@@ -5,14 +5,14 @@
 }
 
 :root {
-  --primary-color: #c41e3a;
+  --primary-color: #c41e3a; /* Cavallaro red */
   --primary-dark: #a01829;
-  --secondary-color: #2c3e50;
-  --text-color: #333;
-  --text-light: #666;
-  --border-color: #ddd;
-  --bg-light: #f8f9fa;
-  --success-color: #28a745;
+  --secondary-color: #1f2a36; /* darker footer/nav */
+  --text-color: #2e2e2e;
+  --text-light: #6b6b6b;
+  --border-color: #e5e7eb;
+  --bg-light: #f6f7f9;
+  --success-color: #16a34a;
   --white: #ffffff;
 }
 
@@ -43,11 +43,11 @@ body {
 }
 
 .header {
-  background: var(--white);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: var(--primary-color);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .header-top {

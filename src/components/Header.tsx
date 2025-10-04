@@ -7,7 +7,7 @@ export default function Header() {
   const { user, logout } = useAuth();
 
   return (
-    <header className="header" style={{ background: '#c41e3a' }}>
+    <header className="header">
       <div className="container" style={{ padding: '10px 0' }}>
         <div className="header-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <Link to="/" className="logo" aria-label="Ir al inicio">

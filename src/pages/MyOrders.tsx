@@ -2,7 +2,16 @@ import { useEffect, useState } from 'react';
 import { Api } from '../lib/api';
 import { useAuth } from '../contexts/AuthContext';
 
-interface OrderDto { id: number; total: number; status: string; created_at: string }
+interface OrderDto {
+  id: number;
+  subtotal: number;
+  importe_descuento: number;
+  porcentaje_descuento: number;
+  importe_iva: number;
+  total: number;
+  status: string;
+  created_at: string;
+}
 
 export default function MyOrders() {
   const { user } = useAuth();
@@ -31,6 +40,9 @@ export default function MyOrders() {
             <div key={o.id} className="cart-item">
               <div>Pedido #{o.id}</div>
               <div>Fecha: {new Date(o.created_at).toLocaleString()}</div>
+              <div>Subtotal: {new Intl.NumberFormat('es-PY', { style: 'currency', currency: 'PYG', minimumFractionDigits: 0 }).format(o.subtotal)}</div>
+              <div>Descuentos: -{new Intl.NumberFormat('es-PY', { style: 'currency', currency: 'PYG', minimumFractionDigits: 0 }).format(o.importe_descuento)}</div>
+              <div>IVA: {new Intl.NumberFormat('es-PY', { style: 'currency', currency: 'PYG', minimumFractionDigits: 0 }).format(o.importe_iva)}</div>
               <div>Total: {new Intl.NumberFormat('es-PY', { style: 'currency', currency: 'PYG', minimumFractionDigits: 0 }).format(o.total)}</div>
               <div>Estado: {o.status}</div>
               <button className="btn btn-primary" onClick={() => repeatOrder(o.id)}>Repetir</button>

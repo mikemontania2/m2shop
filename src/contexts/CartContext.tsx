@@ -9,7 +9,9 @@ interface CartContextType {
   clearCart: () => void;
   cartSubtotal: number; // sum of original prices
   cartDiscount: number; // total discount amount (positive number)
-  cartTotal: number; // subtotal - discount
+  cartTotal: number; // subtotal - discount (sin IVA)
+  cartIva: number; // IVA estimado sobre el total con descuentos
+  cartTotalWithIva: number; // total + IVA
   cartCount: number;
 }
 
@@ -85,6 +87,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
   );
   const cartDiscount = Math.max(0, cartSubtotal - cartTotal);
 
+  const cartIva = cart.reduce((sum, item) => {
+    const ivaPercent = item.product.iva ?? 10;
+    const discountedLine = getDiscountedUnitPrice(item.product) * item.quantity;
+    return sum + discountedLine * (ivaPercent / 100);
+  }, 0);
+
+  const cartTotalWithIva = cartTotal + cartIva;
+
   const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -98,6 +108,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
         cartSubtotal,
         cartDiscount,
         cartTotal,
+        cartIva,
+        cartTotalWithIva,
         cartCount,
       }}
     >

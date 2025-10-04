@@ -16,18 +16,28 @@ async function create(req, res) {
       customer_phone,
       shipping_address,
       status: 'pending',
+      subtotal: 0,
+      importe_descuento: 0,
+      porcentaje_descuento: 0,
+      importe_iva: 0,
       total: 0,
     }, { transaction: trx });
 
-    let total = 0;
-    let amountEligibleSubtotal = 0;
+    // Acumuladores
+    let subtotal = 0; // Suma de precios sin descuentos
+    let productDiscountAmount = 0; // Descuentos por PRODUCT
+    let amountEligibleSubtotal = 0; // Subtotal elegible para AMOUNT (líneas sin descuento PRODUCT)
+
+    // Guardar líneas para prorratear el descuento AMOUNT e IVA luego
+    const lineItems = [];
+
     for (const item of items) {
       const product = await Product.findByPk(item.product_id, { transaction: trx, lock: trx.LOCK.UPDATE });
       if (!product) throw new Error('Product not found: ' + item.product_id);
       const quantity = Math.max(1, Number(item.quantity || 1));
       if (product.stock < quantity) throw new Error('Insufficient stock for product ' + product.id);
 
-      // Aplicar descuento PRODUCT si existe y vigente
+      // Buscar descuento PRODUCT vigente
       const now = new Date();
       const productDiscount = await Discount.findOne({
         where: {
@@ -51,25 +61,47 @@ async function create(req, res) {
 
       const unitPrice = Number(product.price);
       const lineSubtotal = unitPrice * quantity;
-      let discountPercent = 0;
-      if (productDiscount) {
-        discountPercent = Number(productDiscount.value);
+      subtotal += lineSubtotal;
+
+      const productIvaPercent = Number(product.iva ?? 10);
+
+      const productDiscountPercent = productDiscount ? Number(productDiscount.value) : 0;
+      const lineAfterProduct = productDiscountPercent > 0
+        ? lineSubtotal * (1 - productDiscountPercent / 100)
+        : lineSubtotal;
+      const lineProductDiscount = lineSubtotal - lineAfterProduct;
+      productDiscountAmount += lineProductDiscount;
+
+      const eligibleForAmount = !productDiscount;
+      if (eligibleForAmount) {
+        amountEligibleSubtotal += lineSubtotal;
       }
 
-      const discounted = discountPercent > 0 ? lineSubtotal * (1 - discountPercent / 100) : lineSubtotal;
+      // Persistir item del pedido al precio original (auditoría)
+      await OrderItem.create({
+        order_id: order.id,
+        product_id: product.id,
+        quantity,
+        price: product.price,
+      }, { transaction: trx });
 
-      await OrderItem.create({ order_id: order.id, product_id: product.id, quantity, price: product.price }, { transaction: trx });
-
+      // Actualizar stock
       product.stock = product.stock - quantity;
       await product.save({ transaction: trx });
 
-      total += discounted;
-      if (!productDiscount) {
-        amountEligibleSubtotal += lineSubtotal;
-      }
+      lineItems.push({
+        productId: product.id,
+        quantity,
+        ivaPercent: productIvaPercent,
+        lineSubtotal,
+        lineAfterProduct,
+        eligibleForAmount,
+      });
     }
 
-    // Aplicar descuento AMOUNT al subtotal elegible (sin PRODUCT)
+    // Descuento por monto (AMOUNT) prorrateado en las líneas elegibles
+    let amountDiscountPercent = 0;
+    let amountDiscountValue = 0;
     if (amountEligibleSubtotal > 0) {
       const now = new Date();
       const amountRule = await Discount.findOne({
@@ -80,16 +112,37 @@ async function create(req, res) {
           start_date: { [Op.lte]: now },
           end_date: { [Op.gte]: now },
         },
-        order: [[ 'value', 'DESC' ]],
+        order: [['value', 'DESC']],
         transaction: trx,
       });
       if (amountRule) {
-        const percent = Number(amountRule.value);
-        const discountValue = amountEligibleSubtotal * (percent / 100);
-        total -= discountValue;
+        amountDiscountPercent = Number(amountRule.value);
+        amountDiscountValue = amountEligibleSubtotal * (amountDiscountPercent / 100);
       }
     }
 
+    // Calcular prorrateo AMOUNT e IVA
+    let totalAfterAllDiscounts = 0;
+    let importeIva = 0;
+    for (const li of lineItems) {
+      let proratedAmountDiscount = 0;
+      if (amountDiscountValue > 0 && li.eligibleForAmount && amountEligibleSubtotal > 0) {
+        const weight = li.lineSubtotal / amountEligibleSubtotal;
+        proratedAmountDiscount = amountDiscountValue * weight;
+      }
+      const finalLineAmount = li.lineAfterProduct - proratedAmountDiscount;
+      totalAfterAllDiscounts += finalLineAmount;
+      importeIva += finalLineAmount * (li.ivaPercent / 100);
+    }
+
+    const importeDescuento = (subtotal - totalAfterAllDiscounts);
+    const porcentajeDescuento = subtotal > 0 ? (importeDescuento / subtotal) * 100 : 0;
+    const total = totalAfterAllDiscounts + importeIva;
+
+    order.subtotal = subtotal;
+    order.importe_descuento = importeDescuento;
+    order.porcentaje_descuento = porcentajeDescuento;
+    order.importe_iva = importeIva;
     order.total = total;
     await order.save({ transaction: trx });
 

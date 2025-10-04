@@ -38,9 +38,11 @@ async function list(req, res) {
       }
     });
     const price = Number(it.price);
+    const iva = Number(it.iva ?? 10);
     const percent = pd ? Number(pd.value) : 0;
     it.setDataValue('discount_percent', percent);
     it.setDataValue('price_with_discount', percent > 0 ? price * (1 - percent / 100) : price);
+    it.setDataValue('iva', iva);
   }
   res.json(items);
 }
@@ -67,9 +69,11 @@ async function get(req, res) {
     },
   });
   const price = Number(item.price);
+  const iva = Number(item.iva ?? 10);
   const percent = pd ? Number(pd.value) : 0;
   item.setDataValue('discount_percent', percent);
   item.setDataValue('price_with_discount', percent > 0 ? price * (1 - percent / 100) : price);
+  item.setDataValue('iva', iva);
   res.json(item);
 }
 
@@ -95,9 +99,11 @@ async function getBySlug(req, res) {
     },
   });
   const price = Number(item.price);
+  const iva = Number(item.iva ?? 10);
   const percent = pd ? Number(pd.value) : 0;
   item.setDataValue('discount_percent', percent);
   item.setDataValue('price_with_discount', percent > 0 ? price * (1 - percent / 100) : price);
+  item.setDataValue('iva', iva);
   res.json(item);
 }
 

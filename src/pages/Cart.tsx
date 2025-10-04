@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 
 export default function Cart() {
-  const { cart, removeFromCart, updateQuantity, cartSubtotal, cartDiscount, cartTotal } = useCart();
+  const { cart, removeFromCart, updateQuantity, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva } = useCart();
   const navigate = useNavigate();
 
   const formatPrice = (price: number) => {
@@ -108,9 +108,13 @@ export default function Cart() {
                 <span>-{formatPrice(cartDiscount)}</span>
               </div>
             )}
+            <div className="summary-row">
+              <span>IVA:</span>
+              <span>{formatPrice(cartIva)}</span>
+            </div>
             <div className="summary-row summary-total">
-              <span>Total:</span>
-              <span>{formatPrice(cartTotal)}</span>
+              <span>Total a pagar:</span>
+              <span>{formatPrice(cartTotalWithIva)}</span>
             </div>
             <button
               onClick={() => navigate('/checkout')}

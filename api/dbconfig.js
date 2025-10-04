@@ -16,6 +16,8 @@ const dbConnection = async () => {
 
     if (process.env.DB_INIT === "true") {
       await sequelize.sync({ force: true });
+    } else if (process.env.DB_ALTER === "true") {
+      await sequelize.sync({ alter: true });
     } else {
       await sequelize.sync();
     }
