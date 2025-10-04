@@ -60,6 +60,9 @@ export const Api = {
     }
     return fetch(url.toString()).then(json);
   },
+  async listDiscounts(): Promise<any[]> {
+    return fetch('/api/discounts').then(json);
+  },
   // Orders listing for MyOrders page
   async listMyOrders(customerId: number) {
     return fetch(`/api/orders/my/${customerId}`).then(json);

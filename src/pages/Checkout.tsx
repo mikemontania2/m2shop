@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { Api } from '../lib/api';
 
 export default function Checkout() {
-  const { cart, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva, clearCart } = useCart();
+  const { cart, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva, clearCart, cartLineInfo } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -133,18 +133,18 @@ export default function Checkout() {
             <h2>Resumen del Pedido</h2>
 
             <div className="summary-items">
-              {cart.map((item) => (
-                <div key={item.productId} className="summary-item">
-                  <span>
-                    {item.product.name} x {item.quantity}
-                  </span>
-                  <span>
-                    {formatPrice(((item.product.discount_percent ?? 0) > 0
-                      ? Math.round(item.product.price * (1 - (item.product.discount_percent as number) / 100))
-                      : item.product.price) * item.quantity)}
-                  </span>
-                </div>
-              ))}
+              {cart.map((item) => {
+                const info = cartLineInfo[item.productId];
+                const lineTotal = info ? Math.round(info.finalLineAmount) : Math.round(item.product.price * item.quantity);
+                return (
+                  <div key={item.productId} className="summary-item">
+                    <span>
+                      {item.product.name} x {item.quantity}
+                    </span>
+                    <span>{formatPrice(lineTotal)}</span>
+                  </div>
+                );
+              })}
             </div>
 
             <div className="summary-row">

@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 
 export default function Cart() {
-  const { cart, removeFromCart, updateQuantity, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva } = useCart();
+  const { cart, removeFromCart, updateQuantity, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva, cartLineInfo } = useCart();
   const navigate = useNavigate();
 
   const formatPrice = (price: number) => {
@@ -41,20 +41,21 @@ export default function Cart() {
                 <div className="cart-item-info">
                   <h3>{item.product.name}</h3>
                   <p className="cart-item-price">
-                    {(item.product.discount_percent ?? 0) > 0 ? (
-                      <>
-                        <span className="price-old">{formatPrice(item.product.price)}</span>
-                        <span className="price-new">
-                          {formatPrice(Math.round(item.product.price * (1 - (item.product.discount_percent as number) / 100)))}
-                        </span>
-                        <small className="discount-tag">
-                          Oferta {item.product.discount_percent}%
-                        </small>
-                      </>
-                    ) : (
-                      <span>{formatPrice(item.product.price)}</span>
-                    )}
+                    <span>{formatPrice(item.product.price)}</span>
                   </p>
+                  {(() => {
+                    const info = cartLineInfo[item.productId];
+                    if (!info) return null;
+                    if (!info.discountType || info.discountPercent <= 0 || info.discountAmount <= 0) return null;
+                    const porcentajeDescuento = info.discountPercent.toFixed(2).replace(/\.00$/, '') + '%';
+                    const importeDescuento = formatPrice(Math.round(info.discountAmount));
+                    const tipo = info.discountType === 'importe' ? 'importe' : 'producto';
+                    return (
+                      <div style={{ fontSize: 12, color: '#2563eb', marginTop: 4 }}>
+                        {`${porcentajeDescuento} ${importeDescuento} ${tipo}`}
+                      </div>
+                    );
+                  })()}
                 </div>
 
                 <div className="cart-item-quantity">
@@ -78,9 +79,11 @@ export default function Cart() {
                 </div>
 
                 <div className="cart-item-total">
-                  {formatPrice(((item.product.discount_percent ?? 0) > 0
-                    ? Math.round(item.product.price * (1 - (item.product.discount_percent as number) / 100))
-                    : item.product.price) * item.quantity)}
+                  {(() => {
+                    const info = cartLineInfo[item.productId];
+                    const value = info ? Math.round(info.finalLineAmount) : Math.round(item.product.price * item.quantity);
+                    return formatPrice(value);
+                  })()}
                 </div>
 
                 <button

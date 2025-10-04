@@ -33,6 +33,7 @@ export default function ProductDetail() {
   const handleAddToCart = () => {
     if (product) {
       addToCart(product, quantity);
+      setQuantity(1);
     }
   };
 
@@ -122,7 +123,7 @@ export default function ProductDetail() {
 
             {product.stock > 0 && (
               <div className="product-actions">
-                <div className="quantity-selector">
+                <div className="quantity-selector" style={{ marginBottom: 12 }}>
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
                     disabled={quantity <= 1}
