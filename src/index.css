@@ -51,7 +51,7 @@ body {
 }
 
 .header-top {
-  background: var(--primary-color);
+  background: var(--primary-dark);
   color: var(--white);
   padding: 8px 0;
   font-size: 14px;

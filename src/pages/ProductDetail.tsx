@@ -33,6 +33,7 @@ export default function ProductDetail() {
   const handleAddToCart = () => {
     if (product) {
       addToCart(product, quantity);
+      setQuantity(1);
     }
   };
 
@@ -121,33 +122,33 @@ export default function ProductDetail() {
             </div>
 
             {product.stock > 0 && (
-              <div className="product-actions">
-                <div className="quantity-selector">
-                  <button
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    disabled={quantity <= 1}
-                  >
-                    -
-                  </button>
-                  <input
-                    type="number"
-                    value={quantity}
-                    onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                    min="1"
-                    max={product.stock}
-                  />
-                  <button
-                    onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
-                    disabled={quantity >= product.stock}
-                  >
-                    +
-                  </button>
-                </div>
-
-                <button onClick={handleAddToCart} className="btn btn-primary btn-large">
-                  Agregar al Carrito
+            <div className="product-actions" style={{ flexDirection: 'column', alignItems: 'stretch', gap: 12 }}>
+              <div className="quantity-selector" style={{ alignSelf: 'flex-start' }}>
+                <button
+                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                  disabled={quantity <= 1}
+                >
+                  -
+                </button>
+                <input
+                  type="number"
+                  value={quantity}
+                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                  min="1"
+                  max={product.stock}
+                />
+                <button
+                  onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
+                  disabled={quantity >= product.stock}
+                >
+                  +
                 </button>
               </div>
+
+              <button onClick={handleAddToCart} className="btn btn-primary btn-large">
+                Agregar al Carrito
+              </button>
+            </div>
             )}
           </div>
         </div>

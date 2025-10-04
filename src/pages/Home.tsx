@@ -48,6 +48,19 @@ export default function Home() {
 
   return (
     <div className="home">
+      <div className="container" style={{ padding: '10px 0' }}>
+        <div className="header-features" style={{ display: 'flex', gap: 24, justifyContent: 'center', alignItems: 'center', fontSize: 14 }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <img src="/icons/truck.png" alt="Envíos" width={20} height={20} /> Envíos a todo el país
+          </span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <img src="/icons/credit-card.png" alt="Pagos" width={20} height={20} /> Pagos seguros
+          </span>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <img src="/icons/support.png" alt="Soporte" width={20} height={20} /> Soporte 24/7
+          </span>
+        </div>
+      </div>
       <section className="hero-carousel">
         <div className="carousel">
           {banners.map((banner, index) => (

@@ -8,6 +8,24 @@ export default function Header() {
 
   return (
     <header className="header">
+      <div className="header-top">
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', gap: 16 }}>
+          <div className="header-features" style={{ display: 'flex', gap: 16, alignItems: 'center', fontSize: 13 }}>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <img src="/icons/truck.png" alt="Envíos" width={18} height={18} /> Envíos a todo el país
+            </span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <img src="/icons/credit-card.png" alt="Pagos" width={18} height={18} /> Pagos seguros
+            </span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <img src="/icons/support.png" alt="Soporte" width={18} height={18} /> Soporte 24/7
+            </span>
+          </div>
+          <div className="header-contact">
+            <span>Atención: +595 21 000 000</span>
+          </div>
+        </div>
+      </div>
       <div className="container" style={{ padding: '10px 0' }}>
         <div className="header-content" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <Link to="/" className="logo" aria-label="Ir al inicio">
