@@ -5,7 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { Api } from '../lib/api';
 
 export default function Checkout() {
-  const { cart, cartSubtotal, cartDiscount, cartTotal, clearCart } = useCart();
+  const { cart, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva, clearCart } = useCart();
   const { user } = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -158,9 +158,13 @@ export default function Checkout() {
               </div>
             )}
 
+            <div className="summary-row">
+              <span>IVA:</span>
+              <span>{formatPrice(cartIva)}</span>
+            </div>
             <div className="summary-total">
-              <span>Total:</span>
-              <span>{formatPrice(cartTotal)}</span>
+              <span>Total a pagar:</span>
+              <span>{formatPrice(cartTotalWithIva)}</span>
             </div>
           </div>
         </div>

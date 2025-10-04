@@ -16,6 +16,7 @@ export interface ProductDto {
   recommended_uses?: string;
   properties?: string;
   price: number;
+  iva?: number;
   image_url: string;
   stock: number;
   is_featured: boolean;
@@ -25,6 +26,7 @@ export interface ProductDto {
 }
 
 export interface OrderCreateDto {
+  customer_id?: number;
   customer_name: string;
   customer_email: string;
   customer_phone: string;
@@ -57,6 +59,10 @@ export const Api = {
       });
     }
     return fetch(url.toString()).then(json);
+  },
+  // Orders listing for MyOrders page
+  async listMyOrders(customerId: number) {
+    return fetch(`/api/orders/my/${customerId}`).then(json);
   },
   async getProductBySlug(slug: string): Promise<ProductDto> {
     return fetch(`/api/products/slug/${slug}`).then(json);

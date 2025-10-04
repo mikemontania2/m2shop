@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     recommended_uses: { type: DataTypes.STRING(1000) },
     properties: { type: DataTypes.STRING(1000) },
     price: { type: DataTypes.DECIMAL(12,2), allowNull: false, defaultValue: 0 },
+    iva: { type: DataTypes.DECIMAL(5,2), allowNull: false, defaultValue: 10 },
     image_url: { type: DataTypes.STRING(500) },
     stock: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0 },
     is_featured: { type: DataTypes.BOOLEAN, defaultValue: false },
