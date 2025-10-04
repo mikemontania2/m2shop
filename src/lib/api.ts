@@ -49,6 +49,9 @@ export const Api = {
   async listCategories(): Promise<CategoryDto[]> {
     return fetch('/api/categories').then(json);
   },
+  async listDiscounts(): Promise<any[]> {
+    return fetch('/api/discounts').then(json);
+  },
   async listProducts(params?: { category_slug?: string; is_featured?: boolean; is_new?: boolean; search?: string }): Promise<ProductDto[]> {
     const url = new URL('/api/products', window.location.origin);
     if (params) {

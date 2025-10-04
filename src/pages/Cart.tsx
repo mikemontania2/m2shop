@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext';
 
 export default function Cart() {
-  const { cart, removeFromCart, updateQuantity, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva } = useCart();
+  const { cart, removeFromCart, updateQuantity, cartSubtotal, cartDiscount, cartTotal, cartIva, cartTotalWithIva, computedLinesByProductId } = useCart();
   const navigate = useNavigate();
 
   const formatPrice = (price: number) => {
@@ -41,20 +41,28 @@ export default function Cart() {
                 <div className="cart-item-info">
                   <h3>{item.product.name}</h3>
                   <p className="cart-item-price">
-                    {(item.product.discount_percent ?? 0) > 0 ? (
-                      <>
-                        <span className="price-old">{formatPrice(item.product.price)}</span>
-                        <span className="price-new">
-                          {formatPrice(Math.round(item.product.price * (1 - (item.product.discount_percent as number) / 100)))}
-                        </span>
-                        <small className="discount-tag">
-                          Oferta {item.product.discount_percent}%
-                        </small>
-                      </>
-                    ) : (
-                      <span>{formatPrice(item.product.price)}</span>
-                    )}
+                    <span>{formatPrice(item.product.price)}</span>
                   </p>
+                  {/* Discount detail under the line if any */}
+                  {(() => {
+                    const comp = computedLinesByProductId[item.productId];
+                    if (!comp) return null;
+                    const hasProduct = comp.productDiscountPercent > 0 && comp.productDiscountAmount > 0.5;
+                    const hasAmount = comp.amountDiscountAmount > 0.5;
+                    if (!hasProduct && !hasAmount) return null;
+                    const parts: string[] = [];
+                    if (hasProduct) {
+                      parts.push(`${comp.productDiscountPercent.toFixed(0)}% ${formatPrice(Math.round(comp.productDiscountAmount))} producto`);
+                    }
+                    if (hasAmount) {
+                      parts.push(`${comp.amountDiscountPercent.toFixed(0)}% ${formatPrice(Math.round(comp.amountDiscountAmount))} importe`);
+                    }
+                    return (
+                      <div className="discount-line" style={{ color: '#c41e3a', fontWeight: 600, marginTop: 4 }}>
+                        {parts.join(' + ')}
+                      </div>
+                    );
+                  })()}
                 </div>
 
                 <div className="cart-item-quantity">
@@ -78,9 +86,7 @@ export default function Cart() {
                 </div>
 
                 <div className="cart-item-total">
-                  {formatPrice(((item.product.discount_percent ?? 0) > 0
-                    ? Math.round(item.product.price * (1 - (item.product.discount_percent as number) / 100))
-                    : item.product.price) * item.quantity)}
+                  {formatPrice((computedLinesByProductId[item.productId]?.finalLineAmount ?? (item.product.price * item.quantity)))}
                 </div>
 
                 <button
