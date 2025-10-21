@@ -1,0 +1,29 @@
+//01crear package.json
+//npm init -y
+//02Instalar express
+//npm install express --save
+//03 nodemon
+//npm install -g nodemon
+//04 para conectar a bd
+//npm install --save sequelize
+//05 sqlserver
+//npm i --save mssql
+//06
+//npm i dotenv
+//07
+//npm i cors
+//08
+//npm i morgan
+//09
+//npm i express-validator
+//10
+//npm i bcryptjs
+//11
+//npm i jsonwebtoken
+npm install bcrypt-nodejs
+npm install body-parse connect-multiparty 
+npm install moment 
+npm install jsonwebtoken
+npm install jwt-simple
+npm install --save-dev nodemon
+ npm i express-fileupload

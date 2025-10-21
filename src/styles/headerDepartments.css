@@ -1,0 +1,143 @@
+/* ============================================
+   DEPARTMENTS MENU
+   ============================================ */
+.departments-menu {
+  position: relative;
+}
+
+.departments-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.departments-icon {
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  mask: linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0);
+  opacity: 0.6;
+}
+
+.departments-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  padding: 12px;
+  z-index: 1200;
+  min-width: 560px;
+  animation: menuFade 0.15s ease-out;
+}
+
+.departments-columns {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 12px;
+}
+
+.departments-list {
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  border-right: 1px solid var(--border-color);
+}
+
+.department-item {
+  position: relative;
+}
+
+.department-item.active .department-link {
+  background: var(--bg-light);
+  border-color: var(--border-color);
+}
+
+.department-link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: space-between;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.department-link:hover {
+  background: var(--bg-light);
+}
+
+.square-color {
+  width: 10px;
+  height: 10px;
+  background: #c22622;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+
+.departments-subpanel {
+  padding: 8px 6px;
+  min-width: 320px;
+}
+
+.subcategory-title {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 6px;
+}
+
+.subcategory-listing {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.subcategory-link {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.subcategory-link:hover {
+  background: var(--bg-light);
+}
+
+.subcategory-link.view-all {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.subcategory-empty {
+  color: var(--text-light);
+  padding: 20px 10px;
+}
+
+@keyframes menuFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

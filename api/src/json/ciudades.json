@@ -1,0 +1,1515 @@
+{
+ "ciudades": [
+	{
+		"id" : 1,
+		"codigo" : 1,
+		"descripcion" : "ASUNCION (DISTRITO)",
+		"codDepartamento" : 1
+	},
+	{
+		"id" : 2,
+		"codigo" : 196,
+		"descripcion" : "BAHIA NEGRA",
+		"codDepartamento" : 17
+	},
+	{
+		"id" : 3,
+		"codigo" : 195,
+		"descripcion" : "FUERTE OLIMPO",
+		"codDepartamento" : 17
+	},
+	{
+		"id" : 4,
+		"codigo" : 233,
+		"descripcion" : "MAYOR PABLO LAGERENZA",
+		"codDepartamento" : 17
+	},
+	{
+		"id" : 5,
+		"codigo" : 218,
+		"descripcion" : "PUERTO CASADO",
+		"codDepartamento" : 17
+	},
+	{
+		"id" : 6,
+		"codigo" : 223,
+		"descripcion" : "PUERTO GUARANI",
+		"codDepartamento" : 17
+	},
+	{
+		"id" : 7,
+		"codigo" : 145,
+		"descripcion" : "CIUDAD DEL ESTE",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 8,
+		"codigo" : 143,
+		"descripcion" : "DOMINGO MARTINEZ DE IRALA",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 9,
+		"codigo" : 142,
+		"descripcion" : "HERNANDARIAS",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 10,
+		"codigo" : 217,
+		"descripcion" : "IRUÑA",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 11,
+		"codigo" : 147,
+		"descripcion" : "ITAKYRY",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 12,
+		"codigo" : 148,
+		"descripcion" : "JUAN E.O'LEARY",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 13,
+		"codigo" : 146,
+		"descripcion" : "JUAN LEON MALLORQUIN",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 14,
+		"codigo" : 211,
+		"descripcion" : "LOS CEDRALES",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 15,
+		"codigo" : 219,
+		"descripcion" : "MBARACAYU",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 16,
+		"codigo" : 210,
+		"descripcion" : "MINGA GUAZU",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 17,
+		"codigo" : 213,
+		"descripcion" : "MINGA PORA",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 18,
+		"codigo" : 215,
+		"descripcion" : "NARANJAL",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 19,
+		"codigo" : 240,
+		"descripcion" : "NUEVA ESPERANZA",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 20,
+		"codigo" : 144,
+		"descripcion" : "ÑACUNDAY",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 21,
+		"codigo" : 149,
+		"descripcion" : "PUERTO PTE.FRANCO",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 22,
+		"codigo" : 212,
+		"descripcion" : "SAN ALBERTO",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 23,
+		"codigo" : 151,
+		"descripcion" : "SAN CRISTOBAL",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 24,
+		"codigo" : 239,
+		"descripcion" : "SANTA FE DEL PARANA",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 25,
+		"codigo" : 209,
+		"descripcion" : "SANTA RITA",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 26,
+		"codigo" : 216,
+		"descripcion" : "SANTA ROSA DEL MONDAY",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 27,
+		"codigo" : 150,
+		"descripcion" : "YGUAZU",
+		"codDepartamento" : 11
+	},
+	{
+		"id" : 28,
+		"codigo" : 186,
+		"descripcion" : "BELLA VISTA",
+		"codDepartamento" : 14
+	},
+	{
+		"id" : 29,
+		"codigo" : 187,
+		"descripcion" : "CAPITAN BADO",
+		"codDepartamento" : 14
+	},
+	{
+		"id" : 30,
+		"codigo" : 278,
+		"descripcion" : "KARAPAI",
+		"codDepartamento" : 14
+	},
+	{
+		"id" : 31,
+		"codigo" : 185,
+		"descripcion" : "PEDRO JUAN CABALLERO",
+		"codDepartamento" : 14
+	},
+	{
+		"id" : 32,
+		"codigo" : 193,
+		"descripcion" : "BOQUERON",
+		"codDepartamento" : 16
+	},
+	{
+		"id" : 33,
+		"codigo" : 259,
+		"descripcion" : "FILADELFIA",
+		"codDepartamento" : 16
+	},
+	{
+		"id" : 34,
+		"codigo" : 234,
+		"descripcion" : "GRAL. EUGENIO A. GARAY",
+		"codDepartamento" : 16
+	},
+	{
+		"id" : 35,
+		"codigo" : 260,
+		"descripcion" : "LOMA PLATA",
+		"codDepartamento" : 16
+	},
+	{
+		"id" : 36,
+		"codigo" : 192,
+		"descripcion" : "MCAL.ESTIGARRIBIA",
+		"codDepartamento" : 16
+	},
+	{
+		"id" : 37,
+		"codigo" : 194,
+		"descripcion" : "PEDRO P.PEÑA",
+		"codDepartamento" : 16
+	},
+	{
+		"id" : 38,
+		"codigo" : 62,
+		"descripcion" : "CAAGUAZU",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 39,
+		"codigo" : 63,
+		"descripcion" : "CARAYAO",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 40,
+		"codigo" : 64,
+		"descripcion" : "CECILIO BAEZ",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 41,
+		"codigo" : 61,
+		"descripcion" : "CNEL. OVIEDO",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 42,
+		"codigo" : 244,
+		"descripcion" : "ESCULIES",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 43,
+		"codigo" : 72,
+		"descripcion" : "J. EULOGIO ESTIGARRIBIA",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 44,
+		"codigo" : 73,
+		"descripcion" : "JOSE D. OCAMPOS",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 45,
+		"codigo" : 69,
+		"descripcion" : "JUAN MANUEL FRUTOS",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 46,
+		"codigo" : 229,
+		"descripcion" : "LA PASTORA",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 47,
+		"codigo" : 76,
+		"descripcion" : "MCAL.F.SOLANO LOPEZ",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 48,
+		"codigo" : 65,
+		"descripcion" : "NUEVA LONDRES",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 49,
+		"codigo" : 75,
+		"descripcion" : "RAUL A. OVIEDO",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 50,
+		"codigo" : 70,
+		"descripcion" : "REPATRIACION",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 51,
+		"codigo" : 74,
+		"descripcion" : "R.I.3 CORRALES",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 52,
+		"codigo" : 66,
+		"descripcion" : "SAN JOAQUIN",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 53,
+		"codigo" : 67,
+		"descripcion" : "SAN JOSE DE LOS ARROYOS",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 54,
+		"codigo" : 71,
+		"descripcion" : "SANTA ROSA DEL MBUTUY",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 55,
+		"codigo" : 228,
+		"descripcion" : "SIMON BOLIVAR",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 56,
+		"codigo" : 275,
+		"descripcion" : "TEMBIAPORA",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 57,
+		"codigo" : 237,
+		"descripcion" : "VAQUERIA",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 58,
+		"codigo" : 68,
+		"descripcion" : "YHU",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 59,
+		"codigo" : 227,
+		"descripcion" : "3 DE FEBRERO",
+		"codDepartamento" : 6
+	},
+	{
+		"id" : 60,
+		"codigo" : 83,
+		"descripcion" : "ABAI",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 61,
+		"codigo" : 78,
+		"descripcion" : "BUENA VISTA",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 62,
+		"codigo" : 77,
+		"descripcion" : "CAAZAPA",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 63,
+		"codigo" : 79,
+		"descripcion" : "GRAL. H. MORINIGO",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 64,
+		"codigo" : 80,
+		"descripcion" : "MACIEL",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 65,
+		"codigo" : 81,
+		"descripcion" : "MOISES BERTONI",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 66,
+		"codigo" : 82,
+		"descripcion" : "SAN JUAN NEPOMUCENO",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 67,
+		"codigo" : 84,
+		"descripcion" : "TAVAI",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 68,
+		"codigo" : 85,
+		"descripcion" : "YEGROS",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 69,
+		"codigo" : 86,
+		"descripcion" : "YUTY",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 70,
+		"codigo" : 272,
+		"descripcion" : "3 DE MAYO",
+		"codDepartamento" : 7
+	},
+	{
+		"id" : 71,
+		"codigo" : 200,
+		"descripcion" : "CORPUS CHRISTI",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 72,
+		"codigo" : 202,
+		"descripcion" : "FRANCISCO CABALLERO ALVAREZ",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 73,
+		"codigo" : 201,
+		"descripcion" : "ITANARA",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 74,
+		"codigo" : 236,
+		"descripcion" : "KATUETE",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 75,
+		"codigo" : 235,
+		"descripcion" : "LA PALOMA",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 76,
+		"codigo" : 238,
+		"descripcion" : "NUEVA ESPERANZA",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 77,
+		"codigo" : 207,
+		"descripcion" : "SALTO DEL GUAIRA",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 78,
+		"codigo" : 197,
+		"descripcion" : "SAN ISIDRO DEL CURUGUATY",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 79,
+		"codigo" : 198,
+		"descripcion" : "VILLA YGATIMI",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 80,
+		"codigo" : 241,
+		"descripcion" : "YASY KAÑY",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 81,
+		"codigo" : 274,
+		"descripcion" : "YBY PYTA",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 82,
+		"codigo" : 271,
+		"descripcion" : "YBYRAROBANA",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 83,
+		"codigo" : 199,
+		"descripcion" : "YPEJHU",
+		"codDepartamento" : 18
+	},
+	{
+		"id" : 84,
+		"codigo" : 152,
+		"descripcion" : "AREGUA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 85,
+		"codigo" : 153,
+		"descripcion" : "CAPIATA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 86,
+		"codigo" : 154,
+		"descripcion" : "FERNANDO DE LA MORA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 87,
+		"codigo" : 155,
+		"descripcion" : "GUARAMBARE",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 88,
+		"codigo" : 156,
+		"descripcion" : "ITA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 89,
+		"codigo" : 157,
+		"descripcion" : "ITAUGUA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 90,
+		"codigo" : 170,
+		"descripcion" : "J.AUGUSTO SALDIVAR",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 91,
+		"codigo" : 169,
+		"descripcion" : "LAMBARE",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 92,
+		"codigo" : 158,
+		"descripcion" : "LIMPIO",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 93,
+		"codigo" : 277,
+		"descripcion" : "LOMA PYTA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 94,
+		"codigo" : 159,
+		"descripcion" : "LUQUE",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 95,
+		"codigo" : 160,
+		"descripcion" : "MARIANO ROQUE ALONSO",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 96,
+		"codigo" : 162,
+		"descripcion" : "NUEVA ITALIA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 97,
+		"codigo" : 161,
+		"descripcion" : "ÑEMBY",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 98,
+		"codigo" : 163,
+		"descripcion" : "SAN ANTONIO",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 99,
+		"codigo" : 164,
+		"descripcion" : "SAN LORENZO",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 100,
+		"codigo" : 165,
+		"descripcion" : "VILLA ELISA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 101,
+		"codigo" : 166,
+		"descripcion" : "VILLETA",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 102,
+		"codigo" : 167,
+		"descripcion" : "YPACARAI",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 103,
+		"codigo" : 168,
+		"descripcion" : "YPANE",
+		"codDepartamento" : 12
+	},
+	{
+		"id" : 104,
+		"codigo" : 5,
+		"descripcion" : "BELEN",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 105,
+		"codigo" : 2,
+		"descripcion" : "CONCEPCION (MUNICIPIO)",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 106,
+		"codigo" : 7,
+		"descripcion" : "HORQUETA",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 107,
+		"codigo" : 6,
+		"descripcion" : "LORETO",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 108,
+		"codigo" : 4,
+		"descripcion" : "SAN CARLOS",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 109,
+		"codigo" : 3,
+		"descripcion" : "SAN LAZARO",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 110,
+		"codigo" : 8,
+		"descripcion" : "SAN SALVADOR",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 111,
+		"codigo" : 270,
+		"descripcion" : "SARGENTO JOSE FELIX LOPEZ",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 112,
+		"codigo" : 9,
+		"descripcion" : "YBY YA'U",
+		"codDepartamento" : 2
+	},
+	{
+		"id" : 113,
+		"codigo" : 27,
+		"descripcion" : "ALTOS",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 114,
+		"codigo" : 28,
+		"descripcion" : "ARROYOS Y ESTEROS",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 115,
+		"codigo" : 29,
+		"descripcion" : "ATYRA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 116,
+		"codigo" : 26,
+		"descripcion" : "CAACUPE",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 117,
+		"codigo" : 30,
+		"descripcion" : "CARAGUATAY",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 118,
+		"codigo" : 31,
+		"descripcion" : "EMBOSCADA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 119,
+		"codigo" : 32,
+		"descripcion" : "EUSEBIO AYALA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 120,
+		"codigo" : 33,
+		"descripcion" : "ISLA PUCU",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 121,
+		"codigo" : 34,
+		"descripcion" : "ITACURUBI DE LA CORDILLERA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 122,
+		"codigo" : 35,
+		"descripcion" : "JUAN DE MENA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 123,
+		"codigo" : 43,
+		"descripcion" : "LOMA GRANDE",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 124,
+		"codigo" : 214,
+		"descripcion" : "MBOCAYATY DEL YHAGUY",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 125,
+		"codigo" : 36,
+		"descripcion" : "NUEVA COLOMBIA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 126,
+		"codigo" : 37,
+		"descripcion" : "PIRIBEBUY",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 127,
+		"codigo" : 39,
+		"descripcion" : "SAN BERNARDINO",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 128,
+		"codigo" : 44,
+		"descripcion" : "SAN JOSE OBRERO",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 129,
+		"codigo" : 40,
+		"descripcion" : "SANTA ELENA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 130,
+		"codigo" : 41,
+		"descripcion" : "TOBATI",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 131,
+		"codigo" : 42,
+		"descripcion" : "VALENZUELA",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 132,
+		"codigo" : 38,
+		"descripcion" : "1RO.DE MARZO",
+		"codDepartamento" : 4
+	},
+	{
+		"id" : 133,
+		"codigo" : 47,
+		"descripcion" : "BORJA",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 134,
+		"codigo" : 50,
+		"descripcion" : "CNEL. MARTINEZ",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 135,
+		"codigo" : 60,
+		"descripcion" : "DR. BOTREL",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 136,
+		"codigo" : 52,
+		"descripcion" : "FELIX PEREZ CARDOZO",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 137,
+		"codigo" : 49,
+		"descripcion" : "GRAL.EUGENIO A. GARAY",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 138,
+		"codigo" : 48,
+		"descripcion" : "INDEPENDENCIA (R.D.MELGAREJO)",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 139,
+		"codigo" : 54,
+		"descripcion" : "ITAPE",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 140,
+		"codigo" : 55,
+		"descripcion" : "ITURBE",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 141,
+		"codigo" : 51,
+		"descripcion" : "JOSE FASSARDI",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 142,
+		"codigo" : 53,
+		"descripcion" : "MAURICIO JOSE TROCHE",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 143,
+		"codigo" : 56,
+		"descripcion" : "MBOCAYATY",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 144,
+		"codigo" : 57,
+		"descripcion" : "NATALICIO TALAVERA",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 145,
+		"codigo" : 58,
+		"descripcion" : "ÑUMI",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 146,
+		"codigo" : 225,
+		"descripcion" : "PASO YOBAY",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 147,
+		"codigo" : 46,
+		"descripcion" : "SAN SALVADOR",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 148,
+		"codigo" : 246,
+		"descripcion" : "SIN EQUIVALENCIA",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 149,
+		"codigo" : 265,
+		"descripcion" : "TEBICUARY",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 150,
+		"codigo" : 45,
+		"descripcion" : "VILLARRICA",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 151,
+		"codigo" : 59,
+		"descripcion" : "YATAITY",
+		"codDepartamento" : 5
+	},
+	{
+		"id" : 152,
+		"codigo" : 88,
+		"descripcion" : "BELLA VISTA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 153,
+		"codigo" : 89,
+		"descripcion" : "CAMBYRETA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 154,
+		"codigo" : 90,
+		"descripcion" : "CAPITAN MEZA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 155,
+		"codigo" : 92,
+		"descripcion" : "CAPITAN MIRANDA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 156,
+		"codigo" : 107,
+		"descripcion" : "CARLOS A. LOPEZ",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 157,
+		"codigo" : 91,
+		"descripcion" : "CARMEN DEL PARANA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 158,
+		"codigo" : 93,
+		"descripcion" : "CORONEL BOGADO",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 159,
+		"codigo" : 109,
+		"descripcion" : "EDELIRA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 160,
+		"codigo" : 87,
+		"descripcion" : "ENCARNACION",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 161,
+		"codigo" : 243,
+		"descripcion" : "FEDERICO CHAVEZ",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 162,
+		"codigo" : 94,
+		"descripcion" : "FRAM",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 163,
+		"codigo" : 95,
+		"descripcion" : "GRAL. ARTIGAS",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 164,
+		"codigo" : 96,
+		"descripcion" : "GRAL. DELGADO",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 165,
+		"codigo" : 114,
+		"descripcion" : "HERIBERTA S.DE IGLESIAS",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 166,
+		"codigo" : 97,
+		"descripcion" : "HOHENAU",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 167,
+		"codigo" : 232,
+		"descripcion" : "ITAPUA POTY",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 168,
+		"codigo" : 98,
+		"descripcion" : "JESUS",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 169,
+		"codigo" : 105,
+		"descripcion" : "JOSE LEANDRO OVIEDO",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 170,
+		"codigo" : 108,
+		"descripcion" : "JULIO D. OTAÑO",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 171,
+		"codigo" : 111,
+		"descripcion" : "LA PAZ",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 172,
+		"codigo" : 104,
+		"descripcion" : "NATALIO",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 173,
+		"codigo" : 102,
+		"descripcion" : "NUEVA ALBORADA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 174,
+		"codigo" : 99,
+		"descripcion" : "OBLIGADO",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 175,
+		"codigo" : 221,
+		"descripcion" : "PIRAPO",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 176,
+		"codigo" : 100,
+		"descripcion" : "SAN COSME Y DAMIAN",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 177,
+		"codigo" : 110,
+		"descripcion" : "SAN JUAN DEL PARANA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 178,
+		"codigo" : 101,
+		"descripcion" : "SAN PEDRO DEL PARANA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 179,
+		"codigo" : 106,
+		"descripcion" : "SAN RAFAEL DEL PARANA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 180,
+		"codigo" : 112,
+		"descripcion" : "TOMAS R. PEREIRA",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 181,
+		"codigo" : 103,
+		"descripcion" : "TRINIDAD",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 182,
+		"codigo" : 113,
+		"descripcion" : "YATYTAY",
+		"codDepartamento" : 8
+	},
+	{
+		"id" : 183,
+		"codigo" : 116,
+		"descripcion" : "AYOLAS",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 184,
+		"codigo" : 117,
+		"descripcion" : "SAN IGNACIO",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 185,
+		"codigo" : 115,
+		"descripcion" : "SAN JUAN BAUTISTA",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 186,
+		"codigo" : 118,
+		"descripcion" : "SAN MIGUEL",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 187,
+		"codigo" : 119,
+		"descripcion" : "SAN PATRICIO",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 188,
+		"codigo" : 121,
+		"descripcion" : "SANTA MARIA",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 189,
+		"codigo" : 122,
+		"descripcion" : "SANTA ROSA",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 190,
+		"codigo" : 120,
+		"descripcion" : "SANTIAGO",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 191,
+		"codigo" : 123,
+		"descripcion" : "VILLA FLORIDA",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 192,
+		"codigo" : 124,
+		"descripcion" : "YABEBYRY",
+		"codDepartamento" : 9
+	},
+	{
+		"id" : 193,
+		"codigo" : 172,
+		"descripcion" : "ALBERDI",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 194,
+		"codigo" : 173,
+		"descripcion" : "CERRITO",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 195,
+		"codigo" : 174,
+		"descripcion" : "DESMOCHADOS",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 196,
+		"codigo" : 203,
+		"descripcion" : "GRAL.JOSE EDUVIGIS DIAZ",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 197,
+		"codigo" : 175,
+		"descripcion" : "GUAZU CUA",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 198,
+		"codigo" : 176,
+		"descripcion" : "HUMAITA",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 199,
+		"codigo" : 177,
+		"descripcion" : "ISLA UMBU",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 200,
+		"codigo" : 178,
+		"descripcion" : "LAURELES",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 201,
+		"codigo" : 180,
+		"descripcion" : "MAYOR J.D.MARTINEZ",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 202,
+		"codigo" : 179,
+		"descripcion" : "PASO DE PATRIA",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 203,
+		"codigo" : 171,
+		"descripcion" : "PILAR",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 204,
+		"codigo" : 181,
+		"descripcion" : "SAN JUAN DE ÑEEMBUCU",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 205,
+		"codigo" : 182,
+		"descripcion" : "TACUARAS",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 206,
+		"codigo" : 205,
+		"descripcion" : "VILLA FRANCA",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 207,
+		"codigo" : 230,
+		"descripcion" : "VILLA FRANCA",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 208,
+		"codigo" : 183,
+		"descripcion" : "VILLA OLIVA",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 209,
+		"codigo" : 184,
+		"descripcion" : "VILLALBIN",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 210,
+		"codigo" : 231,
+		"descripcion" : "VILLALBIN",
+		"codDepartamento" : 13
+	},
+	{
+		"id" : 211,
+		"codigo" : 126,
+		"descripcion" : "ACAHAY",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 212,
+		"codigo" : 127,
+		"descripcion" : "CAAPUCU",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 213,
+		"codigo" : 128,
+		"descripcion" : "CABALLERO",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 214,
+		"codigo" : 129,
+		"descripcion" : "CARAPEGUA",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 215,
+		"codigo" : 131,
+		"descripcion" : "ESCOBAR",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 216,
+		"codigo" : 130,
+		"descripcion" : "LA COLMENA",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 217,
+		"codigo" : 132,
+		"descripcion" : "MBUYAPEY",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 218,
+		"codigo" : 125,
+		"descripcion" : "PARAGUARI",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 219,
+		"codigo" : 133,
+		"descripcion" : "PIRAYU",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 220,
+		"codigo" : 134,
+		"descripcion" : "QUIINDY",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 221,
+		"codigo" : 138,
+		"descripcion" : "QUYQUYHO",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 222,
+		"codigo" : 135,
+		"descripcion" : "ROQUE GONZALEZ",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 223,
+		"codigo" : 136,
+		"descripcion" : "SAPUCAI",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 224,
+		"codigo" : 140,
+		"descripcion" : "TEBICUARY MI",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 225,
+		"codigo" : 141,
+		"descripcion" : "YAGUARON",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 226,
+		"codigo" : 137,
+		"descripcion" : "YBYCUI",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 227,
+		"codigo" : 139,
+		"descripcion" : "YBYTYMI",
+		"codDepartamento" : 10
+	},
+	{
+		"id" : 228,
+		"codigo" : 189,
+		"descripcion" : "BENJAMIN ACEVAL(MONTE SOCIEDAD",
+		"codDepartamento" : 15
+	},
+	{
+		"id" : 229,
+		"codigo" : 242,
+		"descripcion" : "JOSE FALCON",
+		"codDepartamento" : 15
+	},
+	{
+		"id" : 230,
+		"codigo" : 191,
+		"descripcion" : "NANAWA",
+		"codDepartamento" : 15
+	},
+	{
+		"id" : 231,
+		"codigo" : 206,
+		"descripcion" : "POZO COLORADO",
+		"codDepartamento" : 15
+	},
+	{
+		"id" : 232,
+		"codigo" : 190,
+		"descripcion" : "PTO.PINAZCO",
+		"codDepartamento" : 15
+	},
+	{
+		"id" : 233,
+		"codigo" : 188,
+		"descripcion" : "VILLA HAYES",
+		"codDepartamento" : 15
+	},
+	{
+		"id" : 234,
+		"codigo" : 11,
+		"descripcion" : "ANTEQUERA",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 235,
+		"codigo" : 226,
+		"descripcion" : "CAPIIBARY",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 236,
+		"codigo" : 23,
+		"descripcion" : "CHORE",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 237,
+		"codigo" : 12,
+		"descripcion" : "GRAL. E.AQUINO",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 238,
+		"codigo" : 220,
+		"descripcion" : "GUAYAIBI",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 239,
+		"codigo" : 22,
+		"descripcion" : "ISIDORO RESQUIN",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 240,
+		"codigo" : 13,
+		"descripcion" : "ITACURUBI DEL ROSARIO",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 241,
+		"codigo" : 15,
+		"descripcion" : "LIMA",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 242,
+		"codigo" : 16,
+		"descripcion" : "NUEVA GERMANIA",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 243,
+		"codigo" : 14,
+		"descripcion" : "SAN ESTANISLAO (SANTANI)",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 244,
+		"codigo" : 25,
+		"descripcion" : "SAN JOSE DEL ROSARIO",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 245,
+		"codigo" : 24,
+		"descripcion" : "SAN PABLO",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 246,
+		"codigo" : 10,
+		"descripcion" : "SAN PEDRO DE YCUAMANDYYU",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 247,
+		"codigo" : 17,
+		"descripcion" : "TACUATI",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 248,
+		"codigo" : 18,
+		"descripcion" : "UNION",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 249,
+		"codigo" : 20,
+		"descripcion" : "VILLA DEL ROSARIO",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 250,
+		"codigo" : 21,
+		"descripcion" : "YATAITY DEL NORTE",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 251,
+		"codigo" : 245,
+		"descripcion" : "YRYBUCUA",
+		"codDepartamento" : 3
+	},
+	{
+		"id" : 252,
+		"codigo" : 19,
+		"descripcion" : "25 DE DICIEMBRE",
+		"codDepartamento" : 3
+	}
+]}

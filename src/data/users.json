@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "email": "admin@cavallaro.com",
+    "password": "admin123",
+    "name": "Administrador",
+    "phone": "0981234567",
+    "address": "Asunción, Paraguay",
+    "role": "admin",
+    "documentType": "ci",
+    "documentNumber": "12345678"
+  },
+  {
+    "id": 2,
+    "email": "usuario@example.com",
+    "password": "usuario123",
+    "name": "Usuario Demo",
+    "phone": "0987654321",
+    "address": "Ciudad del Este, Paraguay",
+    "role": "customer",
+    "documentType": "ci",
+    "documentNumber": "87654321"
+  }
+]

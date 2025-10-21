@@ -1,0 +1,1845 @@
+{
+"sucursaleBiggieJSON": [
+	{
+		"nombre" : "BIGGIE S.A.-VILLA ELISA AMERICO PICCO",
+		"telefono" : "",
+		"direccion" : "AVDA. TTE. FRANCISCO AMERICO PICCO ESQ. SAPIRANGUY",
+		"latitud" : "-25.364935953821274",
+		"longitud" : "-57.577855736017230"
+	},
+	{
+		"nombre" : "BIGGIE S.A. LA TORRE (ESPAÑA)",
+		"telefono" : "",
+		"direccion" : "EDIFICIO LA TORRE, A",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. BOGGIANI 2",
+		"telefono" : "",
+		"direccion" : "BOGGIANI",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. ESPAÑA",
+		"telefono" : "",
+		"direccion" : "ESPAÑA C\/ TTE. ZANOT",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. FACUNDO MACHAIN",
+		"telefono" : "",
+		"direccion" : "AVDA. FACUNDO MACHAI",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LORENZO LAGUNA GRAN",
+		"telefono" : "",
+		"direccion" : "LAGUNA GRANDE C\/CNEL",
+		"latitud" : "-25.314606220533147",
+		"longitud" : "-57.522193193435670"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LORENZO CATEDRAL",
+		"telefono" : "",
+		"direccion" : "CATEDRAL",
+		"latitud" : "-25.340617757176574",
+		"longitud" : "-57.509255558252335"
+	},
+	{
+		"nombre" : "BIGGIE S.A. FDO MARISCAL LOPEZ",
+		"telefono" : "",
+		"direccion" : ": Avda Mcal Lopez c\/Mateo Estigarribia",
+		"latitud" : "-25.307324789551743",
+		"longitud" : "-57.533173486590385"
+	},
+	{
+		"nombre" : "BIGGIE S.A. GHA",
+		"telefono" : "",
+		"direccion" : "AVDA. MADAME LYNCH E",
+		"latitud" : "-25.280204096744697",
+		"longitud" : "-57.546279095113280"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN BER LAGO AZUL",
+		"telefono" : "",
+		"direccion" : " AV GUILLERMO NAUMAN",
+		"latitud" : "-25.297784373772345",
+		"longitud" : "-57.303771860897534"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-MCAL LOPEZ MUNICIPALIDA",
+		"telefono" : "",
+		"direccion" : "Av Mcal Lopez\/Herminio Maldonado y Gumercindo Sosa",
+		"latitud" : "-25.298970184507315",
+		"longitud" : "-57.568161226809030"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-HERRERA Y GRAL SANTOS",
+		"telefono" : "",
+		"direccion" : "HERRERA",
+		"latitud" : "-25.298171764137926",
+		"longitud" : "-57.612717412412170"
+	},
+	{
+		"nombre" : "BIGGIE S.A. PALMA",
+		"telefono" : "",
+		"direccion" : "CALLE PALMA",
+		"latitud" : "-25.283082328031597",
+		"longitud" : "-57.633394896984100"
+	},
+	{
+		"nombre" : "BIGGIE S.A. CARLOS A LOPEZ",
+		"telefono" : "",
+		"direccion" : "AVDA CARLOS A. LOPEZ",
+		"latitud" : "-25.288863140482490",
+		"longitud" : "-57.654151171445850"
+	},
+	{
+		"nombre" : "BIGGIE S.A. ESTRELLA",
+		"telefono" : "",
+		"direccion" : "ESTRELLA C\/ ALBERDI",
+		"latitud" : "-25.281826937675850",
+		"longitud" : "-57.636426463723180"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ARANJUEZ",
+		"telefono" : "",
+		"direccion" : "AVDA. FELIX BOGADO E",
+		"latitud" : "-25.312477059488284",
+		"longitud" : "-57.630961462855340"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN MARTIN LOMAS",
+		"telefono" : "",
+		"direccion" : "MOLAS LOPEZ",
+		"latitud" : "-25.277089018066235",
+		"longitud" : "-57.565331161022186"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN MARTIN AUSTRIA",
+		"telefono" : "",
+		"direccion" : "SAN MARTIN C\/ AUSTRI",
+		"latitud" : "-25.288288375934123",
+		"longitud" : "-57.574687041342250"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-PRIMER PRESIDENTE",
+		"telefono" : "",
+		"direccion" : "PRIMER PRESIDENTE",
+		"latitud" : "-25.262379006194700",
+		"longitud" : "-57.560446187853820"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ITAPUA",
+		"telefono" : "",
+		"direccion" : "ITAPUA ESQ. MAYOR AL",
+		"latitud" : "-25.258366847838587",
+		"longitud" : "-57.570793814957140"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-TRINIDAD JADE",
+		"telefono" : "",
+		"direccion" : "SMA TRINIDAD\/CAPELLA",
+		"latitud" : "-25.264809523737718",
+		"longitud" : "-57.571291029453280"
+	},
+	{
+		"nombre" : "BIGGIE S.A. TRINIDAD CAMPO GRANDE",
+		"telefono" : "",
+		"direccion" : "AV SMA TRINIDAD\/TTE",
+		"latitud" : "-25.274038134052663",
+		"longitud" : "-57.556431926786900"
+	},
+	{
+		"nombre" : "BIGGIE S.A GRAL SANTOS C\/ FELIX BOG",
+		"telefono" : "",
+		"direccion" : "AV GRAL. SANTOS N° 2",
+		"latitud" : "-25.326592168339470",
+		"longitud" : "-57.626184113323696"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE CENTURY PLAZA",
+		"telefono" : "",
+		"direccion" : "CENTURY",
+		"latitud" : "-25.343527581415284",
+		"longitud" : "-57.613899260759354"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE ARGAÑA",
+		"telefono" : "",
+		"direccion" : "ARGAÑA",
+		"latitud" : "-25.335989407705540",
+		"longitud" : "-57.624479569494724"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE BRUNO GUGGIARI",
+		"telefono" : "",
+		"direccion" : "BRUNO GUGGIARI",
+		"latitud" : "-25.333170918571970",
+		"longitud" : "-57.620624899864204"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-KUBITSCHEK SEMINARIO",
+		"telefono" : "",
+		"direccion" : "AVDA. KUBITSCHEK Y L",
+		"latitud" : "-25.300507901858452",
+		"longitud" : "-57.605983391404150"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CHOFERES Y JULIA INSFRA",
+		"telefono" : "",
+		"direccion" : "AV CHOFERS DL CHACO",
+		"latitud" : "-25.299214498877024",
+		"longitud" : "-57.593706920742990"
+	},
+	{
+		"nombre" : "BIGGIE S.A. MEDICOS DEL CHACO",
+		"telefono" : "",
+		"direccion" : "MEDICOS DEL CHACO Nº",
+		"latitud" : "-25.311284106778820",
+		"longitud" : "-57.596921548247340"
+	},
+	{
+		"nombre" : "BIGGIE S.A.  COLON Y HAEDO",
+		"telefono" : "",
+		"direccion" : "COLON ESQ. HAEDO",
+		"latitud" : "-25.281012336693940",
+		"longitud" : "-57.643060237169266"
+	},
+	{
+		"nombre" : "BIGGIE S.A. TERMINAL",
+		"telefono" : "",
+		"direccion" : "AV RCA ARGENTINA ESQ",
+		"latitud" : "-25.325934546399022",
+		"longitud" : "-57.597557567059994"
+	},
+	{
+		"nombre" : "BIGGIE S.A. RCA ARGENTINA",
+		"telefono" : "",
+		"direccion" : "AV RCA. ARGENTINA Y",
+		"latitud" : "-25.317220566947523",
+		"longitud" : "-57.591068968176840"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAS MERCEDES ESPAÑA",
+		"telefono" : "",
+		"direccion" : "AVDA. ESPAÑA CASI WA",
+		"latitud" : "-25.286937244113073",
+		"longitud" : "-57.614037729799750"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SACRAMENTO Y ROQUE MIRA",
+		"telefono" : "",
+		"direccion" : "SACRAMENTO",
+		"latitud" : "-25.281851797016900",
+		"longitud" : "-57.587160319089890"
+	},
+	{
+		"nombre" : "BIGGIE S.A. VENEZUELA",
+		"telefono" : "",
+		"direccion" : "VENEZUELA",
+		"latitud" : "-25.270428393228230",
+		"longitud" : "-57.593422271311280"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-BRASILIA AMERICANA",
+		"telefono" : "",
+		"direccion" : " AVDA. BRASILIA ESQ.",
+		"latitud" : "-25.278180744767585",
+		"longitud" : "-57.599960155785084"
+	},
+	{
+		"nombre" : "BIGGIE S.A. LA VICTORIA",
+		"telefono" : "",
+		"direccion" : "LA VICTORIA",
+		"latitud" : "-25.317925212453270",
+		"longitud" : "-57.575658001005660"
+	},
+	{
+		"nombre" : "BIGGIE S.A. BOGGIANI",
+		"telefono" : "",
+		"direccion" : " AVDA.BOGGIANI E\/ AL",
+		"latitud" : "-25.299073548339205",
+		"longitud" : "-57.573220208287240"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SANTA TERESA Y MIRANDA",
+		"telefono" : "",
+		"direccion" : "AVDA SANTA TERESA",
+		"latitud" : "-25.285582459399617",
+		"longitud" : "-57.559701874852180"
+	},
+	{
+		"nombre" : "BIGGIE S.A. (CORONEL OVIEDO)",
+		"telefono" : "",
+		"direccion" : "MCAL. LÓPEZ E\/ IGNACIO A. PANE 53278",
+		"latitud" : "-25.442182861817674",
+		"longitud" : "-56.440730877220630"
+	},
+	{
+		"nombre" : "BIGGIE S.A. (OVIEDO ROTONDA)",
+		"telefono" : "",
+		"direccion" : "MCAL. ESTIGARRIBIA RUTA 2, C\/ AGUSTÃN P 53908",
+		"latitud" : "-25.466677351524990",
+		"longitud" : "-56.452508792281150"
+	},
+	{
+		"nombre" : "BIGGIE S.A. PACHECO",
+		"telefono" : "",
+		"direccion" : "DR TORIBIO PACHECO\/G",
+		"latitud" : "-25.297171760972580",
+		"longitud" : "-57.586479708552350"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LAS MERCEDES SIRIA",
+		"telefono" : "",
+		"direccion" : "AVDA. GRAL. MAXIMO SANTOS ESQ. SOCIEDAD",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CENTENARIO MARISCAL LOPEZ",
+		"telefono" : "",
+		"direccion" : "Avda. Macl. Lopez 2349 entre Sta. Rosa & Venezuela",
+		"latitud" : "",
+		"longitud" : ""
+	},
+ 
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE MEDICOS DEL CHACO",
+		"telefono" : "",
+		"direccion" : "AVDA. MEDICOS DEL CHACO esq. NUÑEZ DE BALBOA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-M.R.A. AREKAJA",
+		"telefono" : "",
+		"direccion" : "La Concordia Monseñor Bogarin c\/ Gral Elizardo Aquino",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN BERNARDINO KENNEDY",
+		"telefono" : "",
+		"direccion" : "Avda Santiago Schaerer entre Else Petzold Santiviago y Defen",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO SOLDADO O. Y PROGRESO",
+		"telefono" : "",
+		"direccion" : "Soldado Ovelar entre Progreso y M. Molas",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-YPACARAI PEAJE",
+		"telefono" : "",
+		"direccion" : "RUTA 2 Mcal Jose Felix Estigarribia esq Porvenir",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-MCAL LOPEZ E INGAVI",
+		"telefono" : "",
+		"direccion" : "AVDA. MCAL LOPEZ casi INGAVI",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LIMPIO ENTRADA",
+		"telefono" : "",
+		"direccion" : "RUTA 3 GRAL ELIZARDO AQUINO Esq. 1RO DE MARZO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO S. OVELAR Y PANCHITO",
+		"telefono" : "",
+		"direccion" : "SOLDADO OVELAR Y DR CASTULO FRANCO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ITA CENTRO",
+		"telefono" : "",
+		"direccion" : "Ruta 1 Mcal Francisco Solano López c\/ Presidente Franco",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ÑEMBY A. SUR CAÑADITA",
+		"telefono" : "",
+		"direccion" : "Ruta Acceso Sur",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE ROA BASTOS",
+		"telefono" : "",
+		"direccion" : "AVDA AUGUSTO ROA BASTOS esq SAN MARCOS",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-PIZARRO",
+		"telefono" : "",
+		"direccion" : "Pizarro entre Monseñor Juan Moleon y Dr Raul Casal",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-VILLA ELISA PETROPAR",
+		"telefono" : "",
+		"direccion" : "Avda Américo Picco entre Virgen de Fatima y Sta. Rita",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CHILE & PIRIBEBUY",
+		"telefono" : "",
+		"direccion" : "CHILE ESQ PIRIBEBUY",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE PALMA LOMA",
+		"telefono" : "",
+		"direccion" : "FELIPE GONZALEZ esq. JOSE BONIFACIO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ITAUGUA",
+		"telefono" : "",
+		"direccion" : "27 de Junio casi Ruta 2",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE NANAWA",
+		"telefono" : "",
+		"direccion" : "Avda Nanawa esq 21 de Septiembre",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE CAMPO VÍA",
+		"telefono" : "",
+		"direccion" : "AV. CAMPO VÍA CASI 29 DE SEPTIEMRE",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-MOLAS LOPEZ Y TEBICUARY",
+		"telefono" : "",
+		"direccion" : "AV. MOLAS LOPEZ ESQ. RIO TEBICUARY",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ITAUGUA SAN ROQUE",
+		"telefono" : "",
+		"direccion" : "Avda. Gral Marcial Samaniego c\/ Defensores del Chaco",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-MRA SAN JORGE",
+		"telefono" : "",
+		"direccion" : "Soldado Robustiano Quintana esq. M. Ortiz Guerrero",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-TRINIDAD MBURUCUYA",
+		"telefono" : "",
+		"direccion" : "AV. SANTÍSIMA TRINIDAD C\/ PROF. DR. FRANCISCO FERNÁNDEZ",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-1ER PDTE. LYNCH",
+		"telefono" : "",
+		"direccion" : "AV. PRIMER PRESIDENTE ESQ. TTE. 1RO. BLAS A. GIMENEZ",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARÉ CACIQUE MUNI",
+		"telefono" : "",
+		"direccion" : "Av. Cacique Lambaré c\/ 14 de mayo Lambaré",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.- AREGUA CAACUPEMI",
+		"telefono" : "",
+		"direccion" : "AV. LAS RESIDENTAS C\/ REP. DEL PARAGUAY",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SANLO VICTOR CURIEL Y NICORA",
+		"telefono" : "",
+		"direccion" : "PROF. DR. VICTORIO CURIEL esq. DR. MIGUEL NICORA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CAPIATÁ DR. LOPEZ",
+		"telefono" : "",
+		"direccion" : "CALLE 04 DE OCTUBRE CASI AVDA. DOCTOR LOPEZ GODOY",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-VILLA ELISA 4 MOJONES",
+		"telefono" : "",
+		"direccion" : "AV. DEFENSORES DEL CHACO E\/ MCAL ESTIGARRIBIA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-J. AUGUSTO S. 3 BOCAS",
+		"telefono" : "",
+		"direccion" : "RUTA D-027 ESQ. AV. ARSENIO VAEZKEN",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-VILLARICA YBAROTY",
+		"telefono" : "",
+		"direccion" : "PADRE CARLOS ANASAGASTI C\/ OLIMPO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-VILLARICA CENTRO",
+		"telefono" : "",
+		"direccion" : "Gral Jose Eduvigis Díaz entre Dr Bottrel y Ruta Paraguari-Vi",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-VILLA ELISA PICADA",
+		"telefono" : "",
+		"direccion" : "AV. ENRIQUE VON POLESKY ESQ. PELAYO PRATT GILL",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE ROJAS SILVA",
+		"telefono" : "",
+		"direccion" : "AV. ROJAS SILVA ESQ. AZARA.",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-MRA EXPO",
+		"telefono" : "",
+		"direccion" : "KM 13 RUTA TRANSCHACO 5, MARIANO ROQUE ALONSO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE BRITEZ BORGES",
+		"telefono" : "",
+		"direccion" : "Avda. Gral. Manuel Britez Borges",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LIMPIO SAN ROQUE",
+		"telefono" : "",
+		"direccion" : "Avda. San Jose",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.- TRANSCHACO LOMA PYTA",
+		"telefono" : "",
+		"direccion" : "RUTA TRANCHACO Y TTE. GADEA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.- VILLA HAYES CENTRO",
+		"telefono" : "",
+		"direccion" : "MCAL FRANCISCO SOLANO LOPEZ ESQ. TTE. FRANCISCO FLEITAS",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - NUESTRA SEÑORA DEL CARMEN",
+		"telefono" : "",
+		"direccion" : "NTRA SRA DEL CARMEN E\/ SOLDADO DESCONOCIDO Y CAPITAN DR. PAT",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAJONIA LA ENCARNACION",
+		"telefono" : "",
+		"direccion" : "PROF. DR. LUIS ALBERTO GARCETE C\/ TTE PEDRO RODI",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - PUENTE REMANSO",
+		"telefono" : "",
+		"direccion" : "RUTA DEPARTAMENTAL D025 ESQUINA PASEO DE FATIMA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE TUPA REKAVO",
+		"telefono" : "",
+		"direccion" : "TUPA REKAVO C\/ LOMA PYTA - RUTA LUQUE\/LIMPIO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ZEBALLOS CUE",
+		"telefono" : "",
+		"direccion" : "IPIRANGA ESQ. CARLOS PUSINERI SCALA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - HIPODROMO",
+		"telefono" : "",
+		"direccion" : "PASO DE PATRIA ESQ. MBOCAYA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - M.R.A. CIMEFOR",
+		"telefono" : "",
+		"direccion" : "SARGENTO TRIAN ESQUINA MARISCAL ESTIGARRIBIA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ÑEMBY CAAGUAZU",
+		"telefono" : "",
+		"direccion" : "AVDA. CAAGUAZU C\/ MANUEL ORTIZ GUERRERO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CDE SUPER CARRETERA",
+		"telefono" : "",
+		"direccion" : "AVDA. MARISCAL LOPEZ C\/ CALLE PORA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ESPAÑA Y SAN JOSE",
+		"telefono" : "",
+		"direccion" : "AVDA. ESPAÑA ESQ. SAN JOSE",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ÑEMBY PRIMERO DE MAYO",
+		"telefono" : "",
+		"direccion" : "1RO DE MAYO ESQ. CARLOS MIGUEL GIMENEZ",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CDE CIUDAD NUEVA",
+		"telefono" : "",
+		"direccion" : "JULIO CESAR RIQUELME",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - 21 PROYECTADAS",
+		"telefono" : "",
+		"direccion" : "ITA YBATE C\/ ANTEQUERA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAN LORENZO UNA",
+		"telefono" : "",
+		"direccion" : "AVDA. MARISCAL LOPEZ ESQ. UNIVERSITARIA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAN LORENZO RINCON",
+		"telefono" : "",
+		"direccion" : "AVDA. MANUEL ORTIZ GUERRERO ESQ. LILIA BORJAS",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - OVIEDO SAN ISIDRO",
+		"telefono" : "",
+		"direccion" : "JULIA MIRANDA CUETO DE ESTIGARRIBIA ESQ. AYOLAS",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - AREGUA VALLE PUCU",
+		"telefono" : "",
+		"direccion" : "AVDA. LAS RESIDENTAS ESQ. CANONERO HUMAITA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. -",
+		"telefono" : "",
+		"direccion" : "AVDA. LAS RESIDENTAS ESQ. CANONERO HUMAITA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LAMBARE VERANDA",
+		"telefono" : "",
+		"direccion" : "AVDA. DEL YACHT Y CALLE SIN NOMBRE",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE ARIELITO",
+		"telefono" : "",
+		"direccion" : "RUTA LUQUE - SAN BERNARDINO C\/ DOS BOCAS",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-YAGUARON CENTRO",
+		"telefono" : "",
+		"direccion" : "RUTA 1 CAP. REMIGIO CABRAL E\/ JULIA M. CUETO Y MCAL. ESTIGAR",
+		"latitud" : "-25.561292410044892",
+		"longitud" : "-57.28584506504501"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE AEROPUERTO",
+		"telefono" : "",
+		"direccion" : "ISLA PO'I E\/ RUTA DEP D025 Y AMERICA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAN LORENZO REDUCTO",
+		"telefono" : "",
+		"direccion" : "AVDA. DE LA VICTORIA TAPE GUAZU E\/ CAMPO VIA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CAMPO 9 INDEPENDENCIA NACI",
+		"telefono" : "",
+		"direccion" : "INDEPENDENCIA NACIONAL C\/ BOQUERON",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CDE CORREDOR SUR",
+		"telefono" : "",
+		"direccion" : "SAN ALFREDO CORREDOR SUR ESQ. LAS HERMANITAS",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ÑEMBY MOISES BERTONI",
+		"telefono" : "",
+		"direccion" : "AVDA. MOISES BERTONI ESQ. CEIBO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE MARENA",
+		"telefono" : "",
+		"direccion" : "12 DE JUNIO ESQ. OBRERO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAN ANTONIO VGEN DEL ROSAR",
+		"telefono" : "",
+		"direccion" : "AVDA SAN ANTONIO ESQ. VIGER DEL ROSARIO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE MUNICIPALIDAD",
+		"telefono" : "",
+		"direccion" : "PROF. GUILLERMO LEOZ ESQ. PATRIA SOBERANA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE VILLA POLICIAL",
+		"telefono" : "",
+		"direccion" : "SUB OF. IGNACIO R. VERA Y C FRACCION ACAPULCO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - PRESIDENTE FRANCO MONDAY",
+		"telefono" : "",
+		"direccion" : "AVDA. MONDAY ESQ. AVDA. LIC. MIGUEL MEDINA MAURO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE ISLA BOGADO",
+		"telefono" : "",
+		"direccion" : "CAMPO VIA ENTRE SAN MATEO Y F. DEL CHACO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE RIO VERDE",
+		"telefono" : "",
+		"direccion" : "SAN BERNARDINO ESQ. CALLE CIRILA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ÑEMBY SAN CARLOS",
+		"telefono" : "",
+		"direccion" : "SANTA ROSA DE LIMA ESQ. ESTERO BELLACO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LAMBARE VALLE APUA",
+		"telefono" : "",
+		"direccion" : "RIO VERDE ESQ. PEDRO J. CABALLERO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - FERNANDO CNEL CAZAL",
+		"telefono" : "",
+		"direccion" : "CNEL. CAZAL Y 6 DE ENERO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - TEODORO MONGELOS",
+		"telefono" : "",
+		"direccion" : "TEODORO S. MONGELOS ESQ. 33 ORIENTALES",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SL SAN PEDRO",
+		"telefono" : "",
+		"direccion" : "AVDA. SAN PEDRO ESQ. LAGUNA GRANDE",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAN LORENZO CALLE´I",
+		"telefono" : "",
+		"direccion" : "25 DE AGOSTO ESQ. C. VIRGEN DE LOURDES",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ITAUGUA GENARO RODRIGUEZ",
+		"telefono" : "",
+		"direccion" : "GENARO RODRIGUEZ ESQ. VIRGEN DEL ROSARIO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CAACUPE CENTRO",
+		"telefono" : "",
+		"direccion" : "Ruta 2 Mcal. José Félix Estigarribia e\/Padre Solias y Dr Pin",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CDE SAN BLAS",
+		"telefono" : "",
+		"direccion" : "AVDA. SAN BLAS ESQ. TTE. ROJAS SILVA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAN ANTONIO CTE. BOQUERON",
+		"telefono" : "",
+		"direccion" : "CTE. DE BOQUERON C\/ PASO DE PATRIA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - J.A. SALDIVAR CAMINERA",
+		"telefono" : "",
+		"direccion" : "RUTA D027 ESQ. NARANJAL",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LAMBARE PTO. PABLA",
+		"telefono" : "",
+		"direccion" : "LOS ALPES E\/ MAYOR ALFARP Y CAP. CARPINELLI",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CAPIATA LAURELTY",
+		"telefono" : "",
+		"direccion" : "5 de MARZO ESQ. CEDRALES",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SAN ANTONIO CENTRO",
+		"telefono" : "",
+		"direccion" : "AVDA. SAN ANTONIO ESQ. RIO PARANA",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - YPANE IGLESIA",
+		"telefono" : "",
+		"direccion" : "C. ASUNCION ESQ. SAN PEDRO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - GRAL. SANTOS PINOZA",
+		"telefono" : "",
+		"direccion" : "AVDA. GRAL. SANTOS ESQ. 14 DE JUNIO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ÑEMBY CENTRO",
+		"telefono" : "",
+		"direccion" : "YTORORO ESQ. PIO TROCHE",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE CNEL. MARTINEZ",
+		"telefono" : "",
+		"direccion" : "CNEL. MARTINEZ ESQ. MELO DE PORTUGAL",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - YPACARAI RUTA 2",
+		"telefono" : "",
+		"direccion" : "MCAL. EXTIGARRIBIA PY02 ESQ. GRAL. JOSE E. DIAZ",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ANA DIAZ",
+		"telefono" : "",
+		"direccion" : "ANA DIAZ ESQ. PA'I PEREZ",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE MARAMBURE",
+		"telefono" : "",
+		"direccion" : "HERNANDARIAS ESQ. GUAJIVI",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CAPIATA ROJAS CAÑADA",
+		"telefono" : "",
+		"direccion" : "ROJAS CAÑADA ESQ. LAS PALMERAS",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CAPIATA ESTUDIANTES CAPIAT",
+		"telefono" : "",
+		"direccion" : "ESTUDIANTES CAPIATEÑOS ESQ. 2 DE FEBRERO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - SL LUCERITO",
+		"telefono" : "",
+		"direccion" : "TTE. MOLAS ESQ. JUAN A. MELGAREJO",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO SANTA MARIA",
+		"telefono" : "",
+		"direccion" : "Centenario de la Epopeya Nacional y Nicasio Villalba",
+		"latitud" : "-25.299970779071234",
+		"longitud" : "-57.540464065969000"
+	},
+	{
+		"nombre" : "BIGGIE S.A. LUQUE CENTRO",
+		"telefono" : "",
+		"direccion" : "AVDA. Gral. ELIZARDO AQUINO e\/ LUIS A de HERRERA",
+		"latitud" : "-25.266861296267010",
+		"longitud" : "-57.496386989951140"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN BER CASINO",
+		"telefono" : "",
+		"direccion" : "AVDA. GUILLERMO NAUMANN esq CALLE 8 DE DICIEMBRE",
+		"latitud" : "-25.319078700720695",
+		"longitud" : "-57.285815142095090"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-RODRIGUEZ DE FRANCIA",
+		"telefono" : "",
+		"direccion" : "RODRIGUEZ DE FRANCIA E\/ PARAGUARI",
+		"latitud" : "-25.292893691286110",
+		"longitud" : "-57.635293230414380"
+	},
+	{
+		"nombre" : "BIGGIE S.A.- LILLO VILLA MORRA",
+		"telefono" : "",
+		"direccion" : "EUSEBIO LILLO ESQ. GONZALO BULNES",
+		"latitud" : "-25.287475334088680",
+		"longitud" : "-57.578848823904984"
+	},
+	{
+		"nombre" : "BIGGIE S.A LUQUE PRIMAVERA",
+		"telefono" : "",
+		"direccion" : "RUTA LUQUE-SAN BERNARDINO ESQ HE NANDARI",
+		"latitud" : "-25.262457234687812",
+		"longitud" : "-57.479687556624420"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CAMPO GRANDE",
+		"telefono" : "",
+		"direccion" : "ELOY PÁEZ esq. DON CARLOS A PASTRE",
+		"latitud" : "-25.274213676413037",
+		"longitud" : "-57.556143589317800"
+	},
+	{
+		"nombre" : "BIGGIE S.A.- FDO MADAME LYNCH",
+		"telefono" : "",
+		"direccion" : "FRANCIS MORICES ENTRE TIMOTEO AGUIRRE Y MADAME LYNCH",
+		"latitud" : "-25.312580411799637",
+		"longitud" : "-57.555501535534850"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CAL-DEFENSORES DEL CHAC",
+		"telefono" : "",
+		"direccion" : "Carlos Antonio López esq.  Ramón de las Llamas",
+		"latitud" : "-25.331655434587860",
+		"longitud" : "-57.575293891131880"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE CARRETERA DE LO",
+		"telefono" : "",
+		"direccion" : "CARRETERA DE LOPEZ esq. AVDA DE LA BURRERITA",
+		"latitud" : "-25.363343613366037",
+		"longitud" : "-57.619731724262240"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE 1RO DE MARZO",
+		"telefono" : "",
+		"direccion" : "AVDA. 1RO DE MARZO ENTRE NANAWA Y BOQUERON",
+		"latitud" : "-25.348211999896940",
+		"longitud" : "-57.625430077314380"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-GAUDIOSO NUÑEZ",
+		"telefono" : "",
+		"direccion" : " GAUDIOSO NUÑEZ ESQ. HERMINIO GIMENEZ Asuncio PY.",
+		"latitud" : "-25.303376557974957",
+		"longitud" : "-57.601331099867820"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-BARRIO OBRERO HOSPITAL",
+		"telefono" : "",
+		"direccion" : "AVDA FULGENCIO YEGROS ESQ. ITA PIRU- ASUNCION PY.",
+		"latitud" : "-25.299331502854884",
+		"longitud" : "-57.643695250153540"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN PABLO LA VICTORIA",
+		"telefono" : "",
+		"direccion" : "Avda. De la Victoria c\/ Ybyrayu",
+		"latitud" : "-25.329135646668690",
+		"longitud" : "-57.585239522159100"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO DEFENSORES DEL CHAC",
+		"telefono" : "",
+		"direccion" : "AVDA DEFENSORES DEL CHACO ESQ TTE 2DO OSCAR BOTTONA",
+		"latitud" : "-25.331613615324656",
+		"longitud" : "-57.575392462313175"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-REPUBLICA DOMINICANA",
+		"telefono" : "",
+		"direccion" : "AVDA. ESPAÑA ESQ. RCA. DOMINICANA",
+		"latitud" : "-25.288295651451765",
+		"longitud" : "-57.604519911110400"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-VIA FERREA Y GRAL SANTO",
+		"telefono" : "",
+		"direccion" : "VIA FERREA C\/ GRAL MAXIMO SANTOS",
+		"latitud" : "-25.277159051370823",
+		"longitud" : "-57.609739825129510"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-VILLA ELISA VON POLESKY",
+		"telefono" : "",
+		"direccion" : "AVDA DEFENSORES DEL CHACO ESQ VON POLESKY",
+		"latitud" : "-25.357935982509208",
+		"longitud" : "-57.595421858131886"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO MARISCAL ESTIGARRIB",
+		"telefono" : "",
+		"direccion" : "Avda. MCAL ESTIGARRIBIA ESQ. TTE ETTIENE",
+		"latitud" : "-25.327456162979974",
+		"longitud" : "-57.546341456472870"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO 11 DE SEPTIEMBRE",
+		"telefono" : "",
+		"direccion" : "AVDA. 11 DE SEPTIEMBRE ESQ. HUMAITA",
+		"latitud" : "-25.341241967793500",
+		"longitud" : "-57.552982941269875"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-AVIADORES DEL CHACO",
+		"telefono" : "",
+		"direccion" : "AVDA. AVIADORES DEL CHACO esq. RIGOBERTO FONTAO MESA",
+		"latitud" : "-25.279236990854574",
+		"longitud" : "-57.557677477598190"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE ELIZARDO AQUINO",
+		"telefono" : "",
+		"direccion" : "GRAL ELIZARDO AQUINO C\/ LEONISMO LUQUEÑO",
+		"latitud" : "-25.264132464545938",
+		"longitud" : "-57.516057975590230"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE MORA CUE",
+		"telefono" : "",
+		"direccion" : "Calle Rosario - Tupa Rekavo (Mora Cue)",
+		"latitud" : "-25.229773957108378",
+		"longitud" : "-57.476062215864650"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE ROSARIO",
+		"telefono" : "",
+		"direccion" : "Rosario c\/ Mcal Estigarribia",
+		"latitud" : "-25.259788341113940",
+		"longitud" : "-57.490378841757774"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN BERNARDINO-COYOTE",
+		"telefono" : "",
+		"direccion" : "Avda Guillermo Neuman EX discoteca Coyote",
+		"latitud" : "-25.337583926510900",
+		"longitud" : "-57.272414155304440"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-PERU Y MARISCAL LOPEZ",
+		"telefono" : "",
+		"direccion" : "Avda. MCAL LOPEZ ESQ PERU",
+		"latitud" : "-25.289230854980413",
+		"longitud" : "-57.619174830615530"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-COLON SAJONIA",
+		"telefono" : "",
+		"direccion" : "Colón esq.\/Guillermo Marconi",
+		"latitud" : "-25.294743407339688",
+		"longitud" : "-57.652575373649604"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-YGATIMI Y MONTEVIDEO",
+		"telefono" : "",
+		"direccion" : "Avda Ygatimi c\/ Montevideo",
+		"latitud" : "-25.286879342457937",
+		"longitud" : "-57.645646557211870"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE YACARE VALIJA",
+		"telefono" : "",
+		"direccion" : "AVDA. CACIQUE LAMBARE ESQ. YACARE VALIJA",
+		"latitud" : "-25.339513260111850",
+		"longitud" : "-57.591668106615536"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO MA ORTIZ GUERRE",
+		"telefono" : "",
+		"direccion" : "Manuel Ortiz Guerrero c\/ Resurrección",
+		"latitud" : "-25.356473526580200",
+		"longitud" : "-57.514306493103504"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-MOLAS LOPEZ LOMAS",
+		"telefono" : "",
+		"direccion" : "AVDA  DR MOLAS LOPEZ esq. DR CACERES ZORRILLA",
+		"latitud" : "-25.277271225843712",
+		"longitud" : "-57.564963027834890"
+	},
+	{
+		"nombre" : "BIGGIE S.A.- LOS LAURELES RCA. ARGE",
+		"telefono" : "",
+		"direccion" : "AVDA. Rca. ARGENTINA ENTRE MAC MAHON Y DUGRATY",
+		"latitud" : "-25.302710625999440",
+		"longitud" : "-57.581382170319560"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-PERÓN CERRO LAMBARE",
+		"telefono" : "",
+		"direccion" : "Avda. Perón esq. Agustín Justo",
+		"latitud" : "-25.344309946461056",
+		"longitud" : "-57.638620175421230"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-INDE. NAC. Y QUITA",
+		"telefono" : "",
+		"direccion" : "INDEPENDENCIA NACIONAL Esq. FRANCISCO DUPUYS",
+		"latitud" : "-25.294789483157780",
+		"longitud" : "-57.641722485423095"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CENTENARIO ESPAÑA",
+		"telefono" : "",
+		"direccion" : "AVDA. ESPAÑA C\/ VENEZUELA",
+		"latitud" : "-25.287104885922062",
+		"longitud" : "-57.594862952828410"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-GENARO ROMERO",
+		"telefono" : "",
+		"direccion" : "Genaro Romero e\/ Mbyja Ko`e",
+		"latitud" : "-25.268754463033343",
+		"longitud" : "-57.579008080065250"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ARTIGAS COMFAR",
+		"telefono" : "",
+		"direccion" : "AVDA. GRAL ARTIGAS esq. SGTO. ELIODORO FERNANDEZ",
+		"latitud" : "-25.268173236082838",
+		"longitud" : "-57.600139528512955"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LOMBARDO LOMA PYTA",
+		"telefono" : "",
+		"direccion" : "SGTO. 1RO TOMAS LOMBARDO esq. ARMANDO ESPINOZA",
+		"latitud" : "-25.243406199005186",
+		"longitud" : "-57.539664767682550"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-BARTOLOMÉ DE LAS CASAS",
+		"telefono" : "",
+		"direccion" : "BARTOLOMÉ DE LAS CASAS c\/ ARAUCANOS",
+		"latitud" : "-25.312111537116740",
+		"longitud" : "-57.604945041239270"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LORENZO BRUMADO",
+		"telefono" : "",
+		"direccion" : "AVDA GRAL EUGENIO A. GARAY esq. LAS MERCEDES",
+		"latitud" : "-25.325600582184194",
+		"longitud" : "-57.509067803621300"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CAPIATÀ SAN MIGUEL",
+		"telefono" : "",
+		"direccion" : "RUTA Mcal. ESTIGARRIBIA e\/ MAYOR FACUNDO BAREIRO KM. 20.5",
+		"latitud" : "-25.358550711655308",
+		"longitud" : "-57.437152415513990"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO 14.5",
+		"telefono" : "",
+		"direccion" : "Ruta 2 Mariscal José Félix Estigarribia c\/ Virgen de Fatima",
+		"latitud" : "-25.341568313518490",
+		"longitud" : "-57.496097981929786"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO PELLON",
+		"telefono" : "",
+		"direccion" : "Campo Via esq  Los Concejales",
+		"latitud" : "-25.321033180590240",
+		"longitud" : "-57.497309334576120"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LORENZO DE LA VICTO",
+		"telefono" : "",
+		"direccion" : "Avenida de la Victoria Tape Guazu y Carolinas del Norte",
+		"latitud" : "-25.354342375164165",
+		"longitud" : "-57.490576654672620"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CAPIATA POSTA YBYCUA",
+		"telefono" : "",
+		"direccion" : "Ruta 1 Mcal Francisco Solano López esq Boquerón",
+		"latitud" : "-25.384114797296036",
+		"longitud" : "-57.472993098199360"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO 3 FRONTERAS",
+		"telefono" : "",
+		"direccion" : "Avda. LAGUNA GRANDE c\/ JULIO CESAR FRANCO",
+		"latitud" : "-25.296714042312814",
+		"longitud" : "-57.535480521619330"
+	},
+	{
+		"nombre" : "BIGGIE S.A-SAN LZO MONTOYA",
+		"telefono" : "",
+		"direccion" : "ANTONIO RUIZ MONTOYA esq. PA’I RICARDO",
+		"latitud" : "-25.302536034216093",
+		"longitud" : "-57.525458112359050"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LORENZO RUTA 1 Y 2",
+		"telefono" : "",
+		"direccion" : "Ruta2 JULIA MIRANDA CUETO c\/ Ruta1 FRANCISCO SOLANO LOPEZ",
+		"latitud" : "-25.343358199625577",
+		"longitud" : "-57.503621578216550"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO. CICLOVIA",
+		"telefono" : "",
+		"direccion" : "Mcal José Felix Estigarribia c\/14 de Mayo",
+		"latitud" : "-25.341400444054024",
+		"longitud" : "-57.516165934503080"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO IPS INGAVI",
+		"telefono" : "",
+		"direccion" : "Capitán Rivas esq. Rio Ypane",
+		"latitud" : "-25.330992991517405",
+		"longitud" : "-57.532687336206436"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO PASTORA CESPEDE",
+		"telefono" : "",
+		"direccion" : "PASTORA CESPEDES entre LOPEZ DE VERGA y 5 DE ABRIL",
+		"latitud" : "-25.343102156935140",
+		"longitud" : "-57.540785260498520"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ZAVALA CUE NORTE",
+		"telefono" : "",
+		"direccion" : "Avda Zavala Cue entre Morales y Marcos Riera",
+		"latitud" : "-25.328965638643577",
+		"longitud" : "-57.555803954601290"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO ZAVALA CUE SUR",
+		"telefono" : "",
+		"direccion" : "Av. ZAVALAS CUÉ Esq. NUEVA ASUNCIÓN",
+		"latitud" : "-25.344253284251630",
+		"longitud" : "-57.568130046129230"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LORENZO AVELINO MAR",
+		"telefono" : "",
+		"direccion" : "AVELINO MARTINEZ C\/ ALBERDI",
+		"latitud" : "-25.355092251462700",
+		"longitud" : "-57.541805170476444"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO WALDINO LOVERA",
+		"telefono" : "",
+		"direccion" : "WALDINO LOVERA c\/ Tte. ETTIENE",
+		"latitud" : "-25.314497414491740",
+		"longitud" : "-57.536740824580190"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO LUIS A DEL PARANA",
+		"telefono" : "",
+		"direccion" : "Luis Alberto del Paraná esq. Concepción",
+		"latitud" : "-25.314252221689188",
+		"longitud" : "-57.543941549956800"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-TRINITY TOWER",
+		"telefono" : "",
+		"direccion" : "JOSE PAPALARDO Esq\/ MAXIMO CABALLERO",
+		"latitud" : "-25.289003496601318",
+		"longitud" : "-57.542358376085760"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE DE LAS RESIDENTAS",
+		"telefono" : "",
+		"direccion" : "Avda. Gral. Elizardo Aquino C\/ Gral. Abdon Caballero",
+		"latitud" : "-25.279279434535002",
+		"longitud" : "-57.538664638996124"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE GARDEN",
+		"telefono" : "",
+		"direccion" : "Av.Silvio Peirossi c\/ Mangoty",
+		"latitud" : "-25.254631406826820",
+		"longitud" : "-57.513523623347280"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE AMERICA",
+		"telefono" : "",
+		"direccion" : "Avda. AMERICA C\/JOSÉ MARTÍ",
+		"latitud" : "-25.250411575712636",
+		"longitud" : "-57.502860836684700"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE SEGUNDA CAPITAL",
+		"telefono" : "",
+		"direccion" : "Segunda Capital entre Mcal. Sucre",
+		"latitud" : "-25.251328573612390",
+		"longitud" : "-57.495567239820960"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE ESTADIO",
+		"telefono" : "",
+		"direccion" : "Carlos A. López entre 4 de mayo e Inmaculada Concepción",
+		"latitud" : "-25.274767285026236",
+		"longitud" : "-57.494653612375260"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE AREGUA",
+		"telefono" : "",
+		"direccion" : "AVDA LAS RESIDENTAS CASI TREBOL",
+		"latitud" : "-25.279351588757667",
+		"longitud" : "-57.475031241774550"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN BER AQUA",
+		"telefono" : "",
+		"direccion" : "Ruta San Bernardino- Altos Dr. Federico Chavez",
+		"latitud" : "-25.297285432557274",
+		"longitud" : "-57.270171493291855"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO GUYRA CAMPANA",
+		"telefono" : "",
+		"direccion" : "Avda. MCAL LOPEZ c\/ MAINUMBY",
+		"latitud" : "-25.304756907821860",
+		"longitud" : "-57.540823817253110"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-AZARA Y EE.UU",
+		"telefono" : "",
+		"direccion" : "Calle AZARA Esq. EE.UU",
+		"latitud" : "-25.289032295352914",
+		"longitud" : "-57.627366967499256"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-POZO FAVORITO",
+		"telefono" : "",
+		"direccion" : "Avda. Pozo Favorito e\/ Tte. Raul Buzarquis Real",
+		"latitud" : "-25.306647058346947",
+		"longitud" : "-57.627376019954680"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN VICENTE IGLESIA",
+		"telefono" : "",
+		"direccion" : "Juan Z de San Martin e\/ Tte. 1ro Blas Manuel Garay",
+		"latitud" : "-25.312414926824660",
+		"longitud" : "-57.622866220772260"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ÑEMBY ACCESO SUR",
+		"telefono" : "",
+		"direccion" : "Acceso Sur N°. 5986 entre 29 de Septiembre y 1ro. Marzo",
+		"latitud" : "-25.379422682624046",
+		"longitud" : "-57.554037049412734"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO. CAPILLA DEL MO",
+		"telefono" : "",
+		"direccion" : "Dr. Victorino Curiel entre Avda. Moises Bertoni y Carlos Mar",
+		"latitud" : "-25.377547906173300",
+		"longitud" : "-57.527657523751260"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO CAMPO JORDAN",
+		"telefono" : "",
+		"direccion" : "Manuel Ortiz Guerrero esq. Campo Jordan",
+		"latitud" : "-25.365727268937995",
+		"longitud" : "-57.515991590917110"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LILLO HERRERA",
+		"telefono" : "",
+		"direccion" : "EUSEBIO LILLO ROBLES entre CNEL ESCURRA Y GRAL ROGELIO BENIT",
+		"latitud" : "-25.293174697165220",
+		"longitud" : "-57.553086541593075"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE GRAL. GARAY",
+		"telefono" : "",
+		"direccion" : "AVDA. GRAL. EUGENIO A. GARAY- LUQUE",
+		"latitud" : "-25.306777997766030",
+		"longitud" : "-57.505101487040520"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-M.R.A. GRAL. BERNARDINO",
+		"telefono" : "",
+		"direccion" : "AVDA GRAL BERNARDINO CABALLERO esq. GUAVIRÁ",
+		"latitud" : "-25.198490450513223",
+		"longitud" : "-57.502676434814940"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-M.R.A. TRANSCHACO",
+		"telefono" : "",
+		"direccion" : "RUTA TRANSCHACO C\/ PARAPITI",
+		"latitud" : "-25.206408167562870",
+		"longitud" : "-57.531392499804490"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-M.R.A. NANAWA",
+		"telefono" : "",
+		"direccion" : "NANAWA Esq. PIRIZAL",
+		"latitud" : "-25.207685571675320",
+		"longitud" : "-57.533067204058160"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-TRANSCHACO SEMIDEI",
+		"telefono" : "",
+		"direccion" : "Ruta Transchaco esq. Cnel. Juan Porta Ohiggins",
+		"latitud" : "-25.242991037169773",
+		"longitud" : "-57.545996457338330"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CABALLERIA",
+		"telefono" : "",
+		"direccion" : "AVDA MADAME LYNCH esq MARCELO ONIEVA",
+		"latitud" : "-25.261426615730777",
+		"longitud" : "-57.548377588391310"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO ABASTO DEFENSORES",
+		"telefono" : "",
+		"direccion" : "Avda. Defensores del chaco e\/ Dr. Eduardo San Martin",
+		"latitud" : "-25.322960656591064",
+		"longitud" : "-57.564423568546770"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN ANTONIO SAN FRANCIS",
+		"telefono" : "",
+		"direccion" : "Avda. SAN ANTONIO e\/Avda. DEL NORTE Y EDUGABI",
+		"latitud" : "-25.401615775964707",
+		"longitud" : "-57.575471587479110"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-V ELISA VON POLESKY Y D",
+		"telefono" : "",
+		"direccion" : "Avda. ENRIQUE VON POLESKY C\/ NTRA DE LA ASUNCIÓN",
+		"latitud" : "-25.369753140681980",
+		"longitud" : "-57.584017440676690"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE SAN ISIDRO",
+		"telefono" : "",
+		"direccion" : "AVDA SAN ISIDRO esq. MARGARITA ROMAN",
+		"latitud" : "-25.356387784363946",
+		"longitud" : "-57.614586576819430"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE AVDA DEL YACHT",
+		"telefono" : "",
+		"direccion" : "Avda. Del Yacht e\/ Asunción Mustafá Abdala",
+		"latitud" : "-25.355067710130180",
+		"longitud" : "-57.627164460718640"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-PERON Y FELIX BOGADO",
+		"telefono" : "",
+		"direccion" : "AVDA JUAN D. PERON esq AVDA JOSÉ F. BOGADO",
+		"latitud" : "-25.327902249696685",
+		"longitud" : "-57.627168819308280"
+	},
+	{
+		"nombre" : "BIGGIE S.A.- PIRIZAL",
+		"telefono" : "",
+		"direccion" : "Pirizal esq. Carandayty",
+		"latitud" : "-25.317732761291980",
+		"longitud" : "-57.615142799913880"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LAMBARE BRUNO G SAN RAF",
+		"telefono" : "",
+		"direccion" : "AVDA BRUNO GUGGIARI ENTRE SAN RAAFAEL Y GUATAMBU",
+		"latitud" : "-25.323927413660240",
+		"longitud" : "-57.615979649126520"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-BRUNO GUGGIARI PINOZA",
+		"telefono" : "",
+		"direccion" : "Avda. BRUNO GUGGIARI ENTRE AZTECAS E INDIO FRANCISCO",
+		"latitud" : "-25.308616590499646",
+		"longitud" : "-57.608820162713535"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-FDO INGAVI PLATANILLO",
+		"telefono" : "",
+		"direccion" : "INGAVI esq. PLATANILLO",
+		"latitud" : "-25.332351814107940",
+		"longitud" : "-57.531297281384470"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SEIFERHELD",
+		"telefono" : "",
+		"direccion" : "Alfredo Seiferheld c\/ Choferes del Chaco",
+		"latitud" : "-25.303131948885238",
+		"longitud" : "-57.594689615070810"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-EE.UU OBRERO",
+		"telefono" : "",
+		"direccion" : "ESTADOS UNIDOS esq. TATAJYVA",
+		"latitud" : "-25.306295461058625",
+		"longitud" : "-57.639325931668280"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-QUINTA Y PARAPITI",
+		"telefono" : "",
+		"direccion" : "AVDA ACUÑA DE FIGUEROA esq. PARAPITI",
+		"latitud" : "-25.298507925822793",
+		"longitud" : "-57.635587267577650"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-DE LAS PALMERAS",
+		"telefono" : "",
+		"direccion" : "De Las Palmeras Y Charles De Gaulle",
+		"latitud" : "-25.303163169155898",
+		"longitud" : "-57.585383355617520"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SACRAMENTO E ITAPUA",
+		"telefono" : "",
+		"direccion" : "Avda. Santisimo Sacramento entre Tte. 1º Camperchioi e monta",
+		"latitud" : "-25.265811612924430",
+		"longitud" : "-57.582624033093450"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SARGENTO GAUTO",
+		"telefono" : "",
+		"direccion" : "SGTO. GAUTO esq. DIEGO DE SILVA Y VELAZQUEZ",
+		"latitud" : "-25.281902425171340",
+		"longitud" : "-57.599074691534040"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-ARTIGAS LA COSTA",
+		"telefono" : "",
+		"direccion" : "AVDA. GRAL GERVASIO ARTIGAS CASI SCHININI",
+		"latitud" : "-25.274136365042093",
+		"longitud" : "-57.607779465615750"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-R.I.18 PITIANTUTA",
+		"telefono" : "",
+		"direccion" : "R.I. 18 Esq. 25 DE MAYO",
+		"latitud" : "-25.310472431527900",
+		"longitud" : "-57.569225393235680"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-PEDRO PEÑA",
+		"telefono" : "",
+		"direccion" : "PEDRO PEÑA esq. CAPITAN VICTORIA BUENO",
+		"latitud" : "-25.306886810740440",
+		"longitud" : "-57.560804598033430"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-DENIS ROA",
+		"telefono" : "",
+		"direccion" : "Denis Roa esq. Manuel frutos",
+		"latitud" : "-25.294774629770973",
+		"longitud" : "-57.561650499701510"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-(CERRADO) CHILE C\/HAEDO",
+		"telefono" : "",
+		"direccion" : "CHILE ENTRE HAEDO Y HUMAITA",
+		"latitud" : "-25.285340239638447",
+		"longitud" : "-57.637268677353866"
+	},
+	{
+		"nombre" : "BIGGIE S.A. CAPIATA SANTA CATALINA",
+		"telefono" : "",
+		"direccion" : "Ruta 2 Mcal Jose Felix Estigarribia esq Sgto Primero Maidana",
+		"latitud" : "-25.348207757944166",
+		"longitud" : "-57.461547441780574"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-BARTOLOME Y FDO. DE LA MORA",
+		"telefono" : "",
+		"direccion" : "AV FERNANDO DE LA MORA\/BARTOLOME DE LAS CASAS",
+		"latitud" : "-25.316812022213355",
+		"longitud" : "-57.607435137033460"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-CAACUPÉ CURVA",
+		"telefono" : "",
+		"direccion" : "Ruta N°2 Mcal. José Félix Estigarribia c\/ 8 De Diciembre",
+		"latitud" : "-25.389570325145500",
+		"longitud" : "-57.148440778255470"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-LUQUE ALFARO",
+		"telefono" : "",
+		"direccion" : "AVDA.  Tte. Cnel. RAMOS ALFARO E  SAMACL",
+		"latitud" : "-25.258403234392734",
+		"longitud" : "-57.508518621325490"
+	},
+	{
+		"nombre" : "BIGGIE S.A.-SAN LZO LEOPARDI",
+		"telefono" : "",
+		"direccion" : "Juan Leopardi entre 11 de Septiembre y José Bergues",
+		"latitud" : "-25.342233728815300",
+		"longitud" : "-57.547228261828430"
+	},
+	{
+		"nombre" : "BIGGIE S.A. (CDE PLAZA CITY)",
+		"telefono" : "",
+		"direccion" : "MONSEÑOR RODRÍGUEZ ESQ RAFAEL BA",
+		"latitud" : "-25.497332",
+		"longitud" : "-54.677967"
+	},
+	{
+		"nombre" : "BIGGIE S.A. (CDE PARQUE LINEAL)",
+		"telefono" : "",
+		"direccion" : "Avda Itaipu Oeste e\/ Los Lapachos y los Yerbales",
+		"latitud" : "-25.514563",
+		"longitud" : "-54.628162"
+	},
+	{
+		"nombre" : " Biggie S.A - Presidente Franco",
+		"telefono" : "",
+		"direccion" : "Av Monday-Pdte Franco",
+		"latitud" : "-25.54932545377101",
+		"longitud" : "-54.61807765066624"
+	},
+	{
+		"nombre" : "Biggie S.A. CDE San Blas",
+		"telefono" : "",
+		"direccion" : "Av San Blas",
+		"latitud" : "-25.509053218342494",
+		"longitud" : "-54.63054120540619"
+	},
+	{
+		"nombre" : "Biggie S.A. CDE Corredor Sur",
+		"telefono" : "",
+		"direccion" : "Corredor Sur",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE PARANA COUNTRY CLUB",
+		"telefono" : "0981 803981",
+		"direccion" : "cde",
+		"latitud" : "-25.47532636733843",
+		"longitud" : "-54.62358523160219"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - (CDE ROGELIO BENITEZ)",
+		"telefono" : "0981803981",
+		"direccion" : "Av Rogelio Benítez - CDE",
+		"latitud" : "-25.521725122913637",
+		"longitud" : "-54.616779796779156"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CDE CIUDAD NUEVA",
+		"telefono" : "0983622002",
+		"direccion" : "Barrio Ciudad Nueva",
+		"latitud" : "-25.516606666666668",
+		"longitud" : "-54.648086666666664"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CAMPO VIA",
+		"telefono" : "0981803981",
+		"direccion" : "Av. Campo Via - Área 3",
+		"latitud" : "-25.530526286422162",
+		"longitud" : "-54.62706841528416"
+	},
+	{
+		"nombre" : "BIGGIE S.A. BIGGIE SUPERCARRETERA CDE",
+		"telefono" : "0981803981",
+		"direccion" : "Supercarretera km4",
+		"latitud" : "-25.510318653457276",
+		"longitud" : "-54.64015021920204"
+	},
+	{
+		"nombre" : "BIGGIE S.A.",
+		"telefono" : "",
+		"direccion" : "FEDERACION RUSA E\/ PASTOR FILARTIGA",
+		"latitud" : "-25.279393122891580",
+		"longitud" : "-57.573097161948680"
+	},
+	{
+		"nombre" : "BIGGIE SUPERCARRETERA CDE",
+		"telefono" : "0981803981",
+		"direccion" : "Supercarretera km4",
+		"latitud" : "-25.510318653457276",
+		"longitud" : "-54.64015021920204"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - TOBATI CENTRO",
+		"telefono" : "79348282",
+		"direccion" : "RUTA CAACUPE-TOBATI",
+		"latitud" : "-25.269435437964706",
+		"longitud" : "-57.08636909723282"
+	},
+	{
+		"nombre" : "BIGGIE S.A.- BOGGIANI CASA MODIGA",
+		"telefono" : "",
+		"direccion" : "Ada Boggiani c\/ Eusebio Ayala",
+		"latitud" : "-25.317470602918817",
+		"longitud" : "-57.565734833478930"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - PARAGUARI CENTRO",
+		"telefono" : "0217290300",
+		"direccion" : "CALLE TTE DERLIS CACERES Nº 3106",
+		"latitud" : "-25.62378161246693",
+		"longitud" : "-57.15013325214386"
+	},
+	{
+		"nombre" : "BIGGIE S.A. - FERNANDO ISLA PO'I",
+		"telefono" : "",
+		"direccion" : "ISLA PO'I C\/ NATALICIO GONZALEZ",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - ITA SAN BLAS",
+		"telefono" : "",
+		"direccion" : "RUTA D027 E\/ SAN LORENZO Y GUARAMBARE",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - VILLETA CENTRO",
+		"telefono" : "",
+		"direccion" : "RUTA GUARAMBARE-VILLETA ESQ. CERRO LEON",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - CAPIATA YATAITY",
+		"telefono" : "",
+		"direccion" : "AVDA. DOCTOR LOPEZ C\/ 25 DE DICIEMBRE",
+		"latitud" : "",
+		"longitud" : ""
+	},
+	{
+		"nombre" : "BIGGIE S.A. - LUQUE ORTIZ GUERRERO",
+		"telefono" : "",
+		"direccion" : "JOSE CONCEPCION ESQ. ORTIZ GUERRERO",
+		"latitud" : "",
+		"longitud" : ""
+	}
+]}

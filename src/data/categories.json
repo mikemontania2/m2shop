@@ -1,0 +1,101 @@
+[
+  {
+    "id": "cuidado-de-las-prendas",
+    "name": "Cuidado De Las Prendas",
+    "description": "",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio2-411x330.jpg",
+    "subcategories": [
+      {
+        "id": "jabon-en-polvo",
+        "name": "Jabon En Polvo",
+        "description": ""
+      },
+      {
+        "id": "coco-puro",
+        "name": "Coco Puro",
+        "description": ""
+      },
+      {
+        "id": "suavizante",
+        "name": "Suavizante",
+        "description": ""
+      },
+      {
+        "id": "jabon-de-lavar",
+        "name": "Jabon De Lavar",
+        "description": ""
+      },
+      {
+        "id": "jabon-prensado",
+        "name": "Jabon Prensado",
+        "description": ""
+      },
+      {
+        "id": "deterg-liq-p-ropas",
+        "name": "Deterg Liq P Ropas",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": "limpieza-y-desinfeccion-del-hogar",
+    "name": "Limpieza Y Desinfeccion Del Hogar",
+    "description": "",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio-411x330.jpg",
+    "subcategories": [
+      {
+        "id": "detergente",
+        "name": "Detergente",
+        "description": ""
+      },
+      {
+        "id": "bolsa",
+        "name": "Bolsa",
+        "description": ""
+      },
+      {
+        "id": "complementarios",
+        "name": "Complementarios",
+        "description": ""
+      },
+      {
+        "id": "otros-servicios",
+        "name": "Otros Servicios",
+        "description": ""
+      },
+      {
+        "id": "lavandina",
+        "name": "Lavandina",
+        "description": ""
+      },
+      {
+        "id": "desodorante",
+        "name": "Desodorante",
+        "description": ""
+      },
+      {
+        "id": "limpiador",
+        "name": "Limpiador",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "id": "higiene-personal",
+    "name": "Higiene Personal",
+    "description": "",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio-411x330-tocador.jpg",
+    "subcategories": [
+      {
+        "id": "coco-puro",
+        "name": "Coco Puro",
+        "description": ""
+      },
+      {
+        "id": "tocador",
+        "name": "Tocador",
+        "description": ""
+      }
+    ]
+  }
+]

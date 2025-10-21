@@ -1,79 +1,94 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { ProductDto as Product } from '../lib/api';
-import { useCart } from '../contexts/CartContext';
+"use client"
+
+import type React from "react"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { ShoppingCart } from "lucide-react"
+import type { Product } from "../services/productService"
 
 interface ProductCardProps {
-  product: Product;
+  product: Product
+  onProductClick?: (productId: number) => void
+  onAddToCart: (product: Product, quantity: number) => void
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
-  const { addToCart } = useCart();
-  const [quantity, setQuantity] = useState(1);
-  const [added, setAdded] = useState(false);
+const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAddToCart }) => {
+  const [quantity, setQuantity] = useState(1)
+  const navigate = useNavigate()
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('es-PY', {
-      style: 'currency',
-      currency: 'PYG',
+    return new Intl.NumberFormat("es-PY", {
+      style: "currency",
+      currency: "PYG",
       minimumFractionDigits: 0,
-    }).format(price);
-  };
+    }).format(price)
+  }
+
+  const hasDiscount = product.originalPrice > 0
+
+  const handleQuantityChange = (delta: number, e: React.MouseEvent) => {
+    e.stopPropagation()
+    setQuantity(Math.max(1, quantity + delta))
+  }
 
   const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    addToCart(product, quantity);
-    setAdded(true);
-    setQuantity(1);
-    setTimeout(() => setAdded(false), 1800);
-  };
+    e.stopPropagation()
+    onAddToCart(product, quantity)
+    setQuantity(1)
+  }
 
-  const hasDiscount = (product.discount_percent ?? 0) > 0;
-  const discountedPrice = hasDiscount
-    ? Math.round(product.price * (1 - (product.discount_percent as number) / 100))
-    : product.price;
+  const handleCardClick = () => {
+    if (onProductClick) {
+      onProductClick(product.id)
+    } else {
+      navigate(`/producto/${product.id}`)
+    }
+  }
 
   return (
-    <Link to={`/producto/${product.slug}`} className="product-card">
-      <div className="product-image">
-        <img
-          src={product.image_url}
-          alt={product.name}
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = 'https://cdn.cavallaro.com.py/productos/300000918.jpg';
-          }}
-        />
-        {hasDiscount && (
-          <img className="badge-image badge-sale" src="/badge-sale.png" alt="Oferta" />
-        )}
-        {product.is_new && (
-          <img className="badge-image badge-new" src="/badge-new.png" alt="Nuevo" />
-        )}
-        {!product.is_new && product.is_featured && (
-          <span className="badge badge-featured">Destacado</span>
-        )}
-      </div>
-
-      <div className="product-info">
-        <h3 className="product-name">{product.name}</h3>
-        {hasDiscount ? (
-          <p className="product-price">
-            <span className="price-old">{formatPrice(product.price)}</span>
-            <span className="price-new">{formatPrice(discountedPrice)}</span>
-          </p>
-        ) : (
-          <p className="product-price">{formatPrice(product.price)}</p>
-        )}
-        <button onClick={handleAddToCart} className="btn btn-primary">
-          Agregar al Carrito
-        </button>
-      </div>
-
-      {added && (
-        <div className="toast-added" aria-live="polite">
-          Agregado al carrito
+    <div className="product-card-wrap">
+      <div className="product-image-card" onClick={handleCardClick}>
+        {hasDiscount && <div className="product-badge-oferta">OFERTA</div>}
+        <div className="product-image">
+          <img src={product.image || "/placeholder.svg"} alt={product.name} />
         </div>
-      )}
-    </Link>
-  );
+      </div>
+      {/* </CHANGE> */}
+
+      <div className="product-info-section">
+        <h3 className="product-name">{product.name}</h3>
+
+        <div className="product-price">
+          <span className="current-price">{formatPrice(product.price)}</span>
+          {hasDiscount && <span className="original-price">{formatPrice(product.originalPrice)}</span>}
+        </div>
+
+        <div className="product-card-quantity">
+          <button
+            onClick={(e) => handleQuantityChange(-1, e)}
+            className="quantity-btn-circle"
+            aria-label="Disminuir cantidad"
+          >
+            −
+          </button>
+          <div className="quantity-display-rounded">{quantity}</div>
+          <button
+            onClick={(e) => handleQuantityChange(1, e)}
+            className="quantity-btn-circle"
+            aria-label="Aumentar cantidad"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      {/* </CHANGE> */}
+
+      <button className="btn-add-to-cart-card" onClick={handleAddToCart}>
+        <ShoppingCart size={16} />
+        Agregar al carrito
+      </button>
+    </div>
+  )
 }
+
+export default ProductCard

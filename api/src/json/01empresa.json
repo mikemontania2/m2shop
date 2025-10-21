@@ -1,0 +1,110 @@
+{
+  "empresaJson": [
+    {
+      "codEmpresa": 6,
+      "razonSocial": "HEALTHY FOODS E.A.S.",
+      "nombreFantasia": "HEALTHY FOODS E.A.S.",
+      "ruc": "80131268-0",
+      "simboloMoneda": "Gs",
+      "codMoneda": "PYG",
+      "idCSC": "1",
+      "csc": "ABCD0000000000000000000000000000",
+      "tipoContId": 2,
+      "tipoTransaId": 1,
+      "tipoImpId": 1,
+      "numCasa": 9999,
+      "codDepartamento": 12,
+      "codCiudad": 153,
+      "codBarrio": 3568,
+      "telefono": "+595976753428",
+      "email": "vj.healthyfoods@gmail.com",
+      "emailEnvio": "",
+      "web": null,
+      "img": "98fe0d49-1d51-455e-be2b-b06abb001332.jpg",
+      "modoSifen": "NO",
+      "envioKude": "NO",
+      "actividades": [
+        {
+          "codigo": "10999",
+          "descripcion": "ELABORACION DE OTROS PRODUCTOS ALIMENTICIOS N.C.P"
+        }
+      ]
+    },
+    {
+      "codEmpresa": 8,
+      "razonSocial": "HUGO GODOY",
+      "nombreFantasia": "COMPRA.YA ONLINE STORE",
+      "ruc": "3528762-4",
+      "simboloMoneda": "Gs",
+      "codMoneda": "PYG",
+      "idCSC": "1",
+      "csc": "ABCDF000000000000000000000000000",
+      "tipoContId": 2,
+      "tipoTransaId": 1,
+      "tipoImpId": 1,
+      "numCasa": 9999,
+      "codDepartamento": 12,
+      "codCiudad": 153,
+      "codBarrio": 3568,
+      "telefono": "+595984044028",
+      "email": "compraya.pystore@gmail.com",
+      "emailEnvio": "",
+      "web": null,
+      "img": "002ace53-5b3d-4881-b52f-eb39fccc82bd.jpg",
+      "modoSifen": "NO",
+      "envioKude": "NO",
+      "actividades": [
+        {
+          "codigo": "62020",
+          "descripcion": "ACTIVIDADES DE CONSULTORÍA Y GESTIÓN DE SERVICIOS INFORMÁTICOS"
+        },
+        {
+          "codigo": "47529",
+          "descripcion": "COMERCIO AL POR MENOR DE OTROS ARTÍCULOS N.C.P."
+        },
+        {
+          "codigo": "47910",
+          "descripcion": "COMERCIO AL POR MENOR A TRAVÉS DE EMPRESAS DE COMERCIO POR CORREO O INTERNET"
+        },
+        {
+          "codigo": "68100",
+          "descripcion": "ACTIVIDADES INMOBILIARIAS REALIZADAS CON BIENES PROPIOS O ARRENDADOS"
+        }
+      ]
+    },
+    {
+      "codEmpresa": 9,
+      "razonSocial": "DE generado en ambiente de prueba - sin valor comercial ni fiscal",
+      "nombreFantasia": "CAVALLARO S.A.C.e.I",
+      "ruc": "80003110-5",
+      "simboloMoneda": "Gs",
+      "codMoneda": "PYG",
+      "idCSC": "1",
+      "csc": "ABCD0000000000000000000000000000",
+      "tipoContId": 2,
+      "tipoTransaId": 1,
+      "tipoImpId": 1,
+      "numCasa": 1,
+      "codDepartamento": 12,
+      "codCiudad": 153,
+      "codBarrio": 3568,
+      "telefono": "021578603",
+      "email": "info@cavallaro.com.py",
+      "emailEnvio": "mikemontania@gmail.com",
+      "web": "www.cavallaro.com.py",
+      "img": "grupocavallaro3.png",
+      "modoSifen": "NO",
+      "envioKude": "NO",
+      "actividades": [
+        {
+          "codigo": "20130",
+          "descripcion": "FABRICACIÓN DE PLÁSTICOS Y CAUCHO SINTÉTICO EN FORMAS PRIMARIAS"
+        },
+        {
+          "codigo": "20931",
+          "descripcion": "FABRICACIÓN DE JABONES, DETERGENTES Y PREPARADOS DE LIMPIEZA"
+        }
+      ]
+    }
+  ]
+}

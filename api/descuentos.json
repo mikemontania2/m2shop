@@ -1,0 +1,2963 @@
+[
+    {
+        "id": 1,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300000741 TOC. \"CAVALLARO\" 10G SURTIDO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 10.00,
+        "sku": "300000741"
+    },
+    {
+        "id": 2,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300000756 TOC. \"C\" 10 G BLANCO S/LOGO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 10.00,
+        "sku": "300000756"
+    },
+    {
+        "id": 3,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300000918 - DET. LAVAVAJILLAS PIXOL 4L LIMON",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300000918"
+    },
+    {
+        "id": 4,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001010 - SUAVIZ. CAVALLARO PREMIUM 70 ML. COCONUT\t",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001010"
+    },
+    {
+        "id": 5,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001015 - SUAVIZ. CAVALLARO PREMIUM 450 ML. COCONUT",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001015"
+    },
+    {
+        "id": 6,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001016 - SUAVIZ. CAVALLARO PREMIUM 450 ML. EXOTICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001016"
+    },
+    {
+        "id": 7,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001020 - SUAVIZ. CAVALLARO PREMIUM 900 ML. COCONUT",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001020"
+    },
+    {
+        "id": 8,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001021 - SUAVIZ. CAVALLARO PREMIUM 900 ML. EXOTICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001021"
+    },
+    {
+        "id": 9,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001025 - SUAVIZ. CAVALLARO PREMIUM 2000 ML. COCONUT",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001025"
+    },
+    {
+        "id": 10,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001026 - SUAVIZ. CAVALLARO PREMIUM 2000 ML. EXOTICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001026"
+    },
+    {
+        "id": 11,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001060 - SUAVIZ. CAVALLARO PREMIUM COCONUT 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001060"
+    },
+    {
+        "id": 12,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001195 - LIMP. MULTIUSO PIXOL LAVANDA 900ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300001195"
+    },
+    {
+        "id": 13,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001199 - LIMP. MULTIUSO PIXOL FRESCURA HERBAL 900ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300001199"
+    },
+    {
+        "id": 14,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001200 - LIMP. MULTIUSO PIXOL CITRONELA 900ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300001200"
+    },
+    {
+        "id": 15,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001266 - LIMP MULTIUSO PIXOL LAVANDA 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300001266"
+    },
+    {
+        "id": 16,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001268 - LIMP MULTIUSO PIXOL FRESCURA HERBAL 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300001268"
+    },
+    {
+        "id": 17,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001269 - LIMP MULTIUSO PIXOL CITRONELLA 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300001269"
+    },
+    {
+        "id": 18,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001605 - SUAVIZ. CAVA. PREMIUM COCONUT 24X450ML NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001605"
+    },
+    {
+        "id": 19,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "300001681 - SUAVIZ. CAVA. PREMIUM COCONUT 6X2L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001681"
+    },
+    {
+        "id": 20,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "BALDE C/PORTA ESCURRIDOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000035"
+    },
+    {
+        "id": 21,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "BOLSA PARA BAÑO PIXOL-ROLLO X 100 UNID.",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "500000004"
+    },
+    {
+        "id": 22,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "BOLSA PARA BAÑO PIXOL-ROLLO X 30 UNID.",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "500000005"
+    },
+    {
+        "id": 23,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "BOLSA P/ BASURA PIXOL 100 L R.AMARILLO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "500000001"
+    },
+    {
+        "id": 24,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "BOLSA P/ BASURA PIXOL 150 L R.AMARILLO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "500000002"
+    },
+    {
+        "id": 25,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "BOLSA P/ BASURA PIXOL 200 L R.AMARILLO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "500000003"
+    },
+    {
+        "id": 26,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE 125G LECHE DE ALMENDRAS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000734"
+    },
+    {
+        "id": 27,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE 125G  NARANJA Y JAZMIN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000736"
+    },
+    {
+        "id": 28,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE 125G  VAINILLA Y FRU ROJOS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000735"
+    },
+    {
+        "id": 29,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE LECHE DE ALMENDRAS ESTUCHE 125G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000641"
+    },
+    {
+        "id": 30,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE LECHE DE ALMENDRAS PCK90G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000644"
+    },
+    {
+        "id": 31,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE NARANJA Y JAZMIN ESTUCHE 125G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000643"
+    },
+    {
+        "id": 32,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE NARANJA Y JAZMIN PCK90G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000646"
+    },
+    {
+        "id": 33,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE VAINILLA Y F ROJOS ESTUCHE 125G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000642"
+    },
+    {
+        "id": 34,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "C2 HUMECTANTE VAINILLA Y F ROJOS PCK90G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000645"
+    },
+    {
+        "id": 35,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "CAJA EXHIBIDORA COCO TOC. SURTIDO 5X1",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001736"
+    },
+    {
+        "id": 36,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO MARINA CAV 100 G PKSA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000800"
+    },
+    {
+        "id": 37,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO POLVO CAV. 200 G ROPAS DE BEBES",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000079"
+    },
+    {
+        "id": 38,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO POLVO CAV. 200 G ROPAS DELICADAS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000075"
+    },
+    {
+        "id": 39,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO POLVO CAV. 400G ROPAS DE BEBES",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000080"
+    },
+    {
+        "id": 40,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO POLVO CAV. 400 G ROPAS DELICADAS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000086"
+    },
+    {
+        "id": 41,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO POLVO CAV. 800G ROPAS BEBES",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001665"
+    },
+    {
+        "id": 42,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO POLVO CAV. 800 G ROPAS DELICADAS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000087"
+    },
+    {
+        "id": 43,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO POLVO CAV. 80 G ROPAS DELICADAS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000074"
+    },
+    {
+        "id": 44,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO 50 GR x 30 UN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001104"
+    },
+    {
+        "id": 45,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO 60 GR x 30 UN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000629"
+    },
+    {
+        "id": 46,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO BARRA CAVALLARO 1000 G BLANCO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000052"
+    },
+    {
+        "id": 47,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO BARRA CAVALLARO 500 G BLANCO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000050"
+    },
+    {
+        "id": 48,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO CAVALLARO 100G BLANCO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000003"
+    },
+    {
+        "id": 49,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO CAVALLARO 10X1 BLANCO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000002"
+    },
+    {
+        "id": 50,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO CAVALLARO 200 G BLANCO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000000"
+    },
+    {
+        "id": 51,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO PURO PACK TOC. 25G STDO.",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000625"
+    },
+    {
+        "id": 52,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001725"
+    },
+    {
+        "id": 53,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001723"
+    },
+    {
+        "id": 54,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001721"
+    },
+    {
+        "id": 55,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001726"
+    },
+    {
+        "id": 56,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001724"
+    },
+    {
+        "id": 57,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000057"
+    },
+    {
+        "id": 58,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000454"
+    },
+    {
+        "id": 59,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000056"
+    },
+    {
+        "id": 60,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COCO TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000055"
+    },
+    {
+        "id": 61,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COMBO NAVIDEÑO - COCO PURO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000314"
+    },
+    {
+        "id": 62,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COMBO NAVIDEÑO - ECONOMICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000316"
+    },
+    {
+        "id": 63,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COMBO NAVIDEÑO - MEDIO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000437"
+    },
+    {
+        "id": 64,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "COMBO NAVIDEÑO - PREMIUM",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000315"
+    },
+    {
+        "id": 65,
+        "cantDesde": 20000,
+        "cantHasta": 65000,
+        "descripcion": "DESCUENTO IMPORTE 1",
+        "tipoDescuento": "IMPORTE",
+        "descuento": 5.00,
+        "sku": ""
+    },
+    {
+        "id": 66,
+        "cantDesde": 65001,
+        "cantHasta": 200000,
+        "descripcion": "DESCUENTO IMPORTE 2",
+        "tipoDescuento": "IMPORTE",
+        "descuento": 10.00,
+        "sku": ""
+    },
+    {
+        "id": 67,
+        "cantDesde": 200001,
+        "cantHasta": 500000,
+        "descripcion": "DESCUENTO IMPORTE 3",
+        "tipoDescuento": "IMPORTE",
+        "descuento": 15.00,
+        "sku": ""
+    },
+    {
+        "id": 68,
+        "cantDesde": 500001,
+        "cantHasta": 999999,
+        "descripcion": "DESCUENTO IMPORTE 4",
+        "tipoDescuento": "IMPORTE",
+        "descuento": 20.00,
+        "sku": ""
+    },
+    {
+        "id": 69,
+        "cantDesde": 1000001,
+        "cantHasta": 999999999,
+        "descripcion": "DESCUENTO IMPORTE 5",
+        "tipoDescuento": "IMPORTE",
+        "descuento": 25.00,
+        "sku": ""
+    },
+    {
+        "id": 70,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 500CC FANTASIA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000763"
+    },
+    {
+        "id": 71,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 500CC FRESCURA MARINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000783"
+    },
+    {
+        "id": 72,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 500CC UVA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000761"
+    },
+    {
+        "id": 73,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 5L AZAHAR ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000712"
+    },
+    {
+        "id": 74,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 5L FANTASIA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000711"
+    },
+    {
+        "id": 75,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 5L LAVANDA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000710"
+    },
+    {
+        "id": 76,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 5L MARINA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000693"
+    },
+    {
+        "id": 77,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 5L UVA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000709"
+    },
+    {
+        "id": 78,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 900 CC AZAHAR ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000708"
+    },
+    {
+        "id": 79,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 900 CC FANTASIA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000707"
+    },
+    {
+        "id": 80,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 900 CC LAVANDA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000706"
+    },
+    {
+        "id": 81,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 900 CC MARINA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000692"
+    },
+    {
+        "id": 82,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DESOD. CAVALLARO 900 CC UVA ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000705"
+    },
+    {
+        "id": 83,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. CAV. 500CC.",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000015"
+    },
+    {
+        "id": 84,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. CAV. 5L.",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000016"
+    },
+    {
+        "id": 85,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERGENTES",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001513"
+    },
+    {
+        "id": 86,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE CLASICO 200 ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000909"
+    },
+    {
+        "id": 87,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE LIMON 480ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001236"
+    },
+    {
+        "id": 88,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE LIMON 500 ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000664"
+    },
+    {
+        "id": 89,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE LIMON 5L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000667"
+    },
+    {
+        "id": 90,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE MANZANA 480ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001238"
+    },
+    {
+        "id": 91,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE MANZANA 500 ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000665"
+    },
+    {
+        "id": 92,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE MANZANA 5L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000668"
+    },
+    {
+        "id": 93,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE NEUTRO 500 ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001237"
+    },
+    {
+        "id": 94,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE NEUTRO 500 ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000666"
+    },
+    {
+        "id": 95,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. INSUPERABLE NEUTRO 5L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000669"
+    },
+    {
+        "id": 96,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. PARA ROPA INSUPERABLE CITRUS 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000791"
+    },
+    {
+        "id": 97,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. PARA ROPA INSUPERABLE CLASICO 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000789"
+    },
+    {
+        "id": 98,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. PIXOL 5L NEUTRO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000105"
+    },
+    {
+        "id": 99,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CITRUS 200ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000910"
+    },
+    {
+        "id": 100,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CITRUS 2 LTS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000809"
+    },
+    {
+        "id": 101,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CITRUS 400ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000804"
+    },
+    {
+        "id": 102,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CITRUS 800ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000807"
+    },
+    {
+        "id": 103,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CLASICO 2 LTS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000808"
+    },
+    {
+        "id": 104,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CLASICO 400ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001668"
+    },
+    {
+        "id": 105,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CLASICO 400ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000803"
+    },
+    {
+        "id": 106,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DETERG. P/ROPA INSUPERABLE CLASICO 800ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000806"
+    },
+    {
+        "id": 107,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DET. LAVAVAJILLAS PIXOL 500ML LIMON",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000915"
+    },
+    {
+        "id": 108,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "DET. LAVAVAJILLAS PIXOL 500ML LIMON",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001673"
+    },
+    {
+        "id": 109,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "ESCOBA NOVICA R1672",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "500000028"
+    },
+    {
+        "id": 110,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "ESCOBILLON SUPER BE 80X12 R1772",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "500000036"
+    },
+    {
+        "id": 111,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB. AGRICULTOR MARRON 20 UN X 150 GRS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001225"
+    },
+    {
+        "id": 112,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB. AGRICULTOR MARRON 20 UN X 180 GRS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000224"
+    },
+    {
+        "id": 113,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB. AGRICULTOR MARRON 20 UN x 250 GRS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000594"
+    },
+    {
+        "id": 114,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB. AGRICULTOR VERDE 20 UN X 150 GRS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001226"
+    },
+    {
+        "id": 115,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB. AGRICULTOR VERDE 20 UN X 180 GRS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000225"
+    },
+    {
+        "id": 116,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB. AGRICULTOR VERDE 20 UN x 250 GRS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000595"
+    },
+    {
+        "id": 117,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB COCO CAVALLARO VERBENA EST 100 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000796"
+    },
+    {
+        "id": 118,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB COM AGRICULTOR 20 PANES 6 K MARRON",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000222"
+    },
+    {
+        "id": 119,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB COM AGRICULTOR 20 PANES 6 K VERDE",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000223"
+    },
+    {
+        "id": 120,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB COM GUAIRA 20 PANES 4 K MARRON",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000088"
+    },
+    {
+        "id": 121,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB COM GUAIRA 20 PANES 4 K VERDE",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000089"
+    },
+    {
+        "id": 122,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB COM GUAIRA 20 PANES 6 K VERDE",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000094"
+    },
+    {
+        "id": 123,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV GUAIRA 5X1 180G BLANCO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000095"
+    },
+    {
+        "id": 124,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV GUAIRA DELUX  250 G VERDE TRAS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000098"
+    },
+    {
+        "id": 125,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV GUAIRA IND. 130G BLANCO X 20P",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000092"
+    },
+    {
+        "id": 126,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV GUAIRA IND. 200G BLANCO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000096"
+    },
+    {
+        "id": 127,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV GUAIRA IND.DELUX 230G VETEADO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000097"
+    },
+    {
+        "id": 128,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV TROPICAL 180 G ROPA BLANCA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000362"
+    },
+    {
+        "id": 129,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV TROPICAL 180 G ROPA COLOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000365"
+    },
+    {
+        "id": 130,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV TROPICAL 180 G ROPA DELICADA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000363"
+    },
+    {
+        "id": 131,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB LAV TROPICAL 180 G ROPA DIARIA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000364"
+    },
+    {
+        "id": 132,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001489"
+    },
+    {
+        "id": 133,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001491"
+    },
+    {
+        "id": 134,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001490"
+    },
+    {
+        "id": 135,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001245"
+    },
+    {
+        "id": 136,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001242"
+    },
+    {
+        "id": 137,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001249"
+    },
+    {
+        "id": 138,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001248"
+    },
+    {
+        "id": 139,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001493"
+    },
+    {
+        "id": 140,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001250"
+    },
+    {
+        "id": 141,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001494"
+    },
+    {
+        "id": 142,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001486"
+    },
+    {
+        "id": 143,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001492"
+    },
+    {
+        "id": 144,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001488"
+    },
+    {
+        "id": 145,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001460"
+    },
+    {
+        "id": 146,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABÓN DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000163"
+    },
+    {
+        "id": 147,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABÓN DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000154"
+    },
+    {
+        "id": 148,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABÓN DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001749"
+    },
+    {
+        "id": 149,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABÓN DE TOCADOR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000153"
+    },
+    {
+        "id": 150,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABÓN EN POLVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001447"
+    },
+    {
+        "id": 151,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABÓN EN POLVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001448"
+    },
+    {
+        "id": 152,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABÓN EN POLVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001576"
+    },
+    {
+        "id": 153,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 1600ML COCO CLASICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000745"
+    },
+    {
+        "id": 154,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 1600ML COCO FLORAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000746"
+    },
+    {
+        "id": 155,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 200ML COCO CLASICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000784"
+    },
+    {
+        "id": 156,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 200ML COCO FLORAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000785"
+    },
+    {
+        "id": 157,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 4L COCO CLASICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000623"
+    },
+    {
+        "id": 158,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 4L COCO FLORAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000624"
+    },
+    {
+        "id": 159,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 4L COCO NATURAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000628"
+    },
+    {
+        "id": 160,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 900ML COCO CLASICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000743"
+    },
+    {
+        "id": 161,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 900ML COCO FLORAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000744"
+    },
+    {
+        "id": 162,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JABON LIQUIDO 900ML COCO NATURAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000834"
+    },
+    {
+        "id": 163,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "JAB TOCADOR PETITGRAIN 100G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000824"
+    },
+    {
+        "id": 164,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "KITS QUINCENAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000545"
+    },
+    {
+        "id": 165,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "KITS SEMANAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000544"
+    },
+    {
+        "id": 166,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "LAVANDINA CAVALLARO 5L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000007"
+    },
+    {
+        "id": 167,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "LIMP MULTIUSO PIXOL BOUQUET FLORAL 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001267"
+    },
+    {
+        "id": 168,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "LIMP. MULTIUSO PIXOL BOUQUET FLORAL 900ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001197"
+    },
+    {
+        "id": 169,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "LIQ.P/ ROPA INSUPERABLE CITRUS 24X400ML",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001669"
+    },
+    {
+        "id": 170,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "LIQUIDO PARA ROPA GUAIRA DELUXE 20L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 10.00,
+        "sku": "300001744"
+    },
+    {
+        "id": 171,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "MOPA ALG. CON PALO - R 1322",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000030"
+    },
+    {
+        "id": 172,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "MOPA ALG. REFILL - R 132",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000029"
+    },
+    {
+        "id": 173,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "MULTIUSO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300001720"
+    },
+    {
+        "id": 174,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PACK PROMO DESOD. FANTASIA 900ML + 500 ML ",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000351"
+    },
+    {
+        "id": 175,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PACK PROMO DESOD. MARINA 900ML + 500 ML ",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000355"
+    },
+    {
+        "id": 176,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PACK PROMO DESOD. UVA 900ML + 500 ML ",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "830000352"
+    },
+    {
+        "id": 177,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PALA DE LIMPIEZA R150",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "500000032"
+    },
+    {
+        "id": 178,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PERFUMINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000061"
+    },
+    {
+        "id": 179,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PERFUMINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000060"
+    },
+    {
+        "id": 180,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PERFUMINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000063"
+    },
+    {
+        "id": 181,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PERFUMINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000062"
+    },
+    {
+        "id": 182,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PERFUMINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000059"
+    },
+    {
+        "id": 183,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PERFUMINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000058"
+    },
+    {
+        "id": 184,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "PINZAS P/ROPAS PIXOL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000038"
+    },
+    {
+        "id": 185,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA DELUXE 200 G ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000713"
+    },
+    {
+        "id": 186,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA DELUXE 2K  ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000723"
+    },
+    {
+        "id": 187,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA DELUXE 3,4K",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000656"
+    },
+    {
+        "id": 188,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA DELUXE 400 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000246"
+    },
+    {
+        "id": 189,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA DELUXE 400 G ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000715"
+    },
+    {
+        "id": 190,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA DELUXE 800 G ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000716"
+    },
+    {
+        "id": 191,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA DELUXE 80 G ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000724"
+    },
+    {
+        "id": 192,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA EXTRA 10 K",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300000243"
+    },
+    {
+        "id": 193,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA EXTRA 10 K ANTIBA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300000725"
+    },
+    {
+        "id": 194,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA EXTRA 2 K ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000721"
+    },
+    {
+        "id": 195,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA EXTRA 400G ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000719"
+    },
+    {
+        "id": 196,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA EXTRA 800 G ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000720"
+    },
+    {
+        "id": 197,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA OPTI COLORS 800 G\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000257"
+    },
+    {
+        "id": 198,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA OPTI FIBER 200 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000251"
+    },
+    {
+        "id": 199,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA OPTI FIBER 2 KLS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000444"
+    },
+    {
+        "id": 200,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA OPTI FIBER 400 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000252"
+    },
+    {
+        "id": 201,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA OPTI FIBER 800 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000253"
+    },
+    {
+        "id": 202,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA OPTI FIBER 80 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000250"
+    },
+    {
+        "id": 203,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA OPTI FIBER 80 G ANTIBAC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000718"
+    },
+    {
+        "id": 204,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA PROFESIONAL 2 KG",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000276"
+    },
+    {
+        "id": 205,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA PROFESIONAL 5 KG",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000277"
+    },
+    {
+        "id": 206,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO GUAIRA PROFESIONAL 600 GR",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000610"
+    },
+    {
+        "id": 207,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 10 K CITRUS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300000231"
+    },
+    {
+        "id": 208,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 10 K CLASICA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 15.00,
+        "sku": "300000229"
+    },
+    {
+        "id": 209,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 150 G CITRUS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000233"
+    },
+    {
+        "id": 210,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 150 G CLASICA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000238"
+    },
+    {
+        "id": 211,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 1K CITRUS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000230"
+    },
+    {
+        "id": 212,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 1K CLASICA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000236"
+    },
+    {
+        "id": 213,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 3K CITRUS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000235"
+    },
+    {
+        "id": 214,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 3 K CLASICA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000237"
+    },
+    {
+        "id": 215,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 400 G CITRUS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000234"
+    },
+    {
+        "id": 216,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "POLVO INSUPERABLE 400 G CLASICA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000232"
+    },
+    {
+        "id": 217,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SECADOR / ESCURRIDOR 30CM 1292",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 20.00,
+        "sku": "500000033"
+    },
+    {
+        "id": 218,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SECADOR / ESCURRIDOR 40 CM1302",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 20.00,
+        "sku": "500000034"
+    },
+    {
+        "id": 219,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SPRAY",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "500000031"
+    },
+    {
+        "id": 220,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 1600 ML FLORAL EDICION ESPECIAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000492"
+    },
+    {
+        "id": 221,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 1600 ML FLORAL EDICION ESPECIAL NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001675"
+    },
+    {
+        "id": 222,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 1600 ML ORIENTAL EDICIÓN ESP",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000494"
+    },
+    {
+        "id": 223,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 1600 ML ORIENTAL EDICIÓN ESP NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001676"
+    },
+    {
+        "id": 224,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 1600 ML TROPICAL EDICIÓN ESP",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000493"
+    },
+    {
+        "id": 225,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 4000 ML FLORAL EDICIÓN ESP",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000495"
+    },
+    {
+        "id": 226,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 4000 ML ORIENTAL EDICIÓN ESP",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000497"
+    },
+    {
+        "id": 227,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 4000 ML TROPICAL EDICIÓN ESP",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000496"
+    },
+    {
+        "id": 228,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 450 ML. FLORAL EDICIÓN ESP\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001631"
+    },
+    {
+        "id": 229,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 450 ML. FLORAL EDICIÓN ESP\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000273"
+    },
+    {
+        "id": 230,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 450 ML ORIENTAL EDICIÓN ESP\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000275"
+    },
+    {
+        "id": 231,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 450 ML ORIENTAL EDICIÓN ESP 24 UNID",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001632"
+    },
+    {
+        "id": 232,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 450 ML TROPICAL EDICIÓN ESP\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001633"
+    },
+    {
+        "id": 233,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 450 ML TROPICAL EDICIÓN ESP\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000274"
+    },
+    {
+        "id": 234,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 70 ML FLORAL EDICIÓN ESPECIAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000270"
+    },
+    {
+        "id": 235,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 70 ML ORIENTAL EDICIÓN ESPECIAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000272"
+    },
+    {
+        "id": 236,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV 70 ML TROPICAL EDICIÓN ESPECIAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000271"
+    },
+    {
+        "id": 237,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAV CAV TROPICAL ED ESPECIAL 6X1600ML NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001677"
+    },
+    {
+        "id": 238,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ.  CAVALLARO 2L DELICADO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001680"
+    },
+    {
+        "id": 239,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ.  CAVALLARO 2L DELICADO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000616"
+    },
+    {
+        "id": 240,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 1500 ML. CLASI",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000023"
+    },
+    {
+        "id": 241,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 1500 ML. DELIC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000036"
+    },
+    {
+        "id": 242,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 1500 ML. INTEN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000037"
+    },
+    {
+        "id": 243,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 2000 ML. CLASI",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001678"
+    },
+    {
+        "id": 244,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 2000 ML. CLASI",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000038"
+    },
+    {
+        "id": 245,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 2000 ML. EXOTICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001682"
+    },
+    {
+        "id": 246,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 2000 ML. INTEN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000039"
+    },
+    {
+        "id": 247,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 2000 ML. INTEN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001679"
+    },
+    {
+        "id": 248,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 24 x 450 ML. CLASIC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001602"
+    },
+    {
+        "id": 249,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 24 x 450 ML. DELICADO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001604"
+    },
+    {
+        "id": 250,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 24 x 450 ML. INTEN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001603"
+    },
+    {
+        "id": 251,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 4000 ML. CLASI",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000029"
+    },
+    {
+        "id": 252,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 4000 ML. DELIC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000042"
+    },
+    {
+        "id": 253,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 4000 ML. INTEN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000043"
+    },
+    {
+        "id": 254,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 450 ML. CLASIC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000048"
+    },
+    {
+        "id": 255,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 450 ML. DELIC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000040"
+    },
+    {
+        "id": 256,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 450 ML. EXOTICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001606"
+    },
+    {
+        "id": 257,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 450 ML. INTEN",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000041"
+    },
+    {
+        "id": 258,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 500 ML. CLASIC\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000030"
+    },
+    {
+        "id": 259,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 500 ML. DELICA\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000031"
+    },
+    {
+        "id": 260,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 500 ML. INTEN\r\n",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000032"
+    },
+    {
+        "id": 261,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 70 ML. CLASICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000046"
+    },
+    {
+        "id": 262,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 70 ML. DELICADO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000615"
+    },
+    {
+        "id": 263,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 70 ML. EXOTICO\t",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001011"
+    },
+    {
+        "id": 264,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 70 ML. INTENSO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000047"
+    },
+    {
+        "id": 265,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 900 ML. CLASIC",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000033"
+    },
+    {
+        "id": 266,
+        "cantDesde": 1,
+        "cantHasta": 999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 900 ML. CLASIC NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001683"
+    },
+    {
+        "id": 267,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 900 ML. DELICADO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000448"
+    },
+    {
+        "id": 268,
+        "cantDesde": 1,
+        "cantHasta": 999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 900 ML. DELICADO NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001685"
+    },
+    {
+        "id": 269,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 900 ML. EXOTICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001687"
+    },
+    {
+        "id": 270,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 900 ML. INTENS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001684"
+    },
+    {
+        "id": 271,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM 900 ML. INTENS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000034"
+    },
+    {
+        "id": 272,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVALLARO PREMIUM EXOTICO 4L",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001061"
+    },
+    {
+        "id": 273,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "SUAVIZ. CAVA. PREMIUM COCONUT 12X900ML NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001686"
+    },
+    {
+        "id": 274,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. \"C2\" 130 G AZUL (FRESCURA INFINITA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001698"
+    },
+    {
+        "id": 275,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. \"C2\" 130 G AZUL (FRESCURA INFINITA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000703"
+    },
+    {
+        "id": 276,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. \"C2\" 130 G BLANCO (ARMONIA PURA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000754"
+    },
+    {
+        "id": 277,
+        "cantDesde": 1,
+        "cantHasta": 999999,
+        "descripcion": "TOC. \"C2\" 130G BLANCO (ARMONIA PURA) NUEVO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001697"
+    },
+    {
+        "id": 278,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 130G CALMA MISTICA (LILA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000691"
+    },
+    {
+        "id": 279,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. \"C2\" 130 G CORAL (MÁGICA ENERGIA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000690"
+    },
+    {
+        "id": 280,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 130G  DULCE PASION  (ROSA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000755"
+    },
+    {
+        "id": 281,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 130G EQUILIBRIO NATURAL (VERDE)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000704"
+    },
+    {
+        "id": 282,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC C2 3X130G ARMONIA PURA FLOWPACK",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000767"
+    },
+    {
+        "id": 283,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC C2 3X130G CALMA MISTICA FLOWPACK",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000765"
+    },
+    {
+        "id": 284,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 3X130G CITRUS FLOWPACK",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000333"
+    },
+    {
+        "id": 285,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 3X130G CLASICO FLOWPACK",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000332"
+    },
+    {
+        "id": 286,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC C2 3X130G DULCE PASION FLOWPACK",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000768"
+    },
+    {
+        "id": 287,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC C2 3X130G FRESCURA INFINITA FLOWPACK",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000766"
+    },
+    {
+        "id": 288,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 3X130G ROMANCE FLOWPACK",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000335"
+    },
+    {
+        "id": 289,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 85G ARMONIA PURA (BLANCO)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000751"
+    },
+    {
+        "id": 290,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 85G CALMA MISTICA (LILA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000689"
+    },
+    {
+        "id": 291,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 85G  DULCE PASION  (ROSA)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000752"
+    },
+    {
+        "id": 292,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 85G EQUILIBRIO NATURAL (VERDE)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000702"
+    },
+    {
+        "id": 293,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 85G FRESCURA INFINITA (AZUL)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000701"
+    },
+    {
+        "id": 294,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 85G MAGICA ENERGIA (CORAL)",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000688"
+    },
+    {
+        "id": 295,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2. CALMA MISTICA 72X130G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001699"
+    },
+    {
+        "id": 296,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 DULCE PASION 108X85G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001701"
+    },
+    {
+        "id": 297,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 DULCE PASION 72X130G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001694"
+    },
+    {
+        "id": 298,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 EQUILIBRIO NATURAL 108X85G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001702"
+    },
+    {
+        "id": 299,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2 FRESCURA INFINITA 108X85G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001704"
+    },
+    {
+        "id": 300,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. C2. MAGICA ENERGIA 72X130G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001700"
+    },
+    {
+        "id": 301,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO ALMENDRA 100 G CAJ",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000653"
+    },
+    {
+        "id": 302,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO ALMENDRAS CAV 100 G PKSA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000798"
+    },
+    {
+        "id": 303,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO & ALMENENDRAS 25G GOLDEN MOTEL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000694"
+    },
+    {
+        "id": 304,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO CLASICO 100 G CAJ",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000652"
+    },
+    {
+        "id": 305,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC COCO CLASICO 25G PECHUGON",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 33.00,
+        "sku": "300000626"
+    },
+    {
+        "id": 306,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO CLASICO CAV 100 G PKSA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000797"
+    },
+    {
+        "id": 307,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO CLASICO CAVALLARO 100 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000064"
+    },
+    {
+        "id": 308,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO FLORAL 100 G CAJ",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000654"
+    },
+    {
+        "id": 309,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO FLORAL CAVALLARO 100 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000065"
+    },
+    {
+        "id": 310,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO MARINA 100 G CAJ",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000655"
+    },
+    {
+        "id": 311,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO PURO 90 G 3X1 FLOWPACK FLORAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001153"
+    },
+    {
+        "id": 312,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO PURO 90 G 3X1 FLOWPACK MARINA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001154"
+    },
+    {
+        "id": 313,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": " TOC. COCO PURO 90 G 3X1 FLOWPACK VERBENA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001155"
+    },
+    {
+        "id": 314,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO PURO BERRIES 100 G ESTUCHE",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300001168"
+    },
+    {
+        "id": 315,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. \"COCO VERBENA\" CAV 100 G PKSA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000802"
+    },
+    {
+        "id": 316,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. \"COCO VERBENA\" CAV 25 G  X 250.",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000829"
+    },
+    {
+        "id": 317,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO Y ALMENDRAS 25G MANCAVE SPA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 0,
+        "sku": "300000477"
+    },
+    {
+        "id": 318,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. COCO Y ALMENDRAS CAV 100 G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000053"
+    },
+    {
+        "id": 319,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. FLORAL CAVALLARO 100 G PKSA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000799"
+    },
+    {
+        "id": 320,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. GLICRINA 125 G CITRUS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000605"
+    },
+    {
+        "id": 321,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. GLICRINA 125 G FLORAL",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 30.00,
+        "sku": "300000604"
+    },
+    {
+        "id": 322,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. GLICRINA 125 G NEUTRO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000603"
+    },
+    {
+        "id": 323,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. IO 3X80 G AMARILLO-MANGO&MBURUCUYA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000137"
+    },
+    {
+        "id": 324,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. IO 3X80 G ROSA-DURAZNO&FRUTOSROJOS",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000136"
+    },
+    {
+        "id": 325,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TOC. IO 3X80 G VERDE-MANZANA VERDE&PERA",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300000138"
+    },
+    {
+        "id": 326,
+        "cantDesde": 1,
+        "cantHasta": 999999,
+        "descripcion": "TOC. PACK COCO ALMENDRAS 3X90G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001645"
+    },
+    {
+        "id": 327,
+        "cantDesde": 1,
+        "cantHasta": 999999,
+        "descripcion": "TOC. PACK COCO CLASICO 3X90G",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "300001644"
+    },
+    {
+        "id": 328,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TRAPO DE PISO PIXOL 45*70 ECONOMICO",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "500000006"
+    },
+    {
+        "id": 329,
+        "cantDesde": 1,
+        "cantHasta": 999999999,
+        "descripcion": "TRAPO DE PISO PIXOL 45 X 70 PREMIUM",
+        "tipoDescuento": "PRODUCTO",
+        "descuento": 25.00,
+        "sku": "500000007"
+    }
+]

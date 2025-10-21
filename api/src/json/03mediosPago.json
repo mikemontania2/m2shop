@@ -1,0 +1,105 @@
+ {"mediosPagoJson":[
+    {
+      "descripcion": "EFECTIVO",
+      "normal": true,
+      "activo": true,
+      "predeterminado": true,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": false,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "TARJETA",
+      "normal": true,
+      "activo": true,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": true,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "VALE EMPLEADOS",
+      "normal": true,
+      "activo": true,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": false,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "RETENCION",
+      "normal": true,
+      "activo": true,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": true,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "CHEQUE DIA",
+      "normal": true,
+      "activo": true,
+      "esCheque": true,
+      "tieneBanco": true,
+      "tieneRef": true,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "CHEQUE DIFERIDO",
+      "normal": true,
+      "activo": true,
+      "esCheque": true,
+      "tieneBanco": true,
+      "tieneRef": true,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "TRANSFERENCIA",
+      "normal": true,
+      "activo": true,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": true,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "BANCARD QR",
+      "normal": true,
+      "activo": true,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": true,
+      "tieneTipo": false,
+      "esObsequio": false
+    },
+    {
+      "descripcion": "OBSEQUIO",
+      "activo": true,
+      "normal": false,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": false,
+      "tieneTipo": false,
+      "esObsequio": true
+    },
+    {
+      "descripcion": "NOTA CREDITO",
+      "activo": true,
+      "normal": false,
+      "esCheque": false,
+      "tieneBanco": false,
+      "tieneRef": false,
+      "tieneTipo": false,
+      "esObsequio": false,
+      "esNotaCredito": true
+    }
+  ] }
+  

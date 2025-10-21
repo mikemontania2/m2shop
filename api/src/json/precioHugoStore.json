@@ -1,0 +1,323 @@
+{
+"preciosStore": [
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 999,
+		"fecha_desde" : "2025-01-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 190000.00,
+		"cod_producto" : 807
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-01-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 125000.00,
+		"cod_producto" : 808
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-02-25",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 93750.00,
+		"cod_producto" : 808
+	},
+	{
+		"cant_desde" : 3,
+		"cant_hasta" : 3,
+		"fecha_desde" : "2025-02-25",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 87500.00,
+		"cod_producto" : 808
+	},
+	{
+		"cant_desde" : 4,
+		"cant_hasta" : 4,
+		"fecha_desde" : "2025-01-25",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 81250.00,
+		"cod_producto" : 808
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-01-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 145000.00,
+		"cod_producto" : 809
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-01-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 135000.00,
+		"cod_producto" : 810
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-01-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 129000.00,
+		"cod_producto" : 811
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 96750.00,
+		"cod_producto" : 811
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-01-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 10000.00,
+		"cod_producto" : 812
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-02-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 165000.00,
+		"cod_producto" : 813
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-02-25",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 112500.00,
+		"cod_producto" : 815
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-02-25",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 159000.00,
+		"cod_producto" : 816
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-01-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 119250.00,
+		"cod_producto" : 816
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 999,
+		"fecha_desde" : "2025-02-25",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 145000.00,
+		"cod_producto" : 817
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 999,
+		"fecha_desde" : "2025-02-25",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 185000.00,
+		"cod_producto" : 818
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 129000.00,
+		"cod_producto" : 822
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 96750.00,
+		"cod_producto" : 822
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 99000.00,
+		"cod_producto" : 823
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 64500.00,
+		"cod_producto" : 823
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 139000.00,
+		"cod_producto" : 824
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 104250.00,
+		"cod_producto" : 824
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 199000.00,
+		"cod_producto" : 825
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-03",
+		"precio" : 159000.00,
+		"cod_producto" : 826
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 125000.00,
+		"cod_producto" : 826
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 119250.00,
+		"cod_producto" : 826
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 149000.00,
+		"cod_producto" : 827
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 199000.00,
+		"cod_producto" : 828
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 154250.00,
+		"cod_producto" : 828
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-04-04",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 59000.00,
+		"cod_producto" : 830
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 135000.00,
+		"cod_producto" : 831
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 999,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "2025-12-31",
+		"precio" : 99000.00,
+		"cod_producto" : 832
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-01",
+		"precio" : 149000.00,
+		"cod_producto" : 833
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-01",
+		"precio" : 116750.00,
+		"cod_producto" : 833
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 1,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 119000.00,
+		"cod_producto" : 838
+	},
+	{
+		"cant_desde" : 2,
+		"cant_hasta" : 2,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 89500.00,
+		"cod_producto" : 838
+	},
+	{
+		"cant_desde" : 3,
+		"cant_hasta" : 3,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 79667.00,
+		"cod_producto" : 838
+	},
+	{
+		"cant_desde" : 4,
+		"cant_hasta" : 4,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 74750.00,
+		"cod_producto" : 838
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 59000.00,
+		"cod_producto" : 839
+	},
+	{
+		"cant_desde" : 1,
+		"cant_hasta" : 9999,
+		"fecha_desde" : "2025-04-01",
+		"fecha_hasta" : "9999-12-31",
+		"precio" : 179000.00,
+		"cod_producto" : 842
+	}
+]}

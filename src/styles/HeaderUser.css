@@ -1,0 +1,35 @@
+/* ============================================
+   HEADER USER STYLES
+   ============================================ */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-user .btn-link {
+  color: var(--text-color);
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.header-user .btn-link:hover {
+  color: var(--accent-color);
+  background: var(--bg-light);
+  border-color: var(--border-color);
+}
+
+/* Hide user label on mobile */
+@media (max-width: 767px) {
+  .header-user .btn-link .label {
+    display: none;
+  }
+}

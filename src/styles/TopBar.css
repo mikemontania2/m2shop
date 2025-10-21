@@ -1,0 +1,48 @@
+/* ============================================
+   TOP BAR - Not sticky, scrolls up
+   ============================================ */
+.top-bar {
+  width: 100%;
+  background: #c22622;
+  color: #fff;
+  font-size: 0.875rem;
+  line-height: 2.4em;
+  position: relative;
+  z-index: 900;
+}
+
+.top-bar .col-full {
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.topbar-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+.topbar-link {
+  background: transparent;
+  border: none;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.topbar-link:hover {
+  text-decoration: underline;
+}
+
+/* Hide TopBar on mobile screens */
+@media (max-width: 767px) {
+  .top-bar {
+    display: none;
+  }
+}

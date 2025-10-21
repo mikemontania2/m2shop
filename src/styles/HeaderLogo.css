@@ -1,0 +1,18 @@
+/* ============================================
+   LOGO STYLES
+   ============================================ */
+.logo {
+  cursor: pointer;
+}
+
+.logo img {
+  height: 36px;
+  display: block;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .logo img {
+    height: 28px;
+  }
+}

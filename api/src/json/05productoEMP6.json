@@ -1,0 +1,18 @@
+{"productosJson6":[
+  { "nombre": "YOGURTH GRIEGO SD", "subCategoria": 25, "marca": 1 },
+  { "nombre": "SERVICIO", "subCategoria": 28, "marca": 0 },
+  { "nombre": "PROMO", "subCategoria": 26, "marca": 0 },
+  { "nombre": "PANETTONE KETO", "subCategoria": 25, "marca": 0 },
+  { "nombre": "PAN KETO", "subCategoria": 28, "marca": 0 },
+  { "nombre": "MIX FRUTOS SECOS", "subCategoria": 25, "marca": 0 },
+  { "nombre": "MINI BUDIN KETO", "subCategoria": 25, "marca": 0 },
+  { "nombre": "MIEL DE ABEJA MULTIFLORAL", "subCategoria": 28, "marca": 2 },
+  { "nombre": "MERMELADA", "subCategoria": 25, "marca": 0 },
+  { "nombre": "HEESECAKE DE FRUTOS", "subCategoria": 25, "marca": 0 },
+  { "nombre": "Frutos secos ", "subCategoria": 28, "marca": 0 },
+  { "nombre": "DEVOLUCION ", "subCategoria": 28, "marca": 0 },
+  { "nombre": "CONSERVADORA", "subCategoria": 28, "marca": 0 },
+  { "nombre": "CHIPITA KETO ", "subCategoria": 26, "marca": 0 },
+  { "nombre": "BROWNIE", "subCategoria": 25, "marca": 0 },
+  { "nombre": "BOX SAN VALENTIN", "subCategoria": 26, "marca": 0 }
+]}

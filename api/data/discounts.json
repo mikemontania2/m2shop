@@ -1,8 +1,0 @@
-[
-  { "type": "AMOUNT", "qty_from": 1000001, "qty_to": 999999999, "value": 25, "start_date": "2025-04-01", "end_date": "9999-01-01" },
-  { "type": "AMOUNT", "qty_from": 500001, "qty_to": 999999, "value": 20, "start_date": "2025-04-01", "end_date": "9999-01-01" },
-  { "type": "AMOUNT", "qty_from": 200001, "qty_to": 500000, "value": 15, "start_date": "2025-04-01", "end_date": "9999-01-01" },
-  { "type": "AMOUNT", "qty_from": 65001, "qty_to": 200000, "value": 10, "start_date": "2025-04-01", "end_date": "9999-01-01" },
-  { "type": "AMOUNT", "qty_from": 20000, "qty_to": 65000, "value": 5, "start_date": "2025-04-01", "end_date": "9999-01-01" },
-  { "type": "PRODUCT", "product_id": 300000231, "value": 20, "start_date": "2025-04-02", "end_date": "9999-01-02" }
-]

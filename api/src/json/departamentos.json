@@ -1,0 +1,103 @@
+{
+"departamentos": [
+	{
+		"id" : 1,
+		"codigo" : 1,
+		"descripcion" : "CAPITAL"
+	},
+	{
+		"id" : 2,
+		"codigo" : 2,
+		"descripcion" : "CONCEPCION"
+	},
+	{
+		"id" : 3,
+		"codigo" : 3,
+		"descripcion" : "SAN PEDRO"
+	},
+	{
+		"id" : 4,
+		"codigo" : 4,
+		"descripcion" : "CORDILLERA"
+	},
+	{
+		"id" : 5,
+		"codigo" : 5,
+		"descripcion" : "GUAIRA"
+	},
+	{
+		"id" : 6,
+		"codigo" : 6,
+		"descripcion" : "CAAGUAZU"
+	},
+	{
+		"id" : 7,
+		"codigo" : 7,
+		"descripcion" : "CAAZAPA"
+	},
+	{
+		"id" : 8,
+		"codigo" : 8,
+		"descripcion" : "ITAPUA"
+	},
+	{
+		"id" : 9,
+		"codigo" : 9,
+		"descripcion" : "MISIONES"
+	},
+	{
+		"id" : 10,
+		"codigo" : 10,
+		"descripcion" : "PARAGUARI"
+	},
+	{
+		"id" : 11,
+		"codigo" : 11,
+		"descripcion" : "ALTO PARANA"
+	},
+	{
+		"id" : 12,
+		"codigo" : 12,
+		"descripcion" : "CENTRAL"
+	},
+	{
+		"id" : 13,
+		"codigo" : 13,
+		"descripcion" : "NEEMBUCU"
+	},
+	{
+		"id" : 14,
+		"codigo" : 14,
+		"descripcion" : "AMAMBAY"
+	},
+	{
+		"id" : 15,
+		"codigo" : 15,
+		"descripcion" : "PTE. HAYES"
+	},
+	{
+		"id" : 16,
+		"codigo" : 16,
+		"descripcion" : "BOQUERON"
+	},
+	{
+		"id" : 17,
+		"codigo" : 17,
+		"descripcion" : "ALTO PARAGUAY"
+	},
+	{
+		"id" : 18,
+		"codigo" : 18,
+		"descripcion" : "CANINDEYU"
+	},
+	{
+		"id" : 19,
+		"codigo" : 19,
+		"descripcion" : "CHACO"
+	},
+	{
+		"id" : 20,
+		"codigo" : 20,
+		"descripcion" : "NUEVA ASUNCION"
+	}
+]}

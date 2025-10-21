@@ -1,0 +1,137 @@
+/* ============================================
+   MOBILE SEARCH BAR - Modern & Elegant
+   ============================================ */
+.mobile-search-bar {
+  display: none;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: var(--white);
+  z-index: 1100;
+  padding: 12px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* New container with proper flex layout */
+.mobile-search-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* SearchBar takes all available space on the left */
+.mobile-search-left {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Buttons grouped on the right */
+.mobile-search-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mobile-search-bar .mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+
+/* Modern search form styling - consistent across all screens */
+.mobile-search-bar .search-form {
+  margin: 0;
+  max-width: none;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  background: #f8f9fa;
+  transition: all 0.2s ease;
+}
+
+.mobile-search-bar .search-form:focus-within {
+  border-color: var(--accent-color);
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+}
+
+.mobile-search-bar .search-form input {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  background: transparent;
+  min-width: 0;
+}
+
+.mobile-search-bar .search-form button {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  background: var(--accent-color);
+  border-radius: 0 10px 10px 0;
+  transition: all 0.2s ease;
+}
+
+.mobile-search-bar .search-form button:hover {
+  background: var(--primary-color);
+}
+
+.mobile-search-bar .cart-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.mobile-search-bar .cart-btn:hover {
+  border-color: var(--accent-color);
+  background: #fff5f5;
+}
+
+/* Show only on mobile */
+@media (max-width: 767px) {
+  .mobile-search-bar {
+    display: block;
+  }
+}
+
+/* Extra small mobile adjustments */
+@media (max-width: 480px) {
+  .mobile-search-container {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .mobile-search-right {
+    gap: 6px;
+  }
+
+  .mobile-search-bar .mobile-menu-btn,
+  .mobile-search-bar .cart-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-search-bar .search-form input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-search-bar .search-form button {
+    padding: 10px 12px;
+  }
+}

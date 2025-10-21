@@ -1,3 +1,7 @@
-node_modules/ 
-npm-debug.log*
-yarn-error.log
+# Ignorar archivos temporales
+*.log
+*.tmp
+
+# Ignorar carpetas específicas
+node_modules/
+build/

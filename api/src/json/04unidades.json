@@ -1,0 +1,23 @@
+{"unidadesJson":[
+    {
+      "code": "UN",
+      "descripcion": "Unidad"
+    },
+    {
+      "code": "CJ",
+      "descripcion": "Caja"
+    },
+    {
+      "code": "DSP",
+      "descripcion": "Display"
+    },
+    {
+      "code": "ROL",
+      "descripcion": "Rollo"
+    },
+    {
+      "code": "PCK",
+      "descripcion": "Pack"
+    }
+  ]
+  }

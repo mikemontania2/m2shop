@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Nueva Colección Otoño 2024",
+    "subtitle": "Elegancia y estilo en cada prenda",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-cavapuntos-1920x692.jpg",
+    "url": "/",
+    "active": true,
+    "order": 1
+  },
+  {
+    "id": 2,
+    "title": "Hasta 40% de Descuento",
+    "subtitle": "En productos seleccionados",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-deluxe-1920x6923.jpg",
+    "url": "/",
+    "active": true,
+    "order": 2
+  },
+  {
+    "id": 3,
+    "title": "Calzados Premium",
+    "subtitle": "Comodidad y distinción",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-descuento-1920x690.jpg",
+    "url": "/",
+    "active": true,
+    "order": 3
+  },
+  {
+    "id": 4,
+    "title": "Calzados Premium",
+    "subtitle": "Comodidad y distinción",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-pixol-1920x692-px.jpg",
+    "url": "/",
+    "active": true,
+    "order": 4
+  },
+  {
+    "id": 5,
+    "title": "Calzados Premium",
+    "subtitle": "Comodidad y distinción",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-descuento-1920x692-px_2.jpg",
+    "url": "/",
+    "active": true,
+    "order": 5
+  },
+  {
+    "id": 6,
+    "title": "Calzados Premium",
+    "subtitle": "Comodidad y distinción",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/cavallaro-adaptaciones-1920x692-01.png",
+    "url": "/",
+    "active": true,
+    "order": 6
+  }
+]

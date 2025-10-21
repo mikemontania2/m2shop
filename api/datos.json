@@ -1,0 +1,1720 @@
+{
+  "paises": [
+    {
+      "id": "PY",
+      "nombre": "Paraguay"
+    }
+  ],
+  "departamentos": [
+    {
+      "id": 1,
+      "nombre": "Central",
+      "paisId": "PY"
+    },
+    {
+      "id": 2,
+      "nombre": "Asunción",
+      "paisId": "PY"
+    },
+    {
+      "id": 3,
+      "nombre": "Alto Paraná",
+      "paisId": "PY"
+    }
+  ],
+  "ciudades": [
+    {
+      "id": 1,
+      "nombre": "Asunción",
+      "departamentoId": 2
+    },
+    {
+      "id": 2,
+      "nombre": "Lambaré",
+      "departamentoId": 1
+    },
+    {
+      "id": 3,
+      "nombre": "San Lorenzo",
+      "departamentoId": 1
+    },
+    {
+      "id": 4,
+      "nombre": "Fernando de la Mora",
+      "departamentoId": 1
+    },
+    {
+      "id": 5,
+      "nombre": "Ciudad del Este",
+      "departamentoId": 3
+    }
+  ],
+  "barrios": [
+    {
+      "id": 1,
+      "descripcion": "CENTRO",
+      "ciudadId": 1
+    },
+    {
+      "id": 2,
+      "descripcion": "RECOLETA",
+      "ciudadId": 1
+    },
+    {
+      "id": 3,
+      "descripcion": "VILLA MORRA",
+      "ciudadId": 1
+    },
+    {
+      "id": 4,
+      "descripcion": "MBURUCUYA",
+      "ciudadId": 1
+    },
+    {
+      "id": 5,
+      "descripcion": "CENTRO",
+      "ciudadId": 2
+    },
+    {
+      "id": 6,
+      "descripcion": "SAN MIGUEL",
+      "ciudadId": 3
+    },
+    {
+      "id": 7,
+      "descripcion": "SANTA ROSA",
+      "ciudadId": 4
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "admin@cavallaro.com.py",
+      "password": "$2b$10$XYZ123...hash",
+      "nombre": "Carlos",
+      "apellido": "Administrador",
+      "telefono": "+595981123456",
+      "documento": "1234567",
+      "fechaNacimiento": "1985-05-15",
+      "activo": true,
+      "rol": "admin",
+      "emailVerificado": true,
+      "createdAt": "2024-01-10T10:00:00Z",
+      "updatedAt": "2024-01-10T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "email": "vendedor@cavallaro.com.py",
+      "password": "$2b$10$ABC456...hash",
+      "nombre": "María",
+      "apellido": "Vendedora",
+      "telefono": "+595981234567",
+      "documento": "2345678",
+      "fechaNacimiento": "1990-08-20",
+      "activo": true,
+      "rol": "vendedor",
+      "emailVerificado": true,
+      "createdAt": "2024-01-15T10:00:00Z",
+      "updatedAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "email": "juan.perez@gmail.com",
+      "password": "$2b$10$DEF789...hash",
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "telefono": "+595981345678",
+      "documento": "3456789",
+      "fechaNacimiento": "1988-03-12",
+      "activo": true,
+      "rol": "cliente",
+      "emailVerificado": true,
+      "createdAt": "2024-08-01T14:30:00Z",
+      "updatedAt": "2024-10-05T16:20:00Z"
+    },
+    {
+      "id": 4,
+      "email": "ana.martinez@hotmail.com",
+      "password": "$2b$10$GHI012...hash",
+      "nombre": "Ana",
+      "apellido": "Martínez",
+      "telefono": "+595981456789",
+      "documento": "4567890",
+      "fechaNacimiento": "1992-11-25",
+      "activo": true,
+      "rol": "cliente",
+      "emailVerificado": true,
+      "createdAt": "2024-09-10T11:15:00Z",
+      "updatedAt": "2024-10-06T09:45:00Z"
+    },
+    {
+      "id": 5,
+      "email": "roberto.gomez@yahoo.com",
+      "password": "$2b$10$JKL345...hash",
+      "nombre": "Roberto",
+      "apellido": "Gómez",
+      "telefono": "+595981567890",
+      "documento": "5678901",
+      "fechaNacimiento": "1995-07-08",
+      "activo": true,
+      "rol": "cliente",
+      "emailVerificado": false,
+      "createdAt": "2024-10-01T18:22:00Z",
+      "updatedAt": "2024-10-02T10:10:00Z"
+    }
+  ],
+  "direccionesEnvio": [
+    {
+      "id": 1,
+      "usuarioId": 3,
+      "nombreCompleto": "Juan Pérez",
+      "telefono": "+595981345678",
+      "calle": "Av. España",
+      "numero": "1234",
+      "referencia": "Casa blanca con portón negro, al lado del supermercado",
+      "barrioId": 2,
+      "codigoPostal": "1234",
+      "esPrincipal": true,
+      "createdAt": "2024-08-01T15:00:00Z",
+      "updatedAt": "2024-08-01T15:00:00Z"
+    },
+    {
+      "id": 2,
+      "usuarioId": 3,
+      "nombreCompleto": "Juan Pérez",
+      "telefono": "+595981345678",
+      "calle": "Calle Palma",
+      "numero": "567",
+      "referencia": "Oficina - Edificio Palma Center, piso 5",
+      "barrioId": 1,
+      "codigoPostal": "1201",
+      "esPrincipal": false,
+      "createdAt": "2024-08-15T10:30:00Z",
+      "updatedAt": "2024-08-15T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "usuarioId": 4,
+      "nombreCompleto": "Ana Martínez",
+      "telefono": "+595981456789",
+      "calle": "Av. Madame Lynch",
+      "numero": "890",
+      "referencia": "Departamento 302, torre B",
+      "barrioId": 3,
+      "codigoPostal": "1425",
+      "esPrincipal": true,
+      "createdAt": "2024-09-10T11:30:00Z",
+      "updatedAt": "2024-09-10T11:30:00Z"
+    },
+    {
+      "id": 4,
+      "usuarioId": 5,
+      "nombreCompleto": "Roberto Gómez",
+      "telefono": "+595981567890",
+      "calle": "Ruta Transchaco",
+      "numero": "Km 15",
+      "referencia": "Casa quinta con portón verde",
+      "barrioId": 5,
+      "codigoPostal": "2160",
+      "esPrincipal": true,
+      "createdAt": "2024-10-01T18:45:00Z",
+      "updatedAt": "2024-10-01T18:45:00Z"
+    }
+  ],
+  "marcas": [
+    {
+      "id": 1,
+      "nombre": "Cavallaro",
+      "slug": "cavallaro",
+      "logoUrl": "/images/marcas/cavallaro-logo.png",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "nombre": "Pixol",
+      "slug": "pixol",
+      "logoUrl": "/images/marcas/pixol-logo.png",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "nombre": "Coco Puro",
+      "slug": "coco-puro",
+      "logoUrl": "/images/marcas/coco-puro-logo.png",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Higiene Personal",
+      "slug": "higiene-personal",
+      "descripcion": "Productos para el cuidado e higiene personal",
+      "imagenUrl": "/images/categorias/higiene-personal.jpg",
+      "categoriasPadreId": null,
+      "orden": 1,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "nombre": "Jabones de Tocador",
+      "slug": "jabones-tocador",
+      "descripcion": "Jabones para la higiene diaria",
+      "imagenUrl": "/images/categorias/jabones-tocador.jpg",
+      "categoriasPadreId": 1,
+      "orden": 1,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "nombre": "Cuidado de las Prendas",
+      "slug": "cuidado-prendas",
+      "descripcion": "Productos para el lavado y cuidado de la ropa",
+      "imagenUrl": "/images/categorias/cuidado-prendas.jpg",
+      "categoriasPadreId": null,
+      "orden": 2,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "nombre": "Jabón en Polvo",
+      "slug": "jabon-polvo",
+      "descripcion": "Detergentes en polvo para ropa",
+      "imagenUrl": "/images/categorias/jabon-polvo.jpg",
+      "categoriasPadreId": 3,
+      "orden": 1,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 5,
+      "nombre": "Detergente Líquido",
+      "slug": "detergente-liquido",
+      "descripcion": "Detergentes líquidos para ropa",
+      "imagenUrl": "/images/categorias/detergente-liquido.jpg",
+      "categoriasPadreId": 3,
+      "orden": 2,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 6,
+      "nombre": "Suavizantes",
+      "slug": "suavizantes",
+      "descripcion": "Suavizantes para ropa",
+      "imagenUrl": "/images/categorias/suavizantes.jpg",
+      "categoriasPadreId": 3,
+      "orden": 3,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 7,
+      "nombre": "Limpieza y Desinfección del Hogar",
+      "slug": "limpieza-hogar",
+      "descripcion": "Productos para la limpieza del hogar",
+      "imagenUrl": "/images/categorias/limpieza-hogar.jpg",
+      "categoriasPadreId": null,
+      "orden": 3,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 8,
+      "nombre": "Detergentes",
+      "slug": "detergentes",
+      "descripcion": "Detergentes para vajilla y limpieza",
+      "imagenUrl": "/images/categorias/detergentes.jpg",
+      "categoriasPadreId": 7,
+      "orden": 1,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 9,
+      "nombre": "Lavandinas",
+      "slug": "lavandinas",
+      "descripcion": "Productos desinfectantes con cloro",
+      "imagenUrl": "/images/categorias/lavandinas.jpg",
+      "categoriasPadreId": 7,
+      "orden": 2,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 10,
+      "nombre": "Accesorios de Limpieza",
+      "slug": "accesorios-limpieza",
+      "descripcion": "Esponjas, paños y otros accesorios",
+      "imagenUrl": "/images/categorias/accesorios.jpg",
+      "categoriasPadreId": 7,
+      "orden": 3,
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "sku": "CAV-JAB-TOC-100",
+      "nombre": "Jabón de Tocador Natural Coco Cavallaro con Aceite Esencial",
+      "slug": "jabon-tocador-coco-cavallaro",
+      "descripcionCorta": "Jabón de tocador con aceite de coco puro y aceites esenciales naturales",
+      "descripcionLarga": "El jabón de Tocador Coco Cavallaro está elaborado con aceite de almendra de coco puro y enriquecido con aceites esenciales naturales. Ideal para todo tipo de pieles, proporciona una limpieza profunda mientras mantiene la humectación natural de la piel. Su fórmula con ingredientes naturales es perfecta para el uso diario de toda la familia.",
+      "precio": 12500,
+      "precioComparacion": null,
+      "costo": 7500,
+      "categoriaId": 2,
+      "marcaId": 3,
+      "stock": 250,
+      "stockMinimo": 50,
+      "peso": 0.1,
+      "destacado": true,
+      "nuevo": false,
+      "activo": true,
+      "metaTitle": "Jabón de Tocador Natural Coco Cavallaro - 100g",
+      "metaDescription": "Jabón natural con aceite de coco puro. Limpieza e hidratación para tu piel.",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-05T14:20:00Z"
+    },
+    {
+      "id": 2,
+      "sku": "PIX-DET-VAJ-4L",
+      "nombre": "Detergente Lavavajillas Pixol 4L Limón",
+      "slug": "detergente-pixol-4l-limon",
+      "descripcionCorta": "Detergente concentrado para vajillas con aroma a limón",
+      "descripcionLarga": "Detergente lavavajillas Pixol en presentación de 4 litros con fragancia a limón. Fórmula concentrada que elimina eficazmente la grasa y residuos de alimentos. Rinde más y cuida tus manos. Ideal para uso doméstico y comercial.",
+      "precio": 45000,
+      "precioComparacion": 52000,
+      "costo": 28000,
+      "categoriaId": 8,
+      "marcaId": 2,
+      "stock": 180,
+      "stockMinimo": 40,
+      "peso": 4.2,
+      "destacado": true,
+      "nuevo": false,
+      "activo": true,
+      "metaTitle": "Detergente Pixol 4L Limón - Lavavajillas Concentrado",
+      "metaDescription": "Detergente lavavajillas concentrado Pixol. Elimina grasa y cuida tus manos.",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-06T08:15:00Z"
+    },
+    {
+      "id": 3,
+      "sku": "CAV-SUAV-4L",
+      "nombre": "Suavizante para Ropas Cavallaro Premium",
+      "slug": "suavizante-cavallaro-premium-4l",
+      "descripcionCorta": "Suavizante concentrado que deja tu ropa suave y perfumada",
+      "descripcionLarga": "Los Suavizantes Cavallaro Premium son ideales para mantener tus prendas suaves, frescas y con una agradable fragancia por más tiempo. Su fórmula concentrada permite un mayor rendimiento. Disponible en diferentes fragancias: Clásico, Primavera, Lavanda y Bebé.",
+      "precio": 38000,
+      "precioComparacion": 42000,
+      "costo": 23000,
+      "categoriaId": 6,
+      "marcaId": 1,
+      "stock": 200,
+      "stockMinimo": 50,
+      "peso": 4.1,
+      "destacado": false,
+      "nuevo": false,
+      "activo": true,
+      "metaTitle": "Suavizante Cavallaro Premium 4L - Ropa Suave y Perfumada",
+      "metaDescription": "Suavizante concentrado Cavallaro Premium. Ropa suave con fragancia duradera.",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-04T16:30:00Z"
+    },
+    {
+      "id": 4,
+      "sku": "CAV-JAB-POL-3K",
+      "nombre": "Jabón en Polvo Cavallaro Coco Puro 3kg",
+      "slug": "jabon-polvo-cavallaro-3kg",
+      "descripcionCorta": "Detergente en polvo con aceite de coco para ropa blanca y de color",
+      "descripcionLarga": "Jabón en polvo Cavallaro elaborado con aceite de almendra de coco puro. Limpia profundamente sin maltratar las fibras de tus prendas. Efectivo en agua fría y caliente. Ideal para lavado a mano y en máquina. Cuida los colores y mantiene la blancura de tu ropa.",
+      "precio": 35000,
+      "precioComparacion": null,
+      "costo": 20000,
+      "categoriaId": 4,
+      "marcaId": 3,
+      "stock": 320,
+      "stockMinimo": 80,
+      "peso": 3.0,
+      "destacado": true,
+      "nuevo": false,
+      "activo": true,
+      "metaTitle": "Jabón en Polvo Cavallaro 3kg - Coco Puro",
+      "metaDescription": "Detergente en polvo con aceite de coco. Limpieza profunda para tu ropa.",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-06T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "sku": "CAV-DET-LIQ-2L",
+      "nombre": "Detergente Líquido para Ropas Cavallaro 2L",
+      "slug": "detergente-liquido-cavallaro-2l",
+      "descripcionCorta": "Detergente líquido concentrado para todo tipo de ropa",
+      "descripcionLarga": "Detergente líquido Cavallaro de alta concentración. Perfecto para lavadora automática y lavado a mano. Su fórmula especial elimina las manchas difíciles mientras cuida las fibras de tus prendas. Disponible en fragancias Primavera, Lavanda y Bebé.",
+      "precio": 42000,
+      "precioComparacion": 48000,
+      "costo": 26000,
+      "categoriaId": 5,
+      "marcaId": 1,
+      "stock": 150,
+      "stockMinimo": 40,
+      "peso": 2.1,
+      "destacado": false,
+      "nuevo": true,
+      "activo": true,
+      "metaTitle": "Detergente Líquido Cavallaro 2L - Para Ropa",
+      "metaDescription": "Detergente líquido concentrado. Elimina manchas y cuida tus prendas.",
+      "createdAt": "2024-08-15T10:00:00Z",
+      "updatedAt": "2024-10-05T11:20:00Z"
+    },
+    {
+      "id": 6,
+      "sku": "CAV-LAV-2L",
+      "nombre": "Lavandina Cavallaro 2L",
+      "slug": "lavandina-cavallaro-2l",
+      "descripcionCorta": "Lavandina desinfectante para limpieza del hogar",
+      "descripcionLarga": "Lavandina Cavallaro de alta concentración. Ideal para desinfectar y blanquear. Elimina el 99.9% de bacterias y virus. Perfecta para baños, cocina, pisos y desinfección general del hogar. Uso seguro siguiendo las instrucciones del producto.",
+      "precio": 18000,
+      "precioComparacion": null,
+      "costo": 10000,
+      "categoriaId": 9,
+      "marcaId": 1,
+      "stock": 280,
+      "stockMinimo": 60,
+      "peso": 2.05,
+      "destacado": false,
+      "nuevo": false,
+      "activo": true,
+      "metaTitle": "Lavandina Cavallaro 2L - Desinfectante",
+      "metaDescription": "Lavandina desinfectante. Elimina 99.9% de bacterias y virus.",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-03T14:45:00Z"
+    },
+    {
+      "id": 7,
+      "sku": "PIX-ESP-6U",
+      "nombre": "Esponja Pixol Verde Pack x 6 Unidades",
+      "slug": "esponja-pixol-verde-pack-6",
+      "descripcionCorta": "Esponjas doble cara para limpieza de vajilla y superficies",
+      "descripcionLarga": "Pack de 6 esponjas Pixol con doble cara: lado suave para superficies delicadas y lado abrasivo para manchas difíciles. Perfectas para lavar vajilla, ollas, sartenes y limpieza general. Alta durabilidad y absorción. No raya las superficies.",
+      "precio": 15000,
+      "precioComparacion": null,
+      "costo": 8000,
+      "categoriaId": 10,
+      "marcaId": 2,
+      "stock": 420,
+      "stockMinimo": 100,
+      "peso": 0.15,
+      "destacado": false,
+      "nuevo": false,
+      "activo": true,
+      "metaTitle": "Esponja Pixol Pack x 6 - Doble Cara",
+      "metaDescription": "Pack de esponjas Pixol. Perfectas para vajilla y limpieza general.",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-06T09:30:00Z"
+    },
+    {
+      "id": 8,
+      "sku": "CAV-LIMP-MUL-1L",
+      "nombre": "Limpiador Multiuso Cavallaro 1L",
+      "slug": "limpiador-multiuso-cavallaro-1l",
+      "descripcionCorta": "Limpiador concentrado para todo tipo de superficies",
+      "descripcionLarga": "Limpiador multiuso Cavallaro eficaz para todo tipo de superficies: pisos, azulejos, cocina, baño y más. Elimina grasa y suciedad difícil. Deja un aroma fresco y agradable. Fórmula concentrada de alto rendimiento.",
+      "precio": 22000,
+      "precioComparacion": null,
+      "costo": 13000,
+      "categoriaId": 7,
+      "marcaId": 1,
+      "stock": 190,
+      "stockMinimo": 45,
+      "peso": 1.05,
+      "destacado": false,
+      "nuevo": false,
+      "activo": true,
+      "metaTitle": "Limpiador Multiuso Cavallaro 1L",
+      "metaDescription": "Limpiador concentrado para todo tipo de superficies del hogar.",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-02T15:10:00Z"
+    }
+  ],
+  "imagenesProducto": [
+    {
+      "id": 1,
+      "productoId": 1,
+      "url": "/images/productos/jabon-coco-cavallaro-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "productoId": 1,
+      "url": "/images/productos/jabon-coco-cavallaro-2.jpg",
+      "esPrincipal": false,
+      "orden": 2,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "productoId": 2,
+      "url": "/images/productos/detergente-pixol-limon-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "productoId": 3,
+      "url": "/images/productos/suavizante-cavallaro-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "productoId": 3,
+      "url": "/images/productos/suavizante-cavallaro-2.jpg",
+      "esPrincipal": false,
+      "orden": 2,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "productoId": 4,
+      "url": "/images/productos/jabon-polvo-cavallaro-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "productoId": 5,
+      "url": "/images/productos/detergente-liquido-cavallaro-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-08-15T10:00:00Z",
+      "updatedAt": "2024-08-15T10:00:00Z"
+    },
+    {
+      "id": 8,
+      "productoId": 6,
+      "url": "/images/productos/lavandina-cavallaro-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 9,
+      "productoId": 7,
+      "url": "/images/productos/esponja-pixol-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 10,
+      "productoId": 8,
+      "url": "/images/productos/limpiador-multiuso-1.jpg",
+      "esPrincipal": true,
+      "orden": 1,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    }
+  ],
+  "variantesProducto": [
+    {
+      "id": 1,
+      "productoId": 3,
+      "sku": "CAV-SUAV-4L-CLA",
+      "nombre": "Clásico",
+      "precio": null,
+      "stock": 80,
+      "activo": true,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-04T16:30:00Z"
+    },
+    {
+      "id": 2,
+      "productoId": 3,
+      "sku": "CAV-SUAV-4L-PRI",
+      "nombre": "Primavera",
+      "precio": null,
+      "stock": 65,
+      "activo": true,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-04T16:30:00Z"
+    },
+    {
+      "id": 3,
+      "productoId": 3,
+      "sku": "CAV-SUAV-4L-LAV",
+      "nombre": "Lavanda",
+      "precio": null,
+      "stock": 30,
+      "activo": true,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-04T16:30:00Z"
+    },
+    {
+      "id": 4,
+      "productoId": 3,
+      "sku": "CAV-SUAV-4L-BEB",
+      "nombre": "Bebé",
+      "precio": 40000,
+      "stock": 25,
+      "activo": true,
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-10-04T16:30:00Z"
+    },
+    {
+      "id": 5,
+      "productoId": 5,
+      "sku": "CAV-DET-LIQ-2L-PRI",
+      "nombre": "Primavera",
+      "precio": null,
+      "stock": 60,
+      "activo": true,
+      "createdAt": "2024-08-15T10:00:00Z",
+      "updatedAt": "2024-10-05T11:20:00Z"
+    },
+    {
+      "id": 6,
+      "productoId": 5,
+      "sku": "CAV-DET-LIQ-2L-LAV",
+      "nombre": "Lavanda",
+      "precio": null,
+      "stock": 50,
+      "activo": true,
+      "createdAt": "2024-08-15T10:00:00Z",
+      "updatedAt": "2024-10-05T11:20:00Z"
+    },
+    {
+      "id": 7,
+      "productoId": 5,
+      "sku": "CAV-DET-LIQ-2L-BEB",
+      "nombre": "Bebé",
+      "precio": 45000,
+      "stock": 40,
+      "activo": true,
+      "createdAt": "2024-08-15T10:00:00Z",
+      "updatedAt": "2024-10-05T11:20:00Z"
+    }
+  ],
+  "atributosProducto": [
+    {
+      "id": 1,
+      "productoId": 1,
+      "nombre": "Peso Neto",
+      "valor": "100g",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "productoId": 1,
+      "nombre": "Ingrediente Principal",
+      "valor": "Aceite de Coco Puro",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 3,
+      "productoId": 1,
+      "nombre": "pH",
+      "valor": "Neutro",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 4,
+      "productoId": 2,
+      "nombre": "Capacidad",
+      "valor": "4 Litros",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "productoId": 2,
+      "nombre": "Fragancia",
+      "valor": "Limón",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "productoId": 2,
+      "nombre": "Tipo",
+      "valor": "Concentrado",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "productoId": 4,
+      "nombre": "Peso Neto",
+      "valor": "3kg",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 8,
+      "productoId": 4,
+      "nombre": "Uso",
+      "valor": "Lavado a mano y máquina",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 9,
+      "productoId": 6,
+      "nombre": "Concentración de Cloro",
+      "valor": "5%",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    },
+    {
+      "id": 10,
+      "productoId": 6,
+      "nombre": "Capacidad",
+      "valor": "2 Litros",
+      "createdAt": "2024-02-01T10:00:00Z",
+      "updatedAt": "2024-02-01T10:00:00Z"
+    }
+  ],
+  "carritos": [
+    {
+      "id": 1,
+      "usuarioId": 3,
+      "sessionId": null,
+      "expiraEn": null,
+      "createdAt": "2024-10-06T10:00:00Z",
+      "updatedAt": "2024-10-06T14:30:00Z"
+    },
+    {
+      "id": 2,
+      "usuarioId": null,
+      "sessionId": "sess_abc123xyz456",
+      "expiraEn": "2024-10-13T10:00:00Z",
+      "createdAt": "2024-10-05T10:00:00Z",
+      "updatedAt": "2024-10-05T15:20:00Z"
+    }
+  ],
+  "itemsCarrito": [
+    {
+      "id": 1,
+      "carritoId": 1,
+      "productoId": 2,
+      "varianteId": null,
+      "cantidad": 2,
+      "precioUnitario": 45000,
+      "createdAt": "2024-10-06T10:15:00Z",
+      "updatedAt": "2024-10-06T14:30:00Z"
+    },
+    {
+      "id": 2,
+      "carritoId": 1,
+      "productoId": 3,
+      "varianteId": 2,
+      "cantidad": 1,
+      "precioUnitario": 38000,
+      "createdAt": "2024-10-06T11:20:00Z",
+      "updatedAt": "2024-10-06T11:20:00Z"
+    },
+    {
+      "id": 3,
+      "carritoId": 1,
+      "productoId": 7,
+      "varianteId": null,
+      "cantidad": 3,
+      "precioUnitario": 15000,
+      "createdAt": "2024-10-06T14:30:00Z",
+      "updatedAt": "2024-10-06T14:30:00Z"
+    },
+    {
+      "id": 4,
+      "carritoId": 2,
+      "productoId": 1,
+      "varianteId": null,
+      "cantidad": 5,
+      "precioUnitario": 12500,
+      "createdAt": "2024-10-05T10:30:00Z",
+      "updatedAt": "2024-10-05T15:20:00Z"
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "numeroPedido": "PED-2024-00001",
+      "usuarioId": 3,
+      "estado": "entregado",
+      "subtotal": 120000,
+      "descuento": 12000,
+      "costoEnvio": 15000,
+      "total": 123000,
+      "metodoPago": "tarjeta",
+      "estadoPago": "pagado",
+      "direccionEnvioId": 1,
+      "notasCliente": "Por favor tocar timbre dos veces",
+      "notasInternas": "Cliente frecuente - prioridad",
+      "fechaEstimadaEntrega": "2024-09-05T00:00:00Z",
+      "codigoSeguimiento": "CAV-TRK-001234",
+      "createdAt": "2024-09-01T10:30:00Z",
+      "updatedAt": "2024-09-05T16:45:00Z"
+    },
+    {
+      "id": 2,
+      "numeroPedido": "PED-2024-00002",
+      "usuarioId": 4,
+      "estado": "enviado",
+      "subtotal": 158000,
+      "descuento": 0,
+      "costoEnvio": 20000,
+      "total": 178000,
+      "metodoPago": "transferencia",
+      "estadoPago": "pagado",
+      "direccionEnvioId": 3,
+      "notasCliente": null,
+      "notasInternas": null,
+      "fechaEstimadaEntrega": "2024-10-08T00:00:00Z",
+      "codigoSeguimiento": "CAV-TRK-001456",
+      "createdAt": "2024-10-03T14:20:00Z",
+      "updatedAt": "2024-10-06T09:00:00Z"
+    },
+    {
+      "id": 3,
+      "numeroPedido": "PED-2024-00003",
+      "usuarioId": 5,
+      "estado": "confirmado",
+      "subtotal": 85000,
+      "descuento": 0,
+      "costoEnvio": 25000,
+      "total": 110000,
+      "metodoPago": "efectivo",
+      "estadoPago": "pendiente",
+      "direccionEnvioId": 4,
+      "notasCliente": "Entregar después de las 18hs",
+      "notasInternas": "Zona alejada - confirmar disponibilidad del repartidor",
+      "fechaEstimadaEntrega": "2024-10-09T00:00:00Z",
+      "codigoSeguimiento": null,
+      "createdAt": "2024-10-05T16:40:00Z",
+      "updatedAt": "2024-10-06T08:15:00Z"
+    },
+    {
+      "id": 4,
+      "numeroPedido": "PED-2024-00004",
+      "usuarioId": 3,
+      "estado": "preparando",
+      "subtotal": 173000,
+      "descuento": 17300,
+      "costoEnvio": 0,
+      "total": 155700,
+      "metodoPago": "tarjeta",
+      "estadoPago": "pagado",
+      "direccionEnvioId": 2,
+      "notasCliente": "Oficina - Entregar en recepción",
+      "notasInternas": "Aplicado cupón CAVALLARO10",
+      "fechaEstimadaEntrega": "2024-10-10T00:00:00Z",
+      "codigoSeguimiento": null,
+      "createdAt": "2024-10-06T09:15:00Z",
+      "updatedAt": "2024-10-06T11:30:00Z"
+    }
+  ],
+  "itemsPedido": [
+    {
+      "id": 1,
+      "pedidoId": 1,
+      "productoId": 4,
+      "varianteId": null,
+      "nombreProducto": "Jabón en Polvo Cavallaro Coco Puro 3kg",
+      "sku": "CAV-JAB-POL-3K",
+      "cantidad": 2,
+      "precioUnitario": 35000,
+      "subtotal": 70000,
+      "createdAt": "2024-09-01T10:30:00Z",
+      "updatedAt": "2024-09-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "pedidoId": 1,
+      "productoId": 6,
+      "varianteId": null,
+      "nombreProducto": "Lavandina Cavallaro 2L",
+      "sku": "CAV-LAV-2L",
+      "cantidad": 1,
+      "precioUnitario": 18000,
+      "subtotal": 18000,
+      "createdAt": "2024-09-01T10:30:00Z",
+      "updatedAt": "2024-09-01T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "pedidoId": 1,
+      "productoId": 8,
+      "varianteId": null,
+      "nombreProducto": "Limpiador Multiuso Cavallaro 1L",
+      "sku": "CAV-LIMP-MUL-1L",
+      "cantidad": 1,
+      "precioUnitario": 22000,
+      "subtotal": 22000,
+      "createdAt": "2024-09-01T10:30:00Z",
+      "updatedAt": "2024-09-01T10:30:00Z"
+    },
+    {
+      "id": 4,
+      "pedidoId": 1,
+      "productoId": 1,
+      "varianteId": null,
+      "nombreProducto": "Jabón de Tocador Natural Coco Cavallaro con Aceite Esencial",
+      "sku": "CAV-JAB-TOC-100",
+      "cantidad": 1,
+      "precioUnitario": 12500,
+      "subtotal": 12500,
+      "createdAt": "2024-09-01T10:30:00Z",
+      "updatedAt": "2024-09-01T10:30:00Z"
+    },
+    {
+      "id": 5,
+      "pedidoId": 2,
+      "productoId": 2,
+      "varianteId": null,
+      "nombreProducto": "Detergente Lavavajillas Pixol 4L Limón",
+      "sku": "PIX-DET-VAJ-4L",
+      "cantidad": 2,
+      "precioUnitario": 45000,
+      "subtotal": 90000,
+      "createdAt": "2024-10-03T14:20:00Z",
+      "updatedAt": "2024-10-03T14:20:00Z"
+    },
+    {
+      "id": 6,
+      "pedidoId": 2,
+      "productoId": 3,
+      "varianteId": 1,
+      "nombreProducto": "Suavizante para Ropas Cavallaro Premium - Clásico",
+      "sku": "CAV-SUAV-4L-CLA",
+      "cantidad": 1,
+      "precioUnitario": 38000,
+      "subtotal": 38000,
+      "createdAt": "2024-10-03T14:20:00Z",
+      "updatedAt": "2024-10-03T14:20:00Z"
+    },
+    {
+      "id": 7,
+      "pedidoId": 2,
+      "productoId": 7,
+      "varianteId": null,
+      "nombreProducto": "Esponja Pixol Verde Pack x 6 Unidades",
+      "sku": "PIX-ESP-6U",
+      "cantidad": 2,
+      "precioUnitario": 15000,
+      "subtotal": 30000,
+      "createdAt": "2024-10-03T14:20:00Z",
+      "updatedAt": "2024-10-03T14:20:00Z"
+    },
+    {
+      "id": 8,
+      "pedidoId": 3,
+      "productoId": 4,
+      "varianteId": null,
+      "nombreProducto": "Jabón en Polvo Cavallaro Coco Puro 3kg",
+      "sku": "CAV-JAB-POL-3K",
+      "cantidad": 1,
+      "precioUnitario": 35000,
+      "subtotal": 35000,
+      "createdAt": "2024-10-05T16:40:00Z",
+      "updatedAt": "2024-10-05T16:40:00Z"
+    },
+    {
+      "id": 9,
+      "pedidoId": 3,
+      "productoId": 5,
+      "varianteId": 5,
+      "nombreProducto": "Detergente Líquido para Ropas Cavallaro 2L - Primavera",
+      "sku": "CAV-DET-LIQ-2L-PRI",
+      "cantidad": 1,
+      "precioUnitario": 42000,
+      "subtotal": 42000,
+      "createdAt": "2024-10-05T16:40:00Z",
+      "updatedAt": "2024-10-05T16:40:00Z"
+    },
+    {
+      "id": 10,
+      "pedidoId": 3,
+      "productoId": 8,
+      "varianteId": null,
+      "nombreProducto": "Limpiador Multiuso Cavallaro 1L",
+      "sku": "CAV-LIMP-MUL-1L",
+      "cantidad": 1,
+      "precioUnitario": 22000,
+      "subtotal": 22000,
+      "createdAt": "2024-10-05T16:40:00Z",
+      "updatedAt": "2024-10-05T16:40:00Z"
+    },
+    {
+      "id": 11,
+      "pedidoId": 4,
+      "productoId": 2,
+      "varianteId": null,
+      "nombreProducto": "Detergente Lavavajillas Pixol 4L Limón",
+      "sku": "PIX-DET-VAJ-4L",
+      "cantidad": 3,
+      "precioUnitario": 45000,
+      "subtotal": 135000,
+      "createdAt": "2024-10-06T09:15:00Z",
+      "updatedAt": "2024-10-06T09:15:00Z"
+    },
+    {
+      "id": 12,
+      "pedidoId": 4,
+      "productoId": 3,
+      "varianteId": 3,
+      "nombreProducto": "Suavizante para Ropas Cavallaro Premium - Lavanda",
+      "sku": "CAV-SUAV-4L-LAV",
+      "cantidad": 1,
+      "precioUnitario": 38000,
+      "subtotal": 38000,
+      "createdAt": "2024-10-06T09:15:00Z",
+      "updatedAt": "2024-10-06T09:15:00Z"
+    }
+  ],
+  "historialPedido": [
+    {
+      "id": 1,
+      "pedidoId": 1,
+      "estado": "pendiente",
+      "comentario": "Pedido creado",
+      "usuarioId": 3,
+      "createdAt": "2024-09-01T10:30:00Z",
+      "updatedAt": "2024-09-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "pedidoId": 1,
+      "estado": "confirmado",
+      "comentario": "Pago confirmado - Tarjeta",
+      "usuarioId": 2,
+      "createdAt": "2024-09-01T11:00:00Z",
+      "updatedAt": "2024-09-01T11:00:00Z"
+    },
+    {
+      "id": 3,
+      "pedidoId": 1,
+      "estado": "preparando",
+      "comentario": "Pedido en preparación",
+      "usuarioId": 2,
+      "createdAt": "2024-09-02T09:00:00Z",
+      "updatedAt": "2024-09-02T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "pedidoId": 1,
+      "estado": "enviado",
+      "comentario": "Pedido enviado - Código de seguimiento: CAV-TRK-001234",
+      "usuarioId": 2,
+      "createdAt": "2024-09-03T14:30:00Z",
+      "updatedAt": "2024-09-03T14:30:00Z"
+    },
+    {
+      "id": 5,
+      "pedidoId": 1,
+      "estado": "entregado",
+      "comentario": "Pedido entregado exitosamente",
+      "usuarioId": 2,
+      "createdAt": "2024-09-05T16:45:00Z",
+      "updatedAt": "2024-09-05T16:45:00Z"
+    },
+    {
+      "id": 6,
+      "pedidoId": 2,
+      "estado": "pendiente",
+      "comentario": "Pedido creado",
+      "usuarioId": 4,
+      "createdAt": "2024-10-03T14:20:00Z",
+      "updatedAt": "2024-10-03T14:20:00Z"
+    },
+    {
+      "id": 7,
+      "pedidoId": 2,
+      "estado": "confirmado",
+      "comentario": "Pago confirmado - Transferencia bancaria",
+      "usuarioId": 2,
+      "createdAt": "2024-10-04T10:15:00Z",
+      "updatedAt": "2024-10-04T10:15:00Z"
+    },
+    {
+      "id": 8,
+      "pedidoId": 2,
+      "estado": "preparando",
+      "comentario": "Preparando pedido",
+      "usuarioId": 2,
+      "createdAt": "2024-10-05T08:30:00Z",
+      "updatedAt": "2024-10-05T08:30:00Z"
+    },
+    {
+      "id": 9,
+      "pedidoId": 2,
+      "estado": "enviado",
+      "comentario": "Pedido en camino - Código: CAV-TRK-001456",
+      "usuarioId": 2,
+      "createdAt": "2024-10-06T09:00:00Z",
+      "updatedAt": "2024-10-06T09:00:00Z"
+    },
+    {
+      "id": 10,
+      "pedidoId": 3,
+      "estado": "pendiente",
+      "comentario": "Pedido creado - Pago contra entrega",
+      "usuarioId": 5,
+      "createdAt": "2024-10-05T16:40:00Z",
+      "updatedAt": "2024-10-05T16:40:00Z"
+    },
+    {
+      "id": 11,
+      "pedidoId": 3,
+      "estado": "confirmado",
+      "comentario": "Pedido confirmado",
+      "usuarioId": 2,
+      "createdAt": "2024-10-06T08:15:00Z",
+      "updatedAt": "2024-10-06T08:15:00Z"
+    },
+    {
+      "id": 12,
+      "pedidoId": 4,
+      "estado": "pendiente",
+      "comentario": "Pedido creado",
+      "usuarioId": 3,
+      "createdAt": "2024-10-06T09:15:00Z",
+      "updatedAt": "2024-10-06T09:15:00Z"
+    },
+    {
+      "id": 13,
+      "pedidoId": 4,
+      "estado": "confirmado",
+      "comentario": "Pago confirmado - Cupón CAVALLARO10 aplicado",
+      "usuarioId": 2,
+      "createdAt": "2024-10-06T09:30:00Z",
+      "updatedAt": "2024-10-06T09:30:00Z"
+    },
+    {
+      "id": 14,
+      "pedidoId": 4,
+      "estado": "preparando",
+      "comentario": "Preparando productos",
+      "usuarioId": 2,
+      "createdAt": "2024-10-06T11:30:00Z",
+      "updatedAt": "2024-10-06T11:30:00Z"
+    }
+  ],
+  "cupones": [
+    {
+      "id": 1,
+      "codigo": "BIENVENIDO",
+      "descripcion": "Cupón de bienvenida para nuevos clientes - 10% de descuento",
+      "tipoDescuento": "porcentaje",
+      "valor": 10.00,
+      "montoMinimo": 50000,
+      "usosPorUsuario": 1,
+      "usosMaximos": 1000,
+      "usosActuales": 345,
+      "fechaInicio": "2024-01-01T00:00:00Z",
+      "fechaFin": "2024-12-31T23:59:59Z",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-10-06T12:00:00Z"
+    },
+    {
+      "id": 2,
+      "codigo": "CAVALLARO10",
+      "descripcion": "10% de descuento en toda la tienda",
+      "tipoDescuento": "porcentaje",
+      "valor": 10.00,
+      "montoMinimo": 100000,
+      "usosPorUsuario": 3,
+      "usosMaximos": 500,
+      "usosActuales": 187,
+      "fechaInicio": "2024-09-01T00:00:00Z",
+      "fechaFin": "2024-10-31T23:59:59Z",
+      "activo": true,
+      "createdAt": "2024-08-25T00:00:00Z",
+      "updatedAt": "2024-10-06T09:30:00Z"
+    },
+    {
+      "id": 3,
+      "codigo": "ENVIOGRATIS",
+      "descripcion": "Envío gratis en compras mayores a 150.000 Gs",
+      "tipoDescuento": "monto_fijo",
+      "valor": 20000,
+      "montoMinimo": 150000,
+      "usosPorUsuario": 1,
+      "usosMaximos": null,
+      "usosActuales": 523,
+      "fechaInicio": "2024-08-01T00:00:00Z",
+      "fechaFin": "2024-12-31T23:59:59Z",
+      "activo": true,
+      "createdAt": "2024-07-28T00:00:00Z",
+      "updatedAt": "2024-10-06T15:00:00Z"
+    },
+    {
+      "id": 4,
+      "codigo": "VERANO2024",
+      "descripcion": "Descuento especial de verano - 20.000 Gs de descuento",
+      "tipoDescuento": "monto_fijo",
+      "valor": 20000,
+      "montoMinimo": 80000,
+      "usosPorUsuario": 2,
+      "usosMaximos": 200,
+      "usosActuales": 156,
+      "fechaInicio": "2024-09-01T00:00:00Z",
+      "fechaFin": "2024-10-15T23:59:59Z",
+      "activo": true,
+      "createdAt": "2024-08-28T00:00:00Z",
+      "updatedAt": "2024-10-05T18:20:00Z"
+    },
+    {
+      "id": 5,
+      "codigo": "BLACKFRIDAY",
+      "descripcion": "Black Friday - 25% de descuento",
+      "tipoDescuento": "porcentaje",
+      "valor": 25.00,
+      "montoMinimo": 100000,
+      "usosPorUsuario": 1,
+      "usosMaximos": 1000,
+      "usosActuales": 0,
+      "fechaInicio": "2024-11-29T00:00:00Z",
+      "fechaFin": "2024-12-02T23:59:59Z",
+      "activo": false,
+      "createdAt": "2024-10-01T00:00:00Z",
+      "updatedAt": "2024-10-01T00:00:00Z"
+    }
+  ],
+  "usoCupones": [
+    {
+      "id": 1,
+      "cuponId": 1,
+      "usuarioId": 3,
+      "pedidoId": 1,
+      "montoDescuento": 12000,
+      "createdAt": "2024-09-01T10:30:00Z",
+      "updatedAt": "2024-09-01T10:30:00Z"
+    },
+    {
+      "id": 2,
+      "cuponId": 2,
+      "usuarioId": 3,
+      "pedidoId": 4,
+      "montoDescuento": 17300,
+      "createdAt": "2024-10-06T09:15:00Z",
+      "updatedAt": "2024-10-06T09:15:00Z"
+    }
+  ],
+  "resenas": [
+    {
+      "id": 1,
+      "productoId": 1,
+      "usuarioId": 3,
+      "pedidoId": 1,
+      "calificacion": 5,
+      "titulo": "Excelente jabón natural",
+      "comentario": "Me encanta este jabón! Deja la piel muy suave y con un aroma agradable. Lo recomiendo totalmente, es ideal para toda la familia.",
+      "aprobado": true,
+      "createdAt": "2024-09-07T10:15:00Z",
+      "updatedAt": "2024-09-07T14:00:00Z"
+    },
+    {
+      "id": 2,
+      "productoId": 4,
+      "usuarioId": 3,
+      "pedidoId": 1,
+      "calificacion": 5,
+      "titulo": "Muy buen producto",
+      "comentario": "Excelente jabón en polvo, limpia muy bien la ropa y no maltrata las prendas. El aroma es suave y agradable. Muy recomendable.",
+      "aprobado": true,
+      "createdAt": "2024-09-08T15:30:00Z",
+      "updatedAt": "2024-09-08T16:00:00Z"
+    },
+    {
+      "id": 3,
+      "productoId": 2,
+      "usuarioId": 4,
+      "pedidoId": 2,
+      "calificacion": 4,
+      "titulo": "Buen detergente",
+      "comentario": "Muy bueno para lavar los platos, elimina bien la grasa. El aroma a limón es fresco. Le doy 4 estrellas porque a veces hay que usar un poco más para platos muy grasosos.",
+      "aprobado": true,
+      "createdAt": "2024-10-05T11:20:00Z",
+      "updatedAt": "2024-10-05T14:30:00Z"
+    },
+    {
+      "id": 4,
+      "productoId": 3,
+      "usuarioId": 4,
+      "pedidoId": 2,
+      "calificacion": 5,
+      "titulo": "El mejor suavizante!",
+      "comentario": "La fragancia Clásico es mi favorita. Deja la ropa súper suave y el aroma dura muchísimo tiempo. Compro este producto siempre.",
+      "aprobado": true,
+      "createdAt": "2024-10-06T09:45:00Z",
+      "updatedAt": "2024-10-06T10:00:00Z"
+    },
+    {
+      "id": 5,
+      "productoId": 7,
+      "usuarioId": 4,
+      "pedidoId": 2,
+      "calificacion": 4,
+      "titulo": "Buenas esponjas",
+      "comentario": "Son resistentes y limpian bien. El pack de 6 rinde bastante. Buen precio calidad.",
+      "aprobado": true,
+      "createdAt": "2024-10-06T10:30:00Z",
+      "updatedAt": "2024-10-06T11:00:00Z"
+    },
+    {
+      "id": 6,
+      "productoId": 6,
+      "usuarioId": 3,
+      "pedidoId": 1,
+      "calificacion": 5,
+      "titulo": "Desinfecta muy bien",
+      "comentario": "Excelente lavandina, tiene buena concentración y desinfecta perfectamente. La uso para toda la casa.",
+      "aprobado": true,
+      "createdAt": "2024-09-09T14:00:00Z",
+      "updatedAt": "2024-09-09T15:30:00Z"
+    }
+  ],
+  "listaDeseos": [
+    {
+      "id": 1,
+      "usuarioId": 3,
+      "productoId": 5,
+      "createdAt": "2024-09-20T11:30:00Z",
+      "updatedAt": "2024-09-20T11:30:00Z"
+    },
+    {
+      "id": 2,
+      "usuarioId": 3,
+      "productoId": 8,
+      "createdAt": "2024-09-25T16:45:00Z",
+      "updatedAt": "2024-09-25T16:45:00Z"
+    },
+    {
+      "id": 3,
+      "usuarioId": 4,
+      "productoId": 4,
+      "createdAt": "2024-10-01T09:15:00Z",
+      "updatedAt": "2024-10-01T09:15:00Z"
+    },
+    {
+      "id": 4,
+      "usuarioId": 4,
+      "productoId": 6,
+      "createdAt": "2024-10-02T14:20:00Z",
+      "updatedAt": "2024-10-02T14:20:00Z"
+    },
+    {
+      "id": 5,
+      "usuarioId": 5,
+      "productoId": 1,
+      "createdAt": "2024-10-03T10:00:00Z",
+      "updatedAt": "2024-10-03T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "usuarioId": 5,
+      "productoId": 2,
+      "createdAt": "2024-10-03T10:05:00Z",
+      "updatedAt": "2024-10-03T10:05:00Z"
+    }
+  ],
+  "metodosEnvio": [
+    {
+      "id": 1,
+      "nombre": "Envío Estándar - Asunción y Gran Asunción",
+      "descripcion": "Entrega en 2-3 días hábiles para Asunción y zonas aledañas",
+      "costo": 15000,
+      "costoGratis": 200000,
+      "tiempoEstimado": "2-3 días hábiles",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-09-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "nombre": "Envío Express - Asunción",
+      "descripcion": "Entrega en 24 horas para Asunción",
+      "costo": 25000,
+      "costoGratis": 300000,
+      "tiempoEstimado": "24 horas",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-09-01T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "nombre": "Envío Interior del País",
+      "descripcion": "Entrega en 4-7 días hábiles para el interior del país",
+      "costo": 30000,
+      "costoGratis": 250000,
+      "tiempoEstimado": "4-7 días hábiles",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-09-01T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "nombre": "Retiro en Tienda",
+      "descripcion": "Retira tu pedido en nuestra tienda física sin costo",
+      "costo": 0,
+      "costoGratis": 0,
+      "tiempoEstimado": "Disponible en 1-2 días hábiles",
+      "activo": true,
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-09-01T00:00:00Z"
+    }
+  ],
+  "configuracionSitio": [
+    {
+      "id": 1,
+      "clave": "nombre_tienda",
+      "valor": "Cavallaro - Productos de Limpieza e Higiene",
+      "tipo": "texto",
+      "descripcion": "Nombre de la tienda",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 2,
+      "clave": "email_contacto",
+      "valor": "contacto@cavallaro.com.py",
+      "tipo": "texto",
+      "descripcion": "Email de contacto de la tienda",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 3,
+      "clave": "telefono_contacto",
+      "valor": "+595 21 123-4567",
+      "tipo": "texto",
+      "descripcion": "Teléfono de contacto",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 4,
+      "clave": "whatsapp",
+      "valor": "+595981234567",
+      "tipo": "texto",
+      "descripcion": "Número de WhatsApp",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 5,
+      "clave": "direccion_tienda",
+      "valor": "Av. Eusebio Ayala Km 4.5, Asunción, Paraguay",
+      "tipo": "texto",
+      "descripcion": "Dirección física de la tienda",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 6,
+      "clave": "moneda",
+      "valor": "PYG",
+      "tipo": "texto",
+      "descripcion": "Moneda del sistema",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 7,
+      "clave": "iva_porcentaje",
+      "valor": "10",
+      "tipo": "numero",
+      "descripcion": "Porcentaje de IVA",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 8,
+      "clave": "stock_bajo_notificar",
+      "valor": "true",
+      "tipo": "booleano",
+      "descripcion": "Notificar cuando el stock esté bajo",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 9,
+      "clave": "productos_relacionados_cantidad",
+      "valor": "4",
+      "tipo": "numero",
+      "descripcion": "Cantidad de productos relacionados a mostrar",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 10,
+      "clave": "tiempo_sesion_carrito",
+      "valor": "7",
+      "tipo": "numero",
+      "descripcion": "Días que dura el carrito sin actividad",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 11,
+      "clave": "horario_atencion",
+      "valor": "{\"lunes_viernes\": \"08:00-18:00\", \"sabados\": \"08:00-13:00\", \"domingos\": \"Cerrado\"}",
+      "tipo": "json",
+      "descripcion": "Horarios de atención de la tienda",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 12,
+      "clave": "metodos_pago_activos",
+      "valor": "{\"efectivo\": true, \"tarjeta\": true, \"transferencia\": true, \"paypal\": false}",
+      "tipo": "json",
+      "descripcion": "Métodos de pago habilitados",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-08-01T00:00:00Z"
+    },
+    {
+      "id": 13,
+      "clave": "redes_sociales",
+      "valor": "{\"facebook\": \"https://facebook.com/cavallaro.py\", \"instagram\": \"https://instagram.com/cavallaro.py\", \"twitter\": \"https://twitter.com/cavallaro_py\"}",
+      "tipo": "json",
+      "descripcion": "URLs de redes sociales",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    },
+    {
+      "id": 14,
+      "clave": "mensaje_banner_principal",
+      "valor": "¡Envío gratis en compras mayores a 200.000 Gs!",
+      "tipo": "texto",
+      "descripcion": "Mensaje del banner principal",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-09-01T00:00:00Z"
+    },
+    {
+      "id": 15,
+      "clave": "mantenimiento_activo",
+      "valor": "false",
+      "tipo": "booleano",
+      "descripcion": "Modo mantenimiento del sitio",
+      "createdAt": "2024-01-01T00:00:00Z",
+      "updatedAt": "2024-01-01T00:00:00Z"
+    }
+  ],
+  "banners": [
+  {
+    "id": 1,
+    "titulo": "¡Nueva Línea de Productos Cavallaro!",
+    "subtitulo": "Limpieza y frescura para tu hogar",
+    "imagenUrl": "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "imagenMobileUrl": "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "link": "/productos?destacado=true",
+    "textoBoton": "Ver Productos",
+    "tipoBoton": "primario",
+    "posicionTexto": "izquierda",
+    "colorTexto": "#FFFFFF",
+    "activo": true,
+    "orden": 1,
+    "fechaInicio": "2024-01-01T00:00:00Z",
+    "fechaFin": "2025-12-31T23:59:59Z",
+    "tipoDispositivo": "todos",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "titulo": "Hasta 25% OFF",
+    "subtitulo": "En productos seleccionados - Oferta por tiempo limitado",
+    "imagenUrl": "https://images.pexels.com/photos/6728992/pexels-photo-6728992.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "imagenMobileUrl": "https://images.pexels.com/photos/6728992/pexels-photo-6728992.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "link": "/productos?precioMax=50000",
+    "textoBoton": "Comprar Ahora",
+    "tipoBoton": "secundario",
+    "posicionTexto": "centro",
+    "colorTexto": "#FFFFFF",
+    "activo": true,
+    "orden": 2,
+    "fechaInicio": "2024-10-01T00:00:00Z",
+    "fechaFin": "2024-10-31T23:59:59Z",
+    "tipoDispositivo": "todos",
+    "createdAt": "2024-10-01T00:00:00Z",
+    "updatedAt": "2024-10-01T00:00:00Z"
+  },
+  {
+    "id": 3,
+    "titulo": "Jabones Naturales",
+    "subtitulo": "Con aceite de coco puro - Cuida tu piel",
+    "imagenUrl": "https://images.pexels.com/photos/4465831/pexels-photo-4465831.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "imagenMobileUrl": "https://images.pexels.com/photos/4465831/pexels-photo-4465831.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "link": "/productos/jabon-tocador-coco-cavallaro",
+    "textoBoton": "Conocer Más",
+    "tipoBoton": "outline",
+    "posicionTexto": "derecha",
+    "colorTexto": "#333333",
+    "activo": true,
+    "orden": 3,
+    "fechaInicio": null,
+    "fechaFin": null,
+    "tipoDispositivo": "todos",
+    "createdAt": "2024-02-15T00:00:00Z",
+    "updatedAt": "2024-02-15T00:00:00Z"
+  },
+  {
+    "id": 4,
+    "titulo": "Envío Gratis",
+    "subtitulo": "En compras mayores a 200.000 Gs",
+    "imagenUrl": "https://images.pexels.com/photos/4393426/pexels-photo-4393426.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "imagenMobileUrl": "https://images.pexels.com/photos/4393426/pexels-photo-4393426.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "link": "/productos",
+    "textoBoton": "Ver Catálogo",
+    "tipoBoton": "primario",
+    "posicionTexto": "centro",
+    "colorTexto": "#FFFFFF",
+    "activo": true,
+    "orden": 4,
+    "fechaInicio": null,
+    "fechaFin": null,
+    "tipoDispositivo": "desktop",
+    "createdAt": "2024-03-01T00:00:00Z",
+    "updatedAt": "2024-03-01T00:00:00Z"
+  }
+]
+}
+      
