@@ -87,6 +87,7 @@ const procesarCategorias = async (variantes) => {
         slug: catSlug,
         descripcion: catData?.description || '',
         imagenUrl: catData?.image || null,
+        bannerUrl: catData?.image2 || null,
         orden: 0,
         activo: true,
       },

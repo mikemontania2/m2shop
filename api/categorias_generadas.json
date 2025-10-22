@@ -4,6 +4,7 @@
     "name": "Cuidado De Las Prendas",
     "description": "",
     "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio2-411x330.jpg",
+    "image2": "https://www.cavallaro.com.py/userfiles/images/clasificaciones/cuidado-de-prendas.png",
     "subcategories": [
       {
         "id": "jabon-en-polvo",
@@ -42,6 +43,7 @@
     "name": "Limpieza Y Desinfeccion Del Hogar",
     "description": "",
     "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio-411x330.jpg",
+    "image2": "https://www.cavallaro.com.py/userfiles/images/clasificaciones/limpieza-y-desinfeccion-del-hogar.png", 
     "subcategories": [
       {
         "id": "detergente",
@@ -85,6 +87,8 @@
     "name": "Higiene Personal",
     "description": "",
     "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio-411x330-tocador.jpg",
+    "image2": "https://www.cavallaro.com.py/userfiles/images/clasificaciones/limpieza-y-desinfeccion-del-hogar.png",
+   
     "subcategories": [
       {
         "id": "coco-puro",

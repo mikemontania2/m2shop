@@ -24,6 +24,10 @@ const Categoria = sequelize.define('Categoria', {
     type: DataTypes.STRING(255),
     allowNull: true
   },
+   bannerUrl: {
+    type: DataTypes.STRING(255),
+    allowNull: true
+  }, 
   categoriasPadreId: {
     type: DataTypes.INTEGER,
     allowNull: true

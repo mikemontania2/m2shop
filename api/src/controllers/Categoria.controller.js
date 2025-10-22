@@ -36,6 +36,7 @@ const listar = async (req, res) => {
       name: cat.nombre,
       description: cat.descripcion || '',
       image: cat.imagenUrl || '',
+      bannerUrl: cat.bannerUrl || '',
       subcategories: (cat.subcategorias || []).map(sub => ({
         id: sub.slug,
         name: sub.nombre,

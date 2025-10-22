@@ -132,6 +132,17 @@ const HomePage: React.FC = () => {
         onProductClick={handleProductClick}
         onAddToCart={handleAddToCart}
       />
+    
+      {/* Banner medio entre Novedades y Destacados */}
+      <section className="mid-banner">
+        <div className="banner-image-container">
+          <img 
+            src="https://www.cavallaro.com.py/userfiles/images/banners/bannermedio1-12.png" 
+            alt="Banner promocional" 
+            className="banner-image"
+          />
+        </div>
+      </section>
 
       {/* Carrusel de Destacados */}
       <ProductCarousel
@@ -142,16 +153,32 @@ const HomePage: React.FC = () => {
         onAddToCart={handleAddToCart}
       />
 
-      {/* Carruseles por Categoría - uno para cada categoría */}
+      {/* Carruseles por Categoría - uno para cada categoría con su banner */}
       {categories.map((cat) => (
-        <ProductCarousel
-          key={cat.id}
-          title={cat.name}
-          products={categorizedProducts[cat.id] || []}
-          slideBy={1}
-          onProductClick={handleProductClick}
-          onAddToCart={handleAddToCart}
-        />
+        <div key={cat.id}>
+          {/* Banner de la categoría si existe */}
+          {cat.bannerUrl && (
+            <section className="category-banner">
+              <div className="banner-image-container">
+                <img 
+                  src={cat.bannerUrl} 
+                  alt={`Banner ${cat.name}`} 
+                  className="banner-image"
+                  onClick={() => handleCategoryClick(cat.id)}
+                />
+              </div>
+            </section>
+          )}
+          
+          {/* Carrusel de productos de la categoría */}
+          <ProductCarousel
+            title={cat.name}
+            products={categorizedProducts[cat.id] || []}
+            slideBy={1}
+            onProductClick={handleProductClick}
+            onAddToCart={handleAddToCart}
+          />
+        </div>
       ))}
 
       {/* Sección de Promociones / Beneficios */}

@@ -23,7 +23,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer; /* Added cursor pointer for clickable banners */
+  cursor: pointer;
 }
 
 .slide.active {
@@ -79,6 +79,38 @@
   background: var(--white);
 }
 
+/* Banner medio y banners de categorías */
+.mid-banner,
+.category-banner {
+  width: 100%;
+  margin: 40px 0;
+  overflow: hidden;
+}
+
+.banner-image-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.category-banner .banner-image {
+  cursor: pointer;
+}
+
+.category-banner .banner-image:hover {
+  transform: scale(1.02);
+}
+
 /* Categories Section */
 .categories-section {
   padding: 40px 0;
@@ -90,7 +122,6 @@
   gap: 25px;
 }
 
-/* Redesigned category cards with text below image */
 .category-card {
   display: flex;
   flex-direction: column;
@@ -126,8 +157,6 @@
   transform: scale(1.05);
 }
 
-/* Text below image - clean and readable */
-
 /* Promo Section */
 .promo-section {
   padding: 60px 0;
@@ -158,9 +187,10 @@
   color: var(--text-light);
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
   .hero-slider {
-    height: 250px; /* Reduced height for better mobile viewing */
+    height: 250px;
   }
 
   .slider-btn {
@@ -184,27 +214,31 @@
     height: 8px;
   }
 
-  .slide-content h2 {
-    font-size: 2rem;
-  }
-
-  .slide-content p {
-    font-size: 1.2rem;
-  }
-
-  /* Adjusted mobile category card height */
   .category-image {
     height: 220px;
   }
+
+  .mid-banner,
+  .category-banner {
+    margin: 20px 0;
+  }
+
+  .banner-image-container {
+    padding: 0 10px;
+  }
 }
 
-/* Added extra small mobile breakpoint for very small screens */
 @media (max-width: 480px) {
   .hero-slider {
-    height: 200px; /* Even smaller for very small screens */
+    height: 200px;
   }
 
   .slider-btn {
     padding: 8px;
+  }
+
+  .mid-banner,
+  .category-banner {
+    margin: 15px 0;
   }
 }
