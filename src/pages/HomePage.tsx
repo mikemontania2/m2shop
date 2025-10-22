@@ -1,8 +1,6 @@
-"use client"
-
 import type React from "react"
 import { useEffect, useMemo, useState } from "react"
-import productService, { type Product, type Category } from "../services/productService"
+import productService, { type Product } from "../services/productService"
 import bannerService, { type Banner } from "../services/BannerService"
 import ProductCarousel from "../components/ProductCarousel"
 import Newsletter from "../components/Newsletter"
@@ -11,22 +9,27 @@ import { useApp } from "../contexts/AppContext"
 import { useNavigate } from "react-router-dom"
 
 const HomePage: React.FC = () => {
-  const { addToCart } = useApp()
+  // 🎯 Obtener addToCart y categories del contexto (una sola fuente de verdad)
+  const { addToCart, categories } = useApp()
+  
+  // Estados locales de la página
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
   const [newProducts, setNewProducts] = useState<Product[]>([])
-  const [categories, setCategories] = useState<Category[]>([])
   const [banners, setBanners] = useState<Banner[]>([])
   const [currentSlide, setCurrentSlide] = useState(0)
+  
   const navigate = useNavigate()
 
+  // Cargar productos y banners al montar el componente
   useEffect(() => {
     const all = productService.getProducts()
     setFeaturedProducts(all.filter((p) => p.featured))
-    setNewProducts([...all].sort((a, b) => b.id - a.id).slice(0, 10))
-    setCategories(productService.getCategories())
+    setNewProducts([...all].sort((a, b) => b.id - a.id).slice(0, 10)) 
+    
     setBanners(bannerService.getBanners())
   }, [])
 
+  // Auto-play del slider de banners (cambiar cada 5 segundos)
   useEffect(() => {
     if (banners.length > 0) {
       const interval = setInterval(() => {
@@ -60,6 +63,8 @@ const HomePage: React.FC = () => {
     navigate(url)
   }
 
+  // 🎯 Memoizar productos por categoría usando categories del contexto
+  // Solo se recalcula cuando cambian las categorías (muy raramente)
   const categorizedProducts = useMemo(() => {
     const byCat: Record<string, Product[]> = {}
     categories.forEach((c) => {
@@ -70,6 +75,7 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="home-page">
+      {/* Hero Slider - Banners principales */}
       <section className="hero-slider">
         <div className="slider-container">
           {banners.map((banner, index) => (
@@ -81,10 +87,10 @@ const HomePage: React.FC = () => {
             ></div>
           ))}
         </div>
-        <button className="slider-btn prev" onClick={prevSlide}>
+        <button className="slider-btn prev" onClick={prevSlide} aria-label="Banner anterior">
           <ChevronLeft size={30} />
         </button>
-        <button className="slider-btn next" onClick={nextSlide}>
+        <button className="slider-btn next" onClick={nextSlide} aria-label="Siguiente banner">
           <ChevronRight size={30} />
         </button>
         <div className="slider-dots">
@@ -93,15 +99,18 @@ const HomePage: React.FC = () => {
               key={index}
               className={`dot ${index === currentSlide ? "active" : ""}`}
               onClick={() => setCurrentSlide(index)}
+              aria-label={`Ir al banner ${index + 1}`}
             />
           ))}
         </div>
       </section>
 
+      {/* Sección de Categorías */}
       <section className="categories-section">
         <div className="container">
           <h2 className="section-title">Categorías</h2>
           <div className="categories-grid">
+            {/* 🎯 Usar categories directamente del contexto */}
             {categories.map((category) => (
               <div key={category.id} className="category-card" onClick={() => handleCategoryClick(category.id)}>
                 <div className="category-image">
@@ -113,6 +122,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Carrusel de Novedades */}
       <ProductCarousel
         title="Novedades"
         products={newProducts}
@@ -123,6 +133,7 @@ const HomePage: React.FC = () => {
         onAddToCart={handleAddToCart}
       />
 
+      {/* Carrusel de Destacados */}
       <ProductCarousel
         title="Destacados"
         products={featuredProducts}
@@ -131,7 +142,7 @@ const HomePage: React.FC = () => {
         onAddToCart={handleAddToCart}
       />
 
-      {/* Sliders por Categoría */}
+      {/* Carruseles por Categoría - uno para cada categoría */}
       {categories.map((cat) => (
         <ProductCarousel
           key={cat.id}
@@ -143,6 +154,7 @@ const HomePage: React.FC = () => {
         />
       ))}
 
+      {/* Sección de Promociones / Beneficios */}
       <section className="promo-section">
         <div className="container">
           <div className="promo-grid">
@@ -166,6 +178,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
+      {/* Newsletter */}
       <Newsletter />
     </div>
   )

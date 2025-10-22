@@ -1,38 +1,8 @@
 import productsData from '../data/products.json';
 import categoriesData from '../data/categories.json';
+import { Product, Category, Subcategory } from '../interfaces/interfaces';
 
-export interface Product {
-  id: number;
-  name: string;
-  category: string;
-  subcategory?: string;
-  price: number;
-  originalPrice: number;
-  image: string;
-  images: string[];
-  description: string;
-  descripcion?: string;
-  propiedades?: string[];
-  usosRecomendados?: string[];
-  sizes: string[];
-  colors: string[];
-  featured: boolean;
-  stock: number;
-}
 
-export interface Subcategory {
-  id: string;
-  name: string;
-  description: string;
-}
-
-export interface Category {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  subcategories: Subcategory[];
-}
 
 class ProductService {
   private readProducts(): Product[] {
@@ -86,7 +56,8 @@ class ProductService {
   }
 
   getCategories(): Category[] {
-    return this.readCategories();
+    //return this.readCategories();
+    return [];
   }
 
   getCategoryById(id: string): Category | undefined {

@@ -1,67 +1,70 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import productService, { Product, Subcategory, Category } from '../services/productService';
+import productService, { Product } from '../services/productService';
 import ProductCard from '../components/ProductCard';
 import CategorySidebar, { CategoryItem } from '../components/CategorySidebar';
 import { useApp } from '../contexts/AppContext';
 
 const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
-  const { addToCart } = useApp();
+  // 🎯 Obtener categorías y addToCart del contexto
+  const { addToCart, categories } = useApp();
+  
+  // Estados locales para la página de categoría
   const [products, setProducts] = useState<Product[]>([]);
-  const [category, setCategory] = useState<any>(null);
-  const [subcategories, setSubcategories] = useState<Subcategory[]>([]);
-  const [subcategoryCounts, setSubcategoryCounts] = useState<Record<string, number>>({});
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
-  const [allCategories, setAllCategories] = useState<Category[]>([]);
   const [sortBy, setSortBy] = useState<string>('default');
-  const [filters, setFilters] = useState<{ priceMin?: number; priceMax?: number; featured?: boolean; inStock?: boolean; onSale?: boolean; }>({});
+  const [filters, setFilters] = useState<{ 
+    priceMin?: number; 
+    priceMax?: number; 
+    featured?: boolean; 
+    inStock?: boolean; 
+    onSale?: boolean; 
+  }>({});
+  
   const params = useParams();
   const navigate = useNavigate();
+
+  // Determinar el ID efectivo de la categoría según la ruta
   const effectiveCategoryId = useMemo(() => {
     if (categoryId && categoryId.length > 0) return categoryId;
     if (params.categoriaSlug) return params.categoriaSlug;
     if (params.subcategoriaSlug) {
-      // When we are in /catalogo/:subcategoriaSlug, infer base category from subcategory
-      const allCategories = productService.getCategories();
-      const found = allCategories.find(c => c.subcategories.some(s => s.id === params.subcategoriaSlug));
+      // Cuando estamos en /catalogo/:subcategoriaSlug, inferir categoría base desde subcategoría
+      // 🎯 Usar categorías del contexto en lugar de llamar al servicio
+      const found = categories.find(c => 
+        c.subcategories?.some(s => s.id === params.subcategoriaSlug)
+      );
       return found?.id || '';
     }
     return '';
-  }, [categoryId, params.categoriaSlug, params.subcategoriaSlug]);
+  }, [categoryId, params.categoriaSlug, params.subcategoriaSlug, categories]);
 
+  // 🎯 Obtener la categoría actual directamente del contexto
+  const category = useMemo(() => {
+    return categories.find(c => c.id === effectiveCategoryId) || null;
+  }, [categories, effectiveCategoryId]);
+
+  // 🎯 Obtener subcategorías directamente de la categoría (ya vienen en el array)
+  const subcategories = useMemo(() => {
+    return category?.subcategories || [];
+  }, [category]);
+
+  // Cargar productos cuando cambia la categoría o filtros
   useEffect(() => {
-    const categoryData = productService.getCategoryById(effectiveCategoryId);
-    setCategory(categoryData);
-
-    const subcats = productService.getSubcategoriesByCategory(effectiveCategoryId);
-    setSubcategories(subcats);
-
-    setAllCategories(productService.getCategories());
-
     setSelectedSubcategory(null);
     loadProducts(effectiveCategoryId, null, sortBy);
   }, [effectiveCategoryId]);
 
+  // Recargar productos cuando cambian los filtros o subcategoría
   useEffect(() => {
     loadProducts(effectiveCategoryId, selectedSubcategory, sortBy);
-  }, [effectiveCategoryId, selectedSubcategory, sortBy]);
+  }, [effectiveCategoryId, selectedSubcategory, sortBy, filters]);
 
-  useEffect(() => {
-    // Precompute product counts per subcategory for a nicer UI
-    if (!effectiveCategoryId || subcategories.length === 0) {
-      setSubcategoryCounts({});
-      return;
-    }
-    const counts: Record<string, number> = {};
-    subcategories.forEach((s) => {
-      counts[s.id] = productService.getProductsByCategory(effectiveCategoryId, s.id).length;
-    });
-    setSubcategoryCounts(counts);
-  }, [effectiveCategoryId, subcategories]);
-
+  // Cargar y filtrar productos
   const loadProducts = (catId: string, subcat: string | null, sort: string) => {
     let categoryProducts = productService.getProductsByCategory(catId, subcat || undefined);
-    // Apply filters
+    
+    // Aplicar filtros
     if (filters.priceMin !== undefined) {
       categoryProducts = categoryProducts.filter(p => p.price >= (filters.priceMin as number));
     }
@@ -78,6 +81,7 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
       categoryProducts = categoryProducts.filter(p => p.originalPrice > 0 && p.originalPrice > p.price);
     }
 
+    // Aplicar ordenamiento
     if (sort === 'price-asc') {
       categoryProducts = [...categoryProducts].sort((a, b) => a.price - b.price);
     } else if (sort === 'price-desc') {
@@ -107,17 +111,19 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
   };
 
   const handleCategoryTabClick = (catId: string) => {
-    // Reset selected subcategory when switching category
+    // Resetear subcategoría seleccionada al cambiar de categoría
     setSelectedSubcategory(null);
     navigate(`/${catId}`);
   };
 
+  // Si no se encuentra la categoría, mostrar mensaje
   if (!category) {
     return <div className="container"><p>Categoría no encontrada</p></div>;
   }
 
   return (
     <div className="category-page">
+      {/* Hero de la categoría */}
       <div className="category-hero" style={{ backgroundImage: `url(${category.image})` }}>
         <div className="category-hero-content">
           <h1>{category.name}</h1>
@@ -126,15 +132,17 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
       </div>
 
       <div className="container cv-container-with-sidebar">
-        <div className="category-layout" style={{ gridTemplateColumns: subcategories.length>0 ? '260px 1fr' : '1fr' }}>
-          {(subcategories.length > 0 || allCategories.length > 0) && (
+        <div className="category-layout" style={{ gridTemplateColumns: subcategories.length > 0 ? '260px 1fr' : '1fr' }}>
+          {/* Sidebar con categorías y subcategorías */}
+          {(subcategories.length > 0 || categories.length > 0) && (
             <aside className="category-sidebar">
               <CategorySidebar
-                categories={allCategories.map((c) => ({
+                categories={categories.map((c) => ({
                   id: c.id,
                   name: c.name,
                   count: productService.getProductsByCategory(c.id).length,
-                  subCategories: productService.getSubcategoriesByCategory(c.id).map((s) => ({
+                  // 🎯 Usar directamente las subcategorías que ya vienen en el array
+                  subCategories: (c.subcategories || []).map((s) => ({
                     id: s.id,
                     name: s.name,
                     count: productService.getProductsByCategory(c.id, s.id).length,
@@ -144,11 +152,14 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
                 selectedSubCategory={selectedSubcategory || undefined}
                 onCategorySelect={(catId) => handleCategoryTabClick(catId)}
                 onSubCategorySelect={(_catId, subId) => handleSubcategoryClick(subId)}
-                onApplyFilters={(f) => { setFilters(f); loadProducts(effectiveCategoryId, selectedSubcategory, sortBy); }}
+                onApplyFilters={(f) => { 
+                  setFilters(f); 
+                }}
               />
             </aside>
           )}
 
+          {/* Contenido principal con productos */}
           <div className="category-main-content">
             <div className="category-toolbar">
               <div className="product-count">

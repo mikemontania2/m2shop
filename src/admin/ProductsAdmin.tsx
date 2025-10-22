@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import productService, { Product, Category } from '../services/productService';
+import productService, { Product  } from '../services/productService';
+import { useApp } from '../contexts/AppContext';
 
 const emptyProduct = (nextId: number): Product => ({
   id: nextId,
@@ -22,7 +23,7 @@ const emptyProduct = (nextId: number): Product => ({
 
 const ProductsAdmin: React.FC = () => {
   const [products, setProducts] = useState<Product[]>(productService.getProducts());
-  const [categories] = useState<Category[]>(productService.getCategories());
+  const {   categories } = useApp();
   const [editing, setEditing] = useState<Product | null>(null);
 
   const nextId = useMemo(() => (products.reduce((m, p) => Math.max(m, p.id), 0) + 1), [products]);

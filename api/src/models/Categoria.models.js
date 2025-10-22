@@ -41,5 +41,9 @@ const Categoria = sequelize.define('Categoria', {
   timestamps: true,
   underscored: true
 });
+Categoria.hasMany(Categoria, {
+  as: "subcategorias",
+  foreignKey: "categoriasPadreId"
+});
 Categoria.belongsTo(Categoria, { as: 'CategoriaPadre', foreignKey: 'categoriasPadreId' }); 
 module.exports = Categoria;

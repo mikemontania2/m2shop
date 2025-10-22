@@ -1,7 +1,5 @@
-"use client"
-
-import React, { useState } from "react"
-import productService, { type Category } from "../services/productService"
+import React from "react"
+import { useApp } from "../contexts/AppContext"
 import DepartmentsMenu from "./DepartmentsMenu"
 import HeaderLogo from "./header/HeaderLogo"
 import SearchBar from "./header/SearchBar"
@@ -10,12 +8,9 @@ import CartButton from "./header/CartButton"
 import MobileSearchBar from "./header/MobileSearchBar"
 
 const Header: React.FC = () => {
-  const [navCategories, setNavCategories] = useState<Category[]>([])
-
-  // Load categories for nav
-  React.useEffect(() => {
-    setNavCategories(productService.getCategories())
-  }, [])
+  // 🎯 Obtener categorías directamente del contexto global
+  // Ya NO necesitamos useState ni useEffect aquí
+  const { categories, categoriesLoading } = useApp()
 
   return (
     <>
@@ -25,7 +20,8 @@ const Header: React.FC = () => {
             <div className="header-main-content">
               <div className="header-left">
                 <HeaderLogo />
-                <DepartmentsMenu categories={navCategories} />
+                {/* Solo mostrar el menú cuando las categorías ya están cargadas */}
+                {!categoriesLoading && <DepartmentsMenu categories={categories} />}
               </div>
 
               <SearchBar />

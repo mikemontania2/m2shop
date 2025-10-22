@@ -3,24 +3,23 @@
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import type { Category } from "../../services/productService"
 import productService from "../../services/productService"
 import MobileSidebar from "./MobileSidebar"
+import { useApp } from "../../contexts/AppContext"
 
-interface MainNavProps {
-  categories?: Category[]
+interface MainNavProps { 
   mobileActive?: boolean
   onCloseMobile?: () => void
 }
 
-const MainNav: React.FC<MainNavProps> = ({ categories, mobileActive, onCloseMobile }) => {
+const MainNav: React.FC<MainNavProps> = ({   mobileActive, onCloseMobile }) => {
   const navigate = useNavigate()
   const [hidden, setHidden] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [offsetTop, setOffsetTop] = useState<number>(0)
   const lastScroll = useRef<number>(0)
   const [mobileActiveInternal, setMobileActiveInternal] = useState(false)
-  const [cats, setCats] = useState<Category[]>(categories ?? [])
+const { categories  } = useApp() // ✅ Directo del contexto
 
   useEffect(() => {
     const measure = () => {
@@ -45,13 +44,7 @@ const MainNav: React.FC<MainNavProps> = ({ categories, mobileActive, onCloseMobi
     return () => window.removeEventListener("scroll", onScroll)
   }, [mobileActive, mobileActiveInternal, offsetTop])
 
-  useEffect(() => {
-    if (!categories || categories.length === 0) {
-      setCats(productService.getCategories())
-    } else {
-      setCats(categories)
-    }
-  }, [categories])
+ 
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -73,14 +66,14 @@ const MainNav: React.FC<MainNavProps> = ({ categories, mobileActive, onCloseMobi
   }
 
   if (!isDesktop) {
-    return <MobileSidebar isOpen={isMobileActive} onClose={handleClose} categories={cats} />
+    return <MobileSidebar isOpen={isMobileActive} onClose={handleClose} categories={categories} />
   }
 
   return (
     <nav className={`main-nav ${hidden ? "nav-hidden" : ""} ${scrolled ? "scrolled" : ""}`}>
       <div className="container">
         <ul className="nav-list nav-scrollable">
-          {cats.map((c) => (
+          {categories.map((c) => (
             <li key={c.id} className="nav-item">
               <Link to={`/${c.id}`} className="nav-link" onClick={() => onCloseMobile?.()}>
                 {c.name}
