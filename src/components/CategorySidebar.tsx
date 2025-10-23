@@ -136,15 +136,7 @@ export const CategorySidebar: React.FC<CategorySidebarProps> = ({
             </label>
           </div>
           
-          <div className="filters-row">
-            <label className="check">
-              <input 
-                type="checkbox" 
-                checked={inStockOnly} 
-                onChange={(e) => setInStockOnly(e.target.checked)} 
-              /> 
-              En stock
-            </label>
+          <div className="filters-row"> 
             <label className="check">
               <input 
                 type="checkbox" 

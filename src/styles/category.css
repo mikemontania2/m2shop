@@ -2,38 +2,7 @@
 .category-page {
   padding-bottom: 40px;
 }
-
-.category-hero {
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.category-hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.category-hero-content {
-  position: relative;
-  text-align: center;
-  color: var(--white);
-  z-index: 1;
-}
-
-.category-hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
+ 
 
 .category-layout {
   display: grid;
@@ -54,8 +23,7 @@
   background: var(--white);
   border: 1px solid #e8e8e8;
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden; 
 }
 
 .category-sidebar-header {

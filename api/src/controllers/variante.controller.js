@@ -32,16 +32,17 @@ const aplicarDescuento = (precio, precioOriginal, descuento) => {
   let finalPrice = parseFloat(precio);
   let originalPrice = parseFloat(precioOriginal) || 0;
 
-  if (descuento) {
+  if (descuento && descuento.tipo === 'PRODUCTO') {
     if (!originalPrice) {
       originalPrice = finalPrice;
     }
 
-    if (descuento.tipo === 'IMPORTE') {
+   /* if (descuento.tipo === 'IMPORTE') {
       finalPrice = Math.max(0, finalPrice - parseFloat(descuento.valor));
-    } else if (descuento.tipo === 'PRODUCTO') {
+    } else */
+     
       finalPrice = finalPrice * (1 - parseFloat(descuento.valor) / 100);
-    }
+   
   }
 
   return {
@@ -58,7 +59,7 @@ const transformarAProductCard = (variantes, descuentosMap) => {
     const descuento = descuentosMap.get(v.id);
     const { price, originalPrice } = aplicarDescuento(
       v.precio,
-      v.precioOriginal,
+      0,
       descuento
     );
 
@@ -68,7 +69,7 @@ const transformarAProductCard = (variantes, descuentosMap) => {
       slug: v.slug,
       image: v.imagenUrl,
       price,
-      featured:v.novedades,
+      featured:v.destacado,
       news:v.nuevo,
       originalPrice,
       stock: v.stock

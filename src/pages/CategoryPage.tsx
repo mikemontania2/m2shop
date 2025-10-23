@@ -212,14 +212,7 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
   return (
     <div className="category-page">
       {/* Hero de la categoría */}
-      {category && (
-        <div className="category-hero" style={{ backgroundImage: `url(${category.image})` }}>
-          <div className="category-hero-content">
-            <h1>{category.name}</h1>
-            <p>{category.description}</p>
-          </div>
-        </div>
-      )}
+   
 
       <div className="container cv-container-with-sidebar">
         <div 
