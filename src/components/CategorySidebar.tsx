@@ -22,7 +22,14 @@ interface CategorySidebarProps {
   onSubCategorySelect?: (categoryId: string, subCategoryId: string) => void;
   className?: string;
   // New optional filter hooks
-  onApplyFilters?: (filters: { priceMin?: number; priceMax?: number; featured?: boolean; inStock?: boolean; onSale?: boolean; }) => void;
+  onApplyFilters?: (filters: { 
+    priceMin?: number; 
+    priceMax?: number; 
+    featured?: boolean; 
+    news?: boolean;
+    inStock?: boolean; 
+    onSale?: boolean; 
+  }) => void;
 }
 
 const cn = (...classes: Array<string | false | undefined>) => classes.filter(Boolean).join(' ');
@@ -41,6 +48,7 @@ export const CategorySidebar: React.FC<CategorySidebarProps> = ({
   const [priceMin, setPriceMin] = useState<string>('');
   const [priceMax, setPriceMax] = useState<string>('');
   const [featuredOnly, setFeaturedOnly] = useState(false);
+  const [newsOnly, setNewsOnly] = useState(false);
   const [inStockOnly, setInStockOnly] = useState(false);
   const [onSaleOnly, setOnSaleOnly] = useState(false);
 
@@ -56,6 +64,27 @@ export const CategorySidebar: React.FC<CategorySidebarProps> = ({
     if (cat?.subCategories && cat.subCategories.length > 0) toggleCategory(categoryId);
   };
 
+  const handleClearFilters = () => {
+    setPriceMin('');
+    setPriceMax('');
+    setFeaturedOnly(false);
+    setNewsOnly(false);
+    setInStockOnly(false);
+    setOnSaleOnly(false);
+    onApplyFilters?.({});
+  };
+
+  const handleApplyFilters = () => {
+    onApplyFilters?.({
+      priceMin: priceMin ? parseInt(priceMin) : undefined,
+      priceMax: priceMax ? parseInt(priceMax) : undefined,
+      featured: featuredOnly || undefined,
+      news: newsOnly || undefined,
+      inStock: inStockOnly || undefined,
+      onSale: onSaleOnly || undefined,
+    });
+  };
+
   return (
     <div className={cn('category-sidebar-panel', className)}>
       <div className="category-sidebar-header">
@@ -64,48 +93,85 @@ export const CategorySidebar: React.FC<CategorySidebarProps> = ({
           <SlidersHorizontal size={16} /> Filtros
         </button>
       </div>
+      
       {showFilters && (
         <div className="filters-panel">
           <div className="filters-row">
             <div className="filter-field">
               <label>Precio mín.</label>
-              <input type="number" value={priceMin} onChange={(e) => setPriceMin(e.target.value)} placeholder="0" />
+              <input 
+                type="number" 
+                value={priceMin} 
+                onChange={(e) => setPriceMin(e.target.value)} 
+                placeholder="0" 
+              />
             </div>
             <div className="filter-field">
               <label>Precio máx.</label>
-              <input type="number" value={priceMax} onChange={(e) => setPriceMax(e.target.value)} placeholder="999999" />
+              <input 
+                type="number" 
+                value={priceMax} 
+                onChange={(e) => setPriceMax(e.target.value)} 
+                placeholder="999999" 
+              />
             </div>
           </div>
+          
           <div className="filters-row">
-            <label className="check"><input type="checkbox" checked={featuredOnly} onChange={(e) => setFeaturedOnly(e.target.checked)} /> Destacados</label>
-            <label className="check"><input type="checkbox" checked={inStockOnly} onChange={(e) => setInStockOnly(e.target.checked)} /> En stock</label>
-            <label className="check"><input type="checkbox" checked={onSaleOnly} onChange={(e) => setOnSaleOnly(e.target.checked)} /> En oferta</label>
+            <label className="check">
+              <input 
+                type="checkbox" 
+                checked={featuredOnly} 
+                onChange={(e) => setFeaturedOnly(e.target.checked)} 
+              /> 
+              Destacados
+            </label>
+            <label className="check">
+              <input 
+                type="checkbox" 
+                checked={newsOnly} 
+                onChange={(e) => setNewsOnly(e.target.checked)} 
+              /> 
+              Novedades
+            </label>
           </div>
+          
+          <div className="filters-row">
+            <label className="check">
+              <input 
+                type="checkbox" 
+                checked={inStockOnly} 
+                onChange={(e) => setInStockOnly(e.target.checked)} 
+              /> 
+              En stock
+            </label>
+            <label className="check">
+              <input 
+                type="checkbox" 
+                checked={onSaleOnly} 
+                onChange={(e) => setOnSaleOnly(e.target.checked)} 
+              /> 
+              En oferta
+            </label>
+          </div>
+          
           <div className="filters-actions">
             <button
               className="btn-secondary"
-              onClick={() => {
-                setPriceMin(''); setPriceMax(''); setFeaturedOnly(false); setInStockOnly(false); setOnSaleOnly(false);
-                onApplyFilters?.({});
-              }}
+              onClick={handleClearFilters}
             >
               Limpiar
             </button>
             <button
               className="btn-primary"
-              onClick={() => onApplyFilters?.({
-                priceMin: priceMin ? parseInt(priceMin) : undefined,
-                priceMax: priceMax ? parseInt(priceMax) : undefined,
-                featured: featuredOnly || undefined,
-                inStock: inStockOnly || undefined,
-                onSale: onSaleOnly || undefined,
-              })}
+              onClick={handleApplyFilters}
             >
               Aplicar filtros
             </button>
           </div>
         </div>
       )}
+      
       <div className="category-sidebar-scroll">
         <div className="category-sidebar-content">
           {categories.map((cat) => {

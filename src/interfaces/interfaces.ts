@@ -1,4 +1,4 @@
-export interface Product {
+export interface ProductCompleto {
   id: number;
   name: string;
   category: string;
@@ -15,19 +15,4 @@ export interface Product {
   colors: string[];
   featured: boolean;
   stock: number;
-}
-
-export interface Subcategory {
-  id: string;
-  name: string;
-  description: string;
-}
-
-export interface Category {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  bannerUrl: string;
-  subcategories: Subcategory[];
 }

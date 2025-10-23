@@ -1,5 +1,5 @@
-import { API_BASE_URL } from "../Config";
-import { Category } from "../interfaces/interfaces";
+import { API_BASE_URL } from "../Config"; 
+import { Category } from "../interfaces/Categorias.interface";
 
 // ========== INTERFACES PARA EL BACKEND ==========
 

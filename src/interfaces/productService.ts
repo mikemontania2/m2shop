@@ -1,15 +1,16 @@
 import productsData from '../data/products.json';
-import categoriesData from '../data/categories.json'; 
-import { ProductCompleto } from '../interfaces/interfaces';
-import { Category, Subcategory } from '../interfaces/Categorias.interface';
+import categoriesData from '../data/categories.json';
+import { Product, Category, Subcategory } from '../interfaces/interfaces';
+
+
 
 class ProductService {
-  private readProducts(): ProductCompleto[] {
+  private readProducts(): Product[] {
     const saved = localStorage.getItem('products');
-    return saved ? (JSON.parse(saved) as ProductCompleto[]) : (productsData as ProductCompleto[]);
+    return saved ? (JSON.parse(saved) as Product[]) : (productsData as Product[]);
   }
 
-  private writeProducts(list: ProductCompleto[]): void {
+  private writeProducts(list: Product[]): void {
     localStorage.setItem('products', JSON.stringify(list));
   }
 
@@ -22,16 +23,16 @@ class ProductService {
     localStorage.setItem('categories', JSON.stringify(list));
   }
 
-  getProducts(): ProductCompleto[] {
+  getProducts(): Product[] {
     return this.readProducts();
   }
 
-  getProductById(id: number): ProductCompleto | undefined {
-    return this.readProducts().find(p => p.id === id) as ProductCompleto | undefined;
+  getProductById(id: number): Product | undefined {
+    return this.readProducts().find(p => p.id === id) as Product | undefined;
   }
 
-  getProductsByCategory(category: string, subcategory?: string): ProductCompleto[] {
-    let products = this.readProducts().filter(p => p.category === category) as ProductCompleto[];
+  getProductsByCategory(category: string, subcategory?: string): Product[] {
+    let products = this.readProducts().filter(p => p.category === category) as Product[];
 
     if (subcategory) {
       products = products.filter(p => p.subcategory === subcategory);
@@ -40,18 +41,18 @@ class ProductService {
     return products;
   }
 
-  getFeaturedProducts(): ProductCompleto[] {
-    return this.readProducts().filter(p => p.featured) as ProductCompleto[];
+  getFeaturedProducts(): Product[] {
+    return this.readProducts().filter(p => p.featured) as Product[];
   }
 
-  searchProducts(query: string): ProductCompleto[] {
+  searchProducts(query: string): Product[] {
     const lowerQuery = query.toLowerCase();
     return this.readProducts().filter(p =>
       p.name.toLowerCase().includes(lowerQuery) ||
       p.description.toLowerCase().includes(lowerQuery) ||
       p.category.toLowerCase().includes(lowerQuery) ||
       (p.subcategory && p.subcategory.toLowerCase().includes(lowerQuery))
-    ) as ProductCompleto[];
+    ) as Product[];
   }
 
   getCategories(): Category[] {
@@ -69,7 +70,7 @@ class ProductService {
   }
 
   // Mutations for admin (examples)
-  upsertProduct(product: ProductCompleto): void {
+  upsertProduct(product: Product): void {
     const list = this.readProducts();
     const idx = list.findIndex(p => p.id === product.id);
     if (idx >= 0) list[idx] = product; else list.push(product);

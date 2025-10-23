@@ -68,6 +68,8 @@ const transformarAProductCard = (variantes, descuentosMap) => {
       slug: v.slug,
       image: v.imagenUrl,
       price,
+      featured:v.novedades,
+      news:v.nuevo,
       originalPrice,
       stock: v.stock
     };
@@ -88,7 +90,7 @@ const getDestacados = async (req, res) => {
         activo: true,
         destacado: true
       },
-      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock'],
+      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
       order: [['created_at', 'DESC']],
       limit,
       offset,
@@ -130,8 +132,8 @@ const getNovedades = async (req, res) => {
     const offset = (page - 1) * limit;
 
     const { count, rows } = await Variante.findAndCountAll({
-      where: { activo: true },
-      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock'],
+      where: { activo: true, nuevo:true },
+      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
       order: [['created_at', 'DESC']],
       limit,
       offset,
@@ -173,9 +175,10 @@ const getByCategoria = async (req, res) => {
     const limit = parseInt(req.query.limit) || 12;
     const offset = (page - 1) * limit;
 
+    // Traer la categoría o subcategoría por slug
     const categoria = await Categoria.findOne({
       where: { slug, activo: true },
-      attributes: ['id', 'nombre', 'slug'],
+      attributes: ['id', 'nombre', 'slug', 'categoriasPadreId'],
       raw: true
     });
 
@@ -186,16 +189,23 @@ const getByCategoria = async (req, res) => {
       });
     }
 
+    // Determinar si es categoría o subcategoría
+    const esSubcategoria = categoria.categoriasPadreId !== null;
+
+    const whereProducto = { activo: true };
+    if (esSubcategoria) {
+      whereProducto.subcategoriaId = categoria.id;
+    } else {
+      whereProducto.categoriaId = categoria.id;
+    }
+
     const { count, rows } = await Variante.findAndCountAll({
       where: { activo: true },
-      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock'],
+      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
       include: [{
         model: Producto,
         as: 'producto',
-        where: { 
-          activo: true,
-          categoriaId: categoria.id
-        },
+        where: whereProducto,
         attributes: [],
         required: true
       }],
@@ -220,6 +230,7 @@ const getByCategoria = async (req, res) => {
         limit
       }
     });
+
   } catch (error) {
     console.error('Error al obtener productos por categoría:', error);
     res.status(500).json({
@@ -229,6 +240,7 @@ const getByCategoria = async (req, res) => {
     });
   }
 };
+
 module.exports = {
   getDestacados,
   getNovedades,

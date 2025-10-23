@@ -1,22 +1,29 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import productService, { Product } from '../services/productService';
+import { getByCategoria } from '../services/productos.service';
 import ProductCard from '../components/ProductCard';
 import CategorySidebar, { CategoryItem } from '../components/CategorySidebar';
 import { useApp } from '../contexts/AppContext';
+import { Product } from '../interfaces/Productos.interface';
 
 const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
-  // 🎯 Obtener categorías y addToCart del contexto
   const { addToCart, categories } = useApp();
   
-  // Estados locales para la página de categoría
+  // Estados para productos y paginación
   const [products, setProducts] = useState<Product[]>([]);
+  const [allProducts, setAllProducts] = useState<Product[]>([]); // Todos los productos sin filtrar
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [categoryInfo, setCategoryInfo] = useState<any>(null);
+  
+  // Estados de filtros y ordenamiento
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<string>('default');
   const [filters, setFilters] = useState<{ 
     priceMin?: number; 
     priceMax?: number; 
-    featured?: boolean; 
+    featured?: boolean;
+    news?: boolean;
     inStock?: boolean; 
     onSale?: boolean; 
   }>({});
@@ -24,137 +31,211 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
   const params = useParams();
   const navigate = useNavigate();
 
-  // Determinar el ID efectivo de la categoría según la ruta
-  const effectiveCategoryId = useMemo(() => {
+  // Determinar el slug efectivo según la ruta
+  const effectiveSlug = useMemo(() => {
     if (categoryId && categoryId.length > 0) return categoryId;
     if (params.categoriaSlug) return params.categoriaSlug;
-    if (params.subcategoriaSlug) {
-      // Cuando estamos en /catalogo/:subcategoriaSlug, inferir categoría base desde subcategoría
-      // 🎯 Usar categorías del contexto en lugar de llamar al servicio
-      const found = categories.find(c => 
-        c.subcategories?.some(s => s.id === params.subcategoriaSlug)
-      );
-      return found?.id || '';
-    }
+    if (params.subcategoriaSlug) return params.subcategoriaSlug;
     return '';
-  }, [categoryId, params.categoriaSlug, params.subcategoriaSlug, categories]);
+  }, [categoryId, params.categoriaSlug, params.subcategoriaSlug]);
 
-  // 🎯 Obtener la categoría actual directamente del contexto
+  // Obtener la categoría del contexto
   const category = useMemo(() => {
-    return categories.find(c => c.id === effectiveCategoryId) || null;
-  }, [categories, effectiveCategoryId]);
+    const foundInMain = categories.find(c => c.id === effectiveSlug);
+    if (foundInMain) return foundInMain;
+    
+    // Buscar en subcategorías
+    for (const cat of categories) {
+      const foundSub = cat.subcategories?.find((s:any) => s.id === effectiveSlug);
+      if (foundSub) {
+        return {
+          ...foundSub,
+          parentCategory: cat
+        };
+      }
+    }
+    return null;
+  }, [categories, effectiveSlug]);
 
-  // 🎯 Obtener subcategorías directamente de la categoría (ya vienen en el array)
+  // Obtener subcategorías
   const subcategories = useMemo(() => {
+    if (category?.parentCategory) {
+      // Si estamos en una subcategoría, mostrar las hermanas
+      return category.parentCategory.subcategories || [];
+    }
+    // Si es categoría principal, mostrar sus subcategorías
     return category?.subcategories || [];
   }, [category]);
 
-  // Cargar productos cuando cambia la categoría o filtros
-  useEffect(() => {
-    setSelectedSubcategory(null);
-    loadProducts(effectiveCategoryId, null, sortBy);
-  }, [effectiveCategoryId]);
-
-  // Recargar productos cuando cambian los filtros o subcategoría
-  useEffect(() => {
-    loadProducts(effectiveCategoryId, selectedSubcategory, sortBy);
-  }, [effectiveCategoryId, selectedSubcategory, sortBy, filters]);
-
-  // Cargar y filtrar productos
-  const loadProducts = (catId: string, subcat: string | null, sort: string) => {
-    let categoryProducts = productService.getProductsByCategory(catId, subcat || undefined);
+  // Cargar productos desde el API
+  const loadProductsFromAPI = async (slug: string) => {
+    if (!slug) return;
     
-    // Aplicar filtros
+    setLoading(true);
+    setError(null);
+    
+    try {
+      // Usar limit alto para obtener todos los productos de la categoría
+      const response = await getByCategoria(slug, 1, 999);
+      
+      if (response.success) {
+        setCategoryInfo(response.categoria);
+        setAllProducts(response.productos);
+        setProducts(response.productos);
+      } else {
+        setError('No se pudieron cargar los productos');
+        setAllProducts([]);
+        setProducts([]);
+      }
+    } catch (err) {
+      console.error('Error al cargar productos:', err);
+      setError('Error al cargar los productos. Por favor, intenta de nuevo.');
+      setAllProducts([]);
+      setProducts([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Aplicar filtros y ordenamiento localmente
+  const applyFiltersAndSort = () => {
+    let filtered = [...allProducts];
+    
+    // Aplicar filtros de precio
     if (filters.priceMin !== undefined) {
-      categoryProducts = categoryProducts.filter(p => p.price >= (filters.priceMin as number));
+      filtered = filtered.filter(p => p.price >= (filters.priceMin as number));
     }
     if (filters.priceMax !== undefined) {
-      categoryProducts = categoryProducts.filter(p => p.price <= (filters.priceMax as number));
+      filtered = filtered.filter(p => p.price <= (filters.priceMax as number));
     }
+    
+    // Aplicar filtros booleanos
     if (filters.featured) {
-      categoryProducts = categoryProducts.filter(p => p.featured);
+      filtered = filtered.filter(p => p.featured);
+    }
+    if (filters.news) {
+      filtered = filtered.filter(p => p.news);
     }
     if (filters.inStock) {
-      categoryProducts = categoryProducts.filter(p => p.stock > 0);
+      filtered = filtered.filter(p => p.stock > 0);
     }
     if (filters.onSale) {
-      categoryProducts = categoryProducts.filter(p => p.originalPrice > 0 && p.originalPrice > p.price);
+      filtered = filtered.filter(p => p.originalPrice > 0 && p.originalPrice > p.price);
     }
 
     // Aplicar ordenamiento
-    if (sort === 'price-asc') {
-      categoryProducts = [...categoryProducts].sort((a, b) => a.price - b.price);
-    } else if (sort === 'price-desc') {
-      categoryProducts = [...categoryProducts].sort((a, b) => b.price - a.price);
-    } else if (sort === 'name') {
-      categoryProducts = [...categoryProducts].sort((a, b) => a.name.localeCompare(b.name));
+    if (sortBy === 'price-asc') {
+      filtered = filtered.sort((a, b) => a.price - b.price);
+    } else if (sortBy === 'price-desc') {
+      filtered = filtered.sort((a, b) => b.price - a.price);
+    } else if (sortBy === 'name') {
+      filtered = filtered.sort((a, b) => a.name.localeCompare(b.name));
     }
 
-    setProducts(categoryProducts);
+    setProducts(filtered);
   };
+
+  // Cargar productos cuando cambia el slug
+  useEffect(() => {
+    setSelectedSubcategory(null);
+    setFilters({});
+    setSortBy('default');
+    loadProductsFromAPI(effectiveSlug);
+  }, [effectiveSlug]);
+
+  // Aplicar filtros cuando cambian
+  useEffect(() => {
+    applyFiltersAndSort();
+  }, [filters, sortBy, allProducts]);
 
   const handleProductClick = (productId: number) => {
     navigate(`/producto/${productId}`);
   };
 
   const handleAddToCart = (product: Product, quantity: number) => {
-    addToCart(product, quantity, product.sizes[0], product.colors[0]);
+    addToCart(product, quantity, 'presentacion', 'variedad');
   };
 
   const handleSubcategoryClick = (subcategoryId: string | null) => {
     setSelectedSubcategory(subcategoryId);
     if (subcategoryId) {
       navigate(`/catalogo/${subcategoryId}`);
-    } else if (effectiveCategoryId) {
-      navigate(`/${effectiveCategoryId}`);
+    } else if (category?.parentCategory) {
+      navigate(`/${category.parentCategory.id}`);
+    } else if (effectiveSlug) {
+      navigate(`/${effectiveSlug}`);
     }
   };
 
   const handleCategoryTabClick = (catId: string) => {
-    // Resetear subcategoría seleccionada al cambiar de categoría
     setSelectedSubcategory(null);
     navigate(`/${catId}`);
   };
 
-  // Si no se encuentra la categoría, mostrar mensaje
-  if (!category) {
-    return <div className="container"><p>Categoría no encontrada</p></div>;
+  // Calcular contadores para el sidebar
+  const categoriesWithCounts = useMemo(() => {
+    return categories.map((c) => ({
+      id: c.id,
+      name: c.name,
+      count: c.count, // Podrías calcular esto si necesitas
+      subCategories: (c.subcategories || []).map((s:any) => ({
+        id: s.id,
+        name: s.name,
+        count: s.count
+      }))
+    })) as CategoryItem[];
+  }, [categories]);
+
+  // Si hay error
+  if (error) {
+    return (
+      <div className="container">
+        <div className="error-state">
+          <p>{error}</p>
+          <button onClick={() => loadProductsFromAPI(effectiveSlug)}>
+            Reintentar
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Si no se encuentra la categoría
+  if (!loading && !category) {
+    return (
+      <div className="container">
+        <p>Categoría no encontrada</p>
+      </div>
+    );
   }
 
   return (
     <div className="category-page">
       {/* Hero de la categoría */}
-      <div className="category-hero" style={{ backgroundImage: `url(${category.image})` }}>
-        <div className="category-hero-content">
-          <h1>{category.name}</h1>
-          <p>{category.description}</p>
+      {category && (
+        <div className="category-hero" style={{ backgroundImage: `url(${category.image})` }}>
+          <div className="category-hero-content">
+            <h1>{category.name}</h1>
+            <p>{category.description}</p>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="container cv-container-with-sidebar">
-        <div className="category-layout" style={{ gridTemplateColumns: subcategories.length > 0 ? '260px 1fr' : '1fr' }}>
+        <div 
+          className="category-layout" 
+          style={{ gridTemplateColumns: subcategories.length > 0 ? '260px 1fr' : '1fr' }}
+        >
           {/* Sidebar con categorías y subcategorías */}
           {(subcategories.length > 0 || categories.length > 0) && (
             <aside className="category-sidebar">
               <CategorySidebar
-                categories={categories.map((c) => ({
-                  id: c.id,
-                  name: c.name,
-                  count: productService.getProductsByCategory(c.id).length,
-                  // 🎯 Usar directamente las subcategorías que ya vienen en el array
-                  subCategories: (c.subcategories || []).map((s) => ({
-                    id: s.id,
-                    name: s.name,
-                    count: productService.getProductsByCategory(c.id, s.id).length,
-                  }))
-                })) as CategoryItem[]}
-                selectedCategory={effectiveCategoryId}
+                categories={categoriesWithCounts}
+                selectedCategory={category?.parentCategory?.id || effectiveSlug}
                 selectedSubCategory={selectedSubcategory || undefined}
                 onCategorySelect={(catId) => handleCategoryTabClick(catId)}
                 onSubCategorySelect={(_catId, subId) => handleSubcategoryClick(subId)}
-                onApplyFilters={(f) => { 
-                  setFilters(f); 
-                }}
+                onApplyFilters={(f) => setFilters(f)}
               />
             </aside>
           )}
@@ -163,11 +244,21 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
           <div className="category-main-content">
             <div className="category-toolbar">
               <div className="product-count">
-                {products.length} {products.length === 1 ? 'producto' : 'productos'}
+                {loading ? (
+                  'Cargando...'
+                ) : (
+                  <>
+                    {products.length} {products.length === 1 ? 'producto' : 'productos'}
+                  </>
+                )}
               </div>
               <div className="sort-controls">
                 <label>Ordenar por:</label>
-                <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <select 
+                  value={sortBy} 
+                  onChange={(e) => setSortBy(e.target.value)}
+                  disabled={loading}
+                >
                   <option value="default">Predeterminado</option>
                   <option value="price-asc">Precio: Menor a Mayor</option>
                   <option value="price-desc">Precio: Mayor a Menor</option>
@@ -176,21 +267,29 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
               </div>
             </div>
 
-            <div className="products-grid">
-              {products.map((product) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onProductClick={handleProductClick}
-                  onAddToCart={handleAddToCart}
-                />
-              ))}
-            </div>
-
-            {products.length === 0 && (
-              <div className="empty-state">
-                <p>No hay productos disponibles en esta categoría.</p>
+            {loading ? (
+              <div className="loading-state">
+                <p>Cargando productos...</p>
               </div>
+            ) : (
+              <>
+                <div className="products-grid">
+                  {products.map((product) => (
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      onProductClick={handleProductClick}
+                      onAddToCart={handleAddToCart}
+                    />
+                  ))}
+                </div>
+
+                {products.length === 0 && (
+                  <div className="empty-state">
+                    <p>No hay productos disponibles que coincidan con los filtros seleccionados.</p>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>

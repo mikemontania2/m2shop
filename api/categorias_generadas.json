@@ -1,84 +1,93 @@
 [
   {
+    "id": "limpieza-y-desinfeccion-del-hogar",
+    "name": "Limpieza Y Desinfeccion Del Hogar",
+    "description": "",
+    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio-411x330.jpg",
+    "image2": "https://www.cavallaro.com.py/userfiles/images/clasificaciones/limpieza-y-desinfeccion-del-hogar.png",
+    "slug": "limpieza-y-desinfeccion-del-hogar",
+    "subcategories": [
+      {
+        "id": "bolsa",
+        "name": "Bolsa",
+        "description": "",
+        "slug": "limpieza-y-desinfeccion-del-hogar-bolsa"
+      },
+      {
+        "id": "complementarios",
+        "name": "Complementarios",
+        "description": "",
+        "slug": "limpieza-y-desinfeccion-del-hogar-complementarios"
+      },
+      {
+        "id": "lavandina",
+        "name": "Lavandina",
+        "description": "",
+        "slug": "limpieza-y-desinfeccion-del-hogar-lavandina"
+      },
+      {
+        "id": "detergente",
+        "name": "Detergente",
+        "description": "",
+        "slug": "limpieza-y-desinfeccion-del-hogar-detergente"
+      },
+      {
+        "id": "desodorante",
+        "name": "Desodorante",
+        "description": "",
+        "slug": "limpieza-y-desinfeccion-del-hogar-desodorante"
+      },
+      {
+        "id": "limpiador",
+        "name": "Limpiador",
+        "description": "",
+        "slug": "limpieza-y-desinfeccion-del-hogar-limpiador"
+      }
+    ]
+  },
+  {
     "id": "cuidado-de-las-prendas",
     "name": "Cuidado De Las Prendas",
     "description": "",
     "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio2-411x330.jpg",
     "image2": "https://www.cavallaro.com.py/userfiles/images/clasificaciones/cuidado-de-prendas.png",
+    "slug": "cuidado-de-las-prendas",
     "subcategories": [
       {
         "id": "jabon-en-polvo",
         "name": "Jabon En Polvo",
-        "description": ""
+        "description": "",
+        "slug": "cuidado-de-las-prendas-jabon-en-polvo"
       },
       {
         "id": "coco-puro",
         "name": "Coco Puro",
-        "description": ""
+        "description": "",
+        "slug": "cuidado-de-las-prendas-coco-puro"
       },
       {
         "id": "suavizante",
         "name": "Suavizante",
-        "description": ""
+        "description": "",
+        "slug": "cuidado-de-las-prendas-suavizante"
       },
       {
         "id": "jabon-de-lavar",
         "name": "Jabon De Lavar",
-        "description": ""
+        "description": "",
+        "slug": "cuidado-de-las-prendas-jabon-de-lavar"
       },
       {
         "id": "jabon-prensado",
         "name": "Jabon Prensado",
-        "description": ""
+        "description": "",
+        "slug": "cuidado-de-las-prendas-jabon-prensado"
       },
       {
         "id": "deterg-liq-p-ropas",
         "name": "Deterg Liq P Ropas",
-        "description": ""
-      }
-    ]
-  },
-  {
-    "id": "limpieza-y-desinfeccion-del-hogar",
-    "name": "Limpieza Y Desinfeccion Del Hogar",
-    "description": "",
-    "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio-411x330.jpg",
-    "image2": "https://www.cavallaro.com.py/userfiles/images/clasificaciones/limpieza-y-desinfeccion-del-hogar.png", 
-    "subcategories": [
-      {
-        "id": "detergente",
-        "name": "Detergente",
-        "description": ""
-      },
-      {
-        "id": "bolsa",
-        "name": "Bolsa",
-        "description": ""
-      },
-      {
-        "id": "complementarios",
-        "name": "Complementarios",
-        "description": ""
-      },
-      {
-        "id": "otros-servicios",
-        "name": "Otros Servicios",
-        "description": ""
-      },
-      {
-        "id": "lavandina",
-        "name": "Lavandina",
-        "description": ""
-      },
-      {
-        "id": "desodorante",
-        "name": "Desodorante",
-        "description": ""
-      },
-      {
-        "id": "limpiador",
-        "name": "Limpiador",
-        "description": ""
+        "description": "",
+        "slug": "cuidado-de-las-prendas-deterg-liq-p-ropas"
       }
     ]
   },
@@ -88,17 +97,19 @@
     "description": "",
     "image": "https://www.cavallaro.com.py/userfiles/images/banners/banner-medio-411x330-tocador.jpg",
     "image2": "https://www.cavallaro.com.py/userfiles/images/clasificaciones/limpieza-y-desinfeccion-del-hogar.png",
-   
+    "slug": "higiene-personal",
     "subcategories": [
       {
         "id": "coco-puro",
         "name": "Coco Puro",
-        "description": ""
+        "description": "",
+        "slug": "higiene-personal-coco-puro"
       },
       {
         "id": "tocador",
         "name": "Tocador",
-        "description": ""
+        "description": "",
+        "slug": "higiene-personal-tocador"
       }
     ]
   }

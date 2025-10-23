@@ -1,6 +1,9 @@
-const { Op } = require("sequelize")
+const { Op } = require("sequelize") 
+
 const Categoria = require("../models/Categoria.models")
-const { sequelize } = require("../../dbconfig")
+const  Producto   = require('../models/Producto.models');
+const  Variante   = require('../models/Variante.models');
+ 
 
 const crear = async (req, res) => {
   try {
@@ -10,46 +13,84 @@ const crear = async (req, res) => {
     res.status(500).json({ mensaje: "Error al crear categoría", error: error.message })
   }
 }
-
 const listar = async (req, res) => {
   try {
-    // 🔹 Traemos todas las categorías y subcategorías
+    // 1️⃣ Traemos las categorías principales
     const categorias = await Categoria.findAll({
-      where: { activo: true },
-      include: [
-        {
-          model: Categoria,
-          as: 'subcategorias',
-          where: { activo: true },
-          required: false, // permite categorías sin subcategorías
-        },
-      ],
-      order: [['orden', 'ASC']],
+      where: { activo: true, categoriasPadreId: null },
+      order: [["orden", "ASC"]],
+      raw: true,
     });
 
-    // 🔹 Filtramos solo las categorías principales (sin categoriasPadreId)
-    const categoriasPadre = categorias.filter(c => !c.categoriasPadreId);
+    // 2️⃣ Traemos todas las subcategorías activas
+    const subcategorias = await Categoria.findAll({
+      where: { activo: true, categoriasPadreId: { [Op.not]: null } },
+      raw: true,
+    });
 
-    // 🔹 Armamos el JSON de salida
-    const resultado = categoriasPadre.map(cat => ({
-      id: cat.slug,
-      name: cat.nombre,
-      description: cat.descripcion || '',
-      image: cat.imagenUrl || '',
-      bannerUrl: cat.bannerUrl || '',
-      subcategories: (cat.subcategorias || []).map(sub => ({
-        id: sub.slug,
-        name: sub.nombre,
-        description: sub.descripcion || '',
-      })),
-    }));
+    // 3️⃣ Traemos los productos con sus variantes
+    const productos = await Producto.findAll({
+      where: { activo: true },
+      attributes: ["id", "categoriaId", "subcategoriaId"],
+      include: [
+        {
+          model: Variante,
+          as: "variantes",
+          attributes: ["id"],
+          where: { activo: true },
+          required: false,
+        },
+      ],
+    });
+
+    // 4️⃣ Calculamos los conteos
+    const conteoPorCategoria = {};
+    const conteoPorSubcategoria = {};
+
+    productos.forEach((p) => {
+      const variantesCount = p.variantes?.length || 0;
+      if (p.categoriaId) {
+        conteoPorCategoria[p.categoriaId] =
+          (conteoPorCategoria[p.categoriaId] || 0) + variantesCount;
+      }
+      if (p.subcategoriaId) {
+        conteoPorSubcategoria[p.subcategoriaId] =
+          (conteoPorSubcategoria[p.subcategoriaId] || 0) + variantesCount;
+      }
+    });
+
+    // 5️⃣ Armamos el resultado final
+    const resultado = categorias.map((cat) => {
+      const subs = subcategorias.filter(
+        (s) => s.categoriasPadreId === cat.id
+      );
+      return {
+        id: cat.slug,
+        name: cat.nombre,
+        description: cat.descripcion || "",
+        image: cat.imagenUrl || "",
+        bannerUrl: cat.bannerUrl || "",
+        count: conteoPorCategoria[cat.id] || 0,
+        subcategories: subs.map((sub) => ({
+          id: sub.slug,
+          name: sub.nombre,
+          description: sub.descripcion || "",
+          count: conteoPorSubcategoria[sub.id] || 0,
+        })),
+      };
+    });
 
     res.json(resultado);
   } catch (error) {
-    console.error('Error al listar categorías:', error);
-    res.status(500).json({ message: 'Error al listar categorías' });
+    console.error("Error al listar categorías:", error);
+    res.status(500).json({
+      message: "Error al listar categorías",
+      error: error.message,
+    });
   }
 };
+
+
 
 
 

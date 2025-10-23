@@ -366,6 +366,8 @@ export interface Product {
   slug: string;
   image: string;
   price: number;
+  news:boolean;
+    featured:boolean;
   originalPrice: number;
   stock: number;
 }

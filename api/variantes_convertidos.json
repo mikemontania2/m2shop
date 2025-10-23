@@ -1937,41 +1937,6 @@
   },
   {
     "id": 57,
-    "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
-    "variedad": "Tropical",
-    "presentacion": "Doypack 450ml",
-    "name": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL Tropical Doypack 450ml",
-    "category": "cuidado-de-las-prendas",
-    "subcategory": "suavizante",
-    "sku": "300000274",
-    "image": "https://cdn.cavallaro.com.py/productos/300000274.PNG",
-    "images": [
-      "https://cdn.cavallaro.com.py/productos/300000274.PNG",
-      "https://cdn.cavallaro.com.py/presentaciones/Doypack 450ml.png"
-    ],
-    "price": "11050",
-    "originalPrice": "11050",
-    "size": [
-      "Doypack 450ml"
-    ],
-    "featured": false,
-    "descripcion": "<p>Los Suavizantes Cavallaro Edición Especial poseen una fórmula concentrada que otorga el doble de suavidad y perfume a los tejidos. Cada variedad posee una exquisita fragancia desarrollada de manera exclusiva por un perfumista profesional, ofreciendo así diversas sensaciones y experiencias para los sentidos. Su composición posee perfume encapsulado mediante una tecnología denominada HD (High Diffusive) que permite la liberación de fragancia de forma gradual en diferentes momentos: durante el enjuague, en el momento de secado, durante la guarda y al momento de uso con la acción mecánica.</p>",
-    "usosRecomendados": [],
-    "propiedades": [
-      "• Edición Especial de perfumes, con aromas exclusivos para deleitar los sentidos.",
-      "• Su agente activo concentrado brinda humectación y un extra de suavidad a los tejidos.",
-      "• Mayor concentración de perfume, que brindan una explosión de fragancia.",
-      "• Con perfume encapsulado que garantiza que la fragancia se fije y perdure por más tiempo en el tejido.",
-      "• Facilita el planchado de las prendas.",
-      "• Protege los colores y evita el desgaste en la zona de cuello, codos y puños."
-    ],
-    "stock": 0,
-    "color": [
-      "#ff4701"
-    ]
-  },
-  {
-    "id": 58,
     "producto": "POLVO PARA LAVAR LA ROPA GUAIRA PROFESIONAL",
     "variedad": "Profesional",
     "presentacion": "Bolsa de 2Kg",
@@ -2006,7 +1971,7 @@
     ]
   },
   {
-    "id": 59,
+    "id": 58,
     "producto": "POLVO PARA LAVAR LA ROPA GUAIRA PROFESIONAL",
     "variedad": "Profesional",
     "presentacion": "Bolsa de 5Kg",
@@ -2041,7 +2006,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 59,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Delicado",
     "presentacion": "Doypack 900ml",
@@ -2074,42 +2039,7 @@
     ]
   },
   {
-    "id": 61,
-    "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
-    "variedad": "Floral",
-    "presentacion": "Doypack 1600ml",
-    "name": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL Floral Doypack 1600ml",
-    "category": "cuidado-de-las-prendas",
-    "subcategory": "suavizante",
-    "sku": "300000492",
-    "image": "https://cdn.cavallaro.com.py/productos/300000492.PNG",
-    "images": [
-      "https://cdn.cavallaro.com.py/productos/300000492.PNG",
-      "https://cdn.cavallaro.com.py/presentaciones/Doypack 1600ml.png"
-    ],
-    "price": "32400",
-    "originalPrice": "32400",
-    "size": [
-      "Doypack 1600ml"
-    ],
-    "featured": false,
-    "descripcion": "<p>Los Suavizantes Cavallaro Edición Especial poseen una fórmula concentrada que otorga el doble de suavidad y perfume a los tejidos. Cada variedad posee una exquisita fragancia desarrollada de manera exclusiva por un perfumista profesional, ofreciendo así diversas sensaciones y experiencias para los sentidos. Su composición posee perfume encapsulado mediante una tecnología denominada HD (High Diffusive) que permite la liberación de fragancia de forma gradual en diferentes momentos: durante el enjuague, en el momento de secado, durante la guarda y al momento de uso con la acción mecánica.</p>",
-    "usosRecomendados": [],
-    "propiedades": [
-      "• Edición Especial de perfumes, con aromas exclusivos para deleitar los sentidos.",
-      "• Su agente activo concentrado brinda humectación y un extra de suavidad a los tejidos.",
-      "• Mayor concentración de perfume, que brindan una explosión de fragancia.",
-      "• Con perfume encapsulado que garantiza que la fragancia se fije y perdure por más tiempo en el tejido.",
-      "• Facilita el planchado de las prendas.",
-      "• Protege los colores y evita el desgaste en la zona de cuello, codos y puños."
-    ],
-    "stock": 0,
-    "color": [
-      "#f859a0"
-    ]
-  },
-  {
-    "id": 62,
+    "id": 60,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
     "variedad": "Floral",
     "presentacion": "Bidón de 4L",
@@ -2144,7 +2074,7 @@
     ]
   },
   {
-    "id": 63,
+    "id": 61,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
     "variedad": "Tropical",
     "presentacion": "Bidón de 4L",
@@ -2179,7 +2109,7 @@
     ]
   },
   {
-    "id": 64,
+    "id": 62,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
     "variedad": "Oriental",
     "presentacion": "Bidón de 4L",
@@ -2214,7 +2144,7 @@
     ]
   },
   {
-    "id": 65,
+    "id": 63,
     "producto": "JABON PARA LAVAR LA ROPA AGRICULTOR",
     "variedad": "Marrón",
     "presentacion": "Caja de 20 x 250 g.",
@@ -2250,7 +2180,7 @@
     ]
   },
   {
-    "id": 66,
+    "id": 64,
     "producto": "JABON PARA LAVAR LA ROPA AGRICULTOR",
     "variedad": "Verde",
     "presentacion": "Caja de 20 x 250 g.",
@@ -2286,7 +2216,7 @@
     ]
   },
   {
-    "id": 67,
+    "id": 65,
     "producto": "JABON DE TOCADOR C GLICERINA",
     "variedad": "Neutro",
     "presentacion": "Pastilla 125g",
@@ -2321,7 +2251,7 @@
     ]
   },
   {
-    "id": 68,
+    "id": 66,
     "producto": "JABON DE TOCADOR C GLICERINA",
     "variedad": "Floral",
     "presentacion": "Pastilla 125g",
@@ -2356,7 +2286,7 @@
     ]
   },
   {
-    "id": 69,
+    "id": 67,
     "producto": "JABON DE TOCADOR C GLICERINA",
     "variedad": "Citrus",
     "presentacion": "Pastilla 125g",
@@ -2391,7 +2321,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 68,
     "producto": "POLVO PARA LAVAR LA ROPA GUAIRA PROFESIONAL",
     "variedad": "Profesional",
     "presentacion": "Bolsa de 600g",
@@ -2426,7 +2356,7 @@
     ]
   },
   {
-    "id": 71,
+    "id": 69,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Delicado",
     "presentacion": "Display 20x70ml",
@@ -2459,7 +2389,7 @@
     ]
   },
   {
-    "id": 72,
+    "id": 70,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Floral",
     "presentacion": "Bidón de 4L",
@@ -2495,7 +2425,7 @@
     ]
   },
   {
-    "id": 73,
+    "id": 71,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Surtido",
     "presentacion": "Pack de 15 x 25g",
@@ -2532,7 +2462,7 @@
     ]
   },
   {
-    "id": 74,
+    "id": 72,
     "producto": "JABON LIQUIDO ANTIBACTERIAL \"MULTIUSO\" COCO CAVALLARO",
     "variedad": "Natural",
     "presentacion": "Bidón de 4L",
@@ -2569,7 +2499,7 @@
     ]
   },
   {
-    "id": 75,
+    "id": 73,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Leche de Almendras",
     "presentacion": "Estuche de 125g",
@@ -2604,7 +2534,7 @@
     ]
   },
   {
-    "id": 76,
+    "id": 74,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Vainilla y Frutos Rojos",
     "presentacion": "Estuche de 125g",
@@ -2639,7 +2569,7 @@
     ]
   },
   {
-    "id": 77,
+    "id": 75,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Naranja y Jazmín",
     "presentacion": "Estuche de 125g",
@@ -2674,7 +2604,7 @@
     ]
   },
   {
-    "id": 78,
+    "id": 76,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Leche de Almendras",
     "presentacion": "Pastilla 90g",
@@ -2709,7 +2639,7 @@
     ]
   },
   {
-    "id": 79,
+    "id": 77,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Vainilla y Frutos Rojos",
     "presentacion": "Pastilla 90g",
@@ -2744,7 +2674,7 @@
     ]
   },
   {
-    "id": 80,
+    "id": 78,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Naranja y Jazmín",
     "presentacion": "Pastilla 90g",
@@ -2779,7 +2709,7 @@
     ]
   },
   {
-    "id": 81,
+    "id": 79,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Clásico",
     "presentacion": "Estuche de 100 g",
@@ -2816,7 +2746,7 @@
     ]
   },
   {
-    "id": 82,
+    "id": 80,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Almendras",
     "presentacion": "Estuche de 100 g",
@@ -2853,7 +2783,7 @@
     ]
   },
   {
-    "id": 83,
+    "id": 81,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Floral",
     "presentacion": "Estuche de 100 g",
@@ -2890,7 +2820,7 @@
     ]
   },
   {
-    "id": 84,
+    "id": 82,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Marina",
     "presentacion": "Estuche de 100 g",
@@ -2927,7 +2857,7 @@
     ]
   },
   {
-    "id": 85,
+    "id": 83,
     "producto": "DETERGENTE LAVAVAJILLAS INSUPERABLE",
     "variedad": "Limón",
     "presentacion": "Bidón de 5 L.",
@@ -2958,7 +2888,7 @@
     ]
   },
   {
-    "id": 86,
+    "id": 84,
     "producto": "DETERGENTE LAVAVAJILLAS INSUPERABLE",
     "variedad": "Manzana",
     "presentacion": "Bidón de 5 L.",
@@ -2989,7 +2919,7 @@
     ]
   },
   {
-    "id": 87,
+    "id": 85,
     "producto": "DETERGENTE LAVAVAJILLAS INSUPERABLE",
     "variedad": "Neutro",
     "presentacion": "Bidón de 5 L.",
@@ -3020,7 +2950,7 @@
     ]
   },
   {
-    "id": 88,
+    "id": 86,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Mágica Energía",
     "presentacion": "Pastilla 85g",
@@ -3055,7 +2985,7 @@
     ]
   },
   {
-    "id": 89,
+    "id": 87,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Calma Mistica",
     "presentacion": "Pastilla 85g",
@@ -3090,7 +3020,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 88,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Mágica Energía",
     "presentacion": "Pastilla 130g",
@@ -3125,7 +3055,7 @@
     ]
   },
   {
-    "id": 91,
+    "id": 89,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Calma Mistica",
     "presentacion": "Pastilla 130g",
@@ -3160,7 +3090,7 @@
     ]
   },
   {
-    "id": 92,
+    "id": 90,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Marina",
     "presentacion": "Botella 900ml",
@@ -3193,7 +3123,7 @@
     ]
   },
   {
-    "id": 93,
+    "id": 91,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Marina",
     "presentacion": "Bidón de 5L",
@@ -3226,7 +3156,7 @@
     ]
   },
   {
-    "id": 94,
+    "id": 92,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Frescura Infinita",
     "presentacion": "Pastilla 85g",
@@ -3261,7 +3191,7 @@
     ]
   },
   {
-    "id": 95,
+    "id": 93,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Equilibrio Natural",
     "presentacion": "Pastilla 85g",
@@ -3296,7 +3226,7 @@
     ]
   },
   {
-    "id": 96,
+    "id": 94,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Frescura Infinita",
     "presentacion": "Pastilla 130g",
@@ -3331,7 +3261,7 @@
     ]
   },
   {
-    "id": 97,
+    "id": 95,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Uva",
     "presentacion": "Botella 900ml",
@@ -3364,7 +3294,7 @@
     ]
   },
   {
-    "id": 98,
+    "id": 96,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Lavanda",
     "presentacion": "Botella 900ml",
@@ -3397,7 +3327,7 @@
     ]
   },
   {
-    "id": 99,
+    "id": 97,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Fantasía",
     "presentacion": "Botella 900ml",
@@ -3430,7 +3360,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 98,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Azahar",
     "presentacion": "Botella 900ml",
@@ -3463,7 +3393,7 @@
     ]
   },
   {
-    "id": 101,
+    "id": 99,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Uva",
     "presentacion": "Bidón de 5L",
@@ -3496,7 +3426,7 @@
     ]
   },
   {
-    "id": 102,
+    "id": 100,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Lavanda",
     "presentacion": "Bidón de 5L",
@@ -3529,7 +3459,7 @@
     ]
   },
   {
-    "id": 103,
+    "id": 101,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Fantasía",
     "presentacion": "Bidón de 5L",
@@ -3562,7 +3492,7 @@
     ]
   },
   {
-    "id": 104,
+    "id": 102,
     "producto": "DESODORANTE DE AMBIENTE ANTIBACTERIAL CAVALLARO",
     "variedad": "Azahar",
     "presentacion": "Bidón de 5L",
@@ -3595,7 +3525,7 @@
     ]
   },
   {
-    "id": 105,
+    "id": 103,
     "producto": "POLVO PARA LAVAR LA ROPA ANTIBACTERIAL GUAIRA DELUXE",
     "variedad": "Deluxe",
     "presentacion": "Bolsa de 200g",
@@ -3633,7 +3563,7 @@
     ]
   },
   {
-    "id": 106,
+    "id": 104,
     "producto": "POLVO PARA LAVAR LA ROPA ANTIBACTERIAL GUAIRA DELUXE",
     "variedad": "Deluxe",
     "presentacion": "Bolsa de 400g",
@@ -3671,7 +3601,7 @@
     ]
   },
   {
-    "id": 107,
+    "id": 105,
     "producto": "POLVO PARA LAVAR LA ROPA ANTIBACTERIAL GUAIRA DELUXE",
     "variedad": "Deluxe",
     "presentacion": "Bolsa de 800g",
@@ -3709,7 +3639,7 @@
     ]
   },
   {
-    "id": 108,
+    "id": 106,
     "producto": "POLVO PARA LAVAR LA ROPA GUAIRA EXTRA",
     "variedad": "Extra",
     "presentacion": "Bolsa de 400g",
@@ -3747,7 +3677,7 @@
     ]
   },
   {
-    "id": 109,
+    "id": 107,
     "producto": "POLVO PARA LAVAR LA ROPA GUAIRA EXTRA",
     "variedad": "Extra",
     "presentacion": "Bolsa de 800g",
@@ -3785,7 +3715,7 @@
     ]
   },
   {
-    "id": 110,
+    "id": 108,
     "producto": "POLVO PARA LAVAR LA ROPA GUAIRA EXTRA",
     "variedad": "Extra",
     "presentacion": "Bolsa de 2Kg",
@@ -3823,7 +3753,7 @@
     ]
   },
   {
-    "id": 111,
+    "id": 109,
     "producto": "POLVO PARA LAVAR LA ROPA ANTIBACTERIAL GUAIRA DELUXE",
     "variedad": "Deluxe",
     "presentacion": "Bolsa de 2Kg",
@@ -3861,7 +3791,7 @@
     ]
   },
   {
-    "id": 112,
+    "id": 110,
     "producto": "POLVO PARA LAVAR LA ROPA ANTIBACTERIAL GUAIRA DELUXE",
     "variedad": "Deluxe",
     "presentacion": "Bolsa de 80g",
@@ -3899,7 +3829,7 @@
     ]
   },
   {
-    "id": 113,
+    "id": 111,
     "producto": "POLVO PARA LAVAR LA ROPA GUAIRA EXTRA ANTIBAC",
     "variedad": "Extra",
     "presentacion": "Bolsa de 10Kg",
@@ -3937,7 +3867,7 @@
     ]
   },
   {
-    "id": 114,
+    "id": 112,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Leche de Almendras",
     "presentacion": "Pastilla 125g",
@@ -3972,7 +3902,7 @@
     ]
   },
   {
-    "id": 115,
+    "id": 113,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Vainilla y Frutos Rojos",
     "presentacion": "Pastilla 125g",
@@ -4007,7 +3937,7 @@
     ]
   },
   {
-    "id": 116,
+    "id": 114,
     "producto": "JABON DE TOCADOR C2 HUMECTANTE ANTIBACTERIAL",
     "variedad": "Naranja y Jazmín",
     "presentacion": "Pastilla 125g",
@@ -4042,7 +3972,7 @@
     ]
   },
   {
-    "id": 117,
+    "id": 115,
     "producto": "JABON DE TOCADOR CAVALLARO",
     "variedad": "Surtido",
     "presentacion": "Caja de 500 x 10g",
@@ -4076,7 +4006,7 @@
     ]
   },
   {
-    "id": 118,
+    "id": 116,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Clásico",
     "presentacion": "Doypack 900ml",
@@ -4112,7 +4042,7 @@
     ]
   },
   {
-    "id": 119,
+    "id": 117,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Floral",
     "presentacion": "Doypack 900ml",
@@ -4148,7 +4078,7 @@
     ]
   },
   {
-    "id": 120,
+    "id": 118,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Clásico",
     "presentacion": "Doypack 1600ml",
@@ -4184,7 +4114,7 @@
     ]
   },
   {
-    "id": 121,
+    "id": 119,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Floral",
     "presentacion": "Doypack 1600ml",
@@ -4220,7 +4150,7 @@
     ]
   },
   {
-    "id": 122,
+    "id": 120,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Armonía Pura",
     "presentacion": "Pastilla 85g",
@@ -4255,7 +4185,7 @@
     ]
   },
   {
-    "id": 123,
+    "id": 121,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Dulce Pasión",
     "presentacion": "Pastilla 85g",
@@ -4290,7 +4220,7 @@
     ]
   },
   {
-    "id": 124,
+    "id": 122,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Armonía Pura",
     "presentacion": "Pastilla 130g",
@@ -4325,7 +4255,7 @@
     ]
   },
   {
-    "id": 125,
+    "id": 123,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Dulce Pasión",
     "presentacion": "Pastilla 130g",
@@ -4360,7 +4290,7 @@
     ]
   },
   {
-    "id": 126,
+    "id": 124,
     "producto": "JABON DE TOCADOR CAVALLARO",
     "variedad": "Blanco",
     "presentacion": "Caja de 500 x 10g",
@@ -4394,7 +4324,7 @@
     ]
   },
   {
-    "id": 127,
+    "id": 125,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Calma Mistica",
     "presentacion": "Tripack 3 x 130g",
@@ -4429,7 +4359,7 @@
     ]
   },
   {
-    "id": 128,
+    "id": 126,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Frescura Infinita",
     "presentacion": "Tripack 3 x 130g",
@@ -4464,7 +4394,7 @@
     ]
   },
   {
-    "id": 129,
+    "id": 127,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Armonía Pura",
     "presentacion": "Tripack 3 x 130g",
@@ -4499,7 +4429,7 @@
     ]
   },
   {
-    "id": 130,
+    "id": 128,
     "producto": "JABON DE TOCADOR C2",
     "variedad": "Dulce Pasión",
     "presentacion": "Tripack 3 x 130g",
@@ -4534,7 +4464,7 @@
     ]
   },
   {
-    "id": 131,
+    "id": 129,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Clásico",
     "presentacion": "Doypack 200ml",
@@ -4570,7 +4500,7 @@
     ]
   },
   {
-    "id": 132,
+    "id": 130,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Floral",
     "presentacion": "Doypack 200ml",
@@ -4606,7 +4536,7 @@
     ]
   },
   {
-    "id": 133,
+    "id": 131,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Clásico",
     "presentacion": "Bidón de 4L",
@@ -4641,7 +4571,7 @@
     ]
   },
   {
-    "id": 134,
+    "id": 132,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Citrus",
     "presentacion": "Bidón de 4L",
@@ -4676,7 +4606,7 @@
     ]
   },
   {
-    "id": 135,
+    "id": 133,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Verbena",
     "presentacion": "Estuche de 100 g",
@@ -4713,7 +4643,7 @@
     ]
   },
   {
-    "id": 136,
+    "id": 134,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Clásico",
     "presentacion": "Pastilla 100g",
@@ -4750,7 +4680,7 @@
     ]
   },
   {
-    "id": 137,
+    "id": 135,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Almendras",
     "presentacion": "Pastilla 100g",
@@ -4787,7 +4717,7 @@
     ]
   },
   {
-    "id": 138,
+    "id": 136,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Floral",
     "presentacion": "Pastilla 100g",
@@ -4824,7 +4754,7 @@
     ]
   },
   {
-    "id": 139,
+    "id": 137,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Marina",
     "presentacion": "Pastilla 100g",
@@ -4861,7 +4791,7 @@
     ]
   },
   {
-    "id": 140,
+    "id": 138,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Verbena",
     "presentacion": "Pastilla 100g",
@@ -4898,7 +4828,7 @@
     ]
   },
   {
-    "id": 141,
+    "id": 139,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Clásico",
     "presentacion": "Doypack 400ml",
@@ -4933,7 +4863,7 @@
     ]
   },
   {
-    "id": 142,
+    "id": 140,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Citrus",
     "presentacion": "Doypack 400ml",
@@ -4968,7 +4898,7 @@
     ]
   },
   {
-    "id": 143,
+    "id": 141,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Clásico",
     "presentacion": "Doypack 800ml",
@@ -5003,7 +4933,7 @@
     ]
   },
   {
-    "id": 144,
+    "id": 142,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Citrus",
     "presentacion": "Doypack 800ml",
@@ -5038,7 +4968,7 @@
     ]
   },
   {
-    "id": 145,
+    "id": 143,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Clásico",
     "presentacion": "Doypack 2L",
@@ -5073,7 +5003,7 @@
     ]
   },
   {
-    "id": 146,
+    "id": 144,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Citrus",
     "presentacion": "Doypack 2L",
@@ -5108,7 +5038,7 @@
     ]
   },
   {
-    "id": 147,
+    "id": 145,
     "producto": "JABON DE TOCADOR NATURAL COCO CAVALLARO CON ACEITE ESENCIAL",
     "variedad": "Petit Grain",
     "presentacion": "Estuche de 100 g",
@@ -5146,7 +5076,7 @@
     ]
   },
   {
-    "id": 148,
+    "id": 146,
     "producto": "JABON LIQUIDO ANTIBACTERIAL \"MULTIUSO\" COCO CAVALLARO",
     "variedad": "Natural",
     "presentacion": "Doypack 900 ml",
@@ -5183,7 +5113,7 @@
     ]
   },
   {
-    "id": 149,
+    "id": 147,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Clásico",
     "presentacion": "Doypack 200ml",
@@ -5218,7 +5148,7 @@
     ]
   },
   {
-    "id": 150,
+    "id": 148,
     "producto": "LÍQUIDO PARA LAVAR ROPA INSUPERABLE",
     "variedad": "Citrus",
     "presentacion": "Doypack 200ml",
@@ -5253,7 +5183,7 @@
     ]
   },
   {
-    "id": 151,
+    "id": 149,
     "producto": "DETERGENTE LAVAVAJILLAS PIXOL 4L LIMON",
     "variedad": "Limón",
     "presentacion": "Bidón de 4L",
@@ -5288,7 +5218,7 @@
     ]
   },
   {
-    "id": 152,
+    "id": 150,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Coconut",
     "presentacion": "Display 20x70ml",
@@ -5321,7 +5251,7 @@
     ]
   },
   {
-    "id": 153,
+    "id": 151,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Exótico",
     "presentacion": "Display 20x70ml",
@@ -5354,7 +5284,7 @@
     ]
   },
   {
-    "id": 154,
+    "id": 152,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Coconut",
     "presentacion": "Bidón de 4L",
@@ -5387,7 +5317,7 @@
     ]
   },
   {
-    "id": 155,
+    "id": 153,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Exótico",
     "presentacion": "Bidón de 4L",
@@ -5420,7 +5350,7 @@
     ]
   },
   {
-    "id": 156,
+    "id": 154,
     "producto": "JABON DE COCO PURO COCO CAVALLARO",
     "variedad": "Blanco",
     "presentacion": "Caja 30 x 50g",
@@ -5457,7 +5387,7 @@
     ]
   },
   {
-    "id": 157,
+    "id": 155,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Floral",
     "presentacion": "Tripack 3 x 90g",
@@ -5494,7 +5424,7 @@
     ]
   },
   {
-    "id": 158,
+    "id": 156,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Marina",
     "presentacion": "Tripack 3 x 90g",
@@ -5531,7 +5461,7 @@
     ]
   },
   {
-    "id": 159,
+    "id": 157,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Verbena",
     "presentacion": "Tripack 3 x 90g",
@@ -5568,7 +5498,7 @@
     ]
   },
   {
-    "id": 160,
+    "id": 158,
     "producto": "JABON DE TOCADOR COCO CAVALLARO",
     "variedad": "Berries",
     "presentacion": "Estuche de 100 g",
@@ -5605,7 +5535,7 @@
     ]
   },
   {
-    "id": 161,
+    "id": 159,
     "producto": "LIMP. MULTIUSO PIXOL LAVANDA 900ML",
     "variedad": "Lavanda",
     "presentacion": "Botella 900 ml.",
@@ -5641,7 +5571,7 @@
     ]
   },
   {
-    "id": 162,
+    "id": 160,
     "producto": "LIMP. MULTIUSO PIXOL BOUQUET FLORAL 900ML",
     "variedad": "Bouquet Floral",
     "presentacion": "Botella 900 ml.",
@@ -5677,7 +5607,7 @@
     ]
   },
   {
-    "id": 163,
+    "id": 161,
     "producto": "LIMP. MULTIUSO PIXOL FRESCURA HERBAL 900ML",
     "variedad": "Frescura Herbal",
     "presentacion": "Botella 900 ml.",
@@ -5713,7 +5643,7 @@
     ]
   },
   {
-    "id": 164,
+    "id": 162,
     "producto": "LIMP. MULTIUSO PIXOL CITRONELA 900ML",
     "variedad": "Citronella",
     "presentacion": "Botella 900 ml.",
@@ -5749,7 +5679,7 @@
     ]
   },
   {
-    "id": 165,
+    "id": 163,
     "producto": "JABON PARA LAVAR LA ROPA AGRICULTOR",
     "variedad": "Marrón",
     "presentacion": "Caja de 20 x 150 g.",
@@ -5785,7 +5715,7 @@
     ]
   },
   {
-    "id": 166,
+    "id": 164,
     "producto": "JABON PARA LAVAR LA ROPA AGRICULTOR",
     "variedad": "Verde",
     "presentacion": "Caja de 20 x 150g",
@@ -5821,7 +5751,7 @@
     ]
   },
   {
-    "id": 167,
+    "id": 165,
     "producto": "DETERGENTE LAVAVAJILLAS INSUPERABLE",
     "variedad": "Limón",
     "presentacion": "Botella 480 ml.",
@@ -5852,7 +5782,7 @@
     ]
   },
   {
-    "id": 168,
+    "id": 166,
     "producto": "DETERGENTE LAVAVAJILLAS INSUPERABLE",
     "variedad": "Neutro",
     "presentacion": "Botella 480 ml.",
@@ -5883,7 +5813,7 @@
     ]
   },
   {
-    "id": 169,
+    "id": 167,
     "producto": "DETERGENTE LAVAVAJILLAS INSUPERABLE",
     "variedad": "Manzana",
     "presentacion": "Botella 480 ml.",
@@ -5914,7 +5844,7 @@
     ]
   },
   {
-    "id": 170,
+    "id": 168,
     "producto": "LIMP MULTIUSO PIXOL LAVANDA 4L",
     "variedad": "Lavanda",
     "presentacion": "Bidón de 4L",
@@ -5950,7 +5880,7 @@
     ]
   },
   {
-    "id": 171,
+    "id": 169,
     "producto": "LIMP MULTIUSO PIXOL BOUQUET FLORAL 4L",
     "variedad": "Bouquet Floral",
     "presentacion": "Bidón de 4L",
@@ -5986,7 +5916,7 @@
     ]
   },
   {
-    "id": 172,
+    "id": 170,
     "producto": "LIMP MULTIUSO PIXOL FRESCURA HERBAL 4L",
     "variedad": "Frescura Herbal",
     "presentacion": "Bidón de 4L",
@@ -6022,7 +5952,7 @@
     ]
   },
   {
-    "id": 173,
+    "id": 171,
     "producto": "LIMP MULTIUSO PIXOL CITRONELLA 4L",
     "variedad": "Citronella",
     "presentacion": "Bidón de 4L",
@@ -6058,7 +5988,7 @@
     ]
   },
   {
-    "id": 174,
+    "id": 172,
     "producto": "DETERGENTE LAVAVAJILLAS PIXOL FORMULA CONCENTRADA",
     "variedad": "Limón",
     "presentacion": "Doypack 350ml",
@@ -6093,7 +6023,7 @@
     ]
   },
   {
-    "id": 175,
+    "id": 173,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Clásico",
     "presentacion": "Doypack 450ml",
@@ -6126,7 +6056,7 @@
     ]
   },
   {
-    "id": 176,
+    "id": 174,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Intenso",
     "presentacion": "Doypack 450ml",
@@ -6159,7 +6089,7 @@
     ]
   },
   {
-    "id": 177,
+    "id": 175,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Delicado",
     "presentacion": "Doypack 450ml",
@@ -6192,7 +6122,7 @@
     ]
   },
   {
-    "id": 178,
+    "id": 176,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Exótico",
     "presentacion": "Doypack 450ml",
@@ -6225,7 +6155,7 @@
     ]
   },
   {
-    "id": 179,
+    "id": 177,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
     "variedad": "Floral",
     "presentacion": "Doypack 450ml",
@@ -6260,7 +6190,7 @@
     ]
   },
   {
-    "id": 180,
+    "id": 178,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
     "variedad": "Oriental",
     "presentacion": "Doypack 450ml",
@@ -6295,7 +6225,7 @@
     ]
   },
   {
-    "id": 181,
+    "id": 179,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Coconut",
     "presentacion": "Doypack 2L",
@@ -6328,7 +6258,7 @@
     ]
   },
   {
-    "id": 182,
+    "id": 180,
     "producto": "BOLSA PARA RESIDUOS PIXOL",
     "variedad": "Super Resistente",
     "presentacion": "Bolsa de 100 L.",
@@ -6356,7 +6286,7 @@
     ]
   },
   {
-    "id": 183,
+    "id": 181,
     "producto": "BOLSA PARA RESIDUOS PIXOL",
     "variedad": "Super Resistente",
     "presentacion": "Bolsa de 150 L.",
@@ -6384,7 +6314,7 @@
     ]
   },
   {
-    "id": 184,
+    "id": 182,
     "producto": "BOLSA PARA RESIDUOS PIXOL",
     "variedad": "Super Resistente",
     "presentacion": "Bolsa de 200 L.",
@@ -6412,7 +6342,7 @@
     ]
   },
   {
-    "id": 185,
+    "id": 183,
     "producto": "BOLSA PARA RESIDUOS PIXOL",
     "variedad": "Baño",
     "presentacion": "Rollo x 100 Unidades",
@@ -6440,7 +6370,7 @@
     ]
   },
   {
-    "id": 186,
+    "id": 184,
     "producto": "BOLSA PARA RESIDUOS PIXOL",
     "variedad": "Baño",
     "presentacion": "Rollo x 30 Unidades",
@@ -6468,7 +6398,7 @@
     ]
   },
   {
-    "id": 187,
+    "id": 185,
     "producto": "TRAPO  DE PISO PIXOL",
     "variedad": "Económico",
     "presentacion": "1 Unidad",
@@ -6496,7 +6426,7 @@
     ]
   },
   {
-    "id": 188,
+    "id": 186,
     "producto": "TRAPO  DE PISO PIXOL",
     "variedad": "Premium",
     "presentacion": "1 Unidad",
@@ -6524,7 +6454,7 @@
     ]
   },
   {
-    "id": 189,
+    "id": 187,
     "producto": "ESPONJA PIXOL",
     "variedad": "Verde",
     "presentacion": "Pack x 6 Unidades",
@@ -6559,7 +6489,42 @@
     ]
   },
   {
-    "id": 190,
+    "id": 188,
+    "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
+    "variedad": "Tropical",
+    "presentacion": "Doypack 450ml",
+    "name": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL Tropical Doypack 450ml",
+    "category": "cuidado-de-las-prendas",
+    "subcategory": "suavizante",
+    "sku": "300001633",
+    "image": "https://cdn.cavallaro.com.py/productos/300000274.PNG",
+    "images": [
+      "https://cdn.cavallaro.com.py/productos/300000274.PNG",
+      "https://cdn.cavallaro.com.py/presentaciones/Doypack 450ml.png"
+    ],
+    "price": "11050",
+    "originalPrice": "11050",
+    "size": [
+      "Doypack 450ml"
+    ],
+    "featured": false,
+    "descripcion": "<p>Los Suavizantes Cavallaro Edición Especial poseen una fórmula concentrada que otorga el doble de suavidad y perfume a los tejidos. Cada variedad posee una exquisita fragancia desarrollada de manera exclusiva por un perfumista profesional, ofreciendo así diversas sensaciones y experiencias para los sentidos. Su composición posee perfume encapsulado mediante una tecnología denominada HD (High Diffusive) que permite la liberación de fragancia de forma gradual en diferentes momentos: durante el enjuague, en el momento de secado, durante la guarda y al momento de uso con la acción mecánica.</p>",
+    "usosRecomendados": [],
+    "propiedades": [
+      "• Edición Especial de perfumes, con aromas exclusivos para deleitar los sentidos.",
+      "• Su agente activo concentrado brinda humectación y un extra de suavidad a los tejidos.",
+      "• Mayor concentración de perfume, que brindan una explosión de fragancia.",
+      "• Con perfume encapsulado que garantiza que la fragancia se fije y perdure por más tiempo en el tejido.",
+      "• Facilita el planchado de las prendas.",
+      "• Protege los colores y evita el desgaste en la zona de cuello, codos y puños."
+    ],
+    "stock": 0,
+    "color": [
+      "#ff4701"
+    ]
+  },
+  {
+    "id": 189,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Intenso",
     "presentacion": "Doypack 2L",
@@ -6592,7 +6557,7 @@
     ]
   },
   {
-    "id": 191,
+    "id": 190,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Clásico",
     "presentacion": "Doypack 2L",
@@ -6625,7 +6590,7 @@
     ]
   },
   {
-    "id": 192,
+    "id": 191,
     "producto": "DETERGENTE LAVAVAJILLAS PIXOL FORMULA CONCENTRADA",
     "variedad": "Limón",
     "presentacion": "Botella Det. 500ml",
@@ -6660,7 +6625,7 @@
     ]
   },
   {
-    "id": 193,
+    "id": 192,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Clásico",
     "presentacion": "Doypack 900ml",
@@ -6693,7 +6658,7 @@
     ]
   },
   {
-    "id": 194,
+    "id": 193,
     "producto": "JABON LIQUIDO ANTIBACTERIAL PARA LAVAR LA ROPA COCO CAVALLARO",
     "variedad": "Clásico",
     "presentacion": "Bidón de 4L",
@@ -6729,7 +6694,7 @@
     ]
   },
   {
-    "id": 195,
+    "id": 194,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Delicado",
     "presentacion": "Doypack 2L",
@@ -6762,7 +6727,7 @@
     ]
   },
   {
-    "id": 196,
+    "id": 195,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Exótico",
     "presentacion": "Doypack 2L",
@@ -6795,7 +6760,7 @@
     ]
   },
   {
-    "id": 197,
+    "id": 196,
     "producto": "SUAVIZANTE PARA ROPAS CAVALLARO PREMIUM",
     "variedad": "Exótico",
     "presentacion": "Doypack 900ml",
@@ -6825,6 +6790,41 @@
     "stock": 0,
     "color": [
       "#f36ddd"
+    ]
+  },
+  {
+    "id": 197,
+    "producto": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL",
+    "variedad": "Floral",
+    "presentacion": "Doypack 1600ml",
+    "name": "SUAVIZANTE PARA ROPAS CAVALLARO EDICION ESPECIAL Floral Doypack 1600ml",
+    "category": "cuidado-de-las-prendas",
+    "subcategory": "suavizante",
+    "sku": "300001675",
+    "image": "https://cdn.cavallaro.com.py/productos/300000492.PNG",
+    "images": [
+      "https://cdn.cavallaro.com.py/productos/300000492.PNG",
+      "https://cdn.cavallaro.com.py/presentaciones/Doypack 1600ml.png"
+    ],
+    "price": "32400",
+    "originalPrice": "32400",
+    "size": [
+      "Doypack 1600ml"
+    ],
+    "featured": false,
+    "descripcion": "<p>Los Suavizantes Cavallaro Edición Especial poseen una fórmula concentrada que otorga el doble de suavidad y perfume a los tejidos. Cada variedad posee una exquisita fragancia desarrollada de manera exclusiva por un perfumista profesional, ofreciendo así diversas sensaciones y experiencias para los sentidos. Su composición posee perfume encapsulado mediante una tecnología denominada HD (High Diffusive) que permite la liberación de fragancia de forma gradual en diferentes momentos: durante el enjuague, en el momento de secado, durante la guarda y al momento de uso con la acción mecánica.</p>",
+    "usosRecomendados": [],
+    "propiedades": [
+      "• Edición Especial de perfumes, con aromas exclusivos para deleitar los sentidos.",
+      "• Su agente activo concentrado brinda humectación y un extra de suavidad a los tejidos.",
+      "• Mayor concentración de perfume, que brindan una explosión de fragancia.",
+      "• Con perfume encapsulado que garantiza que la fragancia se fije y perdure por más tiempo en el tejido.",
+      "• Facilita el planchado de las prendas.",
+      "• Protege los colores y evita el desgaste en la zona de cuello, codos y puños."
+    ],
+    "stock": 0,
+    "color": [
+      "#f859a0"
     ]
   },
   {

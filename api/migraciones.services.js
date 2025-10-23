@@ -81,10 +81,10 @@ const procesarCategorias = async (variantes) => {
   for (const catSlug of categoriasSet) {
     const catData = categoriasGeneradas.find(c => c.id === catSlug);
     const [categoria, created] = await Categoria.findOrCreate({
-      where: { slug: catSlug },
+      where: { slug: catData.slug },
       defaults: {
         nombre: catData?.name || slugToName(catSlug),
-        slug: catSlug,
+        slug: catData.slug,
         descripcion: catData?.description || '',
         imagenUrl: catData?.image || null,
         bannerUrl: catData?.image2 || null,
@@ -105,10 +105,10 @@ const procesarCategorias = async (variantes) => {
       const subData = catData?.subcategories?.find(s => s.id === subSlug);
 
       const [subcategoria, created] = await Categoria.findOrCreate({
-        where: { slug: subSlug },
+        where: { slug: subData?.slug },
         defaults: {
           nombre: subData?.name || slugToName(subSlug),
-          slug: subSlug,
+          slug: subData?.slug,
           descripcion: subData?.description || '',
           categoriasPadreId: categoriaId,
           orden: 0,
