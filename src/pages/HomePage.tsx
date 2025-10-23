@@ -1,13 +1,13 @@
 import type React from "react"
-import { useEffect, useState } from "react"
-import * as homeService from "../services/productos.service"
+import { useEffect, useState } from "react";
 import bannerService, { type Banner } from "../services/BannerService"
 import ProductCarousel from "../components/ProductCarousel"
 import Newsletter from "../components/Newsletter"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useApp } from "../contexts/AppContext"
 import { useNavigate } from "react-router-dom" 
-import { Product } from "../services/productos.service"
+import { getByCategoria, getDestacados, getNovedades  } from "../services/productos.service"
+import { Product } from "../interfaces/Productos.interface";
 const HomePage: React.FC = () => {
   const { addToCart, categories } = useApp()
   
@@ -31,23 +31,23 @@ const HomePage: React.FC = () => {
 
       // Cargar destacados y novedades en paralelo
       const [destacadosRes, novedadesRes] = await Promise.all([
-        homeService.getDestacados(),
-        homeService.getNovedades()
+        getDestacados(),
+        getNovedades()
       ])
 
-      setFeaturedProducts(destacadosRes.data)
-      setNewProducts(novedadesRes.data)
+      setFeaturedProducts(destacadosRes.productos)
+      setNewProducts(novedadesRes.productos)
 
       // Cargar productos por cada categoría
       if (categories.length > 0) {
         const categoriesPromises = categories.map(cat => 
-          homeService.getByCategoria(cat.id)
+          getByCategoria(cat.id)
         )
         const categoriesResults = await Promise.all(categoriesPromises)
 
         const catProducts: Record<string, Product[]> = {}
         categoriesResults.forEach((res, index) => {
-          catProducts[categories[index].id] = res.data
+          catProducts[categories[index].id] = res.productos
         })
         setCategoryProducts(catProducts)
       }

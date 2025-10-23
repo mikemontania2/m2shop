@@ -357,3 +357,36 @@ export interface CacheOptions {
   ttl?: number; // Time to live en milisegundos
   key: string;
 }
+
+// ========== INTERFACES ==========
+
+export interface Product {
+  id: number;
+  name: string;
+  slug: string;
+  image: string;
+  price: number;
+  originalPrice: number;
+  stock: number;
+}
+
+export interface Pagination {
+  total: number;
+  page: number;
+  limit: number;
+  pages: number;
+}
+
+export interface ProductResponse {
+  success: boolean;
+  productos: Product[];
+  pagination: Pagination;
+}
+
+export interface CategoryProductResponse extends ProductResponse {
+  categoria: {
+    id: number;
+    nombre: string;
+    slug: string;
+  };
+}

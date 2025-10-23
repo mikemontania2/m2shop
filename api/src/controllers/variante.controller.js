@@ -98,7 +98,7 @@ const getDestacados = async (req, res) => {
 
     res.json({
       success: true,
-      data: productos,
+      productos,
       count: productos.length
     });
   } catch (error) {
@@ -134,7 +134,7 @@ const getNovedades = async (req, res) => {
 
     res.json({
       success: true,
-      data: productos,
+      productos,
       count: productos.length
     });
   } catch (error) {
@@ -193,7 +193,7 @@ const getByCategoria = async (req, res) => {
     res.json({
       success: true,
       categoria,
-      data: productos,
+      productos,
       count: productos.length
     });
   } catch (error) {

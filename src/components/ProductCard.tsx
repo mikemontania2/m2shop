@@ -3,8 +3,8 @@
 import type React from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { ShoppingCart } from "lucide-react"
-import type { Product } from "../services/productService"
+import { ShoppingCart } from "lucide-react" 
+import { Product } from "../interfaces/Productos.interface"
 
 interface ProductCardProps {
   product: Product

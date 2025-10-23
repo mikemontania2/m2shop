@@ -1,8 +1,8 @@
 import React from 'react';
 import Carousel, { Breakpoints } from './Carousel';
 import ProductCard from './ProductCard';
-import type { Product } from '../services/productService';
-
+import { Product } from '../interfaces/Productos.interface';
+ 
 interface ProductCarouselProps {
   products: Product[];
   title?: string;
