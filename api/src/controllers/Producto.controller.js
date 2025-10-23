@@ -8,6 +8,7 @@ const ValorAtributo = require("../models/ValorAtributo.models")
 const Atributo = require("../models/Atributo.models")
 const Descuento = require("../models/Descuento.models")
 const { sequelize } = require("../../dbconfig")
+const moment = require('moment');
 
 
 /**
@@ -107,15 +108,14 @@ const includesCompletos = [
 ];
  
 // ========== OBTENER VARIANTES DESTACADAS (para Home) ==========
- const getDestacados = async (req, res) => {
+/*   const getDestacados = async (req, res) => {
   try {
     const limit = parseInt(req.query.limit) || 12;
     
     const variantes = await Variante.findAll({
       where: { 
         destacado: true,
-        activo: true,
-        stock: { [Op.gt]: 0 }
+        activo: true 
       },
       include: includesCompletos,
       order: [['created_at', 'DESC']],
@@ -137,17 +137,16 @@ const includesCompletos = [
       error: error.message 
     });
   }
-};
-
+}; */
+ 
 // ========== OBTENER NOVEDADES (para Home) ==========
-const getNovedades = async (req, res) => {
+/* const getNovedades = async (req, res) => {
   try {
     const limit = parseInt(req.query.limit) || 12;
     
     const variantes = await Variante.findAll({
       where: { 
-        activo: true,
-        stock: { [Op.gt]: 0 }
+        activo: true
       },
       include: includesCompletos,
       order: [['created_at', 'DESC']],
@@ -169,7 +168,7 @@ const getNovedades = async (req, res) => {
       error: error.message 
     });
   }
-};
+}; */
 
 // ========== OBTENER VARIANTES POR CATEGORÍA (para Home) ==========
  const getByCategoriaHome = async (req, res) => {
@@ -179,8 +178,7 @@ const getNovedades = async (req, res) => {
 
     const variantes = await Variante.findAll({
       where: { 
-        activo: true,
-        stock: { [Op.gt]: 0 }
+        activo: true
       },
       include: [
         {
@@ -1112,9 +1110,118 @@ const eliminar = async (req, res) => {
 
 
 
+// ========== OBTENER VARIANTES DESTACADAS ==========
+const getDestacados = async (req, res) => {
+  try {
+    const limit = parseInt(req.query.limit) || 12;
+    const productos = await getProductosParaCard({ destacado: true }, limit);
 
+    res.json({
+      success: true,
+      data: productos,
+      count: productos.length
+    });
+  } catch (error) {
+    console.error('Error al obtener destacados:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error al obtener variantes destacadas',
+      error: error.message
+    });
+  }
+};
 
+// ========== OBTENER NOVEDADES ==========
+const getNovedades = async (req, res) => {
+  try {
+    const limit = parseInt(req.query.limit) || 12;
+    const productos = await getProductosParaCard({}, limit);
 
+    res.json({
+      success: true,
+      data: productos,
+      count: productos.length
+    });
+  } catch (error) {
+    console.error('Error al obtener novedades:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error al obtener novedades',
+      error: error.message
+    });
+  }
+};
+ 
+const getProductosParaCard = async (where = {}, limit = 12) => {
+  const hoy = moment().format('YYYY-MM-DD');
+
+  // 1️⃣ Buscar variantes activas con includes
+  const variantes = await Variante.findAll({
+    where: { activo: true, ...where },
+    include: includesCompletos,
+    order: [['created_at', 'DESC']],
+    limit
+  });
+
+  // 2️⃣ Procesar las variantes para obtener variedad, presentación, etc.
+  const variantesProcesadas = procesarVariantes(variantes);
+
+  // 3️⃣ Buscar descuentos vigentes para esas variantes
+  const ids = variantesProcesadas.map(v => v.id);
+
+  const descuentos = await Descuento.findAll({
+    where: {
+      varianteId: { [Op.in]: ids },
+      activo: true,
+      fechaDesde: { [Op.lte]: hoy },
+      fechaHasta: { [Op.gte]: hoy }
+    }
+  });
+
+  // Crear un mapa de descuentos por variante
+  const descuentosMap = {};
+  descuentos.forEach(d => {
+    descuentosMap[d.varianteId] = d;
+  });
+
+  // 4️⃣ Transformar a formato ProductCard
+  const productos = variantesProcesadas.map(v => {
+    const descuento = descuentosMap[v.id];
+    let finalPrice = parseFloat(v.precio);
+    let originalPrice = 0;
+
+    if (descuento) {
+      originalPrice = finalPrice;
+
+      // Si el tipo de descuento es IMPORTE → resta valor
+      if (descuento.tipo === 'IMPORTE') {
+        finalPrice = Math.max(0, finalPrice - parseFloat(descuento.valor));
+      }
+
+      // Si el tipo es PRODUCTO → porcentaje (ej: 20 significa -20%)
+      if (descuento.tipo === 'PRODUCTO') {
+        finalPrice = finalPrice - (finalPrice * (parseFloat(descuento.valor) / 100));
+      }
+    }
+
+    return {
+      id: v.id,
+      name: v.nombreCompleto,
+      slug: v.slug,
+      image: v.imagenUrl || v.presentacionImagen,
+      price: finalPrice,
+      originalPrice,
+      stock: v.stock,
+      category: v.producto?.categoria?.nombre || '',
+      variety: v.variedad,
+      varietyColor: v.variedadColor,
+      presentation: v.presentacion,
+      presentationImage: v.presentacionImagen
+    };
+  });
+
+  return productos;
+};
 
 
 

@@ -10,20 +10,8 @@ const { authMiddleware, roleMiddleware } = require("../middlewares/authMiddlewar
 const router = Router()
 
 // ============= RUTAS DE PRODUCTOS =============
-
-// Públicas
-router.get("/", productoController.listar)
-router.get("/destacados", productoController.obtenerDestacados)
-router.get("/nuevos", productoController.obtenerNuevos)
-router.get("/categoria/:categoriaSlug", productoController.obtenerPorCategoria)
-router.get("/subcategoria/:subcategoriaSlug", productoController.obtenerPorSubcategoria)
-router.get("/:slug", productoController.obtenerPorSlug)
-
-// Admin/Vendedor
-router.post("/productos", authMiddleware, roleMiddleware("admin", "vendedor"), productoController.crear)
-router.put("/productos/:id", authMiddleware, roleMiddleware("admin", "vendedor"), productoController.actualizar)
-router.delete("/productos/:id", authMiddleware, roleMiddleware("admin", "vendedor"), productoController.eliminar)
  
+
 
 
 

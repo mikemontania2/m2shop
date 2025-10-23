@@ -264,6 +264,7 @@ const procesarVariantes = async (variantes) => {
       defaults: {
         productoId,
         sku: v.sku,
+        nombre:  (`${v.producto} ${v.variedad || ''} ${v.presentacion || ''}`),
         slug: generarSlug(`${v.producto} ${v.variedad || ''} ${v.presentacion || ''}`),
         precio: parseFloat(v.price) || 0,
         precioOriginal: parseFloat(v.originalPrice) || null,

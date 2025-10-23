@@ -24,7 +24,12 @@ const Variante = sequelize.define('Variante', {
     allowNull: false,
     unique: true
   },
- 
+  nombre: {
+    type: DataTypes.STRING(300),
+    allowNull: false,
+    comment: 'Nombre completo pre-calculado con acentos: Producto - Atributo1 - Atributo2'
+  },
+
   slug: {
     type: DataTypes.STRING(250),
     allowNull: false,

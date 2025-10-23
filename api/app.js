@@ -37,7 +37,7 @@ app.use("/M2SHOP/productos", require("./src/routes/productos-routes"));
 app.use("/M2SHOP/resenas", require("./src/routes/resenas-routes"));
 app.use("/M2SHOP/ubicaciones", require("./src/routes/ubicaciones-routes"));
 app.use("/M2SHOP/usuarios", require("./src/routes/usuarios-routes")); 
-
+app.use("/M2SHOP/variantes", require("./src/routes/variantes-routes"));  
 app.listen(process.env.PORT, () =>
   console.log("Servidor corriendo en puerto " + process.env.PORT)
 );
