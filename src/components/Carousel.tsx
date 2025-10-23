@@ -17,8 +17,12 @@ interface CarouselProps<T = any> {
   autoPlayIntervalMs?: number;
   loop?: boolean;
   itemsPerView?: number | Breakpoints;
-  slideBy?: number; // how many items to move per step
+  slideBy?: number;
   ariaLabel?: string;
+  // ⭐ NUEVAS PROPS para lazy loading
+  onNearEnd?: () => void;
+  nearEndThreshold?: number;
+  isLoadingMore?: boolean;
 }
 
 const getPerView = (itemsPerView?: number | Breakpoints): number => {
@@ -44,11 +48,15 @@ function Carousel<T = any>(props: CarouselProps<T>) {
     itemsPerView: itemsPerViewProp = { default: 4, md: 3, sm: 2, xs: 1 },
     slideBy: slideByProp,
     ariaLabel = 'carousel',
+    onNearEnd,
+    nearEndThreshold = 3,
+    isLoadingMore = false,
   } = props;
 
   const [perView, setPerView] = useState<number>(() => getPerView(itemsPerViewProp));
   const [current, setCurrent] = useState<number>(0);
   const trackRef = useRef<HTMLDivElement | null>(null);
+  const hasTriggeredLoadRef = useRef(false);
 
   const maxIndex = Math.max(0, items.length - perView);
   const slideBy = Math.max(1, slideByProp ?? 1);
@@ -60,9 +68,28 @@ function Carousel<T = any>(props: CarouselProps<T>) {
   }, [itemsPerViewProp]);
 
   useEffect(() => {
-    // Ensure current index is valid after perView change
     setCurrent((prev) => Math.min(prev, Math.max(0, items.length - perView)));
   }, [perView, items.length]);
+
+  // ⭐ NUEVO: Detectar cuando estamos cerca del final
+  useEffect(() => {
+    if (!onNearEnd || isLoadingMore) return;
+
+    const itemsFromEnd = items.length - (current + perView);
+    
+    if (itemsFromEnd <= nearEndThreshold && itemsFromEnd >= 0 && !hasTriggeredLoadRef.current) {
+      console.log(`🔄 Cerca del final (quedan ${itemsFromEnd} items), disparando onNearEnd`);
+      hasTriggeredLoadRef.current = true;
+      onNearEnd();
+    }
+  }, [current, items.length, perView, nearEndThreshold, onNearEnd, isLoadingMore]);
+
+  // ⭐ NUEVO: Reset del flag cuando se completa la carga
+  useEffect(() => {
+    if (!isLoadingMore) {
+      hasTriggeredLoadRef.current = false;
+    }
+  }, [isLoadingMore]);
 
   useEffect(() => {
     if (!autoPlay || items.length <= perView) return;
@@ -127,6 +154,19 @@ function Carousel<T = any>(props: CarouselProps<T>) {
               {renderItem(item, idx)}
             </div>
           ))}
+          
+          {/* ⭐ NUEVO: Indicador de carga al final */}
+          {isLoadingMore && (
+            <div
+              className="carousel-item carousel-loading-item"
+              style={{ flex: `0 0 ${100 / perView}%` }}
+            >
+              <div className="loading-indicator">
+                <div className="spinner"></div>
+                <p>Cargando más productos...</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
 

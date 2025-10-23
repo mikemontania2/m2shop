@@ -6,21 +6,43 @@ import Newsletter from "../components/Newsletter"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useApp } from "../contexts/AppContext"
 import { useNavigate } from "react-router-dom" 
-import { getByCategoria, getDestacados, getNovedades  } from "../services/productos.service"
+import { getByCategoria, getDestacados, getNovedades } from "../services/productos.service"
 import { Product } from "../interfaces/Productos.interface";
+
+// ⭐ Interface para el estado de paginación
+interface PaginationState {
+  currentPage: number;
+  totalPages: number;
+  isLoading: boolean;
+}
+
 const HomePage: React.FC = () => {
   const { addToCart, categories } = useApp()
   
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
   const [newProducts, setNewProducts] = useState<Product[]>([])
   const [categoryProducts, setCategoryProducts] = useState<Record<string, Product[]>>({})
+  
+  // ⭐ Estados de paginación
+  const [featuredPagination, setFeaturedPagination] = useState<PaginationState>({
+    currentPage: 1,
+    totalPages: 1,
+    isLoading: false,
+  })
+  const [newPagination, setNewPagination] = useState<PaginationState>({
+    currentPage: 1,
+    totalPages: 1,
+    isLoading: false,
+  })
+  const [categoryPagination, setCategoryPagination] = useState<Record<string, PaginationState>>({})
+  
   const [banners, setBanners] = useState<Banner[]>([])
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loading, setLoading] = useState(true)
   
   const navigate = useNavigate()
 
-  // Cargar productos del backend al montar
+  // Cargar productos del backend al montar (SOLO PRIMERA PÁGINA)
   useEffect(() => {
     loadHomeData()
   }, [categories])
@@ -29,36 +51,161 @@ const HomePage: React.FC = () => {
     try {
       setLoading(true)
 
-      // Cargar destacados y novedades en paralelo
+      // ⭐ Cargar SOLO la primera página (12 items)
       const [destacadosRes, novedadesRes] = await Promise.all([
-        getDestacados(),
-        getNovedades()
+        getDestacados(1, 12),
+        getNovedades(1, 12)
       ])
 
       setFeaturedProducts(destacadosRes.productos)
-      setNewProducts(novedadesRes.productos)
+      setFeaturedPagination({
+        currentPage: 1,
+        totalPages: destacadosRes.pagination.pages,
+        isLoading: false,
+      })
 
-      // Cargar productos por cada categoría
+      setNewProducts(novedadesRes.productos)
+      setNewPagination({
+        currentPage: 1,
+        totalPages: novedadesRes.pagination.pages,
+        isLoading: false,
+      })
+
+      // ⭐ Cargar solo primera página de cada categoría
       if (categories.length > 0) {
         const categoriesPromises = categories.map(cat => 
-          getByCategoria(cat.id)
+          getByCategoria(cat.id, 1, 12)
         )
         const categoriesResults = await Promise.all(categoriesPromises)
 
         const catProducts: Record<string, Product[]> = {}
+        const catPag: Record<string, PaginationState> = {}
+        
         categoriesResults.forEach((res, index) => {
-          catProducts[categories[index].id] = res.productos
+          const catId = categories[index].id
+          catProducts[catId] = res.productos
+          catPag[catId] = {
+            currentPage: 1,
+            totalPages: res.pagination.pages,
+            isLoading: false,
+          }
         })
+        
         setCategoryProducts(catProducts)
+        setCategoryPagination(catPag)
       }
 
-      // Cargar banners (del servicio local)
+      // Cargar banners
       setBanners(bannerService.getBanners())
 
     } catch (error) {
       console.error('Error al cargar datos del home:', error)
     } finally {
       setLoading(false)
+    }
+  }
+
+  // ⭐ NUEVO: Cargar más destacados
+  const loadMoreFeatured = async () => {
+    const { currentPage, totalPages, isLoading } = featuredPagination
+    
+    if (isLoading || currentPage >= totalPages) {
+      console.log('⏸️ Destacados: Ya está cargando o no hay más páginas')
+      return
+    }
+
+    try {
+      console.log(`📥 Destacados: Cargando página ${currentPage + 1} de ${totalPages}`)
+      setFeaturedPagination(prev => ({ ...prev, isLoading: true }))
+      
+      const nextPage = currentPage + 1
+      const response = await getDestacados(nextPage, 12)
+      
+      setFeaturedProducts(prev => [...prev, ...response.productos])
+      setFeaturedPagination({
+        currentPage: nextPage,
+        totalPages: response.pagination.pages,
+        isLoading: false,
+      })
+      
+      console.log(`✅ Destacados: Cargados ${response.productos.length} productos más`)
+    } catch (error) {
+      console.error('❌ Error cargando más destacados:', error)
+      setFeaturedPagination(prev => ({ ...prev, isLoading: false }))
+    }
+  }
+
+  // ⭐ NUEVO: Cargar más novedades
+  const loadMoreNew = async () => {
+    const { currentPage, totalPages, isLoading } = newPagination
+    
+    if (isLoading || currentPage >= totalPages) {
+      console.log('⏸️ Novedades: Ya está cargando o no hay más páginas')
+      return
+    }
+
+    try {
+      console.log(`📥 Novedades: Cargando página ${currentPage + 1} de ${totalPages}`)
+      setNewPagination(prev => ({ ...prev, isLoading: true }))
+      
+      const nextPage = currentPage + 1
+      const response = await getNovedades(nextPage, 12)
+      
+      setNewProducts(prev => [...prev, ...response.productos])
+      setNewPagination({
+        currentPage: nextPage,
+        totalPages: response.pagination.pages,
+        isLoading: false,
+      })
+      
+      console.log(`✅ Novedades: Cargados ${response.productos.length} productos más`)
+    } catch (error) {
+      console.error('❌ Error cargando más novedades:', error)
+      setNewPagination(prev => ({ ...prev, isLoading: false }))
+    }
+  }
+
+  // ⭐ NUEVO: Cargar más productos de categoría
+  const loadMoreCategory = async (categoryId: string) => {
+    const pagination = categoryPagination[categoryId]
+    
+    if (!pagination || pagination.isLoading || pagination.currentPage >= pagination.totalPages) {
+      console.log(`⏸️ Categoría ${categoryId}: Ya está cargando o no hay más páginas`)
+      return
+    }
+
+    try {
+      console.log(`📥 Categoría ${categoryId}: Cargando página ${pagination.currentPage + 1} de ${pagination.totalPages}`)
+      
+      setCategoryPagination(prev => ({
+        ...prev,
+        [categoryId]: { ...prev[categoryId], isLoading: true }
+      }))
+      
+      const nextPage = pagination.currentPage + 1
+      const response = await getByCategoria(categoryId, nextPage, 12)
+      
+      setCategoryProducts(prev => ({
+        ...prev,
+        [categoryId]: [...(prev[categoryId] || []), ...response.productos]
+      }))
+      
+      setCategoryPagination(prev => ({
+        ...prev,
+        [categoryId]: {
+          currentPage: nextPage,
+          totalPages: response.pagination.pages,
+          isLoading: false,
+        }
+      }))
+      
+      console.log(`✅ Categoría ${categoryId}: Cargados ${response.productos.length} productos más`)
+    } catch (error) {
+      console.error(`❌ Error cargando más productos de ${categoryId}:`, error)
+      setCategoryPagination(prev => ({
+        ...prev,
+        [categoryId]: { ...prev[categoryId], isLoading: false }
+      }))
     }
   }
 
@@ -81,7 +228,6 @@ const HomePage: React.FC = () => {
   }
 
   const handleAddToCart = (product: Product, quantity: number) => {
-    // Adaptar el producto del backend al formato del contexto
     const productWithSizes = {
       ...product,
       sizes: ['Único'],
@@ -160,16 +306,19 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Carrusel de Novedades */}
+      {/* ⭐ Carrusel de Novedades CON LAZY LOADING */}
       {newProducts.length > 0 && (
         <ProductCarousel
           title="Novedades"
-          products={newProducts as any}
+          products={newProducts}
           slideBy={1}
           autoPlay
           autoPlayIntervalMs={4500}
           onProductClick={handleProductClick}
           onAddToCart={handleAddToCart}
+          onLoadMore={loadMoreNew}
+          hasMore={newPagination.currentPage < newPagination.totalPages}
+          isLoadingMore={newPagination.isLoading}
         />
       )}
     
@@ -184,20 +333,24 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Carrusel de Destacados */}
+      {/* ⭐ Carrusel de Destacados CON LAZY LOADING */}
       {featuredProducts.length > 0 && (
         <ProductCarousel
           title="Destacados"
-          products={featuredProducts as any}
+          products={featuredProducts}
           slideBy={1}
           onProductClick={handleProductClick}
           onAddToCart={handleAddToCart}
+          onLoadMore={loadMoreFeatured}
+          hasMore={featuredPagination.currentPage < featuredPagination.totalPages}
+          isLoadingMore={featuredPagination.isLoading}
         />
       )}
 
-      {/* Carruseles por Categoría - uno para cada categoría con su banner */}
+      {/* ⭐ Carruseles por Categoría CON LAZY LOADING */}
       {categories.map((cat) => {
         const products = categoryProducts[cat.id] || []
+        const pagination = categoryPagination[cat.id]
         if (products.length === 0) return null
 
         return (
@@ -219,10 +372,13 @@ const HomePage: React.FC = () => {
             {/* Carrusel de productos de la categoría */}
             <ProductCarousel
               title={cat.name}
-              products={products as any}
+              products={products}
               slideBy={1}
               onProductClick={handleProductClick}
               onAddToCart={handleAddToCart}
+              onLoadMore={() => loadMoreCategory(cat.id)}
+              hasMore={pagination ? pagination.currentPage < pagination.totalPages : false}
+              isLoadingMore={pagination?.isLoading || false}
             />
           </div>
         )

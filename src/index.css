@@ -343,3 +343,37 @@
     text-align: left;
   }
 }
+
+
+/* Indicador de carga en el carrusel */
+.carousel-loading-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 2rem;
+}
+
+.loading-indicator .spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-indicator p {
+  color: #666;
+  font-size: 0.9rem;
+}

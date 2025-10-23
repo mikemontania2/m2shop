@@ -75,13 +75,15 @@ const transformarAProductCard = (variantes, descuentosMap) => {
 };
 
 /**
- * GET /api/home/destacados
+ * GET /api/home/destacados?page=1&limit=12
  */
 const getDestacados = async (req, res) => {
   try {
-    const limit = 12;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 12;
+    const offset = (page - 1) * limit;
 
-    const variantes = await Variante.findAll({
+    const { count, rows } = await Variante.findAndCountAll({
       where: { 
         activo: true,
         destacado: true
@@ -89,17 +91,23 @@ const getDestacados = async (req, res) => {
       attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock'],
       order: [['created_at', 'DESC']],
       limit,
+      offset,
       raw: true
     });
 
-    const variantesIds = variantes.map(v => v.id);
+    const variantesIds = rows.map(v => v.id);
     const descuentosMap = await getDescuentosVigentes(variantesIds);
-    const productos = transformarAProductCard(variantes, descuentosMap);
+    const productos = transformarAProductCard(rows, descuentosMap);
 
     res.json({
       success: true,
       productos,
-      count: productos.length
+      pagination: {
+        total: count,
+        pages: Math.ceil(count / limit),
+        current: page,
+        limit
+      }
     });
   } catch (error) {
     console.error('Error al obtener destacados:', error);
@@ -111,31 +119,38 @@ const getDestacados = async (req, res) => {
   }
 };
 
+
 /**
- * GET /api/home/novedades
+ * GET /api/home/novedades?page=1&limit=12
  */
 const getNovedades = async (req, res) => {
   try {
-    const limit = 12;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 12;
+    const offset = (page - 1) * limit;
 
-    const variantes = await Variante.findAll({
-      where: { 
-        activo: true
-      },
+    const { count, rows } = await Variante.findAndCountAll({
+      where: { activo: true },
       attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock'],
       order: [['created_at', 'DESC']],
       limit,
+      offset,
       raw: true
     });
 
-    const variantesIds = variantes.map(v => v.id);
+    const variantesIds = rows.map(v => v.id);
     const descuentosMap = await getDescuentosVigentes(variantesIds);
-    const productos = transformarAProductCard(variantes, descuentosMap);
+    const productos = transformarAProductCard(rows, descuentosMap);
 
     res.json({
       success: true,
       productos,
-      count: productos.length
+      pagination: {
+        total: count,
+        pages: Math.ceil(count / limit),
+        current: page,
+        limit
+      }
     });
   } catch (error) {
     console.error('Error al obtener novedades:', error);
@@ -147,13 +162,16 @@ const getNovedades = async (req, res) => {
   }
 };
 
+
 /**
- * GET /api/home/categoria/:slug
+ * GET /api/home/categoria/:slug?page=1&limit=12
  */
 const getByCategoria = async (req, res) => {
   try {
     const { slug } = req.params;
-    const limit = 12;
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 12;
+    const offset = (page - 1) * limit;
 
     const categoria = await Categoria.findOne({
       where: { slug, activo: true },
@@ -168,7 +186,7 @@ const getByCategoria = async (req, res) => {
       });
     }
 
-    const variantes = await Variante.findAll({
+    const { count, rows } = await Variante.findAndCountAll({
       where: { activo: true },
       attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock'],
       include: [{
@@ -183,18 +201,24 @@ const getByCategoria = async (req, res) => {
       }],
       order: [['created_at', 'DESC']],
       limit,
+      offset,
       raw: true
     });
 
-    const variantesIds = variantes.map(v => v.id);
+    const variantesIds = rows.map(v => v.id);
     const descuentosMap = await getDescuentosVigentes(variantesIds);
-    const productos = transformarAProductCard(variantes, descuentosMap);
+    const productos = transformarAProductCard(rows, descuentosMap);
 
     res.json({
       success: true,
       categoria,
       productos,
-      count: productos.length
+      pagination: {
+        total: count,
+        pages: Math.ceil(count / limit),
+        current: page,
+        limit
+      }
     });
   } catch (error) {
     console.error('Error al obtener productos por categoría:', error);
@@ -205,7 +229,6 @@ const getByCategoria = async (req, res) => {
     });
   }
 };
-
 module.exports = {
   getDestacados,
   getNovedades,

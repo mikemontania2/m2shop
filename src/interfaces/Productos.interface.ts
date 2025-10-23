@@ -372,15 +372,15 @@ export interface Product {
 
 export interface Pagination {
   total: number;
-  page: number;
-  limit: number;
   pages: number;
+  limit: number;
+  current: number;
 }
 
 export interface ProductResponse {
   success: boolean;
   productos: Product[];
-  pagination: Pagination;
+  pagination: Pagination;  
 }
 
 export interface CategoryProductResponse extends ProductResponse {
