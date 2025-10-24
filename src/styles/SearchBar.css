@@ -56,6 +56,7 @@
   transform: scale(0.95);
 }
 
+/* Improved suggestions dropdown to look like modern e-commerce product cards */
 .search-suggestions {
   position: absolute;
   top: calc(100% + 8px);
@@ -65,15 +66,20 @@
   border: 1px solid #e8e8e8;
   border-radius: 12px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-  padding: 8px;
+  padding: 12px;
   animation: dropdownIn 0.2s ease-out;
   z-index: 1200;
+  max-height: 480px;
+  overflow-y: auto;
 }
 
 .search-suggestions ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .search-suggestions li {
@@ -84,46 +90,85 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   padding: 12px;
-  background: transparent;
-  border: none;
+  background: var(--white);
+  border: 1px solid #f0f0f0;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: all 0.2s ease;
   text-align: left;
 }
 
 .suggestion-item:hover {
   background: #f8f9fa;
-  transform: translateX(4px);
+  border-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
 .suggestion-item img {
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   border-radius: 10px;
   border: 1px solid #e8e8e8;
+  flex-shrink: 0;
 }
 
 .suggestion-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
 }
 
 .suggestion-name {
   font-weight: 600;
   color: var(--text-color);
   font-size: 0.95rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.suggestion-sub {
+.suggestion-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.suggestion-price .original-price {
+  color: var(--text-light);
+  text-decoration: line-through;
   font-size: 0.85rem;
+}
+
+.suggestion-price .current-price {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 1rem;
+}
+/* </CHANGE> */
+
+/* Better loading state */
+.suggestions-loading {
+  padding: 32px 20px;
+  text-align: center;
   color: var(--text-light);
 }
+
+.suggestions-loading p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+/* </CHANGE> */
 
 @keyframes dropdownIn {
   from {
@@ -136,9 +181,43 @@
   }
 }
 
-/* Responsive adjustments */
+/* Mobile responsive improvements */
 @media (max-width: 768px) {
   .search-form {
     max-width: none;
+    border-radius: 10px;
+  }
+
+  .search-form input {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .search-form button {
+    padding: 10px 16px;
+  }
+
+  .search-suggestions {
+    max-height: 360px;
+    padding: 8px;
+  }
+
+  .suggestion-item {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .suggestion-item img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .suggestion-name {
+    font-size: 0.9rem;
+  }
+
+  .suggestion-price .current-price {
+    font-size: 0.95rem;
   }
 }
+/* </CHANGE> */

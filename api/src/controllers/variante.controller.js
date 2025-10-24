@@ -98,47 +98,7 @@ const getDestacados = async (req, res) => {
   }
 };
  
-/**
- * GET /api/home/novedades?page=1&limit=12
- */
-const getNovedades = async (req, res) => {
-  try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 12;
-    const offset = (page - 1) * limit;
 
-    const { count, rows } = await Variante.findAndCountAll({
-      where: { activo: true, nuevo:true },
-      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
-      order: [['created_at', 'DESC']],
-      limit,
-      offset,
-      raw: true
-    });
-
-    const variantesIds = rows.map(v => v.id);
-    const descuentosMap = await getDescuentosVigentes(variantesIds);
-    const productos = transformarAProductCard(rows, descuentosMap);
-
-    res.json({
-      success: true,
-      productos,
-      pagination: {
-        total: count,
-        pages: Math.ceil(count / limit),
-        current: page,
-        limit
-      }
-    });
-  } catch (error) {
-    console.error('Error al obtener novedades:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Error al obtener novedades',
-      error: error.message
-    });
-  }
-};
  
 /**
  * GET /api/home/categoria/:slug?page=1&limit=12
@@ -215,9 +175,141 @@ const getByCategoria = async (req, res) => {
     });
   }
 };
+/**
+ * GET /api/home/novedades?page=1&limit=12
+ */
+const getNovedades = async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 12;
+    const offset = (page - 1) * limit;
+
+    const { count, rows } = await Variante.findAndCountAll({
+      where: { activo: true, nuevo:true },
+      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
+      order: [['created_at', 'DESC']],
+      limit,
+      offset,
+      raw: true
+    });
+
+    const variantesIds = rows.map(v => v.id);
+    const descuentosMap = await getDescuentosVigentes(variantesIds);
+    const productos = transformarAProductCard(rows, descuentosMap);
+
+    res.json({
+      success: true,
+      productos,
+      pagination: {
+        total: count,
+        pages: Math.ceil(count / limit),
+        current: page,
+        limit
+      }
+    });
+  } catch (error) {
+    console.error('Error al obtener novedades:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error al obtener novedades',
+      error: error.message
+    });
+  }
+};
+const buscarProductos = async (req, res) => {
+  try {
+    const query = req.query.q?.trim() || '';
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 12;
+    const offset = (page - 1) * limit; 
+
+    if (!query) {
+      return res.status(400).json({
+        success: false,
+        message: 'Debe proporcionar un término de búsqueda (q)',
+      });
+    }
+
+    // ✅ Construir condiciones de búsqueda válidas
+    const searchCondition = {
+      [Op.or]: [
+        // Campos de Variante
+        { nombre: { [Op.iLike]: `%${query}%` } },
+
+        // Campos del Producto
+       /*  { '$producto.nombre$': { [Op.iLike]: `%${query}%` } },
+        { '$producto.descripcion$': { [Op.iLike]: `%${query}%` } },
+        { '$producto.propiedades$': { [Op.iLike]: `%${query}%` } },
+        { '$producto.usosRecomendados$': { [Op.iLike]: `%${query}%` } }, */
+
+        // Campos de categoría y subcategoría
+      /*   { '$producto.categoria.nombre$': { [Op.iLike]: `%${query}%` } },
+        { '$producto.subcategoria.nombre$': { [Op.iLike]: `%${query}%` } }, */
+      ],
+    };
+
+    const { count, rows } = await Variante.findAndCountAll({
+      where: {
+        activo: true,
+        ...searchCondition
+      },
+      attributes: [
+        'id',
+        'nombre',
+        'slug',
+        'precio',
+        'precioOriginal',
+        'imagenUrl',
+        'stock',
+        'destacado',
+        'nuevo'
+      ],
+      include: [
+        {
+          model: Producto,
+          as: 'producto',
+          attributes: ['id', 'nombre', 'descripcion', 'propiedades', 'usosRecomendados'],
+          include: [
+            { model: Categoria, as: 'categoria', attributes: ['id', 'nombre', 'slug'] },
+            { model: Categoria, as: 'subcategoria', attributes: ['id', 'nombre', 'slug'] }
+          ]
+        }
+      ],
+      order: [['created_at', 'DESC']],
+      limit,
+      offset, 
+    });
+
+    // 🔹 Obtener descuentos y transformar resultados
+    const variantesIds = rows.map(v => v.id);
+    const descuentosMap = await getDescuentosVigentes(variantesIds);
+    const productos = transformarAProductCard(rows, descuentosMap);
+
+    res.json({
+      success: true,
+      query,
+      productos,
+      pagination: {
+        total: count,
+        pages: Math.ceil(count / limit),
+        current: page,
+        limit
+      }
+    });
+
+  } catch (error) {
+    console.error('Error al buscar productos:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error al buscar productos',
+      error: error.message
+    });
+  }
+};
+
 
 module.exports = {
   getDestacados,
   getNovedades,
-  getByCategoria
+  getByCategoria,buscarProductos
 };

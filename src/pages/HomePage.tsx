@@ -1,28 +1,31 @@
+"use client"
+
 import type React from "react"
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import bannerService, { type Banner } from "../services/BannerService"
 import ProductCarousel from "../components/ProductCarousel"
 import Newsletter from "../components/Newsletter"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useApp } from "../contexts/AppContext"
-import { useNavigate } from "react-router-dom" 
+import { useNavigate } from "react-router-dom"
 import { getByCategoria, getDestacados, getNovedades } from "../services/productos.service"
-import { Product } from "../interfaces/Productos.interface";
+import type { Product } from "../interfaces/Productos.interface"
+import LoadingSpinner from "../components/LoadingSpinner"
 
 // ⭐ Interface para el estado de paginación
 interface PaginationState {
-  currentPage: number;
-  totalPages: number;
-  isLoading: boolean;
+  currentPage: number
+  totalPages: number
+  isLoading: boolean
 }
 
 const HomePage: React.FC = () => {
   const { addToCart, categories } = useApp()
-  
+
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([])
   const [newProducts, setNewProducts] = useState<Product[]>([])
   const [categoryProducts, setCategoryProducts] = useState<Record<string, Product[]>>({})
-  
+
   // ⭐ Estados de paginación
   const [featuredPagination, setFeaturedPagination] = useState<PaginationState>({
     currentPage: 1,
@@ -35,11 +38,11 @@ const HomePage: React.FC = () => {
     isLoading: false,
   })
   const [categoryPagination, setCategoryPagination] = useState<Record<string, PaginationState>>({})
-  
+
   const [banners, setBanners] = useState<Banner[]>([])
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loading, setLoading] = useState(true)
-  
+
   const navigate = useNavigate()
 
   // Cargar productos del backend al montar (SOLO PRIMERA PÁGINA)
@@ -52,10 +55,7 @@ const HomePage: React.FC = () => {
       setLoading(true)
 
       // ⭐ Cargar SOLO la primera página (12 items)
-      const [destacadosRes, novedadesRes] = await Promise.all([
-        getDestacados(1, 12),
-        getNovedades(1, 12)
-      ])
+      const [destacadosRes, novedadesRes] = await Promise.all([getDestacados(1, 12), getNovedades(1, 12)])
 
       setFeaturedProducts(destacadosRes.productos)
       setFeaturedPagination({
@@ -73,14 +73,12 @@ const HomePage: React.FC = () => {
 
       // ⭐ Cargar solo primera página de cada categoría
       if (categories.length > 0) {
-        const categoriesPromises = categories.map(cat => 
-          getByCategoria(cat.id, 1, 12)
-        )
+        const categoriesPromises = categories.map((cat) => getByCategoria(cat.id, 1, 12))
         const categoriesResults = await Promise.all(categoriesPromises)
 
         const catProducts: Record<string, Product[]> = {}
         const catPag: Record<string, PaginationState> = {}
-        
+
         categoriesResults.forEach((res, index) => {
           const catId = categories[index].id
           catProducts[catId] = res.productos
@@ -90,16 +88,15 @@ const HomePage: React.FC = () => {
             isLoading: false,
           }
         })
-        
+
         setCategoryProducts(catProducts)
         setCategoryPagination(catPag)
       }
 
       // Cargar banners
       setBanners(bannerService.getBanners())
-
     } catch (error) {
-      console.error('Error al cargar datos del home:', error)
+      console.error("Error al cargar datos del home:", error)
     } finally {
       setLoading(false)
     }
@@ -108,103 +105,105 @@ const HomePage: React.FC = () => {
   // ⭐ NUEVO: Cargar más destacados
   const loadMoreFeatured = async () => {
     const { currentPage, totalPages, isLoading } = featuredPagination
-    
+
     if (isLoading || currentPage >= totalPages) {
-      console.log('⏸️ Destacados: Ya está cargando o no hay más páginas')
+      console.log("⏸️ Destacados: Ya está cargando o no hay más páginas")
       return
     }
 
     try {
       console.log(`📥 Destacados: Cargando página ${currentPage + 1} de ${totalPages}`)
-      setFeaturedPagination(prev => ({ ...prev, isLoading: true }))
-      
+      setFeaturedPagination((prev) => ({ ...prev, isLoading: true }))
+
       const nextPage = currentPage + 1
       const response = await getDestacados(nextPage, 12)
-      
-      setFeaturedProducts(prev => [...prev, ...response.productos])
+
+      setFeaturedProducts((prev) => [...prev, ...response.productos])
       setFeaturedPagination({
         currentPage: nextPage,
         totalPages: response.pagination.pages,
         isLoading: false,
       })
-      
+
       console.log(`✅ Destacados: Cargados ${response.productos.length} productos más`)
     } catch (error) {
-      console.error('❌ Error cargando más destacados:', error)
-      setFeaturedPagination(prev => ({ ...prev, isLoading: false }))
+      console.error("❌ Error cargando más destacados:", error)
+      setFeaturedPagination((prev) => ({ ...prev, isLoading: false }))
     }
   }
 
   // ⭐ NUEVO: Cargar más novedades
   const loadMoreNew = async () => {
     const { currentPage, totalPages, isLoading } = newPagination
-    
+
     if (isLoading || currentPage >= totalPages) {
-      console.log('⏸️ Novedades: Ya está cargando o no hay más páginas')
+      console.log("⏸️ Novedades: Ya está cargando o no hay más páginas")
       return
     }
 
     try {
       console.log(`📥 Novedades: Cargando página ${currentPage + 1} de ${totalPages}`)
-      setNewPagination(prev => ({ ...prev, isLoading: true }))
-      
+      setNewPagination((prev) => ({ ...prev, isLoading: true }))
+
       const nextPage = currentPage + 1
       const response = await getNovedades(nextPage, 12)
-      
-      setNewProducts(prev => [...prev, ...response.productos])
+
+      setNewProducts((prev) => [...prev, ...response.productos])
       setNewPagination({
         currentPage: nextPage,
         totalPages: response.pagination.pages,
         isLoading: false,
       })
-      
+
       console.log(`✅ Novedades: Cargados ${response.productos.length} productos más`)
     } catch (error) {
-      console.error('❌ Error cargando más novedades:', error)
-      setNewPagination(prev => ({ ...prev, isLoading: false }))
+      console.error("❌ Error cargando más novedades:", error)
+      setNewPagination((prev) => ({ ...prev, isLoading: false }))
     }
   }
 
   // ⭐ NUEVO: Cargar más productos de categoría
   const loadMoreCategory = async (categoryId: string) => {
     const pagination = categoryPagination[categoryId]
-    
+
     if (!pagination || pagination.isLoading || pagination.currentPage >= pagination.totalPages) {
       console.log(`⏸️ Categoría ${categoryId}: Ya está cargando o no hay más páginas`)
       return
     }
 
     try {
-      console.log(`📥 Categoría ${categoryId}: Cargando página ${pagination.currentPage + 1} de ${pagination.totalPages}`)
-      
-      setCategoryPagination(prev => ({
+      console.log(
+        `📥 Categoría ${categoryId}: Cargando página ${pagination.currentPage + 1} de ${pagination.totalPages}`,
+      )
+
+      setCategoryPagination((prev) => ({
         ...prev,
-        [categoryId]: { ...prev[categoryId], isLoading: true }
+        [categoryId]: { ...prev[categoryId], isLoading: true },
       }))
-      
+
       const nextPage = pagination.currentPage + 1
       const response = await getByCategoria(categoryId, nextPage, 12)
-      
-      setCategoryProducts(prev => ({
+
+      setCategoryProducts((prev) => ({
         ...prev,
-        [categoryId]: [...(prev[categoryId] || []), ...response.productos]
+        [categoryId]: [...(prev[categoryId] || []), ...response.productos],
       }))
-      
-      setCategoryPagination(prev => ({
+
+      setCategoryPagination((prev) => ({
         ...prev,
         [categoryId]: {
           currentPage: nextPage,
           totalPages: response.pagination.pages,
           isLoading: false,
-        }
+        },
       }))
-      
+
       console.log(`✅ Categoría ${categoryId}: Cargados ${response.productos.length} productos más`)
     } catch (error) {
       console.error(`❌ Error cargando más productos de ${categoryId}:`, error)
-      setCategoryPagination(prev => ({
+      setCategoryPagination((prev) => ({
         ...prev,
-        [categoryId]: { ...prev[categoryId], isLoading: false }
+        [categoryId]: { ...prev[categoryId], isLoading: false },
       }))
     }
   }
@@ -230,18 +229,23 @@ const HomePage: React.FC = () => {
   const handleAddToCart = (product: Product, quantity: number) => {
     const productWithSizes = {
       ...product,
-      sizes: ['Único'],
-      colors: ['Único']
+      sizes: ["Único"],
+      colors: ["Único"],
     }
-    addToCart(productWithSizes as any, quantity, 'Único', 'Único')
+    addToCart(productWithSizes as any, quantity, "Único", "Único")
   }
 
   const handleCategoryClick = (categoryId: string) => {
     navigate(`/${categoryId}`)
   }
 
-  const handleProductClick = (product: Product) => {
-    navigate(`/producto/${product.slug}`)
+  const handleProductClick = (productId: number) => {
+    const product = [...featuredProducts, ...newProducts, ...Object.values(categoryProducts).flat()].find(
+      (p) => p.id === productId,
+    )
+    if (product) {
+      navigate(`/producto/${product.slug}`)
+    }
   }
 
   const handleBannerClick = (url: string) => {
@@ -251,8 +255,8 @@ const HomePage: React.FC = () => {
   if (loading) {
     return (
       <div className="home-page">
-        <div className="container" style={{ textAlign: 'center', padding: '3rem' }}>
-          <p>Cargando productos...</p>
+        <div className="container" style={{ textAlign: "center", padding: "3rem" }}>
+          <LoadingSpinner message="Cargando productos..." />
         </div>
       </div>
     )
@@ -321,13 +325,13 @@ const HomePage: React.FC = () => {
           isLoadingMore={newPagination.isLoading}
         />
       )}
-    
+
       {/* Banner medio entre Novedades y Destacados */}
       <section className="mid-banner">
         <div className="banner-image-container">
-          <img 
-            src="https://www.cavallaro.com.py/userfiles/images/banners/bannermedio1-12.png" 
-            alt="Banner promocional" 
+          <img
+            src="https://www.cavallaro.com.py/userfiles/images/banners/bannermedio1-12.png"
+            alt="Banner promocional"
             className="banner-image"
           />
         </div>
@@ -359,16 +363,16 @@ const HomePage: React.FC = () => {
             {cat.bannerUrl && (
               <section className="category-banner">
                 <div className="banner-image-container">
-                  <img 
-                    src={cat.bannerUrl} 
-                    alt={`Banner ${cat.name}`} 
+                  <img
+                    src={cat.bannerUrl || "/placeholder.svg"}
+                    alt={`Banner ${cat.name}`}
                     className="banner-image"
                     onClick={() => handleCategoryClick(cat.id)}
                   />
                 </div>
               </section>
             )}
-            
+
             {/* Carrusel de productos de la categoría */}
             <ProductCarousel
               title={cat.name}

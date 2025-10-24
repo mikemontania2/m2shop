@@ -1,35 +1,40 @@
-import { AppProvider, useApp } from './contexts/AppContext';
-import { Routes, Route, Outlet } from 'react-router-dom';
-import Header from './components/Header';
-import MainNav from './components/header/MainNav';
-import TopBar from './components/TopBar';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import CategoryPage from './pages/CategoryPage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import CatalogPage from './pages/CatalogPage';
-import MapCoveragePage from './pages/MapCoveragePage';
-import AdminLoginPage from './pages/AdminLoginPage';
-import AdminDashboard from './pages/AdminDashboard';
-import AdminLayout from './admin/AdminLayout';
-import ProductsAdmin from './admin/ProductsAdmin';
-import CategoriesAdmin from './admin/CategoriesAdmin';
-import BannersAdmin from './admin/BannersAdmin';
-import DiscountsAdmin from './admin/DiscountsAdmin';
-import OrdersAdmin from './admin/OrdersAdmin';
-import BranchesAdmin from './admin/BranchesAdmin';
-import CoverageAdmin from './admin/CoverageAdmin';
-import authService from './services/authService';
-import CartPage from './pages/CartPage';
-import CheckoutPage from './pages/CheckoutPage';
-import ContactPage from './pages/ContactPage';
-import CompanyPage from './pages/CompanyPage';
-import HistoryPage from './pages/HistoryPage';
-import StoresPage from './pages/StoresPage';
-import OrderConfirmationPage from './pages/OrderConfirmationPage';
-import LoginPage from './pages/LoginPage';
- function ToastContainer() {
-  const { toasts } = useApp();
+import type React from "react"
+import { AppProvider, useApp } from "./contexts/AppContext"
+import { Routes, Route, Outlet } from "react-router-dom"
+import Header from "./components/Header"
+import MainNav from "./components/header/MainNav"
+import TopBar from "./components/TopBar"
+import Footer from "./components/Footer"
+import HomePage from "./pages/HomePage"
+import CategoryPage from "./pages/CategoryPage"
+import ProductDetailPage from "./pages/ProductDetailPage"
+import CatalogPage from "./pages/CatalogPage"
+import MapCoveragePage from "./pages/MapCoveragePage"
+import AdminLoginPage from "./pages/AdminLoginPage"
+import AdminDashboard from "./pages/AdminDashboard"
+import AdminLayout from "./admin/AdminLayout"
+import ProductsAdmin from "./admin/ProductsAdmin"
+import CategoriesAdmin from "./admin/CategoriesAdmin"
+import BannersAdmin from "./admin/BannersAdmin"
+import DiscountsAdmin from "./admin/DiscountsAdmin"
+import OrdersAdmin from "./admin/OrdersAdmin"
+import BranchesAdmin from "./admin/BranchesAdmin"
+import CoverageAdmin from "./admin/CoverageAdmin"
+import authService from "./services/authService"
+import CartPage from "./pages/CartPage"
+import CheckoutPage from "./pages/CheckoutPage"
+import ContactPage from "./pages/ContactPage"
+import CompanyPage from "./pages/CompanyPage"
+import HistoryPage from "./pages/HistoryPage"
+import StoresPage from "./pages/StoresPage"
+import OrderConfirmationPage from "./pages/OrderConfirmationPage"
+import LoginPage from "./pages/LoginPage"
+import SearchPage from "./pages/SearchPage"
+import RegisterPage from "./pages/RegisterPage"
+import ProfilePage from "./pages/ProfilePage"
+
+function ToastContainer() {
+  const { toasts } = useApp()
   return (
     <div className="toast-container" aria-live="polite" aria-atomic="true">
       {toasts.map((t) => (
@@ -38,11 +43,8 @@ import LoginPage from './pages/LoginPage';
         </div>
       ))}
     </div>
-  );
+  )
 }
-import RegisterPage from './pages/RegisterPage';
-import ProfilePage from './pages/ProfilePage';
-
 
 function Layout() {
   return (
@@ -56,14 +58,14 @@ function Layout() {
       <ToastContainer />
       <Footer />
     </div>
-  );
+  )
 }
 
-function ProtectedAdminRoute({ children }: { children: JSX.Element }) {
+function ProtectedAdminRoute({ children }: { children: React.JSX.Element }) {
   if (!authService.isAuthenticated() || !authService.isAdmin()) {
-    return <AdminLoginPage onAdminLogin={() => {}} onNavigate={() => {}} />;
+    return <AdminLoginPage onAdminLogin={() => {}} onNavigate={() => {}} />
   }
-  return children;
+  return children
 }
 
 function App() {
@@ -76,6 +78,7 @@ function App() {
           <Route path="/catalogo/:subcategoriaSlug" element={<CategoryPage />} />
           <Route path="/:categoriaSlug" element={<CategoryPage />} />
           <Route path="/producto/:slug" element={<ProductDetailPage />} />
+          <Route path="/buscar" element={<SearchPage />} />
           <Route path="/carrito" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/orden/:id" element={<OrderConfirmationPage />} />
@@ -159,7 +162,7 @@ function App() {
         </Route>
       </Routes>
     </AppProvider>
-  );
+  )
 }
 
-export default App;
+export default App

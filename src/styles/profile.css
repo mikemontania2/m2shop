@@ -24,22 +24,17 @@
   margin-bottom: 20px;
 }
 
+/* Ensuring single column on mobile, two columns on desktop */
 .profile-content {
   display: grid;
+  grid-template-columns: 1fr;
   gap: 30px;
   align-items: start;
 }
 
-/* Desktop: 2 columns, Mobile: 1 column */
-@media (min-width: 969px) {
+@media (min-width: 769px) {
   .profile-content {
     grid-template-columns: 260px 1fr;
-  }
-}
-
-@media (max-width: 968px) {
-  .profile-content {
-    grid-template-columns: 1fr;
   }
 }
 /* </CHANGE> */
@@ -52,23 +47,59 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Desktop: sticky sidebar, Mobile: horizontal scroll */
-@media (min-width: 969px) {
-  .profile-tabs {
-    position: sticky;
-    top: 20px;
-  }
-}
-/* </CHANGE> */
-
 .profile-tabs ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: column;
   gap: 8px;
 }
+
+/* Desktop: vertical tabs with sticky positioning, Mobile: horizontal scroll */
+@media (min-width: 769px) {
+  .profile-tabs {
+    position: sticky;
+    top: 100px;
+  }
+
+  .profile-tabs ul {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-tabs {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 12px;
+  }
+
+  .profile-tabs ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  /* Visible scrollbar for better UX on mobile */
+  .profile-tabs::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .profile-tabs::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  .profile-tabs::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 3px;
+  }
+
+  .profile-tabs::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+  }
+}
+/* </CHANGE> */
 
 .profile-tabs button {
   width: 100%;
@@ -85,6 +116,8 @@
   color: #6c757d;
   transition: all 0.2s ease;
   text-align: left;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .profile-tabs button:hover {
@@ -308,22 +341,18 @@
   box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .profile-tabs {
-    position: static;
-    padding: 16px;
+/* Improved mobile responsiveness - single column layout, proper tab scrolling */
+@media (max-width: 768px) {
+  .profile-page {
+    padding: 20px 0;
   }
 
-  .profile-tabs ul {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 8px;
-    padding-bottom: 8px;
+  .profile-page h1 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
   }
 
   .profile-tabs button {
-    white-space: nowrap;
     min-width: fit-content;
     padding: 12px 16px;
     font-size: 0.9rem;
@@ -340,24 +369,40 @@
   .form-grid {
     grid-template-columns: 1fr;
   }
+
+  .order-card {
+    padding: 20px;
+  }
+
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
   .profile-page {
-    padding: 20px 0;
+    padding: 16px 0;
   }
 
   .profile-page h1 {
-    font-size: 1.6rem;
-    margin-bottom: 24px;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
   }
 
   .profile-form-section {
     padding: 20px;
+    border-radius: 12px;
+  }
+
+  .profile-form-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
   }
 
   .profile-tabs {
-    padding: 12px;
+    padding: 10px;
+    border-radius: 10px;
   }
 
   .profile-tabs button {
@@ -366,12 +411,28 @@
     gap: 8px;
   }
 
-  .order-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .profile-tabs button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .order-card {
+    padding: 16px;
   }
 
   .order-total {
     font-size: 1.15rem;
   }
+
+  .admin-panel {
+    padding: 16px;
+  }
+
+  .profile-form-section .form-group input,
+  .profile-form-section .form-group textarea,
+  .profile-form-section .form-group select {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
 }
+/* </CHANGE> */

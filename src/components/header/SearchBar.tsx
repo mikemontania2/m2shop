@@ -3,9 +3,10 @@
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
 import { Search } from "lucide-react"
-import productService, { type Product } from "../../services/productService"
 import { useNavigate } from "react-router-dom"
- 
+import { searchProductos } from "../../services/productos.service"
+import type { Product } from "../../interfaces/Productos.interface"
+
 interface SearchBarProps {
   className?: string
 }
@@ -14,26 +15,62 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("")
   const [suggestions, setSuggestions] = useState<Product[]>([])
   const [showSuggestions, setShowSuggestions] = useState(false)
+  const [loadingSuggestions, setLoadingSuggestions] = useState(false)
   const searchRef = useRef<HTMLFormElement | null>(null)
+  const debounceTimer = useRef<NodeJS.Timeout | null>(null)
   const navigate = useNavigate()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    const params = new URLSearchParams()
-    if (searchQuery.trim()) params.set("q", searchQuery.trim())
-    navigate(`/catalogo${params.toString() ? `?${params.toString()}` : ""}`)
+    if (!searchQuery.trim()) return
+
+    navigate(`/buscar?q=${encodeURIComponent(searchQuery.trim())}`)
     setShowSuggestions(false)
+    setSearchQuery("")
   }
 
   useEffect(() => {
+    // Clear previous timer
+    if (debounceTimer.current) {
+      clearTimeout(debounceTimer.current)
+    }
+
     if (searchQuery.trim().length === 0) {
       setSuggestions([])
       setShowSuggestions(false)
+      setLoadingSuggestions(false)
       return
     }
-    const all = productService.searchProducts(searchQuery.trim())
-    setSuggestions(all.slice(0, 6))
-    setShowSuggestions(true)
+
+    // Set loading state immediately
+    setLoadingSuggestions(true)
+
+    // Debounce API call by 500ms
+    debounceTimer.current = setTimeout(async () => {
+      try {
+        const response = await searchProductos(searchQuery.trim(), 1, 6)
+
+        if (response.success && response.productos) {
+          setSuggestions(response.productos)
+          setShowSuggestions(response.productos.length > 0)
+        } else {
+          setSuggestions([])
+          setShowSuggestions(false)
+        }
+      } catch (error) {
+        console.error("Error fetching suggestions:", error)
+        setSuggestions([])
+        setShowSuggestions(false)
+      } finally {
+        setLoadingSuggestions(false)
+      }
+    }, 500)
+
+    return () => {
+      if (debounceTimer.current) {
+        clearTimeout(debounceTimer.current)
+      }
+    }
   }, [searchQuery])
 
   useEffect(() => {
@@ -60,28 +97,40 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
       <button type="submit">
         <Search size={20} />
       </button>
-      {showSuggestions && suggestions.length > 0 && (
+      {showSuggestions && (
         <div className="search-suggestions">
-          <ul>
-            {suggestions.map((p) => (
-              <li key={p.id}>
-                <button
-                  className="suggestion-item"
-                  onClick={() => {
-                    navigate(`/producto/${p.slug}`)
-                    setShowSuggestions(false)
-                    setSearchQuery("")
-                  }}
-                >
-                  <img src={p.image || "/placeholder.svg"} alt={p.name} />
-                  <div className="suggestion-info">
-                    <span className="suggestion-name">{p.name}</span>
-                    <span className="suggestion-sub">{p.subcategory || p.category}</span>
-                  </div>
-                </button>
-              </li>
-            ))}
-          </ul>
+          {loadingSuggestions ? (
+            <div className="suggestions-loading">
+              <p>Buscando productos...</p>
+            </div>
+          ) : (
+            <ul>
+              {suggestions.map((p) => (
+                <li key={p.id}>
+                  <button
+                    type="button"
+                    className="suggestion-item"
+                    onClick={() => {
+                      navigate(`/producto/${p.slug}`)
+                      setShowSuggestions(false)
+                      setSearchQuery("")
+                    }}
+                  >
+                    <img src={p.image || "/placeholder.svg"} alt={p.name} />
+                    <div className="suggestion-info">
+                      <span className="suggestion-name">{p.name}</span>
+                      <span className="suggestion-price">
+                        {p.originalPrice > 0 && p.originalPrice > p.price && (
+                          <span className="original-price">Gs. {p.originalPrice.toLocaleString()}</span>
+                        )}
+                        <span className="current-price">Gs. {p.price.toLocaleString()}</span>
+                      </span>
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </form>

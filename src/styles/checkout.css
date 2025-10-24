@@ -139,8 +139,8 @@
   padding-top: 20px;
 }
 
-/* Mobile responsiveness for checkout */
-@media (max-width: 968px) {
+/* Mobile responsiveness for checkout - single column layout */
+@media (max-width: 768px) {
   .checkout-form {
     padding: 24px;
   }

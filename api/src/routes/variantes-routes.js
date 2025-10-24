@@ -5,9 +5,11 @@ const varianteController = require('../controllers/variante.controller');
 const varianteDetailController = require('../controllers/variante.detail.controller');
 
 // Rutas de listado con paginación (8 items por página)
+router.get('/buscar', varianteController.buscarProductos);
 router.get('/destacados', varianteController.getDestacados);
 router.get('/novedades', varianteController.getNovedades);
 router.get('/categoria/:slug', varianteController.getByCategoria);
+
 
 // Ruta de detalle individual (debe ir al final para no conflictuar)
 // Acepta tanto ID como slug 
