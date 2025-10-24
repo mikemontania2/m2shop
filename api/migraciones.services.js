@@ -79,7 +79,9 @@ const procesarCategorias = async (variantes) => {
   const categoriasGeneradas = await cargarCategoriasGeneradas();
 
   for (const catSlug of categoriasSet) {
+    console.log('catSlug  => ',catSlug)
     const catData = categoriasGeneradas.find(c => c.id === catSlug);
+    console.log('catData  => ',catData)
     const [categoria, created] = await Categoria.findOrCreate({
       where: { slug: catData.slug },
       defaults: {
@@ -102,8 +104,9 @@ const procesarCategorias = async (variantes) => {
     const catData = categoriasGeneradas.find(c => c.id === catSlug);
 
     for (const subSlug of subCats) {
+         console.log('subSlug  => ',subSlug)
       const subData = catData?.subcategories?.find(s => s.id === subSlug);
-
+ console.log('subData  => ',subData)
       const [subcategoria, created] = await Categoria.findOrCreate({
         where: { slug: subData?.slug },
         defaults: {

@@ -88,6 +88,12 @@
         "name": "Deterg Liq P Ropas",
         "description": "",
         "slug": "cuidado-de-las-prendas-deterg-liq-p-ropas"
+      },
+      {
+        "id": "complementarios",
+        "name": "Complementarios",
+        "description": "",
+        "slug": "cuidado-de-las-prendas-complementarios"
       }
     ]
   },
