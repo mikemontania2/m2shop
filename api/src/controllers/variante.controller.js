@@ -4,6 +4,7 @@ const Producto = require("../models/Producto.models");
 const Categoria = require("../models/Categoria.models");
 const Descuento = require("../models/Descuento.models");
 const moment = require('moment');
+const { aplicarDescuento } = require("../helper/productos.helper");
 
 /**
  * Obtener descuentos vigentes
@@ -15,6 +16,7 @@ const getDescuentosVigentes = async (variantesIds) => {
     where: {
       varianteId: { [Op.in]: variantesIds },
       activo: true,
+      tipo:'PRODUCTO',
       fechaDesde: { [Op.lte]: hoy },
       fechaHasta: { [Op.gte]: hoy }
     },
@@ -24,33 +26,7 @@ const getDescuentosVigentes = async (variantesIds) => {
 
   return new Map(descuentos.map(d => [d.varianteId, d]));
 };
-
-/**
- * Aplicar descuento
- */
-const aplicarDescuento = (precio, precioOriginal, descuento) => {
-  let finalPrice = parseFloat(precio);
-  let originalPrice = parseFloat(precioOriginal) || 0;
-
-  if (descuento && descuento.tipo === 'PRODUCTO') {
-    if (!originalPrice) {
-      originalPrice = finalPrice;
-    }
-
-   /* if (descuento.tipo === 'IMPORTE') {
-      finalPrice = Math.max(0, finalPrice - parseFloat(descuento.valor));
-    } else */
-     
-      finalPrice = finalPrice * (1 - parseFloat(descuento.valor) / 100);
-   
-  }
-
-  return {
-    price: Math.round(finalPrice),
-    originalPrice: Math.round(originalPrice)
-  };
-};
-
+ 
 /**
  * Transformar a formato ProductCard
  */
@@ -121,8 +97,7 @@ const getDestacados = async (req, res) => {
     });
   }
 };
-
-
+ 
 /**
  * GET /api/home/novedades?page=1&limit=12
  */
@@ -164,8 +139,7 @@ const getNovedades = async (req, res) => {
     });
   }
 };
-
-
+ 
 /**
  * GET /api/home/categoria/:slug?page=1&limit=12
  */

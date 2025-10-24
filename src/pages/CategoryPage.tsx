@@ -148,8 +148,8 @@ const CategoryPage: React.FC<{ categoryId?: string }> = ({ categoryId }) => {
     applyFiltersAndSort();
   }, [filters, sortBy, allProducts]);
 
-  const handleProductClick = (productId: number) => {
-    navigate(`/producto/${productId}`);
+  const handleProductClick = (product: Product) => {
+    navigate(`/producto/${product.slug}`);
   };
 
   const handleAddToCart = (product: Product, quantity: number) => {

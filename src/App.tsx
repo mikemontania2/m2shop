@@ -75,7 +75,7 @@ function App() {
           <Route path="/catalogo" element={<CatalogPage />} />
           <Route path="/catalogo/:subcategoriaSlug" element={<CategoryPage />} />
           <Route path="/:categoriaSlug" element={<CategoryPage />} />
-          <Route path="/producto/:id" element={<ProductDetailPage />} />
+          <Route path="/producto/:slug" element={<ProductDetailPage />} />
           <Route path="/carrito" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/orden/:id" element={<OrderConfirmationPage />} />

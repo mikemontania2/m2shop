@@ -1,7 +1,29 @@
 import { API_BASE_URL } from "../Config";
 import { ProductResponse, CategoryProductResponse, Product } from "../interfaces/Productos.interface";
+import { VarianteDetalleModel } from "../interfaces/VarianteDetalleModel.interface";
 
 // ========== MÉTODOS DEL SERVICIO ==========
+
+
+
+/**
+ * Obtener productos destacados con paginación
+ */
+export const getVarianteDetalle = async (slug: string): Promise<VarianteDetalleModel> => {
+  try {
+    const url =`${API_BASE_URL}/variantes/${slug}`;
+    console.log(url)
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.error('Error al obtener detalle de variante:', error);
+    throw error;
+  }
+};
 
 /**
  * Obtener productos destacados con paginación
@@ -215,4 +237,4 @@ export const useProductFilters = () => {
     filterAndSortProducts
   };
 };
- 
+  

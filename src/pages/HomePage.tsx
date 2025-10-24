@@ -240,8 +240,8 @@ const HomePage: React.FC = () => {
     navigate(`/${categoryId}`)
   }
 
-  const handleProductClick = (productId: number) => {
-    navigate(`/producto/${productId}`)
+  const handleProductClick = (product: Product) => {
+    navigate(`/producto/${product.slug}`)
   }
 
   const handleBannerClick = (url: string) => {

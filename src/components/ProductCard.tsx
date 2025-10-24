@@ -37,12 +37,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
     setQuantity(1)
   }
 
-  const handleCardClick = () => {
+  const handleCardClick = () => { 
+
     if (onProductClick) {
       onProductClick(product.id)
-    } else {
-      navigate(`/producto/${product.id}`)
-    }
+    } 
+      console.log(product)
+      navigate(`/producto/${product.slug}`)
+    
   }
 
   return (

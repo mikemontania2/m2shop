@@ -144,8 +144,8 @@ const CatalogPage: React.FC = () => {
     applyFiltersAndSort();
   }, [filters, sortBy, selectedCategory, selectedSubcategory, allProducts]);
 
-  const handleProductClick = (productId: number) => {
-    navigate(`/producto/${productId}`);
+  const handleProductClick = (product: Product) => {
+    navigate(`/producto/${product.slug}`);
   };
 
   const handleAddToCart = (product: Product, quantity: number) => {

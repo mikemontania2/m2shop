@@ -4,8 +4,7 @@ const imagenProductoController = require("../controllers/imagenProducto.controll
 const varianteProductoController = require("../controllers/variante.controller")
 const atributoController = require("../controllers/Atributo.controller")
 const valorAtributoController = require("../controllers/ValorAtributo.controller")
-const varianteAtributoController = require("../controllers/VarianteAtributo.controller")
-
+ 
 const { authMiddleware, roleMiddleware } = require("../middlewares/authMiddleware.mw")
 const router = Router()
 

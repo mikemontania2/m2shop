@@ -68,7 +68,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
                 <button
                   className="suggestion-item"
                   onClick={() => {
-                    navigate(`/producto/${p.id}`)
+                    navigate(`/producto/${p.slug}`)
                     setShowSuggestions(false)
                     setSearchQuery("")
                   }}

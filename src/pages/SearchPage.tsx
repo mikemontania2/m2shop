@@ -17,8 +17,8 @@ const SearchPage: React.FC = () => {
     setProducts(results);
   }, [searchQuery]);
 
-  const handleProductClick = (productId: number) => {
-    navigate(`/producto/${productId}`);
+  const handleProductClick = (product: Product) => {
+    navigate(`/producto/${product.slug}`);
   };
 
   const handleAddToCart = (product: Product, quantity: number) => {

@@ -1,0 +1,120 @@
+{
+   "id":137,
+   "sku":"300000800",
+   "nombre":"JABON DE TOCADOR COCO CAVALLARO Marina Pastilla 100g",
+   "slug":"jabon-de-tocador-coco-cavallaro-marina-pastilla-100g",
+   "precio":4575,
+   "precioOriginal":6100,
+   "descuentoPorcentaje":"25.00",
+   "imagenPrincipal":"https://cdn.cavallaro.com.py/productos/300000800.jpg", 
+   "destacado":true,
+   "nuevo":false,
+   "descripcion":"<p>El jabón de Tocador Coco Cavallaro está hecho 100% de aceite de almendra de coco. Brinda una protección Antibacterial Natural, es antiséptico, hipoalergénico y libre de gluten dándole a la piel una limpieza profunda y el máximo cuidado sin resecarla, gracias al agregado de un aditivo humectante natural a su formulación, que disminuye la astringencia característica de este jabón.</p>",
+   "usosRecomendados":[
+      "Para todo tipo de piel inclusive las delicadas, personas alérgicas y celiacas."
+   ],
+   "propiedades":[
+      "• Elimina el 99 % de virus, bacterias y hongos.",
+      "• Hipoalergénico",
+      "• Antiséptico",
+      "• Antibacterial Natural",
+      "• Libre de Gluten",
+      "• Previene el acné"
+   ],
+   "opciones":[
+      {
+         "id":1,
+         "nombre":"Variedad",
+         "orden":1,
+         "valores":[
+            {
+               "id":11,
+               "valor":"Almendras",
+               "metadata":{
+                  "color":"#c2c39d"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-almendras-pastilla-100g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300000798.PNG",
+               "seleccionado":false
+            },
+            {
+               "id":7,
+               "valor":"Clásico",
+               "metadata":{
+                  "color":"#1385dd"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-clasico-pastilla-100g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300000797.PNG",
+               "seleccionado":false
+            },
+            {
+               "id":10,
+               "valor":"Floral",
+               "metadata":{
+                  "color":"#f859a0"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-floral-pastilla-100g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300000799.PNG",
+               "seleccionado":false
+            },
+            {
+               "id":28,
+               "valor":"Marina",
+               "metadata":{
+                  "color":"#79baec"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-marina-pastilla-100g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300000800.jpg",
+               "seleccionado":true
+            },
+            {
+               "id":43,
+               "valor":"Verbena",
+               "metadata":{
+                  "color":"#09be70"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-verbena-pastilla-100g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300000802.PNG",
+               "seleccionado":false
+            }
+         ]
+      },
+      {
+         "id":2,
+         "nombre":"Presentación",
+         "orden":2,
+         "valores":[
+            {
+               "id":97,
+               "valor":"Estuche de 100 g",
+               "metadata":{
+                  "imagen":"https://cdn.cavallaro.com.py/presentaciones/Estuche de 100 g.png"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-marina-estuche-de-100-g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300000655.PNG",
+               "seleccionado":false
+            },
+            {
+               "id":107,
+               "valor":"Pastilla 100g",
+               "metadata":{
+                  "imagen":"https://cdn.cavallaro.com.py/presentaciones/Pastilla 100g.png"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-marina-pastilla-100g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300000800.jpg",
+               "seleccionado":true
+            },
+            {
+               "id":113,
+               "valor":"Tripack 3 x 90g",
+               "metadata":{
+                  "imagen":"https://cdn.cavallaro.com.py/presentaciones/Tripack 3 x 90g.png"
+               },
+               "slug":"jabon-de-tocador-coco-cavallaro-marina-tripack-3-x-90g",
+               "imagenUrl":"https://cdn.cavallaro.com.py/productos/300001154.jpg",
+               "seleccionado":false
+            }
+         ]
+      }
+   ]
+}
