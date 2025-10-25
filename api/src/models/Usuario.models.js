@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../../dbconfig');
+
 const Usuario = sequelize.define('Usuario', {
   id: {
     type: DataTypes.INTEGER,
@@ -30,6 +31,19 @@ const Usuario = sequelize.define('Usuario', {
     type: DataTypes.STRING(20),
     allowNull: true
   },
+  // NUEVO: Dirección completa
+  direccion: {
+    type: DataTypes.TEXT,
+    allowNull: true
+  },
+  // NUEVO: Tipo de documento
+  tipoDocumento: {
+    type: DataTypes.ENUM('ci', 'ruc', 'ninguno'),
+    allowNull: false,
+    defaultValue: 'ninguno',
+    field: 'tipo_documento'
+  },
+  // Campo existente documento mantiene su uso
   documento: {
     type: DataTypes.STRING(20),
     allowNull: true
