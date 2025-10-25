@@ -5,24 +5,22 @@
   flex: 1;
   display: flex;
   max-width: 680px;
-  border: 2px solid #e8e8e8;
+  /* Changed overflow to visible so suggestions dropdown can show */
+  border: 2px solid #e0e0e0;
   border-radius: 12px;
-    overflow: visible;
-
+  overflow: visible;
   position: relative;
-  background: #f8f9fa;
+  background: #ffffff;
   transition: all 0.2s ease;
   min-width: 0;
 }
 
 .search-form:focus-within {
-  border-color: var(--accent-color);
-  background: var(--white);
-  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.1);
+  border-color: #c8102e;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.15);
 }
-.search-suggestions {
-  outline: 2px solid red !important;
-}
+
 .search-form input {
   flex: 1;
   padding: 12px 20px;
@@ -31,17 +29,21 @@
   font-size: 0.95rem;
   background: transparent;
   min-width: 0;
-  color: var(--text-color);
+  /* Ensure proper text contrast with dark text on white background */
+  color: #333333;
+  /* Add border-radius to match the form's left side */
+  border-radius: 10px 0 0 10px;
 }
 
 .search-form input::placeholder {
-  color: #999;
+  color: #999999;
 }
 
 .search-form button {
   padding: 12px 24px;
-  background: var(--accent-color);
-  color: var(--white);
+  /* Use theme red color */
+  background: #f0f0f0;
+  color: #ffffff;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -49,26 +51,29 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
+  /* Add border-radius to match the form's right side */
+  border-radius: 0 10px 10px 0;
 }
 
 .search-form button:hover {
-  background: var(--primary-color);
+  background: #a00d25;
 }
 
 .search-form button:active {
   transform: scale(0.95);
 }
 
-/* Improved suggestions dropdown to look like modern e-commerce product cards */
+/* Improved suggestions dropdown to match ProductCard styling */
 .search-suggestions {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
   width: 100%;
-  background: var(--white);
-  border: 1px solid #e8e8e8;
+  /* Ensure white background for proper contrast */
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 12px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 12px;
   animation: dropdownIn 0.2s ease-out;
   z-index: 1200;
@@ -89,34 +94,38 @@
   margin: 0;
 }
 
+/* Match ProductCard styling for suggestion items */
 .suggestion-item {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 12px;
-  background: var(--white);
-  border: 1px solid #f0f0f0;
+  /* White background for cards */
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   cursor: pointer;
   border-radius: 12px;
   transition: all 0.2s ease;
   text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .suggestion-item:hover {
-  background: #f8f9fa;
-  border-color: var(--accent-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #fafafa;
+  border-color: #c8102e;
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.15);
   transform: translateY(-2px);
 }
 
 .suggestion-item img {
-  width: 64px;
-  height: 64px;
-  object-fit: cover;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
   border-radius: 10px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #e0e0e0;
   flex-shrink: 0;
+  background: #ffffff;
 }
 
 .suggestion-info {
@@ -127,9 +136,10 @@
   min-width: 0;
 }
 
+/* Ensure proper text contrast with dark text */
 .suggestion-name {
   font-weight: 600;
-  color: var(--text-color);
+  color: #333333;
   font-size: 0.95rem;
   line-height: 1.4;
   display: -webkit-box;
@@ -147,31 +157,50 @@
 }
 
 .suggestion-price .original-price {
-  color: var(--text-light);
+  color: #999999;
   text-decoration: line-through;
   font-size: 0.85rem;
 }
 
+/* Use theme red color for price */
 .suggestion-price .current-price {
-  color: var(--accent-color);
+  color: #c8102e;
   font-weight: 700;
   font-size: 1rem;
 }
-/* </CHANGE> */
 
-/* Better loading state */
+/* Better loading state with spinner */
 .suggestions-loading {
   padding: 32px 20px;
   text-align: center;
-  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.suggestions-loading .loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #f0f0f0;
+  border-top-color: #c8102e;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .suggestions-loading p {
   margin: 0;
   font-size: 0.95rem;
   font-weight: 500;
+  /* Dark text for proper contrast */
+  color: #666666;
 }
-/* </CHANGE> */
 
 @keyframes dropdownIn {
   from {
@@ -194,36 +223,36 @@
   .search-form input {
     padding: 10px 16px;
     font-size: 0.9rem;
+    border-radius: 8px 0 0 8px;
   }
 
   .search-form button {
     padding: 10px 16px;
+    border-radius: 0 8px 8px 0;
   }
 
   .search-suggestions {
     max-height: 360px;
     padding: 8px;
+    border-radius: 10px;
   }
 
   .suggestion-item {
     gap: 12px;
     padding: 10px;
+    border-radius: 10px;
   }
 
   .suggestion-item img {
-    width: 56px;
-    height: 56px;
+    width: 60px;
+    height: 60px;
   }
 
   .suggestion-name {
-    font-size: 0.9rem;
+    font-size: 0.875rem;
   }
 
   .suggestion-price .current-price {
     font-size: 0.95rem;
   }
-}
-/* </CHANGE> */
-.search-suggestions {
-  z-index: 9999; /* Fuerza a estar por encima de todo */
 }
