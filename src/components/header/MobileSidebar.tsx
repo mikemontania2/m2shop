@@ -4,7 +4,7 @@ import type React from "react"
 import { MapPin, Phone, LogOut, X, Search } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { useApp } from "../../contexts/AppContext"
-import type { Category } from "../../services/productService"
+import { Category } from "../../interfaces/Categorias.interface"
 
 interface MobileSidebarProps {
   isOpen: boolean
