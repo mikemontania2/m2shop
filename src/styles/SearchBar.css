@@ -1,14 +1,15 @@
-/* ============================================
-   SEARCH BAR STYLES - Modern & Elegant
-   ============================================ */
+/* =========================================================
+   🔍 SEARCH BAR STYLES - Modern & Elegant
+   ========================================================= */
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
 .search-form {
   flex: 1;
   display: flex;
   max-width: 680px;
-  /* Changed overflow to visible so suggestions dropdown can show */
   border: 2px solid #e0e0e0;
   border-radius: 12px;
-  overflow: visible;
+  overflow: visible; /* Para que el dropdown sea visible */
   position: relative;
   background: #ffffff;
   transition: all 0.2s ease;
@@ -21,6 +22,7 @@
   box-shadow: 0 4px 12px rgba(200, 16, 46, 0.15);
 }
 
+/* ====== INPUT ====== */
 .search-form input {
   flex: 1;
   padding: 12px 20px;
@@ -28,22 +30,22 @@
   outline: none;
   font-size: 0.95rem;
   background: transparent;
-  min-width: 0;
-  /* Ensure proper text contrast with dark text on white background */
   color: #333333;
-  /* Add border-radius to match the form's left side */
   border-radius: 10px 0 0 10px;
+  min-width: 0;
 }
 
 .search-form input::placeholder {
   color: #999999;
 }
 
-.search-form button {
+/* =========================================================
+   🔴 SEARCH BUTTON STYLES
+   ========================================================= */
+.search-button {
   padding: 12px 24px;
-  /* Use theme red color */
-  background: #f0f0f0;
-  color: #ffffff;
+  background: #c8102e; /* Rojo principal */
+  color: #ffffff; /* Icono y texto blancos */
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -51,25 +53,26 @@
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  /* Add border-radius to match the form's right side */
   border-radius: 0 10px 10px 0;
 }
 
-.search-form button:hover {
-  background: #a00d25;
+.search-button:hover {
+  background: #d8243f; /* Rojo un poco más claro en hover */
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.25);
 }
 
-.search-form button:active {
-  transform: scale(0.95);
+.search-button:active {
+  transform: scale(0.96);
 }
 
-/* Improved suggestions dropdown to match ProductCard styling */
+/* =========================================================
+   💡 SUGERENCIAS DE BÚSQUEDA
+   ========================================================= */
 .search-suggestions {
   position: absolute;
   top: calc(100% + 8px);
   left: 0;
   width: 100%;
-  /* Ensure white background for proper contrast */
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
@@ -90,18 +93,13 @@
   gap: 8px;
 }
 
-.search-suggestions li {
-  margin: 0;
-}
-
-/* Match ProductCard styling for suggestion items */
+/* ====== ITEMS ====== */
 .suggestion-item {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 16px;
   padding: 12px;
-  /* White background for cards */
   background: #ffffff;
   border: 1px solid #e0e0e0;
   cursor: pointer;
@@ -136,7 +134,7 @@
   min-width: 0;
 }
 
-/* Ensure proper text contrast with dark text */
+/* ====== TEXTO ====== */
 .suggestion-name {
   font-weight: 600;
   color: #333333;
@@ -162,14 +160,15 @@
   font-size: 0.85rem;
 }
 
-/* Use theme red color for price */
 .suggestion-price .current-price {
   color: #c8102e;
   font-weight: 700;
   font-size: 1rem;
 }
 
-/* Better loading state with spinner */
+/* =========================================================
+   ⏳ ESTADOS DE CARGA
+   ========================================================= */
 .suggestions-loading {
   padding: 32px 20px;
   text-align: center;
@@ -198,10 +197,12 @@
   margin: 0;
   font-size: 0.95rem;
   font-weight: 500;
-  /* Dark text for proper contrast */
   color: #666666;
 }
 
+/* =========================================================
+   ✨ ANIMACIONES
+   ========================================================= */
 @keyframes dropdownIn {
   from {
     opacity: 0;
@@ -213,7 +214,9 @@
   }
 }
 
-/* Mobile responsive improvements */
+/* =========================================================
+   📱 MOBILE
+   ========================================================= */
 @media (max-width: 768px) {
   .search-form {
     max-width: none;
@@ -226,7 +229,7 @@
     border-radius: 8px 0 0 8px;
   }
 
-  .search-form button {
+  .search-button {
     padding: 10px 16px;
     border-radius: 0 8px 8px 0;
   }
@@ -250,6 +253,51 @@
 
   .suggestion-name {
     font-size: 0.875rem;
+  }
+
+  .suggestion-price .current-price {
+    font-size: 0.95rem;
+  }
+}
+/* =========================================================
+   🧩 NORMALIZACIÓN DE SUGERENCIAS EN MOBILE
+   ========================================================= */
+.suggestion-item {
+  -webkit-appearance: none; /* Quita estilos nativos de iOS */
+  appearance: none;
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+  color: #333333 !important;
+  text-align: left;
+}
+
+.suggestion-item:focus {
+  outline: none;
+  background: #fafafa;
+  border-color: #c8102e;
+}
+
+.suggestion-item:active {
+  background: #f5f5f5;
+  transform: scale(0.98);
+}
+
+/* Mantener consistencia visual en mobile */
+@media (max-width: 768px) {
+  .suggestion-item {
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .suggestion-item img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .suggestion-name {
+    font-size: 0.9rem;
+    color: #333333;
   }
 
   .suggestion-price .current-price {

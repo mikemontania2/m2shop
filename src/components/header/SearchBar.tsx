@@ -94,7 +94,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className }) => {
           if (suggestions.length > 0) setShowSuggestions(true)
         }}
       />
-      <button type="submit">
+      <button type="submit"className="search-button">
         <Search size={20} />
       </button>
       {showSuggestions && (

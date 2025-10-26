@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { MapPin, Phone, LogOut, User, X } from "lucide-react"
+import { MapPin, Phone, LogOut, X, Search } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { useApp } from "../../contexts/AppContext"
 import type { Category } from "../../services/productService"
@@ -40,7 +40,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose, categori
         {/* Header with Logo and Close Button */}
         <div className="mobile-sidebar-header">
           <div className="sidebar-logo" onClick={() => handleNavigation("/")}>
-            <img src="https://www.cavallaro.com.py/img/logo-web-blanco.png" alt="Cavallaro" />
+            <img src="/images/design-mode/logo-web-blanco.png" alt="Cavallaro" />
           </div>
           <button className="sidebar-close-btn" onClick={onClose} aria-label="Cerrar menú">
             <X size={24} />
@@ -51,9 +51,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose, categori
         <div className="mobile-sidebar-user">
           {user ? (
             <div className="user-info">
-              <div className="user-avatar">
-                <User size={24} />
-              </div>
+              <div className="user-avatar"> <button className="search-button"><Search size={20} />  </button> </div>
               <div className="user-details">
                 <span className="user-name">{user.name}</span>
                 <button className="user-profile-link" onClick={() => handleNavigation("/profile")}>
