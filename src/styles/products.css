@@ -12,8 +12,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100%; 
- }
+  height: 100%;
+}
 
 /* Image card with light gray background and rounded corners */
 .product-image-card {
@@ -23,7 +23,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .product-image-card:hover {
@@ -31,21 +31,31 @@
   transform: translateY(-2px);
 }
 
-/* OFERTA badge in top-right corner with red background */
-.product-badge-oferta {
+/* NUEVO badge - top-left corner */
+.product-badge-nuevo {
   position: absolute;
-  top: 12px;
-  right: 12px;
-  background: #c8102e;
-  color: #ffffff;
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 4px;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: auto;
   z-index: 10;
-  box-shadow: 0 2px 6px rgba(200, 16, 46, 0.3);
+  pointer-events: none;
+}
+
+/* OFERTA badge - top-right corner */
+.product-badge-oferta-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Remove old text-based oferta badge */
+.product-badge-oferta {
+  display: none;
 }
 
 /* Product image container - reducido para segundo grupo */
@@ -76,7 +86,7 @@ product-info-section {
 }
 /* Product name - más compacto */
 .product-name {
-    font-size: 0.875rem;
+  font-size: 0.875rem;
   line-height: 1.4;
   margin: 0;
   color: #333333;
@@ -269,5 +279,20 @@ product-info-section {
 
   .current-price {
     font-size: 0.95rem;
+  }
+}
+
+/* Responsive adjustments for badges */
+@media (max-width: 768px) {
+  .product-badge-nuevo,
+  .product-badge-oferta-img {
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-badge-nuevo,
+  .product-badge-oferta-img {
+    width: 45px;
   }
 }

@@ -3,8 +3,8 @@
 import type React from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { ShoppingCart } from "lucide-react" 
-import { Product } from "../interfaces/Productos.interface"
+import { ShoppingCart } from "lucide-react"
+import type { Product } from "../interfaces/Productos.interface"
 
 interface ProductCardProps {
   product: Product
@@ -37,20 +37,31 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
     setQuantity(1)
   }
 
-  const handleCardClick = () => { 
-
+  const handleCardClick = () => {
     if (onProductClick) {
       onProductClick(product.id)
-    } 
-      console.log(product)
-      navigate(`/producto/${product.slug}`)
-    
+    }
+    console.log(product)
+    navigate(`/producto/${product.slug}`)
   }
 
   return (
     <div className="product-card-wrap">
       <div className="product-image-card" onClick={handleCardClick}>
-        {hasDiscount && <div className="product-badge-oferta">OFERTA</div>}
+        {product.news && (
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nuevo-djc35SGYZMtIa4bS58afxGU1io840w.png"
+            alt="Nuevo"
+            className="product-badge-nuevo"
+          />
+        )}
+        {hasDiscount && (
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/oferta-SHk7WBKrrUMLGyhJCdMeIFeJKLDYqn.png"
+            alt="Oferta"
+            className="product-badge-oferta-img"
+          />
+        )}
         <div className="product-image">
           <img src={product.image || "/placeholder.svg"} alt={product.name} />
         </div>
