@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import authService, { User } from '../services/authService';
-import cartService, { CartItem } from '../services/cartService';
-import { Product } from '../services/productService'; 
-import { Category } from '../interfaces/interfaces';
+import cartService, { CartItem } from '../services/cartService'; 
 import { obtenerCategorias } from '../services/categorias.services';
+import { Product } from '../interfaces/Productos.interface';
+import { Category } from '../interfaces/Categorias.interface';
 
 interface AppContextType {
   // Usuario y autenticación

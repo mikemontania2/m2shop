@@ -1,5 +1,6 @@
-import { Product } from './productService';
+import { Product } from "../interfaces/Productos.interface";
 
+ 
 export interface CartItem {
   product: Product;
   quantity: number;

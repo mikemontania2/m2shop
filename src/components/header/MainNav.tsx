@@ -1,11 +1,10 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useRef, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import productService from "../../services/productService"
-import MobileSidebar from "./MobileSidebar"
-import { useApp } from "../../contexts/AppContext"
+import { useEffect, useRef, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+ import MobileSidebar from "./MobileSidebar";
+import { useApp } from "../../contexts/AppContext";
 
 interface MainNavProps { 
   mobileActive?: boolean

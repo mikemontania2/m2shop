@@ -10,7 +10,8 @@
  * - Solo necesitas descomentar las secciones de API y agregar la URL del backend
  */
 
-import type { Product } from "./productService"
+ 
+import { Product } from "../interfaces/Productos.interface"
 import type { CartItem } from "../types/cart.types"
 
 // CONFIGURACIÓN DEL API (descomentar cuando tengas el backend)

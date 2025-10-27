@@ -5,8 +5,9 @@
  * Estas interfaces están diseñadas para ser compatibles con el backend API.
  */
 
-import type { Product } from "../services/productService"
+import { Product } from "../interfaces/Productos.interface"
 
+ 
 /**
  * CartItem - Representa un producto en el carrito
  *
