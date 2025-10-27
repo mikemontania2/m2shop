@@ -38,35 +38,41 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
   }
 
   const handleCardClick = () => {
-    if (onProductClick) {
-      onProductClick(product.id)
-    }
-    console.log(product)
+    onProductClick?.(product.id)
     navigate(`/producto/${product.slug}`)
   }
+
+  // 🏷️ Selección inteligente de etiqueta
+  const badge = hasDiscount
+    ? {
+        src: "/src/imagenes/oferta2.png",
+        alt: "Oferta",
+        className: "product-badge-oferta-img",
+      }
+    : product.news
+    ? {
+        src: "/src/imagenes/new.png",
+        alt: "Nuevo",
+        className: "product-badge-nuevo",
+      }
+    : product.featured
+    ? {
+        src: "/src/imagenes/destacaco2.png",
+        alt: "Destacado",
+        className: "product-badge-destacado",
+      }
+    : null
 
   return (
     <div className="product-card-wrap">
       <div className="product-image-card" onClick={handleCardClick}>
-        {product.news && (
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nuevo-djc35SGYZMtIa4bS58afxGU1io840w.png"
-            alt="Nuevo"
-            className="product-badge-nuevo"
-          />
-        )}
-        {hasDiscount && (
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/oferta-SHk7WBKrrUMLGyhJCdMeIFeJKLDYqn.png"
-            alt="Oferta"
-            className="product-badge-oferta-img"
-          />
-        )}
+        {/* Renderiza solo una etiqueta si existe */}
+        {badge && <img src={badge.src} alt={badge.alt} className={badge.className} />}
+
         <div className="product-image">
           <img src={product.image || "/placeholder.svg"} alt={product.name} />
         </div>
       </div>
-      {/* </CHANGE> */}
 
       <div className="product-info-section">
         <h3 className="product-name">{product.name}</h3>
@@ -94,7 +100,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
           </button>
         </div>
       </div>
-      {/* </CHANGE> */}
 
       <button className="btn-add-to-cart-card" onClick={handleAddToCart}>
         <ShoppingCart size={16} />
