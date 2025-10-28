@@ -1,6 +1,11 @@
-const jsonwebtoken = require('jsonwebtoken');
+// ========================================
+// validar-jwt.js - ACTUALIZADO
+// ========================================
 
-const validarJWT = (req, res, next) => {
+const jsonwebtoken = require('jsonwebtoken');
+const Usuario = require('../models/Usuario.models');
+
+const validarJWT = async (req, res, next) => {
     let token = null;
 
     // Verificar si el encabezado tiene el formato "Bearer TOKEN"
@@ -10,26 +15,58 @@ const validarJWT = (req, res, next) => {
 
     if (!token) {
         return res.status(401).json({
-           
-            msg: 'No token found in the request'
+            error: 'Token no proporcionado'
         });
     }
 
     try {
         // Verificar el token y extraer el usuario
-        const {user} = jsonwebtoken.verify(token, process.env.JWT_SECRET);
+        const { user } = jsonwebtoken.verify(token, process.env.JWT_SECRET);
+        
+        // Verificar que el usuario siga existiendo y esté activo
+        const usuarioDB = await Usuario.findByPk(user.id, {
+            attributes: { exclude: ['password'] }
+        });
+
+        if (!usuarioDB) {
+            return res.status(401).json({
+                error: 'Usuario no encontrado'
+            });
+        }
+
+        if (!usuarioDB.activo) {
+            return res.status(401).json({
+                error: 'Usuario inactivo'
+            });
+        }
+
+        if (usuarioDB.bloqueado) {
+            return res.status(401).json({
+                error: 'Usuario bloqueado'
+            });
+        }
+
         // Asignar valores al objeto "req" para usar en rutas posteriores
-        req.usuario = user; 
-         
+        req.usuario = usuarioDB;
+        
         next();
     } catch (error) {
+        console.error('Error validando JWT:', error);
+        
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({
+                error: 'Token expirado'
+            });
+        }
+        
         return res.status(401).json({
-           
-            msg: 'Invalid token'
+            error: 'Token inválido'
         });
     }
-}
+};
 
 module.exports = {
     validarJWT
 };
+
+

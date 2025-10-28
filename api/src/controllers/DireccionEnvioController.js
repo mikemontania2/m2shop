@@ -1,66 +1,260 @@
+// ========================================
+// direccion.controller.js - Gestión de Direcciones de Envío
+// ========================================
+
+const { response } = require('express');
+const { Op } = require('sequelize');
 const DireccionEnvio = require('../models/DireccionEnvio.models');
 
-const obtenerDirecciones = async (req, res) => {
+/**
+ * @route GET /api/direcciones/usuario/:userId
+ * @desc Obtener todas las direcciones de un usuario
+ * @access Private
+ */
+const obtenerDireccionesPorUsuario = async (req, res = response) => {
   try {
+    const { userId } = req.params;
+
+    if (req.usuario.id !== parseInt(userId) && req.usuario.rol !== 'admin') {
+      return res.status(403).json({ error: 'No tienes permiso para acceder a estas direcciones' });
+    }
+
     const direcciones = await DireccionEnvio.findAll({
-      where: { usuarioId: req.usuario.id },
-      order: [['createdAt', 'DESC']]
-    });
-
-    res.json({ direcciones });
-  } catch (error) {
-    res.status(500).json({ mensaje: 'Error al obtener direcciones', error: error.message });
-  }
-};
-
-const guardarDireccion = async (req, res) => {
-  try {
-    const { id, calle, numero, transversal, ciudad, barrio, referencia, latitud, longitud } = req.body;
-
-    const [direccion, created] = await DireccionEnvio.upsert({
-      id: id || `addr-${Date.now()}`,
-      usuarioId: req.usuario.id,
-      calle,
-      numero,
-      transversal,
-      ciudad,
-      barrio,
-      referencia,
-      latitud: latitud || -25.2969,
-      longitud: longitud || -57.6244
+      where: { usuarioId: userId },
+      order: [
+        ['esPrincipal', 'DESC'],
+        ['createdAt', 'DESC']
+      ]
     });
 
     res.json({
-      mensaje: created ? 'Dirección creada' : 'Dirección actualizada',
-      direccion
+      total: direcciones.length,
+      direcciones
     });
   } catch (error) {
-    res.status(500).json({ mensaje: 'Error al guardar dirección', error: error.message });
+    console.error('Error obteniendo direcciones:', error);
+    res.status(500).json({ error: 'Error al obtener direcciones' });
   }
 };
 
-const eliminarDireccion = async (req, res) => {
+/**
+ * @route GET /api/direcciones/:id
+ * @desc Obtener una dirección por ID
+ * @access Private
+ */
+const obtenerDireccionPorId = async (req, res = response) => {
   try {
     const { id } = req.params;
-
-    const direccion = await DireccionEnvio.findOne({
-      where: { id, usuarioId: req.usuario.id }
-    });
+    const direccion = await DireccionEnvio.findByPk(id);
 
     if (!direccion) {
-      return res.status(404).json({ mensaje: 'Dirección no encontrada' });
+      return res.status(404).json({ error: 'Dirección no encontrada' });
+    }
+
+    if (direccion.usuarioId !== req.usuario.id && req.usuario.rol !== 'admin') {
+      return res.status(403).json({ error: 'No tienes permiso para acceder a esta dirección' });
+    }
+
+    res.json({ direccion });
+  } catch (error) {
+    console.error('Error obteniendo dirección:', error);
+    res.status(500).json({ error: 'Error al obtener la dirección' });
+  }
+};
+
+/**
+ * @route POST /api/direcciones
+ * @desc Crear nueva dirección
+ * @access Private
+ */
+const crearDireccion = async (req, res = response) => {
+  try {
+    const {
+      nombreCompleto,
+      telefono,
+      calle,
+      numero,
+      referencia,
+      codigoPostal,
+      departamento,
+      ciudad,
+      barrio,
+      esPrincipal
+    } = req.body;
+
+    // Validar campos mínimos
+    if (!nombreCompleto || !telefono || !calle) {
+      return res.status(400).json({
+        error: 'Nombre completo, teléfono y calle son requeridos'
+      });
+    }
+
+    // Si es principal, desmarcar las demás
+    if (esPrincipal) {
+      await DireccionEnvio.update(
+        { esPrincipal: false },
+        { where: { usuarioId: req.usuario.id } }
+      );
+    }
+
+    const nuevaDireccion = await DireccionEnvio.create({
+      usuarioId: req.usuario.id,
+      nombreCompleto,
+      telefono,
+      calle,
+      numero: numero || '',
+      referencia: referencia || '',
+      codigoPostal: codigoPostal || '',
+      departamento: departamento || null,
+      ciudad: ciudad || null,
+      barrio: barrio || null,
+      esPrincipal: !!esPrincipal
+    });
+
+    res.status(201).json({
+      mensaje: 'Dirección creada exitosamente',
+      direccion: nuevaDireccion
+    });
+  } catch (error) {
+    console.error('Error creando dirección:', error);
+    res.status(500).json({
+      error: error?.original?.detail || 'Error al crear la dirección'
+    });
+  }
+};
+
+/**
+ * @route PUT /api/direcciones/:id
+ * @desc Actualizar dirección existente
+ * @access Private
+ */
+const actualizarDireccion = async (req, res = response) => {
+  try {
+    const { id } = req.params;
+    const {
+      nombreCompleto,
+      telefono,
+      calle,
+      numero,
+      referencia,
+      codigoPostal,
+      departamento,
+      ciudad,
+      barrio,
+      esPrincipal
+    } = req.body;
+
+    const direccion = await DireccionEnvio.findByPk(id);
+
+    if (!direccion) {
+      return res.status(404).json({ error: 'Dirección no encontrada' });
+    }
+
+    if (direccion.usuarioId !== req.usuario.id && req.usuario.rol !== 'admin') {
+      return res.status(403).json({ error: 'No tienes permiso para modificar esta dirección' });
+    }
+
+    // Si se marca como principal, desmarcar las demás
+    if (esPrincipal && !direccion.esPrincipal) {
+      await DireccionEnvio.update(
+        { esPrincipal: false },
+        { where: { usuarioId: req.usuario.id, id: { [Op.ne]: id } } }
+      );
+    }
+
+    await direccion.update({
+      nombreCompleto,
+      telefono,
+      calle,
+      numero,
+      referencia,
+      codigoPostal,
+      departamento,
+      ciudad,
+      barrio,
+      esPrincipal
+    });
+
+    res.json({
+      mensaje: 'Dirección actualizada exitosamente',
+      direccion
+    });
+  } catch (error) {
+    console.error('Error actualizando dirección:', error);
+    res.status(500).json({
+      error: error?.original?.detail || 'Error al actualizar la dirección'
+    });
+  }
+};
+
+/**
+ * @route DELETE /api/direcciones/:id
+ * @desc Eliminar dirección
+ * @access Private
+ */
+const eliminarDireccion = async (req, res = response) => {
+  try {
+    const { id } = req.params;
+    const direccion = await DireccionEnvio.findByPk(id);
+
+    if (!direccion) {
+      return res.status(404).json({ error: 'Dirección no encontrada' });
+    }
+
+    if (direccion.usuarioId !== req.usuario.id && req.usuario.rol !== 'admin') {
+      return res.status(403).json({ error: 'No tienes permiso para eliminar esta dirección' });
     }
 
     await direccion.destroy();
-
-    res.json({ mensaje: 'Dirección eliminada' });
+    res.json({ mensaje: 'Dirección eliminada exitosamente' });
   } catch (error) {
-    res.status(500).json({ mensaje: 'Error al eliminar dirección', error: error.message });
+    console.error('Error eliminando dirección:', error);
+    res.status(500).json({ error: 'Error al eliminar la dirección' });
+  }
+};
+
+/**
+ * @route PUT /api/direcciones/:id/principal
+ * @desc Marcar dirección como principal
+ * @access Private
+ */
+const marcarComoPrincipal = async (req, res = response) => {
+  try {
+    const { id } = req.params;
+    const direccion = await DireccionEnvio.findByPk(id);
+
+    if (!direccion) {
+      return res.status(404).json({ error: 'Dirección no encontrada' });
+    }
+
+    if (direccion.usuarioId !== req.usuario.id) {
+      return res.status(403).json({ error: 'No tienes permiso para modificar esta dirección' });
+    }
+
+    // Desmarcar todas las direcciones del usuario
+    await DireccionEnvio.update(
+      { esPrincipal: false },
+      { where: { usuarioId: req.usuario.id } }
+    );
+
+    direccion.esPrincipal = true;
+    await direccion.save();
+
+    res.json({
+      mensaje: 'Dirección marcada como principal',
+      direccion
+    });
+  } catch (error) {
+    console.error('Error marcando dirección como principal:', error);
+    res.status(500).json({ error: 'Error al marcar la dirección como principal' });
   }
 };
 
 module.exports = {
-  obtenerDirecciones,
-  guardarDireccion,
-  eliminarDireccion
+  obtenerDireccionesPorUsuario,
+  obtenerDireccionPorId,
+  crearDireccion,
+  actualizarDireccion,
+  eliminarDireccion,
+  marcarComoPrincipal
 };

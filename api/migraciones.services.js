@@ -270,8 +270,7 @@ const procesarVariantes = async (variantes) => {
         nombre:  (`${v.producto} ${v.variedad || ''} ${v.presentacion || ''}`),
         slug: generarSlug(`${v.producto} ${v.variedad || ''} ${v.presentacion || ''}`),
         precio: parseFloat(v.price) || 0,
-        precioOriginal: parseFloat(v.originalPrice) || null,
-        imagenUrl: v.image || null,
+         imagenUrl: v.image || null,
         images: v.images || null,
         stock: v.stock || 0,
         destacado: v.featured || false,
@@ -320,24 +319,32 @@ const procesarDescuentos = async () => {
       if (desc.tipoDescuento === 'PRODUCTO' && desc.sku) {
         const variante = await Variante.findOne({ where: { sku: desc.sku } });
         varianteId = variante?.id || null;
+        // ⚠️update bloqueoDescuento
+        if (variante && parseFloat(desc.descuento) === 0) {
+          await variante.update({ bloqueoDescuento: true });
+        }
       }
-
-      const [_, created] = await Descuento.findOrCreate({
-        where: { id: desc.id },
-        defaults: {
-          varianteId,
-          activo: true,
-          cantDesde: parseFloat(desc.cantDesde) || 1,
-          cantHasta: parseFloat(desc.cantHasta) || 999999999,
-          fechaDesde: new Date(),
-          fechaHasta: new Date('2025-12-31'),
-          valor: parseFloat(desc.descuento) || 0,
-          tipo: desc.tipoDescuento || 'PRODUCTO',
-        },
-      });
-
-      if (created) contadorCreados++;
-    }
+      
+if (varianteId) {
+  
+  const [_, created] = await Descuento.findOrCreate({
+    where: { id: desc.id },
+    defaults: {
+      varianteId,
+      activo: true,
+      cantDesde: parseFloat(desc.cantDesde) || 1,
+      cantHasta: parseFloat(desc.cantHasta) || 999999999,
+      fechaDesde: new Date(),
+      fechaHasta: new Date('2025-12-31'),
+      valor: parseFloat(desc.descuento) || 0,
+      tipo: desc.tipoDescuento || 'PRODUCTO',
+    },
+    
+  });
+  
+        if (created) contadorCreados++;
+      }
+}
 
     console.log(`✅ Procesados ${contadorCreados} descuentos nuevos\n`);
   } catch {

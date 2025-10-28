@@ -1,239 +1,334 @@
-/**
- * SERVICIO DE PERFIL DE USUARIO
- *
- * Maneja operaciones relacionadas con el perfil del usuario,
- * direcciones guardadas y tarjetas de pago.
- *
- * PREPARADO PARA INTEGRACIÓN CON BACKEND:
- * - Las interfaces están en src/types/profile.types.ts
- * - Solo necesitas descomentar las secciones de API
- */
+// ========================================
+// profileService.ts - Servicio Completo de Perfil
+// ========================================
 
-import type { UpdateProfileRequest, Address, SavedCard, ProfileResponse } from "../types/profile.types"
-import authService from "./authService"
+ import addressService, { type Address } from './address.service';
+import authService, { PasswordUpdateData, ProfileUpdateData, User } from './auth.service';
+import cardService, { Card } from './card.service';
+ 
+export interface ProfileData {
+  user: User;
+  addresses: Address[];
+  cards: Card[];
+}
 
-// CONFIGURACIÓN DEL API (descomentar cuando tengas el backend)
-// const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+export interface UpdateProfileResponse {
+  success: boolean;
+  message?: string;
+  user?: User;
+}
 
 class ProfileService {
   /**
-   * Obtiene el perfil completo del usuario actual
-   * Incluye datos personales, direcciones y tarjetas guardadas
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * GET /api/profile
-   * Response: ProfileResponse
+   * Obtiene el perfil completo del usuario
+   * Incluye datos personales, direcciones y tarjetas
    */
-  async getProfile(): Promise<ProfileResponse> {
-    // TODO: Descomentar cuando tengas el backend
-    // const response = await fetch(`${API_URL}/profile`, {
-    //   credentials: 'include'
-    // });
-    // return await response.json();
+  async getCompleteProfile(): Promise<{ success: boolean; data?: ProfileData; message?: string }> {
+    try {
+      const user = authService.getCurrentUser();
+      
+      if (!user) {
+        return {
+          success: false,
+          message: 'Usuario no autenticado'
+        };
+      }
 
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const user = authService.getCurrentUser()
-    if (!user) {
-      return { success: false, message: "Usuario no autenticado" }
-    }
+      // Cargar datos en paralelo
+      const [addresses, cards] = await Promise.all([
+        addressService.getByUser(user.id),
+        cardService.getByUser(user.id)
+      ]);
 
-    return {
-      success: true,
-      profile: {
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        phone: user.phone,
-        address: user.address,
-        documentType: user.documentType,
-        documentNumber: user.documentNumber,
-      },
+      return {
+        success: true,
+        data: {
+          user,
+          addresses,
+          cards
+        }
+      };
+    } catch (error) {
+      console.error('Error obteniendo perfil completo:', error);
+      return {
+        success: false,
+        message: 'Error al cargar el perfil'
+      };
     }
   }
 
   /**
-   * Actualiza los datos del perfil del usuario
-   *
-   * @param updates - Campos a actualizar
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * PUT /api/profile
-   * Body: UpdateProfileRequest
-   * Response: ProfileResponse
+   * Actualiza los datos personales del usuario
    */
-  async updateProfile(updates: UpdateProfileRequest): Promise<ProfileResponse> {
-    // TODO: Descomentar cuando tengas el backend
-    // const response = await fetch(`${API_URL}/profile`, {
-    //   method: 'PUT',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(updates),
-    //   credentials: 'include'
-    // });
-    // return await response.json();
-
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const result = authService.updateProfile(updates)
-    return {
-      success: result.success,
-      message: result.message,
+  async updatePersonalInfo(data: ProfileUpdateData): Promise<UpdateProfileResponse> {
+    try {
+      const result = await authService.updateProfile(data);
+      return result;
+    } catch (error) {
+      console.error('Error actualizando información personal:', error);
+      return {
+        success: false,
+        message: 'Error al actualizar información personal'
+      };
     }
   }
 
   /**
-   * Obtiene todas las direcciones guardadas del usuario
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * GET /api/profile/addresses
-   * Response: { success: boolean, addresses: Address[] }
+   * Cambia la contraseña del usuario
+   */
+  async changePassword(data: PasswordUpdateData): Promise<{ success: boolean; message?: string }> {
+    try {
+      const result = await authService.updatePassword(data);
+      return result;
+    } catch (error) {
+      console.error('Error cambiando contraseña:', error);
+      return {
+        success: false,
+        message: 'Error al cambiar contraseña'
+      };
+    }
+  }
+
+  // ========================================
+  // MÉTODOS DE DIRECCIONES
+  // ========================================
+
+  /**
+   * Obtiene todas las direcciones del usuario
    */
   async getAddresses(): Promise<Address[]> {
-    // TODO: Descomentar cuando tengas el backend
-    // const response = await fetch(`${API_URL}/profile/addresses`, {
-    //   credentials: 'include'
-    // });
-    // const data = await response.json();
-    // return data.addresses;
+    try {
+      const user = authService.getCurrentUser();
+      if (!user) return [];
 
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const saved = localStorage.getItem("userAddresses")
-    return saved ? JSON.parse(saved) : []
-  }
-
-  /**
-   * Guarda o actualiza una dirección
-   *
-   * @param address - Dirección a guardar
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * POST /api/profile/addresses (para nueva)
-   * PUT /api/profile/addresses/:id (para actualizar)
-   */
-  async saveAddress(address: Address): Promise<void> {
-    // TODO: Descomentar cuando tengas el backend
-    // const method = address.id ? 'PUT' : 'POST';
-    // const url = address.id
-    //   ? `${API_URL}/profile/addresses/${address.id}`
-    //   : `${API_URL}/profile/addresses`;
-    //
-    // await fetch(url, {
-    //   method,
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(address),
-    //   credentials: 'include'
-    // });
-
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const addresses = await this.getAddresses()
-    const index = addresses.findIndex((a) => a.id === address.id)
-
-    if (index >= 0) {
-      addresses[index] = address
-    } else {
-      addresses.push(address)
+      return await addressService.getByUser(user.id);
+    } catch (error) {
+      console.error('Error obteniendo direcciones:', error);
+      return [];
     }
-
-    localStorage.setItem("userAddresses", JSON.stringify(addresses))
   }
 
   /**
-   * Elimina una dirección guardada
-   *
-   * @param addressId - ID de la dirección a eliminar
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * DELETE /api/profile/addresses/:id
+   * Obtiene una dirección por ID
    */
-  async deleteAddress(addressId: string): Promise<void> {
-    // TODO: Descomentar cuando tengas el backend
-    // await fetch(`${API_URL}/profile/addresses/${addressId}`, {
-    //   method: 'DELETE',
-    //   credentials: 'include'
-    // });
-
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const addresses = await this.getAddresses()
-    const filtered = addresses.filter((a) => a.id !== addressId)
-    localStorage.setItem("userAddresses", JSON.stringify(filtered))
-  }
-
-  /**
-   * Obtiene todas las tarjetas guardadas del usuario
-   * NOTA: Solo se guardan los últimos 4 dígitos por seguridad
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * GET /api/profile/cards
-   * Response: { success: boolean, cards: SavedCard[] }
-   */
-  async getCards(): Promise<SavedCard[]> {
-    // TODO: Descomentar cuando tengas el backend
-    // const response = await fetch(`${API_URL}/profile/cards`, {
-    //   credentials: 'include'
-    // });
-    // const data = await response.json();
-    // return data.cards;
-
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const saved = localStorage.getItem("userCards")
-    return saved ? JSON.parse(saved) : []
-  }
-
-  /**
-   * Guarda o actualiza una tarjeta
-   * IMPORTANTE: Nunca guardes el número completo de la tarjeta en el frontend
-   *
-   * @param card - Tarjeta a guardar (solo últimos 4 dígitos)
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * POST /api/profile/cards (para nueva)
-   * PUT /api/profile/cards/:id (para actualizar)
-   */
-  async saveCard(card: SavedCard): Promise<void> {
-    // TODO: Descomentar cuando tengas el backend
-    // const method = card.id ? 'PUT' : 'POST';
-    // const url = card.id
-    //   ? `${API_URL}/profile/cards/${card.id}`
-    //   : `${API_URL}/profile/cards`;
-    //
-    // await fetch(url, {
-    //   method,
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(card),
-    //   credentials: 'include'
-    // });
-
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const cards = await this.getCards()
-    const index = cards.findIndex((c) => c.id === card.id)
-
-    if (index >= 0) {
-      cards[index] = card
-    } else {
-      cards.push(card)
+  async getAddressById(id: string): Promise<Address | null> {
+    try {
+      return await addressService.getById(id);
+    } catch (error) {
+      console.error('Error obteniendo dirección:', error);
+      return null;
     }
-
-    localStorage.setItem("userCards", JSON.stringify(cards))
   }
 
   /**
-   * Elimina una tarjeta guardada
-   *
-   * @param cardId - ID de la tarjeta a eliminar
-   *
-   * INTEGRACIÓN CON BACKEND:
-   * DELETE /api/profile/cards/:id
+   * Crea o actualiza una dirección
    */
-  async deleteCard(cardId: string): Promise<void> {
-    // TODO: Descomentar cuando tengas el backend
-    // await fetch(`${API_URL}/profile/cards/${cardId}`, {
-    //   method: 'DELETE',
-    //   credentials: 'include'
-    // });
+  async saveAddress(address: Address): Promise<{ success: boolean; address?: Address; message?: string }> {
+    try {
+      const result = await addressService.upsert(address);
+      
+      if (result) {
+        return {
+          success: true,
+          address: result
+        };
+      }
+      
+      return {
+        success: false,
+        message: 'Error al guardar la dirección'
+      };
+    } catch (error) {
+      console.error('Error guardando dirección:', error);
+      return {
+        success: false,
+        message: 'Error al guardar la dirección'
+      };
+    }
+  }
 
-    // IMPLEMENTACIÓN LOCAL (actual)
-    const cards = await this.getCards()
-    const filtered = cards.filter((c) => c.id !== cardId)
-    localStorage.setItem("userCards", JSON.stringify(filtered))
+  /**
+   * Elimina una dirección
+   */
+  async deleteAddress(id: string): Promise<{ success: boolean; message?: string }> {
+    try {
+      const result = await addressService.delete(id);
+      
+      if (result) {
+        return {
+          success: true,
+          message: 'Dirección eliminada exitosamente'
+        };
+      }
+      
+      return {
+        success: false,
+        message: 'Error al eliminar la dirección'
+      };
+    } catch (error) {
+      console.error('Error eliminando dirección:', error);
+      return {
+        success: false,
+        message: 'Error al eliminar la dirección'
+      };
+    }
+  }
+
+  // ========================================
+  // MÉTODOS DE TARJETAS
+  // ========================================
+
+  /**
+   * Obtiene todas las tarjetas del usuario
+   */
+  async getCards(): Promise<Card[]> {
+    try {
+      const user = authService.getCurrentUser();
+      if (!user) return [];
+
+      return await cardService.getByUser(user.id);
+    } catch (error) {
+      console.error('Error obteniendo tarjetas:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Obtiene una tarjeta por ID
+   */
+  async getCardById(id: string): Promise<Card | null> {
+    try {
+      return await cardService.getById(id);
+    } catch (error) {
+      console.error('Error obteniendo tarjeta:', error);
+      return null;
+    }
+  }
+
+  /**
+   * Crea o actualiza una tarjeta
+   */
+  async saveCard(card: Card): Promise<{ success: boolean; card?: Card; message?: string }> {
+    try {
+      // Validar que la tarjeta no esté vencida
+      if (cardService.isExpired(card)) {
+        return {
+          success: false,
+          message: 'La tarjeta está vencida'
+        };
+      }
+
+      const result = await cardService.upsert(card);
+      
+      if (result) {
+        return {
+          success: true,
+          card: result
+        };
+      }
+      
+      return {
+        success: false,
+        message: 'Error al guardar la tarjeta'
+      };
+    } catch (error) {
+      console.error('Error guardando tarjeta:', error);
+      return {
+        success: false,
+        message: 'Error al guardar la tarjeta'
+      };
+    }
+  }
+
+  /**
+   * Elimina una tarjeta
+   */
+  async deleteCard(id: string): Promise<{ success: boolean; message?: string }> {
+    try {
+      const result = await cardService.delete(id);
+      
+      if (result) {
+        return {
+          success: true,
+          message: 'Tarjeta eliminada exitosamente'
+        };
+      }
+      
+      return {
+        success: false,
+        message: 'Error al eliminar la tarjeta'
+      };
+    } catch (error) {
+      console.error('Error eliminando tarjeta:', error);
+      return {
+        success: false,
+        message: 'Error al eliminar la tarjeta'
+      };
+    }
+  }
+
+  /**
+   * Valida si una tarjeta está vencida
+   */
+  isCardExpired(card: Card): boolean {
+    return cardService.isExpired(card);
+  }
+
+  /**
+   * Formatea la fecha de vencimiento de una tarjeta
+   */
+  formatCardExpiry(card: Card): string {
+    return cardService.formatExpiry(card);
+  }
+
+  /**
+   * Formatea el número de tarjeta con máscara
+   */
+  formatCardNumber(card: Card): string {
+    return cardService.formatCardNumber(card.last4, card.brand);
+  }
+
+  // ========================================
+  // MÉTODOS AUXILIARES
+  // ========================================
+
+  /**
+   * Verifica si el usuario está autenticado
+   */
+  isAuthenticated(): boolean {
+    return authService.isAuthenticated();
+  }
+
+  /**
+   * Obtiene el usuario actual
+   */
+  getCurrentUser(): User | null {
+    return authService.getCurrentUser();
+  }
+
+  /**
+   * Cierra la sesión del usuario
+   */
+  logout(): void {
+    authService.logout();
+  }
+
+  /**
+   * Refresca los datos del perfil
+   */
+  async refreshProfile(): Promise<{ success: boolean; user?: User; message?: string }> {
+    try {
+      return await authService.getProfile();
+    } catch (error) {
+      console.error('Error refrescando perfil:', error);
+      return {
+        success: false,
+        message: 'Error al refrescar el perfil'
+      };
+    }
   }
 }
 
-export default new ProfileService()
+// Exportar instancia única
+const profileService = new ProfileService();
+export default profileService;

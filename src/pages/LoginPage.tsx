@@ -1,24 +1,37 @@
+// ========================================
+// LoginPage.tsx - ACTUALIZADO
+// ========================================
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../contexts/AppContext';
-import { User, Lock } from 'lucide-react';
+import { User, Lock, Loader } from 'lucide-react';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const { login } = useApp();
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setLoading(true);
 
-    const result = login(email, password);
-    if (result.success) {
-      navigate('/');
-    } else {
-      setError(result.message || 'Error al iniciar sesión');
+    try {
+      const result = await login(email, password);
+      
+      if (result.success) {
+        navigate('/');
+      } else {
+        setError(result.message || 'Error al iniciar sesión');
+      }
+    } catch (err) {
+      setError('Error de conexión con el servidor');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -44,6 +57,7 @@ const LoginPage: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
                   required
+                  disabled={loading}
                 />
               </div>
 
@@ -58,11 +72,19 @@ const LoginPage: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
+                  disabled={loading}
                 />
               </div>
 
-              <button type="submit" className="btn-primary btn-block">
-                Iniciar Sesión
+              <button type="submit" className="btn-primary btn-block" disabled={loading}>
+                {loading ? (
+                  <>
+                    <Loader size={20} className="spinner" />
+                    Iniciando...
+                  </>
+                ) : (
+                  'Iniciar Sesión'
+                )}
               </button>
             </form>
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Package, FolderOpen, Image, LogOut } from 'lucide-react';
-import authService from '../services/authService';
+import { Package, FolderOpen, Image, LogOut } from 'lucide-react'; 
+import authService from '../services/auth.service';
 
 interface AdminDashboardProps {
   onLogout: () => void;
@@ -22,7 +22,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
           <div className="admin-header-content">
             <h1>Panel de Administración - CAVALLARO</h1>
             <div className="admin-user-info">
-              <span>Admin: {user?.name}</span>
+              <span>Admin: {user?.nombre}</span>
               <button onClick={handleLogout} className="btn-secondary">
                 <LogOut size={18} />
                 Salir

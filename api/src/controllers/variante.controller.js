@@ -67,7 +67,7 @@ const getDestacados = async (req, res) => {
         activo: true,
         destacado: true
       },
-      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
+      attributes: ['id', 'nombre', 'slug', 'precio',  'imagenUrl', 'stock', 'destacado', 'nuevo'],
       order: [['created_at', 'DESC']],
       limit,
       offset,
@@ -136,7 +136,7 @@ const getByCategoria = async (req, res) => {
 
     const { count, rows } = await Variante.findAndCountAll({
       where: { activo: true },
-      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
+      attributes: ['id', 'nombre', 'slug', 'precio',  'imagenUrl', 'stock', 'destacado', 'nuevo'],
       include: [{
         model: Producto,
         as: 'producto',
@@ -186,7 +186,7 @@ const getNovedades = async (req, res) => {
 
     const { count, rows } = await Variante.findAndCountAll({
       where: { activo: true, nuevo:true },
-      attributes: ['id', 'nombre', 'slug', 'precio', 'precioOriginal', 'imagenUrl', 'stock', 'destacado', 'nuevo'],
+      attributes: ['id', 'nombre', 'slug', 'precio',   'imagenUrl', 'stock', 'destacado', 'nuevo'],
       order: [['created_at', 'DESC']],
       limit,
       offset,
@@ -257,8 +257,7 @@ const buscarProductos = async (req, res) => {
         'id',
         'nombre',
         'slug',
-        'precio',
-        'precioOriginal',
+        'precio', 
         'imagenUrl',
         'stock',
         'destacado',

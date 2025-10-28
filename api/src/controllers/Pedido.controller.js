@@ -93,12 +93,7 @@ const { sequelize } = require('../../dbconfig');
           ? item.Variante.stock 
           : item.Producto.stock;
 
-        if (stockDisponible < item.cantidad) {
-          await transaction.rollback();
-          return res.status(400).json({ 
-            mensaje: `Stock insuficiente para ${item.Producto.nombre}` 
-          });
-        }
+        
 
         // Crear item del pedido
         await ItemPedido.create({

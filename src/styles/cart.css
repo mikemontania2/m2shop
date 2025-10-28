@@ -285,3 +285,19 @@
   }
 }
 /* </CHANGE> */
+.cart-item-prices {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-price-current {
+  font-weight: bold;
+  color: #e60023; /* rojo o color de descuento */
+  font-size: 1.1rem;
+}
+
+.cart-item-price-original {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 0.9rem;
+}

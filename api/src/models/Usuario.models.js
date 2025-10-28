@@ -20,13 +20,9 @@ const Usuario = sequelize.define('Usuario', {
     allowNull: false
   },
   nombre: {
-    type: DataTypes.STRING(100),
+    type: DataTypes.STRING(250),
     allowNull: false
-  },
-  apellido: {
-    type: DataTypes.STRING(100),
-    allowNull: false
-  },
+  } ,
   telefono: {
     type: DataTypes.STRING(20),
     allowNull: true
@@ -51,11 +47,7 @@ const Usuario = sequelize.define('Usuario', {
   fechaNacimiento: {
     type: DataTypes.DATEONLY,
     allowNull: true
-  },
-  activo: {
-    type: DataTypes.BOOLEAN,
-    defaultValue: true
-  },
+  }, 
   rol: {
     type: DataTypes.ENUM('cliente', 'admin', 'vendedor'),
     defaultValue: 'cliente'
@@ -63,7 +55,22 @@ const Usuario = sequelize.define('Usuario', {
   emailVerificado: {
     type: DataTypes.BOOLEAN,
     defaultValue: false
-  }
+  },
+  intentos: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue:0
+    },
+    activo: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue:true
+    },
+    bloqueado: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue:false
+    }
 }, {
   tableName: 'usuarios',
   timestamps: true,

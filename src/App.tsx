@@ -20,7 +20,6 @@ import DiscountsAdmin from "./admin/DiscountsAdmin"
 import OrdersAdmin from "./admin/OrdersAdmin"
 import BranchesAdmin from "./admin/BranchesAdmin"
 import CoverageAdmin from "./admin/CoverageAdmin"
-import authService from "./services/authService"
 import CartPage from "./pages/CartPage"
 import CheckoutPage from "./pages/CheckoutPage"
 import ContactPage from "./pages/ContactPage"
@@ -31,8 +30,12 @@ import OrderConfirmationPage from "./pages/OrderConfirmationPage"
 import LoginPage from "./pages/LoginPage"
 import SearchPage from "./pages/SearchPage"
 import RegisterPage from "./pages/RegisterPage"
-import ProfilePage from "./pages/ProfilePage"
+import ProfilePage from "./pages/ProfilePage" 
+import ProtectedRoute, { GuestRoute, ProtectedAdminRoute } from "./ProtectedRoute"
 
+// ========================================
+// Toast Container Component
+// ========================================
 function ToastContainer() {
   const { toasts } = useApp()
   return (
@@ -46,6 +49,9 @@ function ToastContainer() {
   )
 }
 
+// ========================================
+// Layout Principal (Ecommerce)
+// ========================================
 function Layout() {
   return (
     <div className="app">
@@ -61,40 +67,97 @@ function Layout() {
   )
 }
 
-function ProtectedAdminRoute({ children }: { children: React.JSX.Element }) {
-  if (!authService.isAuthenticated() || !authService.isAdmin()) {
-    return <AdminLoginPage onAdminLogin={() => {}} onNavigate={() => {}} />
-  }
-  return children
-}
-
+// ========================================
+// App Component
+// ========================================
 function App() {
   return (
     <AppProvider>
       <Routes>
+        {/* ====================================== */}
+        {/* RUTAS PÚBLICAS (Ecommerce Layout) */}
+        {/* ====================================== */}
         <Route element={<Layout />}>
+          {/* Home */}
           <Route path="/" element={<HomePage />} />
+          
+          {/* Catálogo y Productos */}
           <Route path="/catalogo" element={<CatalogPage />} />
           <Route path="/catalogo/:subcategoriaSlug" element={<CategoryPage />} />
           <Route path="/:categoriaSlug" element={<CategoryPage />} />
           <Route path="/producto/:slug" element={<ProductDetailPage />} />
           <Route path="/buscar" element={<SearchPage />} />
+          
+          {/* Carrito y Checkout */}
           <Route path="/carrito" element={<CartPage />} />
-          <Route path="/checkout" element={<CheckoutPage />} />
-          <Route path="/orden/:id" element={<OrderConfirmationPage />} />
+          <Route 
+            path="/checkout" 
+            element={
+              <ProtectedRoute>
+                <CheckoutPage />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/orden/:id" 
+            element={
+              <ProtectedRoute>
+                <OrderConfirmationPage />
+              </ProtectedRoute>
+            } 
+          />
+          
+          {/* Información */}
           <Route path="/contacto" element={<ContactPage />} />
           <Route path="/la-empresa" element={<CompanyPage />} />
           <Route path="/nuestra-historia" element={<HistoryPage />} />
           <Route path="/sucursales" element={<StoresPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/mapa-de-cobertura" element={<MapCoveragePage />} />
+          
+          {/* Autenticación - Solo para invitados */}
+          <Route 
+            path="/login" 
+            element={
+              <GuestRoute redirectTo="/profile">
+                <LoginPage />
+              </GuestRoute>
+            } 
+          />
+          <Route 
+            path="/register" 
+            element={
+              <GuestRoute redirectTo="/profile">
+                <RegisterPage />
+              </GuestRoute>
+            } 
+          />
+          
+          {/* Perfil - Requiere autenticación */}
+          <Route 
+            path="/profile" 
+            element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
+            } 
+          />
         </Route>
 
-        {/* Admin area isolated from ecommerce chrome */}
+        {/* ====================================== */}
+        {/* RUTAS DE ADMINISTRACIÓN (Admin Layout) */}
+        {/* ====================================== */}
         <Route element={<AdminLayout />}>
-          <Route path="/admin/login" element={<AdminLoginPage />} />
+          {/* Login de Admin - Solo para invitados */}
+          <Route 
+            path="/admin/login" 
+            element={
+              <GuestRoute redirectTo="/admin">
+                <AdminLoginPage />
+              </GuestRoute>
+            } 
+          />
+          
+          {/* Dashboard de Admin - Requiere rol admin */}
           <Route
             path="/admin"
             element={
@@ -103,6 +166,8 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+          
+          {/* Productos Admin */}
           <Route
             path="/admin/products"
             element={
@@ -111,6 +176,8 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+          
+          {/* Categorías Admin */}
           <Route
             path="/admin/categories"
             element={
@@ -119,6 +186,8 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+          
+          {/* Banners Admin */}
           <Route
             path="/admin/banners"
             element={
@@ -127,6 +196,8 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+          
+          {/* Descuentos Admin */}
           <Route
             path="/admin/discounts"
             element={
@@ -135,6 +206,8 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+          
+          {/* Pedidos Admin */}
           <Route
             path="/admin/orders"
             element={
@@ -143,6 +216,8 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+          
+          {/* Sucursales Admin */}
           <Route
             path="/admin/branches"
             element={
@@ -151,6 +226,8 @@ function App() {
               </ProtectedAdminRoute>
             }
           />
+          
+          {/* Cobertura Admin */}
           <Route
             path="/admin/coverage"
             element={

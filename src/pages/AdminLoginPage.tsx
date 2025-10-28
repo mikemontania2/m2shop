@@ -1,28 +1,38 @@
 import React, { useState } from 'react';
-import authService from '../services/authService';
-import { Lock, User } from 'lucide-react';
+ import { Lock, User, Loader } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import authService from '../services/auth.service';
 
 const AdminLoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+    setLoading(true);
 
-    const result = authService.login(email, password);
-    if (result.success && result.user) {
-      if (authService.isAdmin()) {
-        navigate('/admin');
+    try {
+      const result = await authService.login(email, password);
+      
+      if (result.success && result.user) {
+        // Verificar si es admin
+        if (result.user.rol === 'admin') {
+          navigate('/admin');
+        } else {
+          setError('No tienes permisos de administrador');
+          authService.logout();
+        }
       } else {
-        setError('No tienes permisos de administrador');
-        authService.logout();
+        setError(result.message || 'Error al iniciar sesión');
       }
-    } else {
-      setError(result.message || 'Error al iniciar sesión');
+    } catch (err) {
+      setError('Error de conexión con el servidor');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -48,6 +58,7 @@ const AdminLoginPage: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@cavallaro.com"
                   required
+                  disabled={loading}
                 />
               </div>
 
@@ -62,11 +73,19 @@ const AdminLoginPage: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
+                  disabled={loading}
                 />
               </div>
 
-              <button type="submit" className="btn-primary btn-block">
-                Iniciar Sesión
+              <button type="submit" className="btn-primary btn-block" disabled={loading}>
+                {loading ? (
+                  <>
+                    <Loader size={20} className="spinner" />
+                    Verificando...
+                  </>
+                ) : (
+                  'Iniciar Sesión'
+                )}
               </button>
             </form>
 

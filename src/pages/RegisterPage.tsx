@@ -1,8 +1,13 @@
+
+// ========================================
+// RegisterPage.tsx - ACTUALIZADO
+// ========================================
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useApp } from '../contexts/AppContext';
-import authService from '../services/authService';
-import { User, Mail, Lock } from 'lucide-react';
+import { useApp } from '../contexts/AppContext'; ;
+import { User, Mail, Lock, Loader } from 'lucide-react';
+import authService from '../services/auth.service';
 
 const RegisterPage: React.FC = () => {
   const [name, setName] = useState('');
@@ -10,13 +15,15 @@ const RegisterPage: React.FC = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useApp();
+  const [loading, setLoading] = useState(false);
+  const { login, showToast } = useApp();
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
 
+    // Validaciones
     if (password !== confirmPassword) {
       setError('Las contraseñas no coinciden');
       return;
@@ -27,12 +34,27 @@ const RegisterPage: React.FC = () => {
       return;
     }
 
-    const result = authService.register(email, password, name);
-    if (result.success) {
-      login(email, password);
-      navigate('/');
-    } else {
-      setError(result.message || 'Error al registrarse');
+    if (name.trim().length < 3) {
+      setError('El nombre debe tener al menos 3 caracteres');
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const result = await authService.register(email, password, name);
+      
+      if (result.success) {
+        showToast('Registro exitoso. Bienvenido!', 'success');
+        // El registro ya devuelve el token, solo navegar
+        navigate('/');
+      } else {
+        setError(result.message || 'Error al registrarse');
+      }
+    } catch (err) {
+      setError('Error de conexión con el servidor');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -58,6 +80,8 @@ const RegisterPage: React.FC = () => {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Tu nombre completo"
                   required
+                  disabled={loading}
+                  minLength={3}
                 />
               </div>
 
@@ -72,6 +96,7 @@ const RegisterPage: React.FC = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="tu@email.com"
                   required
+                  disabled={loading}
                 />
               </div>
 
@@ -86,6 +111,8 @@ const RegisterPage: React.FC = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
+                  disabled={loading}
+                  minLength={6}
                 />
               </div>
 
@@ -100,11 +127,20 @@ const RegisterPage: React.FC = () => {
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="••••••••"
                   required
+                  disabled={loading}
+                  minLength={6}
                 />
               </div>
 
-              <button type="submit" className="btn-primary btn-block">
-                Registrarse
+              <button type="submit" className="btn-primary btn-block" disabled={loading}>
+                {loading ? (
+                  <>
+                    <Loader size={20} className="spinner" />
+                    Registrando...
+                  </>
+                ) : (
+                  'Registrarse'
+                )}
               </button>
             </form>
 

@@ -5,8 +5,8 @@
  * Diseñadas para integrarse con el backend API de órdenes.
  */
 
-import type { CartItem } from "./cart.types"
-import type { User } from "../services/authService"
+import { User } from "../services/auth.service"
+import type { CartItem } from "./cart.types" 
 
 /**
  * OrderStatus - Estados posibles de un pedido

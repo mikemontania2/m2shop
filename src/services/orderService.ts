@@ -9,7 +9,7 @@
  * - Solo necesitas descomentar las secciones de API
  */
 
-import type { CartItem } from "./cartService"
+import type { CartItem } from "./cart.service"
 import type { User } from "./authService"
 import type { Order } from "../types/order.types"
 

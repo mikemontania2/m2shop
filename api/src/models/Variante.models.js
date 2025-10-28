@@ -42,11 +42,6 @@ const Variante = sequelize.define('Variante', {
     comment: 'Precio final (aplicando descuento si corresponde)'
   },
 
-  precioOriginal: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: true,
-    comment: 'Precio antes del descuento'
-  },
 
   imagenUrl: {
     type: DataTypes.STRING(255),
@@ -73,7 +68,10 @@ const Variante = sequelize.define('Variante', {
     type: DataTypes.BOOLEAN,
     defaultValue: false
   },
-
+ bloqueoDescuento: {
+    type: DataTypes.BOOLEAN,
+    defaultValue: false
+  },
   activo: {
     type: DataTypes.BOOLEAN,
     defaultValue: true

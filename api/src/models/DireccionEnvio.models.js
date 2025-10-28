@@ -1,8 +1,7 @@
 
 const { DataTypes } = require('sequelize');
 const { sequelize } = require('../../dbconfig');
-const  Usuario  = require('./Usuario.models');
-const  Barrio  = require('./Barrio.models');
+const  Usuario  = require('./Usuario.models'); 
 const DireccionEnvio = sequelize.define('DireccionEnvio', {
   id: {
     type: DataTypes.INTEGER,
@@ -32,13 +31,21 @@ const DireccionEnvio = sequelize.define('DireccionEnvio', {
   referencia: {
     type: DataTypes.TEXT,
     allowNull: true
-  },
-  barrioId: {
-    type: DataTypes.INTEGER,
-    allowNull: false
-  },
+  }, 
   codigoPostal: {
     type: DataTypes.STRING(20),
+    allowNull: true
+  },
+   departamento: {
+    type: DataTypes.STRING(50),
+    allowNull: true
+  },
+   ciudad: {
+    type: DataTypes.STRING(50),
+    allowNull: true
+  },
+   barrio: {
+    type: DataTypes.STRING(50),
     allowNull: true
   },
   esPrincipal: {
@@ -50,7 +57,6 @@ const DireccionEnvio = sequelize.define('DireccionEnvio', {
   timestamps: true,
   underscored: true
 });
-DireccionEnvio.belongsTo(Usuario, { foreignKey: 'usuarioId' });
-DireccionEnvio.belongsTo(Barrio, { foreignKey: 'barrioId', targetKey: 'id' });
+DireccionEnvio.belongsTo(Usuario, { foreignKey: 'usuarioId' }); 
 
 module.exports = DireccionEnvio;

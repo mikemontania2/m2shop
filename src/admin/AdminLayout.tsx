@@ -1,7 +1,7 @@
 import React from 'react';
-import { LogOut } from 'lucide-react';
-import authService from '../services/authService';
+import { LogOut } from 'lucide-react'; 
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import authService from '../services/auth.service';
 
 const AdminLayout: React.FC = () => {
   const navigate = useNavigate();
