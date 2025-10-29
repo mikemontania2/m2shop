@@ -3,6 +3,7 @@
 // ========================================
  import { API_BASE_URL } from "../Config"
  
+import axios from "axios";
 
 export interface Card {
   id: string;

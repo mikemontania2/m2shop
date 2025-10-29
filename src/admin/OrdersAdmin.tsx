@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import orderService from '../services/orderService';
+import orderService from '../services/pedidos.services';
 
 const OrdersAdmin: React.FC = () => {
   const [orders, setOrders] = useState(orderService.getOrders());

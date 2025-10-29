@@ -74,8 +74,7 @@ class AddressService {
       
       if (isNew) {
         // Crear nueva dirección
-        const response = await axios.post<{ direccion: Address }>(
-          `${API_BASE_URL}/direcciones`,
+        const response = await axios.post<{ direccion: Address }>( `${API_BASE_URL}/direcciones`,
           address,
           { headers: this.getHeaders() }
         );

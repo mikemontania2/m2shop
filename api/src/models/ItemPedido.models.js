@@ -30,6 +30,10 @@ const ItemPedido = sequelize.define('ItemPedido', {
     type: DataTypes.STRING(50),
     allowNull: false
   },
+  imagenUrl: {
+    type: DataTypes.STRING(255),
+    allowNull: true
+  },
   cantidad: {
     type: DataTypes.INTEGER,
     allowNull: false
@@ -38,7 +42,19 @@ const ItemPedido = sequelize.define('ItemPedido', {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   },
+   descuento: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+   importeDescuento: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false
+  },
   subtotal: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false
+  },
+  total: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   }
@@ -47,7 +63,7 @@ const ItemPedido = sequelize.define('ItemPedido', {
   timestamps: true,
   underscored: true
 });
- ItemPedido.belongsTo(Pedido, { foreignKey: 'pedidoId' });
+ItemPedido.belongsTo(Pedido, { foreignKey: 'pedidoId' });
 ItemPedido.belongsTo(Producto, { foreignKey: 'productoId' });
 ItemPedido.belongsTo(Variante, { foreignKey: 'varianteId' });
 module.exports = ItemPedido;

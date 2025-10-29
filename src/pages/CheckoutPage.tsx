@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../contexts/AppContext';
+import authService from '../services/auth.service';
 import { User, Mail, Phone, MapPin, Lock, Loader, ShoppingBag } from 'lucide-react';
 import "../styles/checkout.css";
+import pedidosServices from '../services/pedidos.services';
 
 // Tipos para el formulario de invitado
 interface GuestData {
@@ -16,7 +18,18 @@ interface GuestData {
 }
 
 const CheckoutPage: React.FC = () => {
-  const { user, isAuthenticated, cart, cartTotal,cartSubTotal,cartImporteDescuento, clearCart, login, showToast } = useApp();
+  const { 
+    user, 
+    isAuthenticated, 
+    cart, 
+    cartTotal, 
+    cartSubTotal, 
+    cartImporteDescuento, 
+    clearCart, 
+    login, 
+    showToast 
+  } = useApp();
+  
   const navigate = useNavigate();
 
   // Estados del modo de checkout
@@ -40,6 +53,7 @@ const CheckoutPage: React.FC = () => {
 
   // Estados para usuario autenticado
   const [shippingAddress, setShippingAddress] = useState(user?.direccion || '');
+  const [notasCliente, setNotasCliente] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'efectivo' | 'transferencia' | 'tarjeta' | 'contacto'>('contacto');
 
   // Verificar carrito vacío
@@ -115,10 +129,10 @@ const CheckoutPage: React.FC = () => {
     setLoading(true);
 
     try {
-      // Simular creación de pedido (aquí llamarías a tu API)
-      const orderData = {
+      // ✅ Preparar datos del pedido
+      const pedidoData = {
         cliente: {
-          tipo: 'invitado',
+          tipo: 'invitado' as const,
           nombre: guestData.nombre,
           email: guestData.email,
           telefono: guestData.telefono,
@@ -126,32 +140,45 @@ const CheckoutPage: React.FC = () => {
           notas: guestData.notas
         },
         items: cart.map(item => ({
+          productoId: item.productoId,
           varianteId: item.varianteId,
+          nombreProducto: item.nombre,
+          sku: 'SKU-' + item.varianteId, // Puedes ajustar esto
+          imagenUrl: item.imagen,
           cantidad: item.cantidad,
-          precio: item.precio
+          precioUnitario: item.precio,
+          descuento: item.descuento || 0,
+          importeDescuento: item.importeDescuento || 0,
+          subtotal: item.subtotal,
+          total: item.total
         })),
         total: total,
-        metodoPago: paymentMethod,
-        shippingCost: shippingCost
+        metodoPago: paymentMethod === 'contacto' ? 'otros' : paymentMethod,
+        shippingCost: shippingCost,
+        notasCliente: guestData.notas
       };
 
-      console.log('📦 Pedido de invitado:', orderData);
+      console.log('📦 Creando pedido de invitado:', pedidoData);
 
-      // TODO: Llamar a API para crear pedido
-      // const result = await orderService.createGuestOrder(orderData);
+      // ✅ Crear pedido mediante el servicio
+      const result = await pedidosServices.crearPedido(pedidoData);
 
-      // Si el usuario quiere crear cuenta
+      console.log('✅ Pedido creado:', result);
+
+      // Si el usuario quiere crear cuenta, hacerlo DESPUÉS del pedido
       if (guestData.crearCuenta && guestData.password) {
         try {
-          // Crear cuenta con los datos del checkout
-          // await authService.register(guestData.email, guestData.password, guestData.nombre);
-          showToast('Cuenta creada exitosamente', 'success');
+          console.log('👤 Creando cuenta de usuario...');
+          await authService.register(guestData.email, guestData.password, guestData.nombre);
+          showToast('¡Cuenta creada! Ya puedes iniciar sesión', 'success');
         } catch (error) {
-          console.error('Error creando cuenta:', error);
+          console.error('⚠️ Error creando cuenta:', error);
           // No bloquear el pedido si falla el registro
+          showToast('Pedido creado, pero hubo un error al crear la cuenta', 'info');
         }
       }
 
+      // Mostrar mensaje de éxito
       showToast(
         paymentMethod === 'contacto'
           ? '¡Pedido registrado! Nos contactaremos pronto'
@@ -159,16 +186,25 @@ const CheckoutPage: React.FC = () => {
         'success'
       );
 
-      clearCart();
+      // Vaciar carrito
+      await clearCart();
       
-      // Redirigir a confirmación (con token temporal para invitados)
+      // Redirigir a página de confirmación
       setTimeout(() => {
-        navigate('/orden/guest-' + Date.now());
+        navigate('/pedido-confirmado', { 
+          state: { 
+            pedido: result.pedido,
+            mensaje: result.mensaje 
+          } 
+        });
       }, 1500);
 
     } catch (error: any) {
       console.error('❌ Error procesando pedido:', error);
-      showToast(error.response?.data?.error || 'Error al procesar el pedido', 'error');
+      showToast(
+        error.message || 'Error al procesar el pedido. Por favor intenta nuevamente.',
+        'error'
+      );
     } finally {
       setLoading(false);
     }
@@ -207,40 +243,64 @@ const CheckoutPage: React.FC = () => {
     setLoading(true);
 
     try {
-      const orderData = {
+      // ✅ Preparar datos del pedido
+      const pedidoData = {
         cliente: {
-          tipo: 'registrado',
+          tipo: 'registrado' as const,
           usuarioId: user?.id,
-          nombre: user?.nombre,
-          email: user?.email,
-          telefono: user?.telefono,
-          direccion: shippingAddress
+          nombre: user?.nombre || '',
+          email: user?.email || '',
+          telefono: user?.telefono || '',
+          direccion: shippingAddress,
+          notas: notasCliente
         },
         items: cart.map(item => ({
+          productoId: item.productoId,
           varianteId: item.varianteId,
+          nombreProducto: item.nombre,
+          sku: 'SKU-' + item.varianteId,
+          imagenUrl: item.imagen,
           cantidad: item.cantidad,
-          precio: item.precio
+          precioUnitario: item.precio,
+          descuento: item.descuento || 0,
+          importeDescuento: item.importeDescuento || 0,
+          subtotal: item.subtotal,
+          total: item.total
         })),
         total: total,
         metodoPago: paymentMethod,
-        shippingCost: shippingCost
+        shippingCost: shippingCost,
+        notasCliente: notasCliente
       };
 
-      console.log('📦 Pedido de usuario autenticado:', orderData);
+      console.log('📦 Creando pedido de usuario autenticado:', pedidoData);
 
-      // TODO: Llamar a API para crear pedido
-      // const result = await orderService.createOrder(orderData);
+      // ✅ Crear pedido mediante el servicio
+      const result = await pedidosServices.crearPedido(pedidoData);
+
+      console.log('✅ Pedido creado:', result);
 
       showToast('¡Pedido procesado exitosamente!', 'success');
-      clearCart();
       
+      // Vaciar carrito
+      await clearCart();
+      
+      // Redirigir a página de confirmación
       setTimeout(() => {
-        navigate('/orden/' + Date.now());
+        navigate('/pedido-confirmado', { 
+          state: { 
+            pedido: result.pedido,
+            mensaje: result.mensaje 
+          } 
+        });
       }, 1500);
 
     } catch (error: any) {
       console.error('❌ Error procesando pedido:', error);
-      showToast(error.response?.data?.error || 'Error al procesar el pedido', 'error');
+      showToast(
+        error.message || 'Error al procesar el pedido. Por favor intenta nuevamente.',
+        'error'
+      );
     } finally {
       setLoading(false);
     }
@@ -516,6 +576,16 @@ const CheckoutPage: React.FC = () => {
                       minLength={10}
                     />
                   </div>
+
+                  <div className="form-group">
+                    <label>Notas adicionales (opcional)</label>
+                    <textarea
+                      value={notasCliente}
+                      onChange={(e) => setNotasCliente(e.target.value)}
+                      placeholder="Instrucciones especiales para la entrega..."
+                      rows={2}
+                    />
+                  </div>
                 </div>
 
                 <div className="form-section">
@@ -592,28 +662,25 @@ const CheckoutPage: React.FC = () => {
                 <span>Subtotal</span>
                 <span>{formatPrice(cartSubTotal)}</span>
               </div>
-                 { cartImporteDescuento > 0 && (
+              {cartImporteDescuento > 0 && (
                 <div className="summary-row">
-                    <span>Descuento</span>
-                <span>-{formatPrice(cartImporteDescuento)}</span>
+                  <span>Descuento</span>
+                  <span>-{formatPrice(cartImporteDescuento)}</span>
                 </div>
               )}
               <div className="summary-row">
                 <span>Envío</span>
                 <span>{shippingCost === 0 ? '🎉 Gratis' : formatPrice(shippingCost)}</span>
               </div>
-                {shippingCost > 0 && (
+              {shippingCost > 0 && (
                 <p className="free-shipping-notice">
-                  💡 Envío gratis en compras desde {formatPrice(100000)}
+                  💡 Envío gratis en compras desde {formatPrice(500000)}
                 </p>
-              )}  
-
-
-              
+              )}
               
               <div className="summary-row total">
                 <span>Total</span>
-                <span>{formatPrice(cartTotal)}</span>
+                <span>{formatPrice(total)}</span>
               </div>
             </div>
 

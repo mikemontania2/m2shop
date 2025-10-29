@@ -12,11 +12,7 @@ const DireccionEnvio = sequelize.define(
     usuarioId: {
       type: DataTypes.INTEGER,
       allowNull: false
-    },
-    nombreCompleto: {
-      type: DataTypes.STRING(200),
-      allowNull: false
-    },
+    }, 
     telefono: {
       type: DataTypes.STRING(20),
       allowNull: false

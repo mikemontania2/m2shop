@@ -21,22 +21,26 @@ const Pedido = sequelize.define('Pedido', {
     type: DataTypes.ENUM('pendiente', 'confirmado', 'preparando', 'enviado', 'entregado', 'cancelado'),
     defaultValue: 'pendiente'
   },
-  subtotal: {
+  descuento: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   },
-  descuento: {
+   importeDescuento: {
     type: DataTypes.DECIMAL(10, 2),
-    defaultValue: 0
+    allowNull: false
   },
-  costoEnvio: {
+  subtotal: {
     type: DataTypes.DECIMAL(10, 2),
-    defaultValue: 0
+    allowNull: false
   },
   total: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   },
+  costoEnvio: {
+    type: DataTypes.DECIMAL(10, 2),
+    defaultValue: 0
+  }, 
   metodoPago: {
     type: DataTypes.ENUM('efectivo', 'tarjeta', 'transferencia', 'paypal', 'otros'),
     allowNull: false
