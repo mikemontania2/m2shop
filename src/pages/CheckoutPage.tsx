@@ -16,7 +16,7 @@ interface GuestData {
 }
 
 const CheckoutPage: React.FC = () => {
-  const { user, isAuthenticated, cart, cartTotal, clearCart, login, showToast } = useApp();
+  const { user, isAuthenticated, cart, cartTotal,cartSubTotal,cartImporteDescuento, clearCart, login, showToast } = useApp();
   const navigate = useNavigate();
 
   // Estados del modo de checkout
@@ -590,20 +590,30 @@ const CheckoutPage: React.FC = () => {
             <div className="summary-totals">
               <div className="summary-row">
                 <span>Subtotal</span>
-                <span>{formatPrice(cartTotal)}</span>
+                <span>{formatPrice(cartSubTotal)}</span>
               </div>
+                 { cartImporteDescuento > 0 && (
+                <div className="summary-row">
+                    <span>Descuento</span>
+                <span>-{formatPrice(cartImporteDescuento)}</span>
+                </div>
+              )}
               <div className="summary-row">
                 <span>Envío</span>
                 <span>{shippingCost === 0 ? '🎉 Gratis' : formatPrice(shippingCost)}</span>
               </div>
-              {shippingCost > 0 && (
+                {shippingCost > 0 && (
                 <p className="free-shipping-notice">
-                  💡 Envío gratis en compras desde {formatPrice(500000)}
+                  💡 Envío gratis en compras desde {formatPrice(100000)}
                 </p>
-              )}
+              )}  
+
+
+              
+              
               <div className="summary-row total">
                 <span>Total</span>
-                <span>{formatPrice(total)}</span>
+                <span>{formatPrice(cartTotal)}</span>
               </div>
             </div>
 
