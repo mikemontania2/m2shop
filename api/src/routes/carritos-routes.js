@@ -20,14 +20,7 @@ const router = Router();
  * @access Private/Session
  */
 router.get('/', optionalAuthMiddleware, carritoController.obtenerCarrito);
-
-/**
- * @route GET /api/carrito/resumen
- * @desc Obtener solo resumen del carrito (totales)
- * @access Private/Session
- */
-router.get('/resumen', optionalAuthMiddleware, carritoController.obtenerResumen);
-
+ 
 /**
  * @route POST /api/carrito/agregar
  * @desc Agregar producto al carrito

@@ -12,17 +12,23 @@ export interface CartItem {
   nombre: string;
   slug: string;
   imagen: string;
-  precio: number;
-  precioOriginal: number;
+  precio: number; 
   cantidad: number;
-  stock: number;
+  importeDescuento: number;
   subtotal: number;
-}
+  descuento: number;
+  descripcion: string;
+  total: number;
+  stock: number;
+} 
+
+
 
 export interface CartResumen {
-  subtotal: number;
-  descuentoImporte: number;
-  total: number;
+   importeDescuento: number;
+  subTotal: number;
+   total: number;
+  descuentoImporte: number; 
   cantidadItems: number;
   cantidadTotal?: number;
 }
@@ -39,8 +45,7 @@ export interface CartResponse {
     id: number;
     items: CartItem[];
   };
-  resumen: CartResumen;
-  descuentoAplicado: DescuentoAplicado | null;
+  resumen: CartResumen; 
 }
 
 // ========================================
@@ -62,21 +67,7 @@ class CartService {
       throw error;
     }
   }
-
-  /**
-   * Obtener solo el resumen del carrito
-   */
-  async getCartSummary(): Promise<CartResumen & { descuentoAplicado: DescuentoAplicado | null }> {
-    try {
-      console.log('📞 CartService.getCartSummary() - Llamando a API...');
-      const response = await api.get('/carrito/resumen');
-      console.log('✅ CartService.getCartSummary() - Respuesta recibida');
-      return response.data;
-    } catch (error: any) {
-      console.error('❌ CartService.getCartSummary() - Error:', error.response?.data || error.message);
-      throw error;
-    }
-  }
+ 
 
   /**
    * Agregar producto al carrito
@@ -161,32 +152,7 @@ class CartService {
       throw error;
     }
   }
-
-  /**
-   * Obtener cantidad total de items en el carrito
-   */
-  async getCartCount(): Promise<number> {
-    try {
-      const summary = await this.getCartSummary();
-      return summary.cantidadTotal || 0;
-    } catch (error) {
-      console.error('❌ CartService.getCartCount() - Error:', error);
-      return 0;
-    }
-  }
-
-  /**
-   * Obtener total del carrito
-   */
-  async getCartTotal(): Promise<number> {
-    try {
-      const summary = await this.getCartSummary();
-      return summary.total;
-    } catch (error) {
-      console.error('❌ CartService.getCartTotal() - Error:', error);
-      return 0;
-    }
-  }
+ 
 }
 
 export default new CartService();

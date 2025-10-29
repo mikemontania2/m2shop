@@ -17,6 +17,9 @@ interface AppContextType {
   cart: CartItem[];
   cartCount: number;
   cartTotal: number;
+
+  cartSubTotal: number;
+  cartImporteDescuento: number;
   cartLoading: boolean;
   addToCart: (product: Product, cantidad?: number) => Promise<void>;
   removeFromCart: (itemCarritoId: number) => Promise<void>;
@@ -43,6 +46,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [cart, setCart] = useState<CartItem[]>([]);
   const [cartCount, setCartCount] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
+  const [cartSubTotal, setCartSubTotal] = useState(0);
+  const [cartImporteDescuento, setCartImporteDescuento] = useState(0);
   const [cartLoading, setCartLoading] = useState(true);
   const [toasts, setToasts] = useState<{ id: number; message: string; type: 'success' | 'error' | 'info' }[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -79,6 +84,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       
       setCart(cartData.carrito.items);
       setCartTotal(cartData.resumen.total);
+      setCartSubTotal(cartData.resumen.subTotal);
+      setCartImporteDescuento(cartData.resumen.importeDescuento);
       setCartCount(cartData.resumen.cantidadItems || 0);
      } catch (error: any) {
     console.error('❌ Error refreshing cart:', error);
@@ -391,6 +398,8 @@ const refreshUser = async () => {
         cart,
         cartCount,
         cartTotal,
+        cartSubTotal,
+        cartImporteDescuento, 
         cartLoading,
         addToCart,
         removeFromCart,

@@ -4,8 +4,15 @@ import { useApp } from '../contexts/AppContext'
 import { Trash2, Plus, Minus } from 'lucide-react'
 
 const CartPage: React.FC = () => {
-  const { cart, cartTotal, removeFromCart, updateQuantity, cartLoading } =
-    useApp()
+  const {
+    cart,
+    cartTotal,
+    cartSubTotal,
+    cartImporteDescuento,
+    removeFromCart,
+    updateQuantity,
+    cartLoading
+  } = useApp()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -58,34 +65,43 @@ const CartPage: React.FC = () => {
   return (
     <div className='cart-page'>
       <div className='container'>
-        <h1>Carrito de Compras</h1>
+        <h2>Tu Carrito</h2>
 
         <div className='cart-content'>
           <div className='cart-items'>
             {cart.map(item => (
               <div key={item.itemCarritoId} className='cart-item'>
-                <img src={item.imagen} alt={item.nombre} />
+                {/* Imagen del producto */}
+                <img
+                  src={item.imagen}
+                  alt={item.nombre}
+                  className='cart-item-image'
+                />
 
+                {/* Detalles del producto */}
                 <div className='cart-item-details'>
-                  <h3>{item.nombre}</h3>
+                  <h5>{item.nombre}</h5>
                   <p className='text-sm text-gray-500'>
                     Variante ID: {item.varianteId}
                   </p>
 
-                  {/* 🏷️ Mostrar precios con descuento */}
+                  {/* 🏷️ Precios */}
                   <div className='cart-item-prices'>
                     <span className='cart-item-price-current'>
                       {formatPrice(item.precio)}
                     </span>
-                    {item.precioOriginal &&
-                      item.precioOriginal > item.precio && (
-                        <span className='cart-item-price-original'>
-                          {formatPrice(item.precioOriginal)}
-                        </span>
-                      )}
                   </div>
+
+                  {/* 💸 Descripción del descuento */}
+                  {item.descripcion && (
+                    <p className='cart-item-discount'>
+                      <i className='bi bi-tag-fill text-success me-1'></i>
+                      {item.descripcion}
+                    </p>
+                  )}
                 </div>
 
+                {/* Controles de cantidad y eliminación */}
                 <div className='cart-item-actions'>
                   <div className='quantity-controls'>
                     <button
@@ -106,6 +122,7 @@ const CartPage: React.FC = () => {
                       <Plus size={16} />
                     </button>
                   </div>
+
                   <button
                     className='btn-remove'
                     onClick={() => removeFromCart(item.itemCarritoId)}
@@ -114,8 +131,26 @@ const CartPage: React.FC = () => {
                   </button>
                 </div>
 
-                <div className='cart-item-total'>
-                  {formatPrice(item.subtotal)}
+                {/* Total por línea */}
+                <div className='cart-item-total-container'>
+                  {item.subtotal > item.total ? (
+                    <>
+                     
+                      {/* Total con descuento abajo */}
+                      <span className='cart-item-total'>
+                        {formatPrice(item.total)}
+                      </span>
+                       {/* Subtotal tachado arriba */}
+                      <span className='cart-item-sub-total'>
+                        {formatPrice(item.subtotal)}
+                      </span>
+                    </>
+                  ) : (
+                    // Si no hay descuento, solo se muestra el total normal
+                    <span className='cart-item-total'>
+                      {formatPrice(item.total)}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
@@ -125,17 +160,28 @@ const CartPage: React.FC = () => {
             <h2>Resumen del Pedido</h2>
             <div className='summary-row'>
               <span>Subtotal</span>
-              <span>{formatPrice(cartTotal)}</span>
+              <span>{formatPrice(cartSubTotal)}</span>
             </div>
-            <div className='summary-row'>
+            {/* <div className='summary-row'>
               <span>Envío</span>
               <span>{cartTotal >= 500000 ? 'Gratis' : formatPrice(50000)}</span>
+            </div> */}
+          
+  {cartImporteDescuento && cartImporteDescuento>0 ? (
+                      <div className='summary-row'>
+              <span>Total descuento:</span>
+              <span>- {  formatPrice(cartImporteDescuento)}</span>
             </div>
+                      
+                  ) : <></>
+                  }
+
+
             <div className='summary-row total'>
               <span>Total</span>
               <span>
                 {formatPrice(
-                  cartTotal >= 500000 ? cartTotal : cartTotal + 50000
+                  cartTotal
                 )}
               </span>
             </div>

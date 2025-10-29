@@ -323,6 +323,23 @@ const procesarDescuentos = async () => {
         if (variante && parseFloat(desc.descuento) === 0) {
           await variante.update({ bloqueoDescuento: true });
         }
+      }else {
+        if (desc.tipoDescuento === 'IMPORTE') {
+            const [_, created] = await Descuento.findOrCreate({
+    where: { id: desc.id },
+    defaults: { 
+      activo: true,
+      cantDesde: parseFloat(desc.cantDesde)   ,
+      cantHasta: parseFloat(desc.cantHasta)  ,
+      fechaDesde: new Date(),
+      fechaHasta: new Date('2025-12-31'),
+      valor: parseFloat(desc.descuento) || 0,
+      tipo:   'IMPORTE',
+    },
+    
+  });
+        }
+       
       }
       
 if (varianteId) {

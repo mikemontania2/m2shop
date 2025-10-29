@@ -1,12 +1,12 @@
-const { Op } = require('sequelize');
-const Carrito = require('../models/Carrito.models');
-const ItemCarrito = require('../models/ItemCarrito.models');
-const Producto = require('../models/Producto.models');
-const Variante = require('../models/Variante.models');
-const Descuento = require('../models/Descuento.models');
-const Categoria = require('../models/Categoria.models');
-const moment = require('moment');
-const { aplicarDescuento } = require('../helper/productos.helper');
+const { Op } = require('sequelize')
+const Carrito = require('../models/Carrito.models')
+const ItemCarrito = require('../models/ItemCarrito.models')
+const Producto = require('../models/Producto.models')
+const Variante = require('../models/Variante.models')
+const Descuento = require('../models/Descuento.models')
+const Categoria = require('../models/Categoria.models')
+const moment = require('moment')
+const { aplicarDescuento } = require('../helper/productos.helper')
 
 // ========================================
 // FUNCIONES AUXILIARES
@@ -15,9 +15,9 @@ const { aplicarDescuento } = require('../helper/productos.helper');
 /**
  * Obtener descuentos de productos vigentes
  */
-const getDescuentosProductosVigentes = async (variantesIds) => {
-  const hoy = moment().format('YYYY-MM-DD');
-  
+const getDescuentosProductosVigentes = async variantesIds => {
+  const hoy = moment().format('YYYY-MM-DD')
+
   const descuentos = await Descuento.findAll({
     where: {
       varianteId: { [Op.in]: variantesIds },
@@ -28,47 +28,50 @@ const getDescuentosProductosVigentes = async (variantesIds) => {
     },
     attributes: ['varianteId', 'valor', 'tipo'],
     raw: true
-  });
+  })
 
-  return new Map(descuentos.map(d => [d.varianteId, d]));
-};
+  return new Map(descuentos.map(d => [d.varianteId, d]))
+}
 
 /**
- * Obtener descuentos de IMPORTE vigentes
+ * Obtener descuento de IMPORTE vigenteo null
  * (Descuentos que se aplican según el monto total de la compra)
  */
-const getDescuentosImporteVigentes = async () => {
-  const hoy = moment().format('YYYY-MM-DD');
-  
-  const descuentos = await Descuento.findAll({
+const getDescuentoImporteVigente = async subtotal => {
+  const hoy = moment().format('YYYY-MM-DD')
+
+  const descuento = await Descuento.findOne({
     where: {
       activo: true,
       tipo: 'IMPORTE',
+      cantDesde: { [Op.lte]: subtotal }, // menor o igual que subtotal
+      cantHasta: { [Op.gte]: subtotal }, // mayor o igual que subtotal
       fechaDesde: { [Op.lte]: hoy },
       fechaHasta: { [Op.gte]: hoy }
     },
-    attributes: ['id', 'cantDesde', 'cantHasta', 'valor', 'tipo' ],
-    order: [['valor', 'DESC']], // Mayor a menor para aplicar el mejor descuento
+    attributes: ['id', 'cantDesde', 'cantHasta', 'valor', 'tipo'],
+    order: [['valor', 'DESC']], // el mayor valor primero
     raw: true
-  });
+  })
 
-  return descuentos;
-};
+  return descuento // retorna solo un registro o null si no hay vigente
+}
 
 /**
  * Calcular el mejor descuento por importe aplicable
  */
 const calcularDescuentoImporte = (subtotal, descuentosImporte) => {
   if (!descuentosImporte || descuentosImporte.length === 0) {
-    return { descuento: 0, descuentoAplicado: null };
+    return { descuento: 0, descuentoAplicado: null }
   }
 
   // Encontrar el descuento aplicable con mayor beneficio
   for (const desc of descuentosImporte) {
     if (subtotal >= (desc.montoMinimo || 0)) {
-      const descuento = desc.tipoDescuento === 'PORCENTAJE'
-        ? (subtotal * desc.valor) / 100
-        : desc.valor;
+      const descuento =
+        desc.tipoDescuento === 'PORCENTAJE'
+          ? (subtotal * desc.valor) / 100
+          : desc.valor
 
       return {
         descuento,
@@ -78,31 +81,67 @@ const calcularDescuentoImporte = (subtotal, descuentosImporte) => {
           tipo: desc.tipoDescuento,
           valor: desc.valor
         }
-      };
+      }
     }
   }
 
-  return { descuento: 0, descuentoAplicado: null };
+  return { descuento: 0, descuentoAplicado: null }
+}
+/**
+ * Formatea números con puntos de miles (por ejemplo, 6550 → 6.550)
+ */
+const formatGs = value => {
+  if (isNaN(value)) return String(value)
+  const rounded = Math.round(value)
+  // Usar formato con puntos manualmente
+  return rounded.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+}
+
+/**
+ * Aplica descuento por importe sobre las líneas marcadas como elegibles.
+ */
+const aplicarDescuentoImporte = (lineas, descuentoImporte) => {
+  const porcentaje_descuento = descuentoImporte ? +descuentoImporte.valor : 0;
+
+  // Si no hay descuento, devolvemos las líneas tal cual
+  if (porcentaje_descuento <= 0) return lineas;
+
+  return lineas.map(linea => {
+    if (linea.tipoDescuento !== 'PRODUCTO' && !linea.bloqueoDescuento) {
+      linea.descuento = porcentaje_descuento;
+       linea.tipoDescuento ='IMPORTE';
+      linea.importeDescuento = linea.subtotal * (linea.descuento / 100);
+      linea.total = linea.total - linea.importeDescuento;
+      linea.descripcion = `Por importe (${linea.descuento}%) - ${formatGs( linea.importeDescuento )} Gs`;
+    }
+    return linea;
+  });
 };
 
 /**
  * Transformar items del carrito a formato ProductCard
  */
-const transformarItemsCarrito = async (items) => {
-  if (!items || items.length === 0) return [];
+const transformarItemsCarrito = async items => {
+  if (!items || items.length === 0) return []
 
-  const variantesIds = items.map(item => item.varianteId).filter(id => id);
-  const descuentosMap = await getDescuentosProductosVigentes(variantesIds);
+  const variantesIds = items.map(item => item.varianteId).filter(id => id)
+  const descuentosMap = await getDescuentosProductosVigentes(variantesIds)
 
   return items.map(item => {
-    const variante = item.Variante;
-    const producto = item.Producto;
-
+    const variante = item.Variante
+    const producto = item.Producto 
+    descuentoObjeto= variante ? descuentosMap.get(variante.id) : null;
+    console.log(descuentoObjeto);
     // Aplicar descuento si existe
-    const descuento = variante ? descuentosMap.get(variante.id) : null;
-    const { price, originalPrice } = variante 
-      ? aplicarDescuento(variante.precio, 0, descuento)
-      : { price: item.precioUnitario, originalPrice: item.precioUnitario };
+    const descuento = (descuentoObjeto)? +descuentoObjeto.valor:0;
+    const tipo = descuento > 0 ? 'PRODUCTO' : ''
+    const subtotal = item.cantidad * variante.precio
+    const importeDescuento = descuento > 0 ? (subtotal * descuento) / 100 : 0
+    const total = subtotal - importeDescuento
+    const descripcion =
+      descuento > 0
+        ? `Por producto (${+descuento}%) - ${formatGs(+importeDescuento)} Gs`
+        : ''
 
     return {
       id: item.id,
@@ -111,15 +150,20 @@ const transformarItemsCarrito = async (items) => {
       productoId: item.productoId,
       nombre: variante ? variante.nombre : producto.nombre,
       slug: variante ? variante.slug : producto.slug,
-      imagen: variante ? variante.imagenUrl :'',
-      precio: price,
-      precioOriginal: originalPrice,
+      imagen: variante ? variante.imagenUrl : '',
+      precio: +variante.precio,
       cantidad: item.cantidad,
-      stock: variante ? variante.stock : producto.stock,
-      subtotal: price * item.cantidad
-    };
-  });
-};
+      subtotal,
+      total,
+      descuento,
+      bloqueoDescuento: variante.bloqueoDescuento,
+      importeDescuento,
+      descripcion,
+      tipoDescuento: tipo,
+      stock: variante ? variante.stock : producto.stock
+    }
+  })
+}
 
 // ========================================
 // CONTROLADORES
@@ -132,50 +176,81 @@ const transformarItemsCarrito = async (items) => {
  */
 const obtenerCarrito = async (req, res) => {
   try {
-    const usuarioId = req.usuario?.id;
-    const sessionId = req.sessionId;
+    const usuarioId = req.usuario?.id
+    const sessionId = req.sessionId
     console.log(req.usuario)
-console.log(req.sessionId)
-    const where = usuarioId ? { usuarioId } : { sessionId };
+    console.log(req.sessionId)
+    const where = usuarioId ? { usuarioId } : { sessionId }
 
-    let carrito = await Carrito.findOne({ where });
-console.log(carrito)
+    let carrito = await Carrito.findOne({ where })
+    console.log(carrito)
     if (!carrito) {
-      carrito = await Carrito.create(where);
+      carrito = await Carrito.create(where)
       return res.json({
         carrito: { id: carrito.id, items: [] },
-        resumen: { subtotal: 0, descuentoImporte: 0, total: 0, cantidadItems: 0 },
+        resumen: {
+          subtotal: 0,
+          descuentoImporte: 0,
+          total: 0,
+          cantidadItems: 0
+        },
         descuentoAplicado: null
-      });
+      })
     }
 
     // ⚠️ Obtener los items usando ItemCarrito.findAll
-    const itemsCarrito = await ItemCarrito.findAll({
-      where: { carritoId: carrito.id },
-      include: [ 
-        { model: Variante, attributes: ['id', 'nombre', 'slug', 'precio', 'imagenUrl' ] }
-      ]
-    });
+   const itemsCarrito = await ItemCarrito.findAll({
+  where: { carritoId: carrito.id },
+  include: [
+    {
+      model: Variante,
+      attributes: [
+        'id',
+        'nombre',
+        'slug',
+        'precio',
+        'imagenUrl',
+        'bloqueoDescuento'
+      ],
+      where: { activo: true }, // ✅ Solo variantes activas
+      required: true // ✅ Hace INNER JOIN (excluye las inactivas)
+    }
+  ]
+});
 
-    const items = await transformarItemsCarrito(itemsCarrito);
-    const subtotal = items.reduce((sum, item) => sum + item.subtotal, 0);
-
-    // Aplicar descuentos por importe
-    const descuentosImporte = await getDescuentosImporteVigentes();
-    const { descuento: descuentoImporte, descuentoAplicado } = calcularDescuentoImporte(subtotal, descuentosImporte);
-    const total = subtotal - descuentoImporte;
+// transformarItemsCarrito tambien creara las lineas de descuento producto aplicado
+    const items = await transformarItemsCarrito(itemsCarrito)
+    // sub total descontable es la suma sin las variantes con bloqueoDescuento y descuento producto... para obtener el porcentaje descuento importe
+    const valorDescontable = items
+      .filter(
+        item => item.tipoDescuento !== 'PRODUCTO' && !item.bloqueoDescuento
+      )
+      .reduce((sum, item) => sum + item.subtotal, 0)
+    console.log('****Importe descontable es**** =>',valorDescontable)
+    // Obtener descuento importe  vigente objeto o null
+    const descuentoImporte = await getDescuentoImporteVigente( valorDescontable ); 
+     console.log('****Importe descuentoImporte es**** =>',descuentoImporte)
+    const detalles = await aplicarDescuentoImporte(      items,      descuentoImporte    )
+    const importeDescuento = detalles.reduce(  (sum, item) => sum + item.importeDescuento, 0 )
+    const subTotal = detalles.reduce(   (sum, item) => sum + item.subtotal,  0  )
+    const total = detalles.reduce( (sum, item) => sum + item.total, 0  )
 
     res.json({
-      carrito: { id: carrito.id, items },
-      resumen: { subtotal, descuentoImporte, total: Math.max(total, 0), cantidadItems: items.length },
-      descuentoAplicado
-    });
-
+      carrito: { id: carrito.id, items: detalles },
+      resumen: {
+        subTotal,
+        importeDescuento,
+        total: Math.max(total, 0),
+        cantidadItems: detalles.length
+      }
+    })
   } catch (error) {
-    console.error('Error obteniendo carrito:', error);
-    res.status(500).json({ error: 'Error al obtener carrito', detalle: error.message });
+    console.error('Error obteniendo carrito:', error)
+    res
+      .status(500)
+      .json({ error: 'Error al obtener carrito', detalle: error.message })
   }
-};
+}
 
 /**
  * @route POST /api/carrito/agregar
@@ -184,48 +259,50 @@ console.log(carrito)
  */
 const agregarItem = async (req, res) => {
   try {
-    console.log(req.body);
-    const { varianteId, cantidad = 1 } = req.body;
-    const usuarioId = req.usuario?.id;
-    const sessionId = req.sessionId;
+    console.log(req.body)
+    const { varianteId, cantidad = 1 } = req.body
+    const usuarioId = req.usuario?.id
+    const sessionId = req.sessionId
 
     if (!varianteId) {
-      return res.status(400).json({ error: 'varianteId es requerido' });
+      return res.status(400).json({ error: 'varianteId es requerido' })
     }
 
     // Verificar que la variante existe
     const variante = await Variante.findByPk(varianteId, {
-      include: [{
-        model: Producto,
-        as: 'producto',
-        attributes: ['id', 'nombre']
-      }]
-    });
+      include: [
+        {
+          model: Producto,
+          as: 'producto',
+          attributes: ['id', 'nombre']
+        }
+      ]
+    })
 
     if (!variante) {
-      return res.status(404).json({ error: 'Variante no encontrada' });
+      return res.status(404).json({ error: 'Variante no encontrada' })
     }
 
     if (!variante.activo) {
-      return res.status(400).json({ error: 'Producto no disponible' });
+      return res.status(400).json({ error: 'Producto no disponible' })
     }
 
     // Obtener o crear carrito
-    const where = usuarioId ? { usuarioId } : { sessionId };
-    let carrito = await Carrito.findOne({ where });
+    const where = usuarioId ? { usuarioId } : { sessionId }
+    let carrito = await Carrito.findOne({ where })
 
     if (!carrito) {
-      carrito = await Carrito.create(where);
+      carrito = await Carrito.create(where)
     }
 
     // Verificar si el item ya existe
     const itemExistente = await ItemCarrito.findOne({
       where: { carritoId: carrito.id, varianteId }
-    });
+    })
 
     if (itemExistente) {
-      const nuevaCantidad = itemExistente.cantidad + cantidad;
-      await itemExistente.update({ cantidad: nuevaCantidad });
+      const nuevaCantidad = itemExistente.cantidad + cantidad
+      await itemExistente.update({ cantidad: nuevaCantidad })
     } else {
       await ItemCarrito.create({
         carritoId: carrito.id,
@@ -233,7 +310,7 @@ const agregarItem = async (req, res) => {
         varianteId: variante.id,
         cantidad,
         precioUnitario: variante.precio
-      });
+      })
     }
 
     // Obtener items del carrito directamente
@@ -243,10 +320,10 @@ const agregarItem = async (req, res) => {
         { model: Producto, attributes: ['id', 'nombre'] },
         { model: Variante, attributes: ['id', 'nombre', 'precio'] }
       ]
-    });
+    })
 
-    const items = await transformarItemsCarrito(itemsRaw);
-    const subtotal = items.reduce((sum, item) => sum + item.subtotal, 0);
+    const items = await transformarItemsCarrito(itemsRaw)
+    const subtotal = items.reduce((sum, item) => sum + item.subtotal, 0)
 
     res.json({
       mensaje: 'Producto agregado al carrito',
@@ -258,16 +335,15 @@ const agregarItem = async (req, res) => {
         subtotal,
         cantidadItems: items.length
       }
-    });
-
+    })
   } catch (error) {
-    console.error('Error agregando item:', error);
+    console.error('Error agregando item:', error)
     res.status(500).json({
       error: 'Error al agregar item',
       detalle: error.message
-    });
+    })
   }
-};
+}
 
 /**
  * @route PUT /api/carrito/item/:itemId
@@ -276,41 +352,38 @@ const agregarItem = async (req, res) => {
  */
 const actualizarCantidad = async (req, res) => {
   try {
-    const { itemId } = req.params;
-    const { cantidad } = req.body;
+    const { itemId } = req.params
+    const { cantidad } = req.body
 
     if (!cantidad || cantidad < 1) {
-      return res.status(400).json({ error: 'Cantidad debe ser mayor a 0' });
+      return res.status(400).json({ error: 'Cantidad debe ser mayor a 0' })
     }
 
     const item = await ItemCarrito.findByPk(itemId, {
       include: [Variante]
-    });
+    })
 
     if (!item) {
-      return res.status(404).json({ error: 'Item no encontrado' });
+      return res.status(404).json({ error: 'Item no encontrado' })
     }
 
-     
+    await item.update({ cantidad })
 
-    await item.update({ cantidad });
-
-    res.json({ 
+    res.json({
       mensaje: 'Cantidad actualizada',
       item: {
         id: item.id,
         cantidad: item.cantidad
       }
-    });
-
+    })
   } catch (error) {
-    console.error('Error actualizando cantidad:', error);
-    res.status(500).json({ 
-      error: 'Error al actualizar cantidad', 
-      detalle: error.message 
-    });
+    console.error('Error actualizando cantidad:', error)
+    res.status(500).json({
+      error: 'Error al actualizar cantidad',
+      detalle: error.message
+    })
   }
-};
+}
 
 /**
  * @route DELETE /api/carrito/item/:itemId
@@ -319,26 +392,25 @@ const actualizarCantidad = async (req, res) => {
  */
 const eliminarItem = async (req, res) => {
   try {
-    const { itemId } = req.params;
+    const { itemId } = req.params
 
-    const deleted = await ItemCarrito.destroy({ 
-      where: { id: itemId } 
-    });
+    const deleted = await ItemCarrito.destroy({
+      where: { id: itemId }
+    })
 
     if (!deleted) {
-      return res.status(404).json({ error: 'Item no encontrado' });
+      return res.status(404).json({ error: 'Item no encontrado' })
     }
 
-    res.json({ mensaje: 'Item eliminado del carrito' });
-
+    res.json({ mensaje: 'Item eliminado del carrito' })
   } catch (error) {
-    console.error('Error eliminando item:', error);
-    res.status(500).json({ 
-      error: 'Error al eliminar item', 
-      detalle: error.message 
-    });
+    console.error('Error eliminando item:', error)
+    res.status(500).json({
+      error: 'Error al eliminar item',
+      detalle: error.message
+    })
   }
-};
+}
 
 /**
  * @route POST /api/carrito/vaciar
@@ -347,28 +419,27 @@ const eliminarItem = async (req, res) => {
  */
 const vaciarCarrito = async (req, res) => {
   try {
-    const usuarioId = req.usuario?.id;
-    const sessionId = req.sessionId;
+    const usuarioId = req.usuario?.id
+    const sessionId = req.sessionId
 
-    const where = usuarioId ? { usuarioId } : { sessionId };
-    const carrito = await Carrito.findOne({ where });
+    const where = usuarioId ? { usuarioId } : { sessionId }
+    const carrito = await Carrito.findOne({ where })
 
     if (carrito) {
-      await ItemCarrito.destroy({ 
-        where: { carritoId: carrito.id } 
-      });
+      await ItemCarrito.destroy({
+        where: { carritoId: carrito.id }
+      })
     }
 
-    res.json({ mensaje: 'Carrito vaciado exitosamente' });
-
+    res.json({ mensaje: 'Carrito vaciado exitosamente' })
   } catch (error) {
-    console.error('Error vaciando carrito:', error);
-    res.status(500).json({ 
-      error: 'Error al vaciar carrito', 
-      detalle: error.message 
-    });
+    console.error('Error vaciando carrito:', error)
+    res.status(500).json({
+      error: 'Error al vaciar carrito',
+      detalle: error.message
+    })
   }
-};
+}
 
 /**
  * @route POST /api/carrito/recalcular
@@ -376,147 +447,10 @@ const vaciarCarrito = async (req, res) => {
  * @access Private/Session
  */
 const recalcularCarrito = async (req, res) => {
-  try {
-    const usuarioId = req.usuario?.id;
-    const sessionId = req.sessionId;
-
-    const where = usuarioId ? { usuarioId } : { sessionId };
-
-    const carrito = await Carrito.findOne({
-      where,
-      include: [{
-        model: ItemCarrito,
-        include: [Producto, Variante]
-      }]
-    });
-
-    if (!carrito || !carrito.ItemCarritos || carrito.ItemCarritos.length === 0) {
-      return res.json({
-        mensaje: 'Carrito vacío',
-        resumen: {
-          subtotal: 0,
-          descuentoImporte: 0,
-          total: 0,
-          cantidadItems: 0
-        }
-      });
-    }
-
-    // Actualizar precios de cada item según precios actuales y descuentos
-    const variantesIds = carrito.ItemCarritos
-      .map(item => item.varianteId)
-      .filter(id => id);
-
-    const descuentosMap = await getDescuentosProductosVigentes(variantesIds);
-
-    // Actualizar precio unitario de cada item
-    for (const item of carrito.ItemCarritos) {
-      if (item.Variante) {
-        const descuento = descuentosMap.get(item.Variante.id);
-        const { price } = aplicarDescuento(item.Variante.precio, 0, descuento);
-        
-        if (item.precioUnitario !== price) {
-          await item.update({ precioUnitario: price });
-        }
-      }
-    }
-
-    // Recargar carrito con precios actualizados
-    const carritoActualizado = await Carrito.findByPk(carrito.id, {
-      include: [{
-        model: ItemCarrito,
-        include: [Producto, Variante]
-      }]
-    });
-
-    const items = await transformarItemsCarrito(carritoActualizado.ItemCarritos);
-    const subtotal = items.reduce((sum, item) => sum + item.subtotal, 0);
-
-    const descuentosImporte = await getDescuentosImporteVigentes();
-    const { descuento: descuentoImporte, descuentoAplicado } = calcularDescuentoImporte(subtotal, descuentosImporte);
-
-    const total = subtotal - descuentoImporte;
-
-    res.json({
-      mensaje: 'Carrito recalculado',
-      carrito: {
-        id: carritoActualizado.id,
-        items
-      },
-      resumen: {
-        subtotal,
-        descuentoImporte,
-        total: Math.max(total, 0),
-        cantidadItems: items.length
-      },
-      descuentoAplicado
-    });
-
-  } catch (error) {
-    console.error('Error recalculando carrito:', error);
-    res.status(500).json({ 
-      error: 'Error al recalcular carrito', 
-      detalle: error.message 
-    });
-  }
+  return obtenerCarrito(req, res);
 };
 
-/**
- * @route GET /api/carrito/resumen
- * @desc Obtener solo el resumen del carrito (subtotal, descuentos, total)
- * @access Private/Session
- */
-const obtenerResumen = async (req, res) => {
-  try {
-    const usuarioId = req.usuario?.id;
-    const sessionId = req.sessionId;
-
-    const where = usuarioId ? { usuarioId } : { sessionId };
-
-    const carrito = await Carrito.findOne({
-      where,
-      include: [{
-        model: ItemCarrito,
-        include: [Variante]
-      }]
-    });
-
-    if (!carrito || !carrito.ItemCarritos || carrito.ItemCarritos.length === 0) {
-      return res.json({
-        subtotal: 0,
-        descuentoImporte: 0,
-        total: 0,
-        cantidadItems: 0,
-        cantidadTotal: 0
-      });
-    }
-
-    const items = await transformarItemsCarrito(carrito.ItemCarritos);
-    const subtotal = items.reduce((sum, item) => sum + item.subtotal, 0);
-    const cantidadTotal = items.reduce((sum, item) => sum + item.cantidad, 0);
-
-    const descuentosImporte = await getDescuentosImporteVigentes();
-    const { descuento: descuentoImporte, descuentoAplicado } = calcularDescuentoImporte(subtotal, descuentosImporte);
-
-    const total = subtotal - descuentoImporte;
-
-    res.json({
-      subtotal,
-      descuentoImporte,
-      total: Math.max(total, 0),
-      cantidadItems: items.length,
-      cantidadTotal,
-      descuentoAplicado
-    });
-
-  } catch (error) {
-    console.error('Error obteniendo resumen:', error);
-    res.status(500).json({ 
-      error: 'Error al obtener resumen', 
-      detalle: error.message 
-    });
-  }
-};
+ 
 
 module.exports = {
   obtenerCarrito,
@@ -524,6 +458,5 @@ module.exports = {
   actualizarCantidad,
   eliminarItem,
   vaciarCarrito,
-  recalcularCarrito,
-  obtenerResumen
-};
+  recalcularCarrito 
+}
