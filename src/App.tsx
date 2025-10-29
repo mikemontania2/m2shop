@@ -93,9 +93,9 @@ function App() {
           <Route 
             path="/checkout" 
             element={
-              <ProtectedRoute>
+            /*   <ProtectedRoute> */
                 <CheckoutPage />
-              </ProtectedRoute>
+            /*   </ProtectedRoute> */
             } 
           />
           <Route 

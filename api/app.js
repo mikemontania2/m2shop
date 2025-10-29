@@ -4,41 +4,44 @@ const cors = require("cors");
 const { dbConnection } = require("./dbconfig");
 const { populateDB } = require("./dbinit");
 
-const morgan = require("morgan"); // const { json } = require('express/lib/response');
+const morgan = require("morgan");
  
-//const { loggerPos } = require("./logger");
-// Este es un comentario
-// Crear el servidor de express
 const app = express();
+
 //middlewares
 app.use(morgan("dev"));
 app.use(express.json());
-// Configurar CORS para permitir todo
-const allowedOrigins = ['http://localhost:5173']; // tu frontend
 
+// ✅ CONFIGURACIÓN CORS CORREGIDA
 const corsOptions = {
   origin: function(origin, callback) {
-    // Permitir requests sin origin (p.ej: Postman) o desde allowedOrigins
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, origin);
+    // Permitir requests sin origin (p.ej: Postman) o desde cualquier origen
+    if (!origin) {
+      callback(null, true); // ✅ Cambié "origin" por "true"
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(null, true); // ✅ Permitir todos los orígenes
     }
   },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true // <- permite enviar cookies o headers de auth
+  allowedHeaders: [
+    "Content-Type", 
+    "Authorization",
+    "x-session-id" // ✅ AGREGADO: Permitir enviar este header
+  ],
+  exposedHeaders: ["x-session-id"], // ✅ AGREGADO: Permitir leer este header
+  credentials: true
 };
 
 // Aplicar CORS antes de las rutas
 app.use(cors(corsOptions)); 
-//loggerPos();
+
 // Base de datos
 const dbSetup = async () => {
-  await dbConnection(); //crea conexion
-  await populateDB(); //inserta registros
+  await dbConnection();
+  await populateDB();
 };
 dbSetup(); 
+
 app.use("/M2SHOP/auth", require("./src/routes/auth-routes"));
 app.use("/M2SHOP/carrito", require("./src/routes/carritos-routes"));
 app.use("/M2SHOP/categorias", require("./src/routes/categorias-routes"));
@@ -54,6 +57,7 @@ app.use("/M2SHOP/productos", require("./src/routes/productos-routes"));
 app.use("/M2SHOP/resenas", require("./src/routes/resenas-routes")); 
 app.use("/M2SHOP/usuarios", require("./src/routes/usuarios-routes")); 
 app.use("/M2SHOP/variantes", require("./src/routes/variantes-routes"));  
+
 app.listen(process.env.PORT, () =>
   console.log("Servidor corriendo en puerto " + process.env.PORT)
 );

@@ -76,7 +76,7 @@ const crearDireccion = async (req, res = response) => {
       numero,
       referencia,
       codigoPostal,
-      departamento,
+      departamento,transversal,lat,lng,
       ciudad,
       barrio,
       esPrincipal
@@ -138,7 +138,7 @@ const actualizarDireccion = async (req, res = response) => {
       numero,
       referencia,
       codigoPostal,
-      departamento,
+      departamento,transversal,lat,lng,
       ciudad,
       barrio,
       esPrincipal
@@ -169,7 +169,7 @@ const actualizarDireccion = async (req, res = response) => {
       numero,
       referencia,
       codigoPostal,
-      departamento,
+      departamento,transversal,lat,lng,
       ciudad,
       barrio,
       esPrincipal

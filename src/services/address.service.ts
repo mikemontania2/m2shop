@@ -3,17 +3,18 @@
 // ========================================
 import axios from "axios";
 import { API_BASE_URL } from "../Config"
- 
-
+  
 export interface Address {
   id: string;
-  userId: number;
-  street: string;
-  number: string;
+  usuarioId: number;
+  calle: string;
+  numero: string;
   cross: string;
-  city: string;
-  neighborhood: string;
-  reference: string;
+  departamento: string; 
+  ciudad: string;
+  barrio: string;
+  transversal: string;
+  referencia: string;
   lat: number;
   lng: number;
   createdAt?: string;

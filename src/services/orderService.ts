@@ -9,9 +9,9 @@
  * - Solo necesitas descomentar las secciones de API
  */
 
-import type { CartItem } from "./cart.service"
-import type { User } from "./authService"
+import type { CartItem } from "./cart.service" 
 import type { Order } from "../types/order.types"
+import { User } from "./auth.service"
 
 // CONFIGURACIÓN DEL API (descomentar cuando tengas el backend)
 // const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
@@ -215,3 +215,13 @@ class OrderService {
 
 export default new OrderService()
 export type { Order }
+/** services/order.service.ts
+class OrderService {
+  async createGuestOrder(orderData) {
+    // POST a /api/pedidos/invitado
+  }
+  
+  async createOrder(orderData) {
+    // POST a /api/pedidos
+  }
+} */

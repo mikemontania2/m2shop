@@ -80,13 +80,15 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       setCart(cartData.carrito.items);
       setCartTotal(cartData.resumen.total);
       setCartCount(cartData.resumen.cantidadItems || 0);
-    } catch (error) {
-      console.error('❌ Error refreshing cart:', error);
-      // En caso de error, inicializar vacío
-      setCart([]);
-      setCartTotal(0);
-      setCartCount(0);
-    } finally {
+     } catch (error: any) {
+    console.error('❌ Error refreshing cart:', error);
+    
+    // ✅ NO mostrar toast (puede ser token expirado normal)
+    // Simplemente inicializar vacío y continuar
+    setCart([]);
+    setCartTotal(0);
+    setCartCount(0);
+  }finally {
       setCartLoading(false);
       isRefreshingCart.current = false;
     }
@@ -194,41 +196,62 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   /**
    * Cerrar sesión
    */
-  const logout = async () => {
+const logout = async () => {
+  try {
+    // 1️⃣ Limpiar autenticación
     authService.logout();
     setUser(null);
     
-    // Limpiar carrito localmente
+    // 2️⃣ Limpiar carrito local temporalmente
     setCart([]);
     setCartTotal(0);
     setCartCount(0);
     
-    // Limpiar sessionId antigua (se generará una nueva automáticamente)
-    localStorage.removeItem('sessionId');
+    // 3️⃣ ✅ CRÍTICO: Generar NUEVO sessionId ANTES de refrescar
+    const newSessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    localStorage.setItem('sessionId', newSessionId);
+    console.log('🆕 Nuevo sessionId para invitado:', newSessionId);
     
-    showToast('Sesión cerrada', 'info');
+    showToast('Sesión cerrada. Puedes seguir comprando como invitado', 'info');
     
-    // 🔧 Refrescar carrito (ahora será carrito de sesión anónima nueva)
+    // 4️⃣ Refrescar carrito con nueva sesión anónima
     await refreshCart();
-  };
+    
+  } catch (error) {
+    console.error('❌ Error en logout:', error);
+    // Asegurar limpieza incluso con error
+    setUser(null);
+    setCart([]);
+  }
+};
 
   /**
    * Actualizar datos del usuario desde el servidor
    */
-  const refreshUser = async () => {
-    if (!authService.isAuthenticated()) {
-      setUser(null);
-      return;
-    }
+const refreshUser = async () => {
+  if (!authService.isAuthenticated()) {
+    setUser(null);
+    return;
+  }
 
+  try {
     const result = await authService.getProfile();
     if (result.success && result.user) {
       setUser(result.user);
     } else {
-      // Si falla, cerrar sesión
-      await logout();
+      // ✅ Solo limpiar usuario, NO hacer logout completo
+      setUser(null);
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
     }
-  };
+  } catch (error) {
+    console.error('❌ Error refreshing user:', error);
+    // ✅ Limpiar credenciales pero mantener sesión anónima
+    setUser(null);
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  }
+};
 
   /**
    * Renovar token automáticamente

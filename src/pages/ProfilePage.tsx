@@ -175,7 +175,7 @@ const ProfilePage: React.FC = () => {
   }
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat("es-PY", {
+    return new Intl.numeroFormat("es-PY", {
       style: "currency",
       currency: "PYG",
       minimumFractionDigits: 0,
@@ -336,12 +336,12 @@ const ProfilePage: React.FC = () => {
                       setEditingAddress({
                         id: "addr-" + Date.now(),
                         userId: user.id,
-                        street: "",
+                        calle: "",
                         number: "",
-                        cross: "",
-                        city: "",
-                        neighborhood: "",
-                        reference: "",
+                        transversal: "",
+                        ciudad: "",
+                        barrio: "",
+                        referencia: "",
                         lat: -25.2969,
                         lng: -57.6244,
                       })
@@ -357,43 +357,43 @@ const ProfilePage: React.FC = () => {
                       <label>
                         Calle
                         <input
-                          value={editingAddress.street}
-                          onChange={(e) => setEditingAddress({ ...editingAddress, street: e.target.value })}
+                          value={editingAddress.calle}
+                          onChange={(e) => setEditingAddress({ ...editingAddress, calle: e.target.value })}
                         />
                       </label>
                       <label>
                         Número
                         <input
-                          value={editingAddress.number}
-                          onChange={(e) => setEditingAddress({ ...editingAddress, number: e.target.value })}
+                          value={editingAddress.numero}
+                          onChange={(e) => setEditingAddress({ ...editingAddress, numero: e.target.value })}
                         />
                       </label>
                       <label>
                         Transversal
                         <input
-                          value={editingAddress.cross}
-                          onChange={(e) => setEditingAddress({ ...editingAddress, cross: e.target.value })}
+                          value={editingAddress.transversal}
+                          onChange={(e) => setEditingAddress({ ...editingAddress, transversal: e.target.value })}
                         />
                       </label>
                       <label>
                         Localidad
                         <input
-                          value={editingAddress.city}
-                          onChange={(e) => setEditingAddress({ ...editingAddress, city: e.target.value })}
+                          value={editingAddress.ciudad}
+                          onChange={(e) => setEditingAddress({ ...editingAddress, ciudad: e.target.value })}
                         />
                       </label>
                       <label>
                         Barrio
                         <input
-                          value={editingAddress.neighborhood}
-                          onChange={(e) => setEditingAddress({ ...editingAddress, neighborhood: e.target.value })}
+                          value={editingAddress.barrio}
+                          onChange={(e) => setEditingAddress({ ...editingAddress, barrio: e.target.value })}
                         />
                       </label>
                       <label>
                         Referencias
                         <input
-                          value={editingAddress.reference}
-                          onChange={(e) => setEditingAddress({ ...editingAddress, reference: e.target.value })}
+                          value={editingAddress.referencia}
+                          onChange={(e) => setEditingAddress({ ...editingAddress, referencia: e.target.value })}
                         />
                       </label>
                     </div>
@@ -404,7 +404,7 @@ const ProfilePage: React.FC = () => {
                         zoom={14}
                         style={{ height: "100%", width: "100%" }}
                       >
-                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                        <TileLayer url="https://{s}.tile.opencallemap.org/{z}/{x}/{y}.png" />
                         <Marker
                           position={[editingAddress.lat || -25.2969, editingAddress.lng || -57.6244]}
                           draggable
@@ -444,12 +444,12 @@ const ProfilePage: React.FC = () => {
                         >
                           <div>
                             <strong>
-                              {a.street} {a.number}
+                              {a.calle} {a.numero}
                             </strong>
                             <br />
-                            {a.neighborhood}, {a.city}
+                            {a.barrio}, {a.ciudad}
                             <br />
-                            {a.reference}
+                            {a.referencia}
                           </div>
                           <button className="btn-secondary" onClick={() => setEditingAddress(a)}>
                             Editar

@@ -66,30 +66,39 @@ const roleMiddleware = (...rolesPermitidos) => {
  * - SIEMPRE envía el sessionId de vuelta en el header de respuesta
  * - NO usa cookies (evita problemas de CORS)
  */
-const sessionMiddleware = (req, res, next) => {
-  // Si hay usuario autenticado, no necesita sessionId
-  if (req.usuario) {
-    console.log('✅ Usuario autenticado, no requiere sessionId');
-    return next();
-  }
-
-  // 🔑 Leer sessionId del header (el frontend lo envía aquí)
+const sessionMiddleware = async (req, res, next) => {
+   const token = req.headers.authorization?.split(' ')[1];
   let sessionId = req.headers['x-session-id'];
+  
+  // INTENTO 1: Autenticar con token
+  if (token) {
+    try {
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      const usuario = await Usuario.findByPk(decoded.user.id, {
+        attributes: { exclude: ['password'] }
+      });
 
-  // Si no existe, generar uno nuevo
-  if (!sessionId) {
+      if (usuario && usuario.activo && !usuario.bloqueado) {
+        req.usuario = usuario;
+        console.log('✅ Usuario autenticado:', usuario.email);
+        return next(); // ✅ Continuar con usuario
+      }
+    } catch (error) {
+      // ✅ Token inválido, continuar con sessionId (NO rechazar)
+      console.log('⚠️ Token inválido/expirado:', error.message);
+    }
+  }
+  
+  // INTENTO 2: Usar sessionId
+  if (!sessionId || sessionId.trim() === '') {
     sessionId = `session_${Date.now()}_${crypto.randomBytes(16).toString('hex')}`;
-    console.log('🆕 Nueva sesión generada:', sessionId);
-  } else {
-    console.log('♻️ Sesión existente:', sessionId);
+    console.log('🆕 Nueva sesión anónima generada');
   }
 
-  // Guardar en req para usarlo en controladores
   req.sessionId = sessionId;
-
-  // 📤 IMPORTANTE: Enviar sessionId de vuelta al cliente en el header
   res.setHeader('x-session-id', sessionId);
 
+  // ✅ CRÍTICO: Siempre continuar (nunca devolver 401)
   next();
 };
 
