@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useApp } from '../contexts/AppContext';
+ import { useApp } from '../contexts/AppContext';
 import authService from '../services/auth.service';
 import { User, Mail, Phone, MapPin, Lock, Loader, ShoppingBag } from 'lucide-react';
 import "../styles/checkout.css";
 import pedidosServices from '../services/pedidos.services';
+import { useNavigate, Navigate, useLocation } from 'react-router-dom';
 
 // Tipos para el formulario de invitado
 interface GuestData {
@@ -55,14 +55,15 @@ const CheckoutPage: React.FC = () => {
   const [shippingAddress, setShippingAddress] = useState(user?.direccion || '');
   const [notasCliente, setNotasCliente] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<'efectivo' | 'transferencia' | 'tarjeta' | 'contacto'>('contacto');
+ const location = useLocation();
 
-  // Verificar carrito vacío
-  useEffect(() => {
-    if (cart.length === 0) {
-      showToast('Tu carrito está vacío', 'info');
-      navigate('/');
-    }
-  }, [cart, navigate, showToast]);
+useEffect(() => {
+  // Solo aplicar esta lógica si estamos en la página de checkout
+  if (location.pathname === '/checkout' && cart.length === 0) {
+    showToast('Tu carrito está vacío', 'info');
+    navigate('/');
+  }
+}, [cart, location.pathname]);
 
   // Actualizar dirección si el usuario cambia
   useEffect(() => {
@@ -191,12 +192,9 @@ const CheckoutPage: React.FC = () => {
       
       // Redirigir a página de confirmación
       setTimeout(() => {
-        navigate('/pedido-confirmado', { 
-          state: { 
-            pedido: result.pedido,
-            mensaje: result.mensaje 
-          } 
-        });
+        console.log('*************result***********',result)
+           navigate(`/pedido-confirmado/${result.pedido.id}`); // ✅ Enviar ID en URL
+
       }, 1500);
 
     } catch (error: any) {
@@ -284,15 +282,11 @@ const CheckoutPage: React.FC = () => {
       
       // Vaciar carrito
       await clearCart();
-      
       // Redirigir a página de confirmación
+      console.log('*************result***********',result)
       setTimeout(() => {
-        navigate('/pedido-confirmado', { 
-          state: { 
-            pedido: result.pedido,
-            mensaje: result.mensaje 
-          } 
-        });
+            navigate(`/pedido-confirmado/${result.pedido.id}`); // ✅ Enviar ID en URL
+
       }, 1500);
 
     } catch (error: any) {

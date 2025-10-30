@@ -1,5 +1,5 @@
 // ========================================
-// pedidos-routes.js - Rutas de Pedidos
+// pedidos-routes.js - Rutas de Pedidos CORREGIDAS
 // ========================================
 
 const { Router } = require('express');
@@ -30,6 +30,19 @@ router.post(
   pedidoController.crearPedido
 );
 
+/**
+ * ✅ CAMBIO CRÍTICO: Permitir ver detalle del pedido con sessionId
+ * @route GET /api/pedidos/:id
+ * @desc Obtener detalle completo de un pedido
+ * @access Private/Session (Usuario autenticado o invitado con sessionId)
+ */
+router.get(
+  '/:id',
+  optionalAuthMiddleware, // ✅ CAMBIO: De authMiddleware a optionalAuthMiddleware
+  auditMiddleware('VER_DETALLE_PEDIDO'),
+  pedidoController.obtenerPedido
+);
+
 // ========================================
 // RUTAS PROTEGIDAS (Requieren autenticación)
 // ========================================
@@ -45,18 +58,6 @@ router.get(
   authMiddleware,
   auditMiddleware('VER_PEDIDOS_USUARIO'),
   pedidoController.obtenerPedidosUsuario
-);
-
-/**
- * @route GET /api/pedidos/:id
- * @desc Obtener detalle completo de un pedido
- * @access Private (Solo el dueño o admin)
- */
-router.get(
-  '/:id',
-  authMiddleware,
-  auditMiddleware('VER_DETALLE_PEDIDO'),
-  pedidoController.obtenerPedido
 );
 
 // ========================================

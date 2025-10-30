@@ -44,11 +44,14 @@ const RegisterPage: React.FC = () => {
     try {
       const result = await authService.register(email, password, name);
       
-      if (result.success) {
-        showToast('Registro exitoso. Bienvenido!', 'success');
-        // El registro ya devuelve el token, solo navegar
-        navigate('/');
-      } else {
+     if (result.success) {
+  showToast('Registro exitoso. Bienvenido!', 'success');
+
+  // 🔧 Forzar actualización del contexto con el nuevo usuario
+  await login(email, password);
+
+  navigate('/');
+}else {
         setError(result.message || 'Error al registrarse');
       }
     } catch (err) {

@@ -69,8 +69,7 @@ const obtenerDireccionPorId = async (req, res = response) => {
  */
 const crearDireccion = async (req, res = response) => {
   try {
-    const {
-      nombreCompleto,
+    const { 
       telefono,
       calle,
       numero,
@@ -83,9 +82,9 @@ const crearDireccion = async (req, res = response) => {
     } = req.body;
 
     // Validar campos mínimos
-    if (!nombreCompleto || !telefono || !calle) {
+    if (  !telefono || !calle) {
       return res.status(400).json({
-        error: 'Nombre completo, teléfono y calle son requeridos'
+        error: 'teléfono y calle son requeridos'
       });
     }
 
@@ -98,10 +97,9 @@ const crearDireccion = async (req, res = response) => {
     }
 
     const nuevaDireccion = await DireccionEnvio.create({
-      usuarioId: req.usuario.id,
-      nombreCompleto,
+      usuarioId: req.usuario.id, 
       telefono,
-      calle,
+      calle,transversal,lat,lng,
       numero: numero || '',
       referencia: referencia || '',
       codigoPostal: codigoPostal || '',

@@ -99,11 +99,9 @@ function App() {
             } 
           />
           <Route 
-            path="/orden/:id" 
-            element={
-              <ProtectedRoute>
-                <OrderConfirmationPage />
-              </ProtectedRoute>
+            path="/pedido-confirmado/:id" 
+            element={ 
+                <OrderConfirmationPage /> 
             } 
           />
           

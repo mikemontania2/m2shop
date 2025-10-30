@@ -95,6 +95,7 @@ const ProfilePage: React.FC = () => {
 
   // 🔹 FUNCIÓN PARA CARGAR DIRECCIONES
   const loadAddresses = async () => {
+    console.log('heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
     if (!user) return
     setLoadingAddresses(true)
     try {
@@ -413,13 +414,13 @@ const ProfilePage: React.FC = () => {
                         />
                       </label>
                       <label>
-                        Número
+                        Telefono
                         <input
-                          value={editingAddress.numero}
+                          value={editingAddress.telefono}
                           onChange={e =>
                             setEditingAddress({
                               ...editingAddress,
-                              numero: e.target.value
+                              telefono: e.target.value
                             })
                           }
                         />
@@ -552,7 +553,7 @@ const ProfilePage: React.FC = () => {
                         >
                           <div>
                             <strong>
-                              {a.calle} {a.numero}
+                              {a.calle} {a.telefono}
                             </strong>
                             <br />
                             {a.barrio}, {a.ciudad}

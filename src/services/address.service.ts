@@ -8,7 +8,7 @@ export interface Address {
   id: string;
   usuarioId: number;
   calle: string;
-  numero: string;
+  telefono: string;
   cross: string;
   departamento: string; 
   ciudad: string;
