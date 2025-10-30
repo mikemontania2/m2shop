@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const expressFileUpload = require('express-fileupload');
-const controller = require('../controllers/uploads-controller.js');
+const controller = require('../controllers/Uploads.controller');
 
 const { validarJWT } = require('../middlewares/validar-jwt');
  

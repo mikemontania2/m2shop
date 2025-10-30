@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const authController = require('../controllers/auth-controller');
+const authController = require('../controllers/Auth.controller');
 const { validarJWT } = require('../middlewares/validar-jwt');
 const { roleMiddleware } = require('../middlewares/authMiddleware.mw'); // AGREGADO
 

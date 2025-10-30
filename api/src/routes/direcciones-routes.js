@@ -3,7 +3,7 @@
 // ========================================
 
 const { Router } = require('express');
-const direccionController = require('../controllers/DireccionEnvioController');
+const direccionController = require('../controllers/DireccionEnvio.controller');
 const { validarJWT } = require('../middlewares/validar-jwt');
 
 const router = Router();

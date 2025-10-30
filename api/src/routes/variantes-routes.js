@@ -1,8 +1,8 @@
 // ========== variante.routes.js ==========
 const express = require('express');
 const router = express.Router();
-const varianteController = require('../controllers/variante.controller');
-const varianteDetailController = require('../controllers/variante.detail.controller');
+const varianteController = require('../controllers/Variante.controller');
+const varianteDetailController = require('../controllers/Variante.detail.controller');
 
 // Rutas de listado con paginación (8 items por página)
 router.get('/buscar', varianteController.buscarProductos);
