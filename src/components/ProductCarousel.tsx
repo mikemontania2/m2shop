@@ -24,7 +24,7 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({
   title,
   className,
   itemsPerView = { default: 4, md: 3, sm: 2, xs: 1 },
-  slideBy = 1,
+  slideBy = 3,
   autoPlay = false,
   autoPlayIntervalMs = 5000,
   onProductClick,

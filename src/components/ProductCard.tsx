@@ -23,6 +23,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
       minimumFractionDigits: 0,
     }).format(price)
   }
+ const  formatProductName = (name: string)  =>{
+  if (!name) return ''
+  return name
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ')
+}
 
   const hasDiscount = product.originalPrice > 0
 
@@ -45,7 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
   // 🏷️ Selección inteligente de etiqueta
   const badge = hasDiscount
     ? {
-        src: "/src/imagenes/oferta2.png",
+        src: "/src/imagenes/sello-oferta-58ee791d6fa589732608a9b17ae81efd411d88eee7ada8d0cb6e219b4267cf8b.png",
         alt: "Oferta",
         className: "product-badge-oferta-img",
       }
@@ -57,7 +65,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
       }
     : product.featured
     ? {
-        src: "/src/imagenes/destacaco2.png",
+        src: "/src/imagenes/destacado_amarillo.png",
         alt: "Destacado",
         className: "product-badge-destacado",
       }
@@ -75,7 +83,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onProductClick, onAd
       </div>
 
       <div className="product-info-section">
-        <h3 className="product-name">{product.name}</h3>
+        <span className="product-name">{ formatProductName(product.name )}</span>
 
         <div className="product-price">
           <span className="current-price">{formatPrice(product.price)}</span>

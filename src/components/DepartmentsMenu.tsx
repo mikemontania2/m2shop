@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react"
-import { ChevronDown, ChevronRight, LayoutGrid } from "lucide-react"
+import { ChevronDown, ChevronRight, LayoutGrid, MenuIcon, SlidersHorizontal } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { Category } from "../interfaces/interfaces"
  
@@ -75,8 +75,8 @@ const DepartmentsMenu: React.FC<DepartmentsMenuProps> = ({ categories }) => {
         }}
         aria-label="Menú de categorías"
       >
-        <LayoutGrid size={18} className="departments-icon" />
-        <span>Categorías</span>
+        <MenuIcon   size={16} />
+         <span>Categorías</span>
         <ChevronDown size={16} />
       </button>
 
