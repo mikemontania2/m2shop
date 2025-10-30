@@ -19,7 +19,7 @@ const HeaderLogo: React.FC = () => {
       >
         <img 
           className="imgheader" 
-          src="/src/imagenes/logo-web-blanco.png" 
+          src="https://www.cavallaro.com.py/img/logo-web-blanco.png" 
           alt="Cavallaro, brinda la mejor calidad en productos de limpieza e higiene para el cuidado de tu familia y hogar. Cavallaro te hace brillar"
         />
       </a>
