@@ -193,7 +193,7 @@ useEffect(() => {
       // Redirigir a página de confirmación
       setTimeout(() => {
         console.log('*************result***********',result)
-           navigate(`/pedido-confirmado/${result.pedido.id}`); // ✅ Enviar ID en URL
+           navigate(`/orden/${result.pedido.id}`); // ✅ Enviar ID en URL
 
       }, 1500);
 
@@ -285,7 +285,7 @@ useEffect(() => {
       // Redirigir a página de confirmación
       console.log('*************result***********',result)
       setTimeout(() => {
-            navigate(`/pedido-confirmado/${result.pedido.id}`); // ✅ Enviar ID en URL
+            navigate(`/orden/${result.pedido.id}`); // ✅ Enviar ID en URL
 
       }, 1500);
 

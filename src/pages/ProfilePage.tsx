@@ -21,7 +21,7 @@ import type L from 'leaflet'
 import '../styles/profile.css'
 import authService from '../services/auth.service'
 import cardService, { Card } from '../services/card.service'
-import pedidosServices from '../services/pedidos.services'
+import pedidosServices, { UserOrder } from '../services/pedidos.services'
 
 const ProfilePage: React.FC = () => {
   const { user } = useApp()
@@ -40,15 +40,18 @@ const ProfilePage: React.FC = () => {
   const [documentNumber, setDocumentNumber] = useState(user?.documento || '')
   const [success, setSuccess] = useState('')
   const [error, setError] = useState('')
-  const [userOrders, setUserOrders] = useState<any[]>([])
+  const [userOrders, setUserOrders] = useState<UserOrder[]>([])
 
   useEffect(() => {
     const fetchOrders = async () => {
       if (user) {
         try {
           const data = await pedidosServices.obtenerMisPedidos()
-          console.log(' lo que recibe const data = await pedidosServices.obtenerMisPedidos()',data);
-          setUserOrders(data || [])
+          console.log(
+            ' lo que recibe const data = await pedidosServices.obtenerMisPedidos()',
+            data
+          ) 
+          setUserOrders(data.pedidos  )
         } catch (error) {
           console.error('Error cargando pedidos:', error)
         }
@@ -61,6 +64,7 @@ const ProfilePage: React.FC = () => {
   const [addresses, setAddresses] = useState<Address[]>([])
   const [editingAddress, setEditingAddress] = useState<Address | null>(null)
   const [loadingAddresses, setLoadingAddresses] = useState(false)
+  const [loadingPedidos, setLoadingPedidos] = useState(false)
 
   // Tarjetas
   const [cards, setCards] = useState<Card[]>([])
@@ -81,18 +85,29 @@ const ProfilePage: React.FC = () => {
     }
   }, [user, activeTab])
 
-  // Cargar pedidos
   useEffect(() => {
+    if (user && activeTab === 'pedidos') {
+      loadPedidos()
+    }
+  }, [user, activeTab])
+ 
+
+
+
+   // 🔹 FUNCIÓN PARA CARGAR DIRECCIONES
+  const loadPedidos = async () => {
     if (!user) return
-    ;(async () => {
-      try {
-        const data = await pedidosServices.obtenerMisPedidos()
-        setUserOrders(data)
-      } catch (error) {
-        console.error('Error cargando pedidos:', error)
-      }
-    })()
-  }, [user])
+    setLoadingPedidos(true)
+    try {
+      const data = await pedidosServices.obtenerMisPedidos()
+        setUserOrders(data.pedidos)
+     
+    } catch (error) {
+      console.error('Error cargando pedidos:', error)
+    } finally {
+      setLoadingPedidos(false)
+    }
+  }
 
   // 🔹 FUNCIÓN PARA CARGAR DIRECCIONES
   const loadAddresses = async () => {
@@ -202,18 +217,18 @@ const ProfilePage: React.FC = () => {
         setSuccess('Perfil actualizado correctamente')
         setTimeout(() => window.location.reload(), 1500)
       } else {
-        setError(result.message || 'Error al actualizar el perfil')
+        setError(result?.message || 'Error al actualizar el perfil')
       }
     } catch (error) {
       setError('Error de conexión')
     }
   }
 
-  const formatPrice = (price: number) => {
-    return new Intl.numeroFormat('es-PY', {
-      style: 'currency',
-      currency: 'PYG',
-      minimumFractionDigits: 0
+    const formatPrice = (price: number) => {
+    return new Intl.NumberFormat("es-PY", {
+      style: "currency",
+      currency: "PYG",
+      minimumFractionDigits: 0,
     }).format(price)
   }
 
@@ -384,7 +399,7 @@ const ProfilePage: React.FC = () => {
                         id: 'addr-' + Date.now(),
                         usuarioId: user.id,
                         calle: '',
-                        number: '',
+                        numero: '',
                         transversal: '',
                         ciudad: '',
                         barrio: '',
@@ -650,7 +665,8 @@ const ProfilePage: React.FC = () => {
                           onChange={e =>
                             setEditingCard({
                               ...editingCard,
-                              mesVencimiento: Number.parseInt(e.target.value) || 1
+                              mesVencimiento:
+                                Number.parseInt(e.target.value) || 1
                             })
                           }
                         />
@@ -707,7 +723,8 @@ const ProfilePage: React.FC = () => {
                             <strong>{c.marca}</strong> •••• {c.ultimos4}
                             <br />
                             <small>
-                              Vence: {c.mesVencimiento.toString().padStart(2, '0')}/
+                              Vence:{' '}
+                              {c.mesVencimiento.toString().padStart(2, '0')}/
                               {c.anioVencimiento}
                             </small>
                           </div>
@@ -746,24 +763,24 @@ const ProfilePage: React.FC = () => {
                   </div>
                 ) : (
                   <div className='orders-list'>
-                    {userOrders.map((order: any) => (
+                    {userOrders.map((order: UserOrder) => (
                       <div key={order.id} className='order-card'>
                         <div className='order-header'>
                           <h3>Pedido #{order.id}</h3>
                           <span
-                            className={`order-status ${order.status.toLowerCase()}`}
+                            className={`order-status ${order.estado.toLowerCase()}`}
                           >
-                            {order.status}
+                            {order.estado}
                           </span>
                         </div>
-                        <p className='order-date'>{formatDate(order.date)}</p>
+                        <p className='order-date'>{formatDate(order?.fechaEstimadaEntrega || '')}</p>
                         <p className='order-total'>
-                          Total: {formatPrice(order.total)}
+                          Total: {formatPrice(+order.total)}
                         </p>
-                        <p className='order-items-count'>
+                      {/*   <p className='order-items-count'>
                           {order.items.length}{' '}
                           {order.items.length === 1 ? 'producto' : 'productos'}
-                        </p>
+                        </p> */}
                         <button
                           className='btn-secondary'
                           onClick={() => navigate(`/orden/${order.id}`)}

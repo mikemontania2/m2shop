@@ -98,7 +98,8 @@ class AuthService {
   async updateProfile(data: ProfileUpdateData) {
     const res = await api.put<{ mensaje: string; user: User }>('/auth/profile', data);
     localStorage.setItem('user', JSON.stringify(res.data.user));
-    return { success: true, user: res.data.user };
+       return { success: true, message: res.data.mensaje };
+
   }
 
   async updatePassword(data: PasswordUpdateData) {

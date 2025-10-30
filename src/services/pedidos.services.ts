@@ -6,7 +6,27 @@ import api from './api';
 // ========================================
 // INTERFACES
 // ========================================
-
+export interface UserOrder {
+  id: number
+  numeroPedido: string
+  usuarioId: number
+  estado: 'pendiente' | 'confirmado' | 'preparando' | 'enviado' | 'entregado' | 'cancelado'
+  descuento: string
+  importeDescuento: string
+  subtotal: string
+  total: string
+  costoEnvio: string
+  metodoPago: 'efectivo' | 'tarjeta' | 'transferencia' | 'paypal' | 'otros'
+  estadoPago: 'pendiente' | 'pagado' | 'rechazado' | 'reembolsado'
+  direccionEnvioId: number
+  notasCliente?: string
+  notasInternas?: string | null
+  fechaEstimadaEntrega?: string
+  codigoSeguimiento?: string | null
+  createdAt: string
+  updatedAt: string
+  DireccionEnvio?: DireccionPedido
+}
 export interface ClienteCheckout {
   tipo: 'invitado' | 'registrado';
   usuarioId?: number;
@@ -107,7 +127,7 @@ export interface CrearPedidoResponse {
 }
 
 export interface ListaPedidosResponse {
-  pedidos: Pedido[];
+  pedidos: UserOrder[];
   pagination: {
     total: number;
     page: number;

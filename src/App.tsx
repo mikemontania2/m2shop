@@ -99,7 +99,7 @@ function App() {
             } 
           />
           <Route 
-            path="/pedido-confirmado/:id" 
+            path="/orden/:id" 
             element={ 
                 <OrderConfirmationPage /> 
             } 
