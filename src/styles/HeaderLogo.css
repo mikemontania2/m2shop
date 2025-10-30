@@ -1,18 +1,102 @@
 /* ============================================
-   LOGO STYLES
+   SITE BRANDING & LOGO STYLES
+   Logo que sobresale del header hacia arriba
    ============================================ */
-.logo {
-  cursor: pointer;
+
+.site-branding {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
 }
 
-.logo img {
-  height: 36px;
+.custom-logo-link {
   display: block;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  line-height: 0;
+  position: relative;
 }
 
-/* Mobile adjustments */
+.custom-logo-link:hover {
+  opacity: 0.9;
+}
+
+.custom-logo-link:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.custom-logo-link:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* El logo sobresale del header */
+.imgheader {
+  height: 120px; /* Altura total del logo */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  position: relative;
+  top: -30px; /* Se sale del header hacia arriba */
+  margin-bottom: -30px; /* Compensa el espacio para no afectar el layout */
+  transition: top 0.3s ease, height 0.3s ease, margin-bottom 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+}
+
+/* Cuando el header está en el top (sticky activo) */
+.header[style*="top: 0"] .imgheader,
+.header.at-top .imgheader {
+  top: 0;
+  height: 80px;
+  margin-bottom: 0;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .imgheader {
+    height: 100px;
+    top: -24px;
+    margin-bottom: -24px;
+  }
+  
+  .header[style*="top: 0"] .imgheader,
+  .header.at-top .imgheader {
+    height: 70px;
+    top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Mobile */
 @media (max-width: 767px) {
-  .logo img {
-    height: 28px;
+  .imgheader {
+    height: 60px;
+    top: -8px;
+    margin-bottom: -8px;
+  }
+  
+  .header[style*="top: 0"] .imgheader,
+  .header.at-top .imgheader {
+    height: 55px;
+    top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .imgheader {
+    height: 55px;
+    top: -6px;
+    margin-bottom: -6px;
+  }
+  
+  .header[style*="top: 0"] .imgheader,
+  .header.at-top .imgheader {
+    height: 50px;
+    top: 0;
+    margin-bottom: 0;
   }
 }
