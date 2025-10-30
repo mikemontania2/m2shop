@@ -6,13 +6,13 @@
 import axios from "axios";
 
 export interface Card {
-  id: string;
+  id: string; 
   userId: number;
-  holder: string;
-  last4: string;
-  brand: string;
-  expMonth: number;
-  expYear: number;
+  titular: string;
+  ultimos4: string;
+  marca: string;
+  mesVencimiento: number;
+  anioVencimiento: number;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -112,7 +112,7 @@ class CardService {
    */
   isExpired(card: Card): boolean {
     const now = new Date();
-    const expiry = new Date(card.expYear, card.expMonth - 1);
+    const expiry = new Date(card.anioVencimiento, card.mesVencimiento - 1);
     return now > expiry;
   }
 
@@ -120,7 +120,7 @@ class CardService {
    * Formatear fecha de vencimiento
    */
   formatExpiry(card: Card): string {
-    return `${card.expMonth.toString().padStart(2, '0')}/${card.expYear}`;
+    return `${card.mesVencimiento.toString().padStart(2, '0')}/${card.anioVencimiento}`;
   }
 
   /**

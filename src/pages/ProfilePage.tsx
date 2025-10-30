@@ -47,7 +47,8 @@ const ProfilePage: React.FC = () => {
       if (user) {
         try {
           const data = await pedidosServices.obtenerMisPedidos()
-          setUserOrders(data)
+          console.log(' lo que recibe const data = await pedidosServices.obtenerMisPedidos()',data);
+          setUserOrders(data || [])
         } catch (error) {
           console.error('Error cargando pedidos:', error)
         }
@@ -95,7 +96,6 @@ const ProfilePage: React.FC = () => {
 
   // 🔹 FUNCIÓN PARA CARGAR DIRECCIONES
   const loadAddresses = async () => {
-    console.log('heyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
     if (!user) return
     setLoadingAddresses(true)
     try {
@@ -590,11 +590,11 @@ const ProfilePage: React.FC = () => {
                       setEditingCard({
                         id: 'card-' + Date.now(),
                         userId: user.id,
-                        holder: '',
-                        last4: '',
-                        brand: '',
-                        expMonth: 1,
-                        expYear: new Date().getFullYear()
+                        titular: '',
+                        ultimos4: '',
+                        marca: '',
+                        mesVencimiento: 1,
+                        anioVencimiento: new Date().getFullYear()
                       })
                     }
                   >
@@ -608,11 +608,11 @@ const ProfilePage: React.FC = () => {
                       <label>
                         Nombre en la tarjeta
                         <input
-                          value={editingCard.holder}
+                          value={editingCard.titular}
                           onChange={e =>
                             setEditingCard({
                               ...editingCard,
-                              holder: e.target.value
+                              titular: e.target.value
                             })
                           }
                         />
@@ -620,11 +620,11 @@ const ProfilePage: React.FC = () => {
                       <label>
                         Marca
                         <input
-                          value={editingCard.brand}
+                          value={editingCard.marca}
                           onChange={e =>
                             setEditingCard({
                               ...editingCard,
-                              brand: e.target.value
+                              marca: e.target.value
                             })
                           }
                           placeholder='Visa / MasterCard'
@@ -633,11 +633,11 @@ const ProfilePage: React.FC = () => {
                       <label>
                         Últimos 4
                         <input
-                          value={editingCard.last4}
+                          value={editingCard.ultimos4}
                           onChange={e =>
                             setEditingCard({
                               ...editingCard,
-                              last4: e.target.value.slice(0, 4)
+                              ultimos4: e.target.value.slice(0, 4)
                             })
                           }
                         />
@@ -646,11 +646,11 @@ const ProfilePage: React.FC = () => {
                         Vencimiento (MM)
                         <input
                           type='number'
-                          value={editingCard.expMonth}
+                          value={editingCard.mesVencimiento}
                           onChange={e =>
                             setEditingCard({
                               ...editingCard,
-                              expMonth: Number.parseInt(e.target.value) || 1
+                              mesVencimiento: Number.parseInt(e.target.value) || 1
                             })
                           }
                         />
@@ -659,11 +659,11 @@ const ProfilePage: React.FC = () => {
                         Vencimiento (YYYY)
                         <input
                           type='number'
-                          value={editingCard.expYear}
+                          value={editingCard.anioVencimiento}
                           onChange={e =>
                             setEditingCard({
                               ...editingCard,
-                              expYear:
+                              anioVencimiento:
                                 Number.parseInt(e.target.value) ||
                                 new Date().getFullYear()
                             })
@@ -704,11 +704,11 @@ const ProfilePage: React.FC = () => {
                           }}
                         >
                           <div>
-                            <strong>{c.brand}</strong> •••• {c.last4}
+                            <strong>{c.marca}</strong> •••• {c.ultimos4}
                             <br />
                             <small>
-                              Vence: {c.expMonth.toString().padStart(2, '0')}/
-                              {c.expYear}
+                              Vence: {c.mesVencimiento.toString().padStart(2, '0')}/
+                              {c.anioVencimiento}
                             </small>
                           </div>
                           <button
